@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_Gear_11
+  m_Shader: {fileID: 4800000, guid: 6327aba704947d34588277fdf911cc0c, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _AnimationMask:
+        m_Texture: {fileID: 2800000, guid: 0fc8bf4d13e7b2c44872d87a42008190, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DiffuseMap:
+        m_Texture: {fileID: 2800000, guid: 418157d801447034487056aac0b60d6a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MATCAPMAP:
+        m_Texture: {fileID: 2800000, guid: ecb976d26e95e5d49bc83ef855e31d5e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Outlines_:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Outlines_Mask:
+        m_Texture: {fileID: 2800000, guid: 51ebc8c8ea091df408f9eefdcce25104, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 2800000, guid: 0fc8bf4d13e7b2c44872d87a42008190, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _tex4coord3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord4:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _Additive: 0
+    - _AlphaCutoff: 0.5
+    - _Bright: 0
+    - _ExtraRotationVariationSpeed: 10
+    - _FacePourcentage: 1
+    - _Faces_Color_Opacity: 2
+    - _FarDistanceMax: 5.39
+    - _Flickering: 0
+    - _Float0: 0
+    - _Float2: 0.002
+    - _Float3: 0
+    - _GeaBright: 0
+    - _GearsBright: 0
+    - _GearsOutlBright: 0
+    - _GearsOutlinesBright: 0
+    - _GearsOutlinesIntensity: 2.5
+    - _Keyword0: 0
+    - _MaskAnimationSpeed: 0.75
+    - _Mask_Debug: 0
+    - _Ou: 0
+    - _OutlineMaskSpeed: 0.75
+    - _OutlinesBright: 0
+    - _Outlines_Color_Opacity: 7.5
+    - _SinusoidalePanner: 0
+    - _Speed: 0
+    - _SwitchAxis: 0
+    - _TessEdgeLength: 16
+    - _TessMax: 25
+    - _TessMaxDisp: 25
+    - _TessMin: 10
+    - _TessPhongStrength: 0.5
+    - _TessValue: 16
+    - _TileX: 1
+    - _TileX_Outline: 0
+    - _TileY: 1
+    - _TileY_Outline: 1
+    - _ToggleSwitch0: 0
+    - _TransAmbient: 0.2
+    - _TransDirect: 1
+    - _TransNormalDistortion: 0.1
+    - _TransScattering: 2
+    - _TransShadow: 0.9
+    - _Translucency: 1
+    - __dirty: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Faces_Color: {r: 0.5095877, g: 0.990566, b: 0.06541472, a: 1}
+    - _Outlines_Color: {r: 0.17102675, g: 0.6901961, b: 0.031372562, a: 1}
+    - _SurfaceColor: {r: 0.70710677, g: 0.70710677, b: 0.70710677, a: 1}
