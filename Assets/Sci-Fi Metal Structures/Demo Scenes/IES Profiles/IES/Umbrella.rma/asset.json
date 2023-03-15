@@ -1,0 +1,257 @@
+{
+    "RenderManAsset": {
+        "usedNodeTypes": [
+            "PxrRectLight"
+        ],
+        "version": 1.0,
+        "asset": {
+            "nodeGraph": {
+                "dependencies": [
+                    "Umbrella.IES"
+                ],
+                "nodeList": {
+                    "PxrRectLightShape1": {
+                        "params": {
+                            "notes": {
+                                "type": "string",
+                                "value": ""
+                            },
+                            "intensity": {
+                                "default": 1.0,
+                                "type": "float",
+                                "name": "intensity",
+                                "value": 1.0
+                            },
+                            "exposure": {
+                                "default": 0,
+                                "type": "float",
+                                "name": "exposure",
+                                "value": 0.0
+                            },
+                            "lightColor": {
+                                "default": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "type": "color",
+                                "name": "lightColor",
+                                "value": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                ]
+                            },
+                            "lightColorMap": {
+                                "default": "",
+                                "type": "string",
+                                "name": "lightColorMap",
+                                "value": ""
+                            },
+                            "enableTemperature": {
+                                "default": 0,
+                                "type": "int",
+                                "name": "enableTemperature",
+                                "value": false
+                            },
+                            "temperature": {
+                                "default": 6500,
+                                "type": "float",
+                                "name": "temperature",
+                                "value": 6500.0
+                            },
+                            "emissionFocus": {
+                                "default": 0.0,
+                                "type": "float",
+                                "name": "emissionFocus",
+                                "value": 0.0
+                            },
+                            "emissionFocusTint": {
+                                "default": [
+                                    0,
+                                    0,
+                                    0
+                                ],
+                                "type": "color",
+                                "name": "emissionFocusTint",
+                                "value": [
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            "specular": {
+                                "default": 1.0,
+                                "type": "float",
+                                "name": "specular",
+                                "value": 1.0
+                            },
+                            "diffuse": {
+                                "default": 1.0,
+                                "type": "float",
+                                "name": "diffuse",
+                                "value": 1.0
+                            },
+                            "intensityNearDist": {
+                                "default": 0.0,
+                                "type": "float",
+                                "name": "intensityNearDist",
+                                "value": 0.0
+                            },
+                            "coneAngle": {
+                                "default": 90.0,
+                                "type": "float",
+                                "name": "coneAngle",
+                                "value": 90.0
+                            },
+                            "coneSoftness": {
+                                "default": 0.0,
+                                "type": "float",
+                                "name": "coneSoftness",
+                                "value": 0.0
+                            },
+                            "iesProfile": {
+                                "default": "",
+                                "type": "string",
+                                "name": "iesProfile",
+                                "value": "Umbrella.IES"
+                            },
+                            "iesProfileScale": {
+                                "default": 0,
+                                "type": "float",
+                                "name": "iesProfileScale",
+                                "value": 0.0
+                            },
+                            "enableShadows": {
+                                "default": 1,
+                                "type": "int",
+                                "name": "enableShadows",
+                                "value": true
+                            },
+                            "shadowColor": {
+                                "default": [
+                                    0,
+                                    0,
+                                    0
+                                ],
+                                "type": "color",
+                                "name": "shadowColor",
+                                "value": [
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            "shadowDistance": {
+                                "default": -1,
+                                "type": "float",
+                                "name": "shadowDistance",
+                                "value": -1.0
+                            },
+                            "shadowFalloff": {
+                                "default": -1.0,
+                                "type": "float",
+                                "name": "shadowFalloff",
+                                "value": -1.0
+                            },
+                            "shadowFalloffGamma": {
+                                "default": 1.0,
+                                "type": "float",
+                                "name": "shadowFalloffGamma",
+                                "value": 1.0
+                            },
+                            "shadowSubset": {
+                                "default": "",
+                                "type": "string",
+                                "name": "shadowSubset",
+                                "value": ""
+                            },
+                            "shadowExcludeSubset": {
+                                "default": "",
+                                "type": "string",
+                                "name": "shadowExcludeSubset",
+                                "value": ""
+                            },
+                            "areaNormalize": {
+                                "default": 0,
+                                "type": "int",
+                                "name": "areaNormalize",
+                                "value": false
+                            },
+                            "traceLightPaths": {
+                                "default": 0,
+                                "type": "int",
+                                "name": "traceLightPaths",
+                                "value": false
+                            },
+                            "thinShadow": {
+                                "default": 1,
+                                "type": "int",
+                                "name": "thinShadow",
+                                "value": true
+                            },
+                            "fixedSampleCount": {
+                                "default": 0,
+                                "type": "int",
+                                "name": "fixedSampleCount",
+                                "value": 0
+                            },
+                            "lightGroup": {
+                                "default": "",
+                                "type": "string",
+                                "name": "lightGroup",
+                                "value": ""
+                            }
+                        },
+                        "rmanNode": "PxrRectLight",
+                        "type": "PxrRectLight",
+                        "nodeClass": "light",
+                        "transforms": {
+                            "type": 1,
+                            "values": [
+                                1.0,
+                                0.0,
+                                0.0,
+                                0.0,
+                                0.0,
+                                1.0,
+                                0.0,
+                                0.0,
+                                0.0,
+                                0.0,
+                                1.0,
+                                0.0,
+                                0.0,
+                                0.0,
+                                0.0,
+                                1.0
+                            ],
+                            "format": [
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                "compatibility": {
+                    "hostNodeTypes": [],
+                    "host": {
+                        "version": "2017.0",
+                        "name": "Maya"
+                    },
+                    "renderer": {
+                        "version": "21.1"
+                    }
+                },
+                "connectionList": [],
+                "metadata": {
+                    "author": "lpedersen",
+                    "version": 0,
+                    "created": "2016-10-11 17:28:33"
+                }
+            }
+        },
+        "label": "Umbrella"
+    }
+}
