@@ -2,19 +2,22 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Hologram_HDRP
   m_Shader: {fileID: 4800000, guid: 7206e33e4f86e32459ea56551d0004dd, type: 3}
-  m_ShaderKeywords: _ADD_PRECOMPUTED_VELOCITY _DISABLE_SSR_TRANSPARENT _ENABLE_FOG_ON_TRANSPARENT
-    _SURFACE_TYPE_TRANSPARENT
+  m_ValidKeywords:
+  - _SURFACE_TYPE_TRANSPARENT
+  m_InvalidKeywords:
+  - _ADD_PRECOMPUTED_VELOCITY
+  - _DISABLE_SSR_TRANSPARENT
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 2760
   stringTagMap:
     MotionVector: User
     RenderType: Transparent
@@ -35,6 +38,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 1
     - _AlphaCutoff: 0.5
@@ -47,15 +51,15 @@ Material:
     - _DoubleSidedEnable: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 10
-    - _EnableFogOnTransparent: 1
+    - _EnableFogOnTransparent: 0
     - _Float0: 0.4
     - _Float1: 0.02
     - _Float2: 0.79
     - _Invert: 0
-    - _Power: 1
+    - _Power: 2
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
-    - _RenderQueueType: 4
+    - _RenderQueueType: 3
     - _RequireSplitLighting: 0
     - _Scale: 1
     - _SrcBlend: 1
@@ -73,19 +77,19 @@ Material:
     - _SurfaceType: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
-    - _TransparentSortPriority: 0
+    - _TransparentSortPriority: 10
     - _TransparentZWrite: 1
-    - _UV: 3.73
+    - _UV: 5
     - _UseShadowThreshold: 0
-    - _VertexMovement: 0.005
+    - _VertexMovement: 0.05
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 0.9245283, g: 0.9097573, b: 0.047970813, a: 0}
+    - _Color: {r: 0, g: 1, b: 0.93790555, a: 1}
     - _Color0: {r: 0.6509434, g: 0.6215183, b: 0.03991636, a: 0}
-    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
