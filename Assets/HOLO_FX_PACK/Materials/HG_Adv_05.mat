@@ -2,19 +2,13 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 8
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_Name: HG_Adv_05
   m_Shader: {fileID: 4800000, guid: 79aed62ebf633114bb3e8df1cea2425f, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _EMISSION
-  - _GLITCHCOLOR_ON
-  - _X_ON
-  - _Y_ON
+  m_ShaderKeywords: _EMISSION _GLITCHCOLOR_ON _X_ON _Y_ON
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -72,11 +66,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _originalDiffuse:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
     m_Floats:
     - Zoom: 10.89
     - _Amount: 1
@@ -96,7 +85,6 @@ Material:
     - _OcclusionStrength: 1
     - _Opacity: 1
     - _Opacity_gl: 1
-    - _OriginalUVSwitch: 0
     - _OrigineX: 0.5
     - _OrigineY: 0
     - _Parallax: 0.02
@@ -132,4 +120,3 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _diff_Color: {r: 1, g: 1, b: 1, a: 1}
     - _glitchColor_c: {r: 0.14327422, g: 0.41089067, b: 0.7794118, a: 1}
-  m_BuildTextureStacks: []
