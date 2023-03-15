@@ -5092,7 +5092,7 @@ GameObject:
   - component: {fileID: 7967142288889584248}
   - component: {fileID: 7573436978831348526}
   m_Layer: 0
-  m_Name: HoloRobot
+  m_Name: HoloRobotYellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
