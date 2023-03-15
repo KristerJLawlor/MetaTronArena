@@ -167,7 +167,7 @@ Material:
     - _StencilWriteMaskDepth: 8
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
-    - _StencilWriteMaskMV: 40
+    - _StencilWriteMaskMV: 42
     - _SurfaceType: 0
     - _Tiling: 0.2
     - _ToggleSwitch0: 0
