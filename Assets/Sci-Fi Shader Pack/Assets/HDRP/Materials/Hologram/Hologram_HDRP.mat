@@ -17,7 +17,7 @@ Material:
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2760
+  m_CustomRenderQueue: 3010
   stringTagMap:
     MotionVector: User
     RenderType: Transparent
@@ -56,12 +56,12 @@ Material:
     - _Float1: 0.02
     - _Float2: 0.79
     - _Invert: 0
-    - _Power: 2
+    - _Power: 0.96
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
-    - _RenderQueueType: 3
+    - _RenderQueueType: 4
     - _RequireSplitLighting: 0
-    - _Scale: 1
+    - _Scale: 1.13
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 0
@@ -79,16 +79,16 @@ Material:
     - _TransparentCullMode: 2
     - _TransparentSortPriority: 10
     - _TransparentZWrite: 1
-    - _UV: 5
+    - _UV: 1
     - _UseShadowThreshold: 0
-    - _VertexMovement: 0.05
+    - _VertexMovement: 0.005
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 0, g: 1, b: 0.93790555, a: 1}
+    - _Color: {r: 0, g: 0.90854096, b: 1, a: 1}
     - _Color0: {r: 0.6509434, g: 0.6215183, b: 0.03991636, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

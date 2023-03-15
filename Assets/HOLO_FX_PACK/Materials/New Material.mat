@@ -8,15 +8,22 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Material
-  m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
-  m_ValidKeywords:
+  m_Shader: {fileID: 15301, guid: 0000000000000000f000000000000000, type: 0}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _CastShadowsEnabled
   - _DISABLE_SSR_TRANSPARENT
+  - _FadingEnabled
   - _NORMALMAP_TANGENT_SPACE
-  m_InvalidKeywords: []
+  - _PreferQuadsEnabled
+  - _ReceiveAmbientLightingEnabled
+  - _ReceiveDirectLightingEnabled
+  - _ReceiveFogEnabled
+  - _ReceiveShadowsEnabled
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2225
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses:
   - TransparentDepthPrepass
@@ -168,11 +175,15 @@ Material:
     - _AlphaToMask: 0
     - _AlphaToMaskInspectorValue: 0
     - _Anisotropy: 0
+    - _BlendDst: 10
     - _BlendMode: 0
+    - _BlendSrc: 5
     - _BumpScale: 1
+    - _CastShadowsEnabled: 1
     - _CoatMask: 0
     - _CullMode: 2
     - _CullModeForward: 2
+    - _Culling: 2
     - _Cutoff: 0.5
     - _DepthOffsetEnable: 0
     - _DetailAlbedoScale: 1
@@ -196,6 +207,7 @@ Material:
     - _EnableFogOnTransparent: 1
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
+    - _FadingEnabled: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.327
     - _GlossyReflections: 1
@@ -212,6 +224,7 @@ Material:
     - _Ior: 1.5
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
+    - _LightingMode: 1
     - _LinkDetailsWithBase: 0
     - _MaterialID: 1
     - _Metallic: 0
@@ -221,6 +234,7 @@ Material:
     - _NormalMapSpace: 0
     - _NormalScale: 1
     - _OcclusionStrength: 1
+    - _Opacity: 1
     - _OpaqueCullMode: 2
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
@@ -228,7 +242,12 @@ Material:
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
     - _Parallax: 0.02
+    - _PreferQuadsEnabled: 1
     - _RayTracing: 0
+    - _ReceiveAmbientLightingEnabled: 1
+    - _ReceiveDirectLightingEnabled: 1
+    - _ReceiveFogEnabled: 1
+    - _ReceiveShadowsEnabled: 1
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
@@ -269,6 +288,9 @@ Material:
     - _UVSec: 0
     - _UseEmissiveIntensity: 0
     - _UseShadowThreshold: 0
+    - _WireThickness: 596
+    - _WireframeSize: 1
+    - _ZTest: 4
     - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
@@ -279,9 +301,11 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _Emission: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
+    - _FadeMinMaxDistance: {r: 10, g: 20, b: 0, a: 0}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

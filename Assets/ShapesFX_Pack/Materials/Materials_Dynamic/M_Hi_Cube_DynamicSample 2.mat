@@ -133,7 +133,7 @@ Material:
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 0
     - _ExtrudeUpFaces: 1
-    - _Frequency: 1
+    - _Frequency: 16
     - _FrontFace_Intensity: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
