@@ -81,7 +81,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Ramp:
-        m_Texture: {fileID: 2800000, guid: d9fed6b9b1b880b459fd4d5d2d2bc1fb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1260249478b816b468c2888f0a40a2e0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture0:
@@ -216,8 +216,8 @@ Material:
     - _ColorTint: {r: 1, g: 1, b: 1, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _FinalColor: {r: 1, g: 0, b: 0, a: 1}
-    - _FinalColor2: {r: 0, g: 0.29803923, b: 1, a: 1}
+    - _FinalColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FinalColor2: {r: 0, g: 0, b: 0, a: 1}
     - _FinalUnlitColor: {r: 0, g: 0, b: 0, a: 1}
     - _TintColor: {r: 1, g: 0, b: 0, a: 0.5}
     - _UnlitColor: {r: 0, g: 0, b: 0, a: 0}

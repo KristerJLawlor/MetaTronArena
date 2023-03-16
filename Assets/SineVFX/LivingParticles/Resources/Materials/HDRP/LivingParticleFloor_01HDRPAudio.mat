@@ -111,8 +111,8 @@ Material:
     - _CullMode: 2
     - _CullModeForward: 2
     - _DepthOffsetEnable: 0
-    - _Distance: 1.75
-    - _DistancePower: 1
+    - _Distance: 1.06
+    - _DistancePower: 1.02
     - _DoubleSidedEnable: 0
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 2
