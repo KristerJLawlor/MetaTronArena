@@ -11,12 +11,14 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 2af328e2fb738c140a06704103b20ce8,
     type: 3}
   m_ValidKeywords:
+  - _DISABLE_DECALS
+  - _DISABLE_SSR
   - _DISABLE_SSR_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2225
+  m_CustomRenderQueue: 2000
   stringTagMap:
     MotionVector: User
   disabledShaderPasses:
@@ -126,7 +128,7 @@ Material:
     - _CullMode: 2
     - _CullModeForward: 2
     - _DepthOffsetEnable: 0
-    - _Distance: 1.5
+    - _Distance: 6.09
     - _DistancePower: 2
     - _DoubleSidedEnable: 0
     - _DoubleSidedGIMode: 0
@@ -151,12 +153,12 @@ Material:
     - _NoiseExp: 1
     - _NoisePower: 0
     - _NoiseTiling: 0.05
-    - _OffsetPower: -1
+    - _OffsetPower: -0.3
     - _OffsetYLock: 1
     - _OpaqueCullMode: 2
     - _RampEnabled: 1
     - _RayTracing: 0
-    - _ReceivesSSR: 1
+    - _ReceivesSSR: 0
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
     - _RenderQueueType: 1
@@ -165,16 +167,16 @@ Material:
     - _SoftParticleDistance: 0.25
     - _SrcBlend: 1
     - _StencilRef: 0
-    - _StencilRefDepth: 8
+    - _StencilRefDepth: 0
     - _StencilRefDistortionVec: 4
-    - _StencilRefGBuffer: 10
-    - _StencilRefMV: 40
+    - _StencilRefGBuffer: 2
+    - _StencilRefMV: 32
     - _StencilWriteMask: 6
     - _StencilWriteMaskDepth: 8
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
-    - _SupportDecals: 1
+    - _SupportDecals: 0
     - _SurfaceType: 0
     - _Tiling: 0.2
     - _ToggleSwitch0: 0
