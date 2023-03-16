@@ -90,6 +90,6 @@ Material:
     m_Colors:
     - _Color: {r: 0.03529412, g: 0.023529412, b: 0.07450981, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GridColor: {r: 1, g: 0, b: 0.9257207, a: 1}
-    - _OutlineColor: {r: 1, g: 0.031372547, b: 0.93675786, a: 1}
+    - _GridColor: {r: 0.4339623, g: 0.4321718, b: 0.43191528, a: 1}
+    - _OutlineColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
   m_BuildTextureStacks: []
