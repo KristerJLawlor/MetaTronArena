@@ -10,12 +10,13 @@ Material:
   m_Name: HologramTriplanar_Mechanism_HDRP
   m_Shader: {fileID: 4800000, guid: 41e0d9b97d7c1e54b88dfeb86adf4600, type: 3}
   m_ValidKeywords:
+  - _DOUBLESIDED_ON
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords:
   - _DISABLE_SSR_TRANSPARENT
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: 3000
   stringTagMap:
     MotionVector: User
@@ -74,9 +75,9 @@ Material:
     - _AlphaDstBlend: 10
     - _AlphaSrcBlend: 1
     - _BlendMode: 0
-    - _CullMode: 2
-    - _CullModeForward: 2
-    - _DoubleSidedEnable: 0
+    - _CullMode: 0
+    - _CullModeForward: 0
+    - _DoubleSidedEnable: 1
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 10
     - _EnableFogOnTransparent: 0
@@ -118,7 +119,7 @@ Material:
     - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 0, b: 0.89759827, a: 1}
-    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissonColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

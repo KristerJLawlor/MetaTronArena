@@ -7,19 +7,18 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HologramFresnelColor_Mechanism_HDRP
-  m_Shader: {fileID: 4800000, guid: e824a27c76f2611438dbf3d3624a92e1, type: 3}
+  m_Name: BeaconHologram
+  m_Shader: {fileID: 4800000, guid: 7206e33e4f86e32459ea56551d0004dd, type: 3}
   m_ValidKeywords:
-  - _DOUBLESIDED_ON
-  - _ENABLE_FOG_ON_TRANSPARENT
+  - _DISABLE_DECALS
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords:
   - _ADD_PRECOMPUTED_VELOCITY
   - _DISABLE_SSR_TRANSPARENT
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 3000
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3010
   stringTagMap:
     MotionVector: User
     RenderType: Transparent
@@ -28,8 +27,16 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _42342:
+        m_Texture: {fileID: 2800000, guid: 6ad97ad16b284d7489f75fcbd326bcf9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Hologram:
         m_Texture: {fileID: 2800000, guid: 1dbcddf7c0c736f4d84ec53ff8243eb7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -40,21 +47,22 @@ Material:
     - _AlphaDstBlend: 10
     - _AlphaSrcBlend: 1
     - _BlendMode: 0
-    - _CullMode: 0
-    - _CullModeForward: 0
-    - _DepthPower: 1
-    - _DoubleSidedEnable: 1
+    - _CullMode: 2
+    - _CullModeForward: 2
+    - _DoubleSidedEnable: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 10
-    - _EnableFogOnTransparent: 1
-    - _Float0: 1
+    - _EnableFogOnTransparent: 0
+    - _Float0: 0.4
+    - _Float1: 0.02
+    - _Float2: 0.79
     - _Invert: 0
-    - _Power: 1
+    - _Power: 0.96
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
     - _RenderQueueType: 4
     - _RequireSplitLighting: 0
-    - _Scale: 1
+    - _Scale: 3.78
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 0
@@ -66,25 +74,23 @@ Material:
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
-    - _SupportDecals: 1
+    - _SupportDecals: 0
     - _SurfaceType: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
-    - _TransparentSortPriority: 0
+    - _TransparentSortPriority: 10
     - _TransparentZWrite: 1
     - _UV: 1
     - _UseShadowThreshold: 0
-    - _VertexMovement: 0.008
+    - _VertexMovement: 0.005
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 2.9960785, g: 0.47058824, b: 0.47058824, a: 0}
-    - _Color0: {r: 0.3764706, g: 0.4392157, b: 2.9960785, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color0: {r: 0.6509434, g: 0.6215183, b: 0.03991636, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _FirstColor: {r: 10.680629, g: 10.680629, b: 10.680629, a: 0}
-    - _SecondColor: {r: 1.0934535, g: 0.9797069, b: 1.7453603, a: 0}
   m_BuildTextureStacks: []

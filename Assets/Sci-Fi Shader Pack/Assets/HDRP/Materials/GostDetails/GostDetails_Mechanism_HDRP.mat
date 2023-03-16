@@ -10,13 +10,14 @@ Material:
   m_Name: GostDetails_Mechanism_HDRP
   m_Shader: {fileID: 4800000, guid: 4612ccb38931d404499e67f9518a46b5, type: 3}
   m_ValidKeywords:
+  - _DOUBLESIDED_ON
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords:
   - _ADD_PRECOMPUTED_VELOCITY
   - _DISABLE_SSR_TRANSPARENT
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: 3000
   stringTagMap:
     MotionVector: User
@@ -50,9 +51,9 @@ Material:
     - _AlphaDstBlend: 1
     - _AlphaSrcBlend: 1
     - _BlendMode: 1
-    - _CullMode: 2
-    - _CullModeForward: 2
-    - _DoubleSidedEnable: 0
+    - _CullMode: 0
+    - _CullModeForward: 0
+    - _DoubleSidedEnable: 1
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 1
     - _EmissivePower: 1
@@ -83,16 +84,16 @@ Material:
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
     - _TransparentSortPriority: 0
-    - _TransparentZWrite: 1
+    - _TransparentZWrite: 0
     - _UseShadowThreshold: 0
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
-    - _ZWrite: 1
+    - _ZWrite: 0
     - __dirty: 0
     m_Colors:
     - _Color: {r: 0.24370345, g: 0.3625832, b: 1.1353015, a: 1}
     - _Color0: {r: 0.31768423, g: 0.35123706, b: 0.5566038, a: 0}
-    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

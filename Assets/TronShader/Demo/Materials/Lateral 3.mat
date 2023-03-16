@@ -62,15 +62,15 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Frequency: 57.3
+    - _Frequency: 75.8
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _GridSharpness: 2.57
     - _Metallic: 0
     - _Mode: 0
-    - _NumberHorizzontal: 0.459
-    - _NumberVertical: 0.28
+    - _NumberHorizzontal: 0.163
+    - _NumberVertical: 0
     - _OcclusionStrength: 1
     - _OutlineSharpness: 3.67
     - _Parallax: 0.02
@@ -83,9 +83,9 @@ Material:
     - _WidthGrid: 0
     - _WidthGridLimiter: 0.983
     - _WidthGridSharpness: 1
-    - _WidthOutline: 0.231
+    - _WidthOutline: 0.203
     - _WidthOutlineLimiter: 0.935
-    - _WidthOutlineSharpness: 0.762
+    - _WidthOutlineSharpness: 0.553
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.03529412, g: 0.023529412, b: 0.07450981, a: 1}

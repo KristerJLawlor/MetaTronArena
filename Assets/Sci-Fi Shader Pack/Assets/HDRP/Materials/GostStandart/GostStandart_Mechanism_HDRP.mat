@@ -11,14 +11,14 @@ Material:
   m_Shader: {fileID: 4800000, guid: ae318ac1497d28f429b4bf48b135104f, type: 3}
   m_ValidKeywords:
   - _DISABLE_DECALS
+  - _DOUBLESIDED_ON
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords:
   - _ADD_PRECOMPUTED_VELOCITY
-  - _DISABLE_SSR_TRANSPARENT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: 3400
   stringTagMap:
     MotionVector: User
     RenderType: Transparent
@@ -33,11 +33,11 @@ Material:
     - _AlphaCutoff: 0.5
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 10
-    - _AlphaSrcBlend: 1
+    - _AlphaSrcBlend: 0
     - _BlendMode: 0
-    - _CullMode: 2
-    - _CullModeForward: 2
-    - _DoubleSidedEnable: 0
+    - _CullMode: 0
+    - _CullModeForward: 0
+    - _DoubleSidedEnable: 1
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 10
     - _EmissionPower1: 3
@@ -45,16 +45,16 @@ Material:
     - _Invert: 0
     - _Power: 5.04
     - _ReceivesSSR: 1
-    - _ReceivesSSRTransparent: 0
-    - _RenderQueueType: 4
+    - _ReceivesSSRTransparent: 1
+    - _RenderQueueType: 5
     - _RequireSplitLighting: 0
     - _Scale: 7.42
     - _SrcBlend: 1
     - _StencilRef: 0
-    - _StencilRefDepth: 0
+    - _StencilRefDepth: 8
     - _StencilRefDistortionVec: 4
-    - _StencilRefGBuffer: 2
-    - _StencilRefMV: 32
+    - _StencilRefGBuffer: 10
+    - _StencilRefMV: 40
     - _StencilWriteMask: 6
     - _StencilWriteMaskDepth: 8
     - _StencilWriteMaskDistortionVec: 4
@@ -75,6 +75,6 @@ Material:
     m_Colors:
     - _Color: {r: 0.14253783, g: 1, b: 0, a: 1}
     - _Color0: {r: 0.6037736, g: 0.44713423, b: 0.44713423, a: 0}
-    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
