@@ -20,7 +20,7 @@ MonoBehaviour:
     supportSSGI: 1
     supportSubsurfaceScattering: 1
     sssSampleBudget:
-      m_Values: 140000002800000050000000
+      m_Values: 0a000000140000001e000000
       m_SchemaId:
         m_Id: With3Levels
     supportVolumetrics: 1
@@ -38,7 +38,7 @@ MonoBehaviour:
       m_Values: 000100000004000000040000
       m_SchemaId:
         m_Id: With3Levels
-    supportDecals: 1
+    supportDecals: 0
     supportDecalLayers: 0
     supportSurfaceGradient: 0
     decalNormalBufferHP: 0
@@ -140,6 +140,7 @@ MonoBehaviour:
       singlePass: 1
       occlusionMesh: 1
       cameraJitter: 0
+      allowMotionBlur: 1
     postProcessQualitySettings:
       NearBlurSampleCount: 030000000400000005000000
       NearBlurMaxRadius:
@@ -171,8 +172,8 @@ MonoBehaviour:
     lodBias:
       m_Values:
       - 1
-      - 1
-      - 1
+      - 0.5
+      - 0.01
       m_SchemaId:
         m_Id: With3Levels
     lightingQualitySettings:
@@ -268,7 +269,7 @@ MonoBehaviour:
   allowShaderVariantStripping: 1
   enableSRPBatcher: 1
   availableMaterialQualityLevels: -1
-  m_DefaultMaterialQualityLevel: 4
+  m_DefaultMaterialQualityLevel: 2
   diffusionProfileSettings: {fileID: 0}
   virtualTexturingSettings:
     streamingCpuCacheSizeInMegaBytes: 256

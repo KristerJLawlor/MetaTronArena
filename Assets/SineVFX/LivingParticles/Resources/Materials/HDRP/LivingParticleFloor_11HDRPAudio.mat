@@ -10,14 +10,16 @@ Material:
   m_Name: LivingParticleFloor_11HDRPAudio
   m_Shader: {fileID: -6465566751694194690, guid: 33aa22b18f2f7c34caa78a865b635e47,
     type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 3000
   stringTagMap:
     MotionVector: User
+    RenderType: Transparent
   disabledShaderPasses:
   - TransparentBackface
   - MOTIONVECTORS
@@ -87,7 +89,7 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaCutoff: 0.5
     - _AlphaCutoffEnable: 0
-    - _AlphaDstBlend: 0
+    - _AlphaDstBlend: 10
     - _AlphaSrcBlend: 1
     - _AlphaToMask: 0
     - _AlphaToMaskInspectorValue: 0
@@ -108,17 +110,17 @@ Material:
     - _CloseFadeDistance: 0.75
     - _CloseFadeEnabled: 1
     - _ConservativeDepthOffsetEnable: 0
-    - _CullMode: 1
-    - _CullModeForward: 1
+    - _CullMode: 2
+    - _CullModeForward: 2
     - _DepthOffsetEnable: 0
     - _Distance: 10
     - _DistancePower: 1
     - _DoubleSidedEnable: 0
     - _DoubleSidedGIMode: 2
     - _DoubleSidedNormalMode: 2
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _EnableBlendModePreserveSpecularLighting: 0
-    - _EnableFogOnTransparent: 1
+    - _EnableFogOnTransparent: 0
     - _FadeCloseDistance: 0.65
     - _FinalExp: 2
     - _FinalMaskMultiply: 3
@@ -127,8 +129,8 @@ Material:
     - _IgnoreYAxis: 0
     - _InvFade: 1
     - _LockYOffset: 1
-    - _Noise01ScrollSpeed: 0.03
-    - _Noise02ScrollSpeed: 0.03
+    - _Noise01ScrollSpeed: 0.05
+    - _Noise02ScrollSpeed: 0.05
     - _NoiseDistortionPower: 0.2
     - _NoiseDistortionScrollSpeed: 0
     - _NoisePower: 6
@@ -138,7 +140,7 @@ Material:
     - _OpaqueCullMode: 1
     - _RampEnabled: 1
     - _ReceivesSSR: 0
-    - _RenderQueueType: 1
+    - _RenderQueueType: 4
     - _RequireSplitLighting: 0
     - _SoftParticleDistance: 0.25
     - _SrcBlend: 1
@@ -152,7 +154,7 @@ Material:
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
-    - _SurfaceType: 0
+    - _SurfaceType: 1
     - _Tiling: 0.2
     - _ToggleSwitch0: 0
     - _TransparentBackfaceEnable: 0
@@ -165,7 +167,7 @@ Material:
     - _UsePixelDistance: 1
     - _UseShadowThreshold: 0
     - _XYUV: 0
-    - _ZTestDepthEqualForOpaque: 3
+    - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
