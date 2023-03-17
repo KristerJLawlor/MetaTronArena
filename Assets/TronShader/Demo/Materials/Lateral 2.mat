@@ -69,8 +69,8 @@ Material:
     - _GridSharpness: 2.57
     - _Metallic: 0
     - _Mode: 0
-    - _NumberHorizzontal: 0.459
-    - _NumberVertical: 0.28
+    - _NumberHorizzontal: 0
+    - _NumberVertical: 0
     - _OcclusionStrength: 1
     - _OutlineSharpness: 3.67
     - _Parallax: 0.02
@@ -90,6 +90,6 @@ Material:
     m_Colors:
     - _Color: {r: 0.03529412, g: 0.023529412, b: 0.07450981, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GridColor: {r: 0.074186325, g: 1, b: 0, a: 1}
-    - _OutlineColor: {r: 0.06814181, g: 1, b: 0.031372547, a: 1}
+    - _GridColor: {r: 1, g: 0, b: 0.8697839, a: 1}
+    - _OutlineColor: {r: 1, g: 0.031372547, b: 0.85448176, a: 1}
   m_BuildTextureStacks: []
