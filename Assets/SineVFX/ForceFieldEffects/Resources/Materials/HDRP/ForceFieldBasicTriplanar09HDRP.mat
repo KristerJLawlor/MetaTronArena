@@ -2,26 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 8
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ForceFieldBasicTriplanar09HDRP
   m_Shader: {fileID: 4800000, guid: 8e614da647638344c82d30cddeeb2547, type: 3}
-  m_ValidKeywords:
-  - _BLENDMODE_ALPHA
-  - _ENABLE_FOG_ON_TRANSPARENT
-  - _LOCALNOISEPOSITION_ON
-  - _MASKDEPTHFADEENABLED_ON
-  - _NOISEDISTORTIONENABLED_ON
-  - _SURFACE_TYPE_TRANSPARENT
-  m_InvalidKeywords:
-  - _ADD_PRECOMPUTED_VELOCITY
-  - _DISABLE_SSR
-  - _DOUBLESIDED_ON
-  - _RAMPOFPROCEDRUAL_ON
-  - _RAMPORPROCEDRUAL_ON
+  m_ShaderKeywords: _ADD_PRECOMPUTED_VELOCITY _BLENDMODE_ALPHA _DISABLE_SSR _DOUBLESIDED_ON
+    _ENABLE_FOG_ON_TRANSPARENT _LOCALNOISEPOSITION_ON _MASKDEPTHFADEENABLED_ON _NOISEDISTORTIONENABLED_ON
+    _RAMPOFPROCEDRUAL_ON _RAMPORPROCEDRUAL_ON _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
@@ -30,7 +20,6 @@ Material:
     MotionVector: User
     RenderType: Transparent
   disabledShaderPasses:
-  - DistortionVectors
   - TransparentBackface
   m_SavedProperties:
     serializedVersion: 3
@@ -103,7 +92,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 1
     - _AlphaCutoff: 0.5
@@ -118,8 +106,6 @@ Material:
     - _CullModeForward: 0
     - _DepthFadeDistance: 2
     - _DepthFadeExp: 4
-    - _DistortionEnable: 0
-    - _DistortionOnly: 0
     - _DoubleSidedEnable: 1
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 10
@@ -149,7 +135,7 @@ Material:
     - _MaskAppearNoiseTriplanar: 0
     - _MaskAppearNoiseTriplanarTiling: 0.1
     - _MaskAppearPower: 0.5
-    - _MaskAppearProgress: -1.0772848
+    - _MaskAppearProgress: -1.093666
     - _MaskAppearRemapLocalY: 0.5
     - _MaskAppearSubtract: 0.25
     - _MaskAppearUseWorldPosition: 0
