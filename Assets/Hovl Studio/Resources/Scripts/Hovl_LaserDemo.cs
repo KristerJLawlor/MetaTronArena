@@ -76,7 +76,7 @@ public class Hovl_LaserDemo : MonoBehaviour
                 //hit.collider.SendMessage("SomeMethod"); // example
                 if (hit.collider.tag == "Target")
                 {
-                    hit.collider.GetComponent<HittedObject>().TakeDamage(damageOverTime * Time.deltaTime);
+                    hit.collider.GetComponent<HS_HittedObject>().TakeDamage(damageOverTime * Time.deltaTime);
                 }
             }
             else
