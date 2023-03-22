@@ -11,11 +11,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: 8e614da647638344c82d30cddeeb2547, type: 3}
   m_ValidKeywords:
   - _BLENDMODE_ALPHA
-  - _ENABLE_FOG_ON_TRANSPARENT
-  - _LOCALNOISEPOSITION_ON
   - _MASKAPPEARNOISETRIPLANAR_ON
   - _MASKDEPTHFADEENABLED_ON
-  - _NOISEDISTORTIONENABLED_ON
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords:
   - _ADD_PRECOMPUTED_VELOCITY
@@ -124,9 +121,9 @@ Material:
     - _DoubleSidedEnable: 1
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 10
-    - _EnableFogOnTransparent: 1
-    - _FinalPower: 3
-    - _FinalPowerAdjust: -1
+    - _EnableFogOnTransparent: 0
+    - _FinalPower: 20
+    - _FinalPowerAdjust: 0.912
     - _FinalPowerSubtract: -1
     - _Float0: 0.5
     - _Float1: 0
@@ -140,7 +137,7 @@ Material:
     - _HitWaveFadeDistancePower: 2
     - _HitWaveLength: 0.25
     - _HitWaveNoiseNegate: 1
-    - _LocalNoisePosition: 1
+    - _LocalNoisePosition: 0
     - _MaskAppearAdd: 1
     - _MaskAppearInvert: 0
     - _MaskAppearLocalYAdd: 0
@@ -148,33 +145,33 @@ Material:
     - _MaskAppearMultiply: 6
     - _MaskAppearNoiseNegate: 1
     - _MaskAppearNoiseTriplanar: 1
-    - _MaskAppearNoiseTriplanarTiling: 0.1
+    - _MaskAppearNoiseTriplanarTiling: 1.3
     - _MaskAppearPower: 0.5
-    - _MaskAppearProgress: -1.0772848
+    - _MaskAppearProgress: -1.0586458
     - _MaskAppearRemapLocalY: 0.5
     - _MaskAppearSubtract: 0.25
     - _MaskAppearUseWorldPosition: 0
-    - _MaskDepthFadeDistance: 3
+    - _MaskDepthFadeDistance: 0.07
     - _MaskDepthFadeEnabled: 1
     - _MaskDepthFadeExp: 4
-    - _MaskFresnelExp: 4
-    - _Noise01ScrollSpeed: 0.25
+    - _MaskFresnelExp: 4.99
+    - _Noise01ScrollSpeed: 0.92
     - _Noise01Tiling: 0.125
     - _Noise02Enabled: 0
     - _Noise02ScrollSpeed: 0.1
     - _Noise02Tiling: 0.35
-    - _NoiseDistortionEnabled: 1
-    - _NoiseDistortionPower: 0.25
+    - _NoiseDistortionEnabled: 0
+    - _NoiseDistortionPower: 2
     - _NoiseDistortionTiling: 0.1
     - _NoiseMaskAdd: 1
-    - _NoiseMaskPower: 3.79
+    - _NoiseMaskPower: 10
     - _NoisePower: 1
-    - _NormalVertexOffset: 0
-    - _OpacityPower: 1
+    - _NormalVertexOffset: 0.04
+    - _OpacityPower: 0.49
     - _OpacityPowerAdd: 0
     - _ProcedrualGradientEnabled: 0
     - _RampFlip: 0
-    - _RampMultiplyTiling: 1
+    - _RampMultiplyTiling: 10
     - _RampofProcedrual: 1
     - _RamporProcedrual: 1
     - _ReceivesSSR: 0
@@ -197,12 +194,12 @@ Material:
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
     - _TransparentSortPriority: 0
-    - _TransparentZWrite: 0
+    - _TransparentZWrite: 1
     - _UseShadowThreshold: 0
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
-    - _ZWrite: 0
+    - _ZWrite: 1
     - __dirty: 0
     m_Colors:
     - _Color0: {r: 1, g: 0, b: 0, a: 1}
@@ -213,5 +210,5 @@ Material:
     - _ProvedrualColor100: {r: 1, g: 0.72413796, b: 0, a: 1}
     - _ProvedrualColorEnd: {r: 1, g: 0.7306288, b: 0.3897058, a: 1}
     - _ProvedrualColorStart: {r: 1, g: 0.24604455, b: 0.07352937, a: 1}
-    - _RampColorTint: {r: 1, g: 1, b: 1, a: 1}
+    - _RampColorTint: {r: 0.26099145, g: 0.6581402, b: 0.8018868, a: 1}
   m_BuildTextureStacks: []

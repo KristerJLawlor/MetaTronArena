@@ -18,6 +18,7 @@ Material:
   - _ANIMATEDOPENING_ON
   - _DEBUGCOLOR1_ON
   - _DISABLE_SSR
+  - _DISPLAYFRAME_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -92,13 +93,13 @@ Material:
     - _CullModeForward: 2
     - _DebugColor: 0
     - _DebugColor1: 1
-    - _DisplayFrame: 0
+    - _DisplayFrame: 1
     - _DistortionEnable: 0
     - _DistortionOnly: 0
     - _DoubleSidedEnable: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 10
-    - _EmissiveMult: 10
+    - _EmissiveMult: 0
     - _EnableFogOnTransparent: 1
     - _Float0: 0.5
     - _Float12: 0
@@ -107,8 +108,8 @@ Material:
     - _FrameEmissive: 1
     - _Hue: 180
     - _Hue1: 83
-    - _MaskDistortion: 0.5
-    - _OutlinesMult: 0.86
+    - _MaskDistortion: 0
+    - _OutlinesMult: 0
     - _PushMult: -50
     - _ReceivesSSR: 0
     - _RenderQueueType: 1
@@ -133,9 +134,9 @@ Material:
     - _TransparentSortPriority: 0
     - _TransparentZWrite: 0
     - _UseShadowThreshold: 0
-    - _WallColorMult: 1
+    - _WallColorMult: 0
     - _WallOpening: 0
-    - _WallOutlineColorMult: 5
+    - _WallOutlineColorMult: 0
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
