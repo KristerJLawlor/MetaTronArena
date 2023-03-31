@@ -11,6 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 8e614da647638344c82d30cddeeb2547, type: 3}
   m_ValidKeywords:
   - _BLENDMODE_ALPHA
+  - _ENABLE_FOG_ON_TRANSPARENT
   - _MASKAPPEARNOISETRIPLANAR_ON
   - _MASKDEPTHFADEENABLED_ON
   - _SURFACE_TYPE_TRANSPARENT
@@ -121,7 +122,7 @@ Material:
     - _DoubleSidedEnable: 1
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 10
-    - _EnableFogOnTransparent: 0
+    - _EnableFogOnTransparent: 1
     - _FinalPower: 20
     - _FinalPowerAdjust: 0.912
     - _FinalPowerSubtract: -1
@@ -188,18 +189,18 @@ Material:
     - _StencilWriteMaskDepth: 8
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
-    - _StencilWriteMaskMV: 40
+    - _StencilWriteMaskMV: 42
     - _SurfaceType: 1
     - _Til: 0.25
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
     - _TransparentSortPriority: 0
-    - _TransparentZWrite: 1
+    - _TransparentZWrite: 0
     - _UseShadowThreshold: 0
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
-    - _ZWrite: 1
+    - _ZWrite: 0
     - __dirty: 0
     m_Colors:
     - _Color0: {r: 1, g: 0, b: 0, a: 1}
