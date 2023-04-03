@@ -53,10 +53,7 @@ public class NetworkPlayerController : NetworkComponent
 
     public override void NetworkedStart()
     {
-      if(IsServer)
-        {
-            myRig = GetComponent<Rigidbody>();
-        }
+      
     }
 
     public override IEnumerator SlowUpdate()
@@ -74,12 +71,15 @@ public class NetworkPlayerController : NetworkComponent
     // Start is called before the first frame update
     void Start()
     {
-        
+        myRig = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        myRig.velocity = new Vector3(LastInput.x, 0, LastInput.y) * speed;
+        if (IsServer)
+        {
+            myRig.velocity = new Vector3(LastInput.x, 0, LastInput.y) * speed;
+        }
     }
 }
