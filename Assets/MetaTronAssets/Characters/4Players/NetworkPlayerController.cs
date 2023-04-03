@@ -44,6 +44,7 @@ public class NetworkPlayerController : NetworkComponent
         if(IsServer && flag == "MVC")
         {
             LastInput = ParseV2(value);
+            Debug.Log("Handle Message");
         }
         if(flag == "PN")
         {
@@ -63,6 +64,8 @@ public class NetworkPlayerController : NetworkComponent
             if(IsDirty)
             {
                 SendUpdate("PN", pname);
+                SendUpdate("MVC", myRig.velocity.ToString());
+                IsDirty= false;
             }
             yield return new WaitForSeconds(.05f);
         }
