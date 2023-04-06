@@ -13,6 +13,7 @@ public class NetworkPlayerController : NetworkComponent
 
 
     public Vector2 LastInput;
+    public Vector2 AimVector;
     public Rigidbody myRig;
     public float speed = 5;
     public string pname;
@@ -39,13 +40,25 @@ public class NetworkPlayerController : NetworkComponent
             SendCommand("MVC", Vector2.zero.ToString("F2"));
         }
     }
+    public void Aiming(InputAction.CallbackContext a)
+    {
+        
+         SendCommand("AIM", a.ReadValue<Vector2>().ToString());
+        
+    }
+    
     public override void HandleMessage(string flag, string value)
     {
         if(IsServer && flag == "MVC")
         {
             LastInput = ParseV2(value);
-            Debug.Log("Handle Message");
         }
+        if(IsServer && flag == "AIM")
+        {
+            
+            AimVector = ParseV2(value);
+        }
+        
         if(flag == "PN")
         {
             pname = value;
@@ -82,7 +95,15 @@ public class NetworkPlayerController : NetworkComponent
     {
         if (IsServer)
         {
-            myRig.velocity = new Vector3(LastInput.x, 0, LastInput.y) * speed;
+            myRig.velocity = transform.forward * LastInput.y * speed + transform.right * LastInput.x *speed;
+            
+            myRig.angularVelocity = new Vector3(0, AimVector.x, 0);
+            
+        }
+        if (IsLocalPlayer)
+        {
+            Camera.main.transform.position = transform.position + transform.forward * .5f + this.transform.up;
+            Camera.main.transform.forward = transform.forward;
         }
     }
 }
