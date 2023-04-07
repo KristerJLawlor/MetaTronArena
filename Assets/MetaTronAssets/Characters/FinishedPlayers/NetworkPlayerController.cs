@@ -29,7 +29,7 @@ public class NetworkPlayerController : NetworkComponent
 
     public void ActionHandler(InputAction.CallbackContext c)
     {
-        if (IsLocalPlayer)
+       if(IsLocalPlayer)
         {
             if (c.started || c.performed)
             {
@@ -45,11 +45,10 @@ public class NetworkPlayerController : NetworkComponent
     }
     public void Aiming(InputAction.CallbackContext a)
     {
-        if (IsLocalPlayer)
-        { 
+        if(IsLocalPlayer)
+        {
             SendCommand("AIM", a.ReadValue<Vector2>().ToString());
         }
-        
     }
     
     public override void HandleMessage(string flag, string value)
