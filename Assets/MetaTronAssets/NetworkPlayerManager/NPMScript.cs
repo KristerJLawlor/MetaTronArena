@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using UnityEngine.Events;
 using NETWORK_ENGINE;
+using static UnityEngine.Rendering.DebugUI;
 
 public class NPMScript : NetworkComponent
 {
@@ -21,6 +22,7 @@ public class NPMScript : NetworkComponent
             if (IsServer)
             {
                 SendUpdate("READY", value);
+                Debug.Log("Sending Update READY" + value.ToString());
             }
         }
 
@@ -30,6 +32,7 @@ public class NPMScript : NetworkComponent
             if (IsServer)
             {
                 SendUpdate("NAME", value);
+                Debug.Log("Sending Update NAME" + value.ToString());
             }
         }
 
@@ -39,6 +42,7 @@ public class NPMScript : NetworkComponent
             if (IsServer)
             {
                 SendUpdate("CLASS", value);
+                Debug.Log("Sending Update CLASS" + value.ToString());
             }
         }
 
@@ -64,6 +68,7 @@ public class NPMScript : NetworkComponent
                 {
                     SendUpdate("NAME", PName);
                     SendUpdate("CLASS", ClassSelected.ToString());
+
   
 
                     IsDirty = false;
@@ -90,6 +95,7 @@ public class NPMScript : NetworkComponent
         if (IsLocalPlayer)
         {
             SendCommand("NAME", s);
+            Debug.Log("NAME EVENT TRIGGER");
         }
 
     }
@@ -99,6 +105,7 @@ public class NPMScript : NetworkComponent
         if (IsLocalPlayer)
         {
             SendCommand("CLASS", i.ToString());
+            Debug.Log("CLASS EVENT TRIGGER");
         }
     }
 
@@ -107,6 +114,7 @@ public class NPMScript : NetworkComponent
         if (IsLocalPlayer)
         {
             SendCommand("READY", r.ToString());
+            Debug.Log("READY EVENT TRIGGER");
         }
     }
 }

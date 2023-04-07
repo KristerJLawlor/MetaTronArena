@@ -3454,7 +3454,7 @@ GameObject:
   - component: {fileID: 9193805699336443005}
   - component: {fileID: 3513917909525702024}
   m_Layer: 0
-  m_Name: Tank
+  m_Name: Sentry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
