@@ -89,6 +89,7 @@ public class NPMScript : NetworkComponent
             SendCommand("NAME", s);
             Debug.Log("NAME EVENT TRIGGER");
         }
+        Debug.Log("NAME EVENT TRIGGER");
 
     }
 
@@ -99,6 +100,7 @@ public class NPMScript : NetworkComponent
             SendCommand("CLASS", i.ToString());
             Debug.Log("CLASS EVENT TRIGGER");
         }
+        Debug.Log("CLASS EVENT TRIGGER");
     }
 
     public void UI_Ready(bool r)
@@ -108,5 +110,6 @@ public class NPMScript : NetworkComponent
             SendCommand("READY", r.ToString());
             Debug.Log("READY EVENT TRIGGER");
         }
+        Debug.Log("READY EVENT TRIGGER");
     }
 }

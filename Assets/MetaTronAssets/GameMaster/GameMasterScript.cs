@@ -13,12 +13,13 @@ public class GameMasterScript : NetworkComponent
         //will only affect clientside
         if (flag == "GAMESTART")
         {
+            Debug.Log("In handlemessage for GAMESTART");
             GameStarted = true;
             foreach (NPMScript npm in GameObject.FindObjectsOfType<NPMScript>())
             {
                 //disable lobby UI
                 npm.transform.GetChild(0).gameObject.SetActive(false);
-                npm.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+                //npm.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
                 Debug.Log("SETTING UI INACTIVE");
             }
         }
@@ -57,7 +58,7 @@ public class GameMasterScript : NetworkComponent
         if (IsServer)
         {
             SendUpdate("GAMESTART", GameStarted.ToString());
-            Debug.Log("Sending Update GameStart");
+            Debug.Log("Sending Update GameStart!!!!!!!!!");
 
             foreach (NPMScript npm in GameObject.FindObjectsOfType<NPMScript>())
             {
@@ -72,6 +73,7 @@ public class GameMasterScript : NetworkComponent
             if (IsDirty)
             {
                 SendUpdate("GAMESTART", GameStarted.ToString());
+                Debug.Log("Sending Update GameStart in IsDirty!!!!!!!!!");
                 IsDirty = false;
             }
             //delay by 5 seconds
