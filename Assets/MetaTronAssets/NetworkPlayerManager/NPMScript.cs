@@ -1,12 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using UnityEngine.Events;
 using NETWORK_ENGINE;
-using static UnityEngine.Rendering.DebugUI;
 
 public class NPMScript : NetworkComponent
 {
@@ -68,8 +62,6 @@ public class NPMScript : NetworkComponent
                 {
                     SendUpdate("NAME", PName);
                     SendUpdate("CLASS", ClassSelected.ToString());
-
-  
 
                     IsDirty = false;
                 }

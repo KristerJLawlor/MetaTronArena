@@ -18,6 +18,8 @@ public class GameMasterScript : NetworkComponent
             {
                 //disable lobby UI
                 npm.transform.GetChild(0).gameObject.SetActive(false);
+                npm.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+                Debug.Log("SETTING UI INACTIVE");
             }
         }
     }
