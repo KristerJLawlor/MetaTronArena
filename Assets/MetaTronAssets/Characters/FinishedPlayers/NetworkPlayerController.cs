@@ -29,21 +29,26 @@ public class NetworkPlayerController : NetworkComponent
 
     public void ActionHandler(InputAction.CallbackContext c)
     {
-        if(c.started || c.performed)
+        if (IsLocalPlayer)
         {
-            //Send input
-            SendCommand("MVC", c.ReadValue<Vector2>().ToString("F2"));
-        }
-        else if(c.canceled)
-        {
-            //Send vector 2.zero.
-            SendCommand("MVC", Vector2.zero.ToString("F2"));
+            if (c.started || c.performed)
+            {
+                //Send input
+                SendCommand("MVC", c.ReadValue<Vector2>().ToString("F2"));
+            }
+            else if (c.canceled)
+            {
+                //Send vector 2.zero.
+                SendCommand("MVC", Vector2.zero.ToString("F2"));
+            }
         }
     }
     public void Aiming(InputAction.CallbackContext a)
     {
-        
-         SendCommand("AIM", a.ReadValue<Vector2>().ToString());
+        if (IsLocalPlayer)
+        { 
+            SendCommand("AIM", a.ReadValue<Vector2>().ToString());
+        }
         
     }
     
@@ -55,7 +60,6 @@ public class NetworkPlayerController : NetworkComponent
         }
         if(IsServer && flag == "AIM")
         {
-            
             AimVector = ParseV2(value);
         }
         

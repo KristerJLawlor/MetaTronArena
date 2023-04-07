@@ -14,13 +14,16 @@ public class GameMasterScript : NetworkComponent
         if (flag == "GAMESTART")
         {
             Debug.Log("In handlemessage for GAMESTART");
-            GameStarted = true;
-            foreach (NPMScript npm in GameObject.FindObjectsOfType<NPMScript>())
+            GameStarted = bool.Parse(value);
+            if (GameStarted && IsClient)
             {
-                //disable lobby UI
-                npm.transform.GetChild(0).gameObject.SetActive(false);
-                //npm.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
-                Debug.Log("SETTING UI INACTIVE");
+                foreach (NPMScript npm in GameObject.FindObjectsOfType<NPMScript>())
+                {
+                    //disable lobby UI
+                    npm.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
+                    //npm.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+                    Debug.Log("SETTING UI INACTIVE");
+                }
             }
         }
     }
@@ -32,52 +35,35 @@ public class GameMasterScript : NetworkComponent
 
     public override IEnumerator SlowUpdate()
     {
-        while (!GameStarted && IsServer)
-        {
-            //assume players are ready until the checks prove they are not
-            bool readyGo = true;
-            int count = 0;
-            foreach (NPMScript npm in GameObject.FindObjectsOfType<NPMScript>())
-            {
-                if (!npm.IsReady)
-                {
-                    readyGo = false;
-                    break;
-                }
-                count++;
-            }
-            if (count < 1)
-            {
-                readyGo = false;
-            }
-            GameStarted = readyGo;
-
-            yield return new WaitForSeconds(.1f);
-        }
-
         if (IsServer)
         {
-            SendUpdate("GAMESTART", GameStarted.ToString());
-            Debug.Log("Sending Update GameStart!!!!!!!!!");
+            while (!GameStarted)
+            {
+                //assume players are ready until the checks prove they are not
+                if (MyCore.Connections.Count > 1)
+                {
+
+                    GameStarted = true;
+                    foreach (NPMScript npm in GameObject.FindObjectsOfType<NPMScript>())
+                    {
+                        
+                        if (!npm.IsReady)
+                        {
+                            GameStarted = false;
+                            break;
+                        }
+                    }
+                    
+                }
+                yield return new WaitForSeconds(.1f);
+            }
 
             foreach (NPMScript npm in GameObject.FindObjectsOfType<NPMScript>())
             {
 
                 GameObject temp = MyCore.NetCreateObject(npm.ClassSelected, npm.Owner, SpawnLoc[npm.Owner].transform.position, Quaternion.identity);
             }
-
-        }
-
-        while (IsServer)
-        {
-            if (IsDirty)
-            {
-                SendUpdate("GAMESTART", GameStarted.ToString());
-                Debug.Log("Sending Update GameStart in IsDirty!!!!!!!!!");
-                IsDirty = false;
-            }
-            //delay by 5 seconds
-            yield return new WaitForSeconds(5);
+            SendUpdate("GAMESTART", GameStarted.ToString());
         }
     }
 
