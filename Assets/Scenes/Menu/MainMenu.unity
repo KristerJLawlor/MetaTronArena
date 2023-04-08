@@ -125,18 +125,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &34664846 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7342005287106793394, guid: 10c4398ac0a58db46a0fab75d252da0c,
-    type: 3}
-  m_PrefabInstance: {fileID: 3128463541061261606}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34ca87a457962d459c49c36b9753ca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &146140918
 GameObject:
   m_ObjectHideFlags: 1
@@ -214,10 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 374536859}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Entries:
-  - id: 0
-    category: 0
-    gameObject: {fileID: 1135808837}
+  m_Entries: []
 --- !u!4 &158084946
 Transform:
   m_ObjectHideFlags: 19
@@ -1807,7 +1792,7 @@ PrefabInstance:
     - target: {fileID: 940889822560283542, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 86.44
+      value: 86.44003
       objectReference: {fileID: 0}
     - target: {fileID: 940889822560283542, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
@@ -1892,7 +1877,7 @@ PrefabInstance:
     - target: {fileID: 1798466400998053502, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 86.44
+      value: 86.44003
       objectReference: {fileID: 0}
     - target: {fileID: 1798466400998053502, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
@@ -2017,7 +2002,7 @@ PrefabInstance:
     - target: {fileID: 1799248680336362282, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 86.44
+      value: 86.44003
       objectReference: {fileID: 0}
     - target: {fileID: 1799248680336362282, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
@@ -2143,7 +2128,8 @@ PrefabInstance:
         type: 3}
       propertyPath: SpawnPrefab.Array.data[4]
       value: 
-      objectReference: {fileID: 34664846}
+      objectReference: {fileID: 7342005287106793394, guid: 10c4398ac0a58db46a0fab75d252da0c,
+        type: 3}
     - target: {fileID: 2012990576368707920, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
       propertyPath: m_IsActive

@@ -20,8 +20,8 @@ public class GameMasterScript : NetworkComponent
                 foreach (NPMScript npm in GameObject.FindObjectsOfType<NPMScript>())
                 {
                     //disable lobby UI
-                    npm.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
-                    //npm.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+                    //npm.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
+                    npm.transform.GetChild(0).gameObject.SetActive(false);
                     Debug.Log("SETTING UI INACTIVE");
                 }
             }
@@ -77,7 +77,6 @@ public class GameMasterScript : NetworkComponent
         
     }
 
-    // Update is called once per frame
     public IEnumerator Playing()
     {
         yield return new WaitForSeconds(15f);
