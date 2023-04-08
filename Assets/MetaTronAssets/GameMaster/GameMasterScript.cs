@@ -65,6 +65,10 @@ public class GameMasterScript : NetworkComponent
             }
             SendUpdate("GAMESTART", GameStarted.ToString());
         }
+        if (GameStarted)
+        {
+            StartCoroutine(Playing());
+        }
     }
 
     // Start is called before the first frame update
@@ -74,8 +78,11 @@ public class GameMasterScript : NetworkComponent
     }
 
     // Update is called once per frame
-    void Update()
+    public IEnumerator Playing()
     {
-        
+        yield return new WaitForSeconds(15f);
+
+        StartCoroutine(MyCore.DisconnectServer());
     }
+    
 }
