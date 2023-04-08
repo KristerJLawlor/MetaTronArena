@@ -8,7 +8,7 @@ using NETWORK_ENGINE;
 
 
 
-public class NetworkPlayerController : NetworkComponent
+public class NetworkPlayerController : HighLevelEntity
 {
 
 
