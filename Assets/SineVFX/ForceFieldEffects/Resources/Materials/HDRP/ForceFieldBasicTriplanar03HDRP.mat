@@ -148,7 +148,7 @@ Material:
     - _MaskAppearNoiseTriplanar: 1
     - _MaskAppearNoiseTriplanarTiling: 1.3
     - _MaskAppearPower: 0.5
-    - _MaskAppearProgress: -1.004029
+    - _MaskAppearProgress: -0.99095225
     - _MaskAppearRemapLocalY: 0.5
     - _MaskAppearSubtract: 0.25
     - _MaskAppearUseWorldPosition: 0
