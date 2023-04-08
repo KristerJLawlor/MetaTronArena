@@ -3455,7 +3455,7 @@ GameObject:
   - component: {fileID: 3513917909525702024}
   m_Layer: 0
   m_Name: Sentry
-  m_TagString: Untagged
+  m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3632,10 +3632,15 @@ MonoBehaviour:
   MyCore: {fileID: 0}
   MyId: {fileID: 0}
   IsDirty: 0
+  HP: 0
+  OverShield: 0
   LastInput: {x: 0, y: 0}
   AimVector: {x: 0, y: 0}
   myRig: {fileID: 0}
   speed: 5
+  Overheat: 0
+  canShoot: 1
+  lastFire: 0
   pname: 
 --- !u!114 &9193805699336443005
 MonoBehaviour:
@@ -3716,7 +3721,19 @@ MonoBehaviour:
     m_ActionId: f46350d7-e63b-44f3-85d7-98711c2e77cc
     m_ActionName: Player/Look[/Mouse/position]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8445364414179443708}
+        m_TargetAssemblyTypeName: NetworkPlayerController, Assembly-CSharp
+        m_MethodName: Shoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: cf2f124c-8413-4a8b-b180-cfee02de057a
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -3759,6 +3776,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 6e94839d-2f36-4c19-a646-1b05f95f4245
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8445364414179443708}
+        m_TargetAssemblyTypeName: NetworkPlayerController, Assembly-CSharp
+        m_MethodName: HeatVent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5695777b-e6fa-41b0-8862-2bab2192d8df
+    m_ActionName: Player/Reload[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

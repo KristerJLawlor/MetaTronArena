@@ -5,13 +5,20 @@ using NETWORK_ENGINE;
 
 public class HighLevelEntity : NetworkComponent
 {
-    public int HP;
-    public int OverShield;
+    public int HP=100;
+    public int OverShield=50;
 
 
     public void Damage()
     {
-        HP--;
+        if (OverShield > 0)
+        {
+            OverShield--;
+        }
+        else
+        {
+            HP--;
+        }
     }
     public override void HandleMessage(string flag, string value)
     {
