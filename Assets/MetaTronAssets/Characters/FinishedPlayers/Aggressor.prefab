@@ -4209,8 +4209,8 @@ MonoBehaviour:
   MyCore: {fileID: 0}
   MyId: {fileID: 0}
   IsDirty: 0
-  HP: 0
-  OverShield: 0
+  HP: 100
+  OverShield: 50
   LastInput: {x: 0, y: 0}
   AimVector: {x: 0, y: 0}
   myRig: {fileID: 0}

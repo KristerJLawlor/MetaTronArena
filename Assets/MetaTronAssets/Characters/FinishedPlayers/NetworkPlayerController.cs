@@ -20,6 +20,7 @@ public class NetworkPlayerController : HighLevelEntity
     public bool canShoot = true;
     public bool lastFire=false;
     public string pname;
+    RaycastHit hit;
 
     public Vector2 ParseV2(string v)
     {
@@ -82,14 +83,15 @@ public class NetworkPlayerController : HighLevelEntity
     {
         yield return new WaitForSeconds(2);
         canShoot = true;
-        SendUpdate("CANSHOOT", canShoot.ToString());
         Overheat = 0;
+        SendUpdate("OH", Overheat.ToString());
+        SendUpdate("CANSHOOT", canShoot.ToString());
+       
     }
     public IEnumerator ROF()
     {
         yield return new WaitForSeconds(.5f);
         canShoot = true;
-        Overheat++;
         SendUpdate("CANSHOOT", canShoot.ToString());
     }
     public IEnumerator OH()
@@ -98,6 +100,7 @@ public class NetworkPlayerController : HighLevelEntity
         Overheat= 0;
         canShoot= true;
         SendUpdate("CANSHOOT", canShoot.ToString());
+        SendUpdate("OH", Overheat.ToString());
     }
     
     public override void HandleMessage(string flag, string value)
@@ -113,11 +116,14 @@ public class NetworkPlayerController : HighLevelEntity
         if(IsServer && flag == "FIRE")
         {
             lastFire = bool.Parse(value);
-            SendUpdate("FIRE", value);
         }
         if(IsClient && flag == "CANSHOOT")
         {
             canShoot= bool.Parse(value);
+        }
+        if(IsClient && flag == "OH")
+        {
+            Overheat = int.Parse(value);
         }
         
         if(flag == "PN")
@@ -137,7 +143,7 @@ public class NetworkPlayerController : HighLevelEntity
         {
             if(lastFire && canShoot)
             {
-                RaycastHit hit;
+                
                 if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward,out hit))
                 {
                     if(hit.collider == GameObject.FindGameObjectWithTag("Entity"))
@@ -145,11 +151,25 @@ public class NetworkPlayerController : HighLevelEntity
                         hit.transform.GetComponent<HighLevelEntity>().Damage();
                     }
                 }
-                canShoot= false;
+                Overheat = Overheat + 5;
+                SendUpdate("OH", Overheat.ToString());
+                canShoot = false;
                 SendUpdate("CANSHOOT", canShoot.ToString());
+                //lastFire = false;
                 StartCoroutine(ROF());
             }
-            if(IsDirty)
+            if (Overheat >= 100)
+            {
+                canShoot = false;
+                SendUpdate("CANSHOOT", canShoot.ToString());
+                StartCoroutine(OH());
+            }
+            if (!lastFire && Overheat > 0)
+            {
+                Overheat= Overheat - .1f;
+                SendUpdate("OH", Overheat.ToString());
+            }
+            if (IsDirty)
             {
                 SendUpdate("PN", pname);
                 SendUpdate("MVC", myRig.velocity.ToString());
@@ -173,22 +193,20 @@ public class NetworkPlayerController : HighLevelEntity
             myRig.velocity = transform.forward * LastInput.y * speed + transform.right * LastInput.x *speed;
             
             myRig.angularVelocity = new Vector3(0, AimVector.x, 0);
-            
+            if (Physics.Raycast(transform.position, transform.forward, out hit))
+            {
+                if (hit.collider == GameObject.FindGameObjectWithTag("Entity"))
+                {
+                    Debug.Log("Player in sight");
+                }
+            }
+
         }
         if (IsLocalPlayer)
         {
             Camera.main.transform.position = transform.position + transform.forward * .5f + this.transform.up;
             Camera.main.transform.forward = transform.forward;
-            if(Overheat >= 100)
-            {
-                canShoot = false;
-                SendCommand("CANSHOOT", canShoot.ToString());
-                StartCoroutine(OH());
-            }
-            if (!lastFire && Overheat>0)
-            {
-                Overheat--;
-            }
+            
         }
     }
 }
