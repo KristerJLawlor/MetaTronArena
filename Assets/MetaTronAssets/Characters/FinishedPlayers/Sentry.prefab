@@ -7478,6 +7478,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barricade
       objectReference: {fileID: 0}
+    - target: {fileID: 3712231321860969012, guid: 289fcb5d805215d4fbd389fab94e3bc2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barricade
+      objectReference: {fileID: 0}
     - target: {fileID: 3712231322806675912, guid: 289fcb5d805215d4fbd389fab94e3bc2,
         type: 3}
       propertyPath: m_LocalScale.x

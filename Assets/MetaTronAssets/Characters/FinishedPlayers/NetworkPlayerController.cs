@@ -14,7 +14,8 @@ public class NetworkPlayerController : HighLevelEntity
 
     public Vector2 LastInput;
     public Vector2 AimVector;
-    public GameObject Head;
+    public Vector3 AimPosition;
+    public Vector3 AimDirection;
     public Rigidbody myRig;
     public float speed = 5;
     public float Overheat = 0;
@@ -139,9 +140,13 @@ public class NetworkPlayerController : HighLevelEntity
             canShoot = false;
             StartCoroutine(Reload());
         }
-        if(IsServer && flag == "FBN")
+        if(IsServer && flag == "AP")
         {
-            Head.transform.forward = ParseV3(value);
+            AimPosition = ParseV3(value);
+        }
+        if(IsServer && flag == "AD")
+        {
+            AimDirection= ParseV3(value);
         }
         
         if(flag == "PN")
@@ -162,7 +167,7 @@ public class NetworkPlayerController : HighLevelEntity
             if(lastFire && canShoot)
             {
                 
-                if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward,out hit))
+                if(Physics.Raycast(transform.position, transform.forward,out hit))
                 {
                     if(hit.collider == GameObject.FindGameObjectWithTag("Entity"))
                     {
@@ -196,7 +201,8 @@ public class NetworkPlayerController : HighLevelEntity
         }
         while (IsLocalPlayer)
         {
-            SendCommand("FBN", Camera.main.transform.forward.ToString());
+            SendCommand("AP", Camera.main.transform.position.ToString());
+            SendCommand("AD", Camera.main.transform.forward.ToString());
             yield return new WaitForSeconds(.05f);
         }
     }
@@ -215,22 +221,25 @@ public class NetworkPlayerController : HighLevelEntity
             myRig.velocity = transform.forward * LastInput.y * speed + transform.right * LastInput.x *speed;
             
             myRig.angularVelocity = new Vector3(0, AimVector.x, 0);
-            if (Physics.Raycast(Head.transform.position, Head.transform.forward, out hit))
+            
+            if (Physics.Raycast(transform.position, transform.forward, out hit))
             {
                 Debug.Log("Something is in sight "+ hit.collider.gameObject.name);
-                if (hit.collider == GameObject.FindGameObjectWithTag("Entity"))
-                {
-                    Debug.Log("Player in sight");
-                }
             }
+            Debug.DrawRay(AimPosition, AimDirection, Color.green);
+           
+            
+            
 
         }
         if (IsLocalPlayer)
         {
             Camera.main.transform.position = transform.position + transform.forward * .5f + this.transform.up;
             Camera.main.transform.forward = transform.forward;
+            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward, Color.red);
 
-            
+
+
         }
     }
 }
