@@ -6797,7 +6797,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8421417209534147942}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2.1
@@ -6861,6 +6861,7 @@ MonoBehaviour:
   OverShield: 50
   LastInput: {x: 0, y: 0}
   AimVector: {x: 0, y: 0}
+  Head: {fileID: 5954795492131690279}
   myRig: {fileID: 0}
   speed: 5
   Overheat: 0

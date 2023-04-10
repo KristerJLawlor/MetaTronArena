@@ -14,6 +14,7 @@ public class NetworkPlayerController : HighLevelEntity
 
     public Vector2 LastInput;
     public Vector2 AimVector;
+    public GameObject Head;
     public Rigidbody myRig;
     public float speed = 5;
     public float Overheat = 0;
@@ -28,6 +29,15 @@ public class NetworkPlayerController : HighLevelEntity
         string[] args = v.Trim('(').Trim(')').Split(',');
         temp.x = float.Parse(args[0]); 
         temp.y = float.Parse(args[1]);
+        return temp;
+    }
+    public Vector2 ParseV3(string v)
+    {
+        Vector3 temp = new Vector3();
+        string[] args = v.Trim('(').Trim(')').Split(',');
+        temp.x = float.Parse(args[0]);
+        temp.y = float.Parse(args[1]);
+        temp.z = float.Parse(args[2]);
         return temp;
     }
 
@@ -129,6 +139,10 @@ public class NetworkPlayerController : HighLevelEntity
             canShoot = false;
             StartCoroutine(Reload());
         }
+        if(IsServer && flag == "FBN")
+        {
+            Head.transform.forward = ParseV3(value);
+        }
         
         if(flag == "PN")
         {
@@ -180,6 +194,11 @@ public class NetworkPlayerController : HighLevelEntity
             }
             yield return new WaitForSeconds(.05f);
         }
+        while (IsLocalPlayer)
+        {
+            SendCommand("FBN", Camera.main.transform.forward.ToString());
+            yield return new WaitForSeconds(.05f);
+        }
     }
 
     // Start is called before the first frame update
@@ -196,9 +215,9 @@ public class NetworkPlayerController : HighLevelEntity
             myRig.velocity = transform.forward * LastInput.y * speed + transform.right * LastInput.x *speed;
             
             myRig.angularVelocity = new Vector3(0, AimVector.x, 0);
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit))
+            if (Physics.Raycast(Head.transform.position, Head.transform.forward, out hit))
             {
-                Debug.Log("Something is in sight");
+                Debug.Log("Something is in sight "+ hit.collider.gameObject.name);
                 if (hit.collider == GameObject.FindGameObjectWithTag("Entity"))
                 {
                     Debug.Log("Player in sight");
@@ -210,6 +229,7 @@ public class NetworkPlayerController : HighLevelEntity
         {
             Camera.main.transform.position = transform.position + transform.forward * .5f + this.transform.up;
             Camera.main.transform.forward = transform.forward;
+
             
         }
     }
