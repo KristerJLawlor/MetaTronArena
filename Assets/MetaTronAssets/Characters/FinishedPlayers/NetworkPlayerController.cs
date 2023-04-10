@@ -56,7 +56,7 @@ public class NetworkPlayerController : HighLevelEntity
     }
     public void Shoot(InputAction.CallbackContext s)
     {
-        if (IsLocalPlayer && canShoot)
+        if (IsLocalPlayer)
         {
             if (s.started)
             {
@@ -74,9 +74,7 @@ public class NetworkPlayerController : HighLevelEntity
     {
         if (IsLocalPlayer && Overheat<100) 
         {
-            canShoot = false;
-            SendUpdate("CANSHOOT", canShoot.ToString());
-            StartCoroutine(Reload());
+            SendCommand("RELOAD", "''");
         }
     }
     public IEnumerator Reload()
@@ -90,7 +88,7 @@ public class NetworkPlayerController : HighLevelEntity
     }
     public IEnumerator ROF()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.25f);
         canShoot = true;
         SendUpdate("CANSHOOT", canShoot.ToString());
     }
@@ -116,6 +114,7 @@ public class NetworkPlayerController : HighLevelEntity
         if(IsServer && flag == "FIRE")
         {
             lastFire = bool.Parse(value);
+            
         }
         if(IsClient && flag == "CANSHOOT")
         {
@@ -124,6 +123,11 @@ public class NetworkPlayerController : HighLevelEntity
         if(IsClient && flag == "OH")
         {
             Overheat = int.Parse(value);
+        }
+        if(IsServer && flag == "RELOAD")
+        {
+            canShoot = false;
+            StartCoroutine(Reload());
         }
         
         if(flag == "PN")
@@ -155,7 +159,6 @@ public class NetworkPlayerController : HighLevelEntity
                 SendUpdate("OH", Overheat.ToString());
                 canShoot = false;
                 SendUpdate("CANSHOOT", canShoot.ToString());
-                //lastFire = false;
                 StartCoroutine(ROF());
             }
             if (Overheat >= 100)
@@ -193,8 +196,9 @@ public class NetworkPlayerController : HighLevelEntity
             myRig.velocity = transform.forward * LastInput.y * speed + transform.right * LastInput.x *speed;
             
             myRig.angularVelocity = new Vector3(0, AimVector.x, 0);
-            if (Physics.Raycast(transform.position, transform.forward, out hit))
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit))
             {
+                Debug.Log("Something is in sight");
                 if (hit.collider == GameObject.FindGameObjectWithTag("Entity"))
                 {
                     Debug.Log("Player in sight");
