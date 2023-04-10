@@ -32,7 +32,7 @@ public class NetworkPlayerController : HighLevelEntity
         temp.y = float.Parse(args[1]);
         return temp;
     }
-    public Vector2 ParseV3(string v)
+    public Vector3 ParseV3(string v)
     {
         Vector3 temp = new Vector3();
         string[] args = v.Trim('(').Trim(')').Split(',');
@@ -143,10 +143,12 @@ public class NetworkPlayerController : HighLevelEntity
         if(IsServer && flag == "AP")
         {
             AimPosition = ParseV3(value);
+            
         }
         if(IsServer && flag == "AD")
         {
             AimDirection= ParseV3(value);
+            
         }
         
         if(flag == "PN")
@@ -169,11 +171,13 @@ public class NetworkPlayerController : HighLevelEntity
                 
                 if(Physics.Raycast(transform.position, transform.forward,out hit))
                 {
-                    if(hit.collider == GameObject.FindGameObjectWithTag("Entity"))
+                    if(hit.collider.tag=="Entity")
                     {
                         hit.transform.GetComponent<HighLevelEntity>().Damage();
                     }
                 }
+                Debug.Log("Aiming position is " + AimPosition);
+                Debug.Log("Aiming direction is " + AimDirection);
                 Overheat = Overheat + 5;
                 SendUpdate("OH", Overheat.ToString());
                 canShoot = false;
@@ -222,7 +226,7 @@ public class NetworkPlayerController : HighLevelEntity
             
             myRig.angularVelocity = new Vector3(0, AimVector.x, 0);
             
-            if (Physics.Raycast(transform.position, transform.forward, out hit))
+            if (Physics.Raycast(AimPosition, AimDirection, out hit))
             {
                 Debug.Log("Something is in sight "+ hit.collider.gameObject.name);
             }
