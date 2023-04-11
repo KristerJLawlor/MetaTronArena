@@ -1008,6 +1008,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank
       objectReference: {fileID: 0}
+    - target: {fileID: 6534260683806437464, guid: 70e8a7473a74e8b4cac632dae5133f25,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.503
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534260684044429221, guid: 70e8a7473a74e8b4cac632dae5133f25,
+        type: 3}
+      propertyPath: affectorCount
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70e8a7473a74e8b4cac632dae5133f25, type: 3}
 --- !u!115 &1011924563

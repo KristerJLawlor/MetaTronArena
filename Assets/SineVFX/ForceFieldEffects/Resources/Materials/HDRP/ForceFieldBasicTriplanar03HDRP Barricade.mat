@@ -7,20 +7,19 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ForceFieldDistortion09HDRP
-  m_Shader: {fileID: 4800000, guid: b4731e228d5641d439bcb8bc5e30be95, type: 3}
+  m_Name: ForceFieldBasicTriplanar03HDRP Barricade
+  m_Shader: {fileID: 4800000, guid: 8e614da647638344c82d30cddeeb2547, type: 3}
   m_ValidKeywords:
   - _BLENDMODE_ALPHA
   - _ENABLE_FOG_ON_TRANSPARENT
-  - _LOCALNOISEPOSITION_ON
+  - _MASKAPPEARNOISETRIPLANAR_ON
   - _MASKDEPTHFADEENABLED_ON
-  - _MASKSOFTBORDERS_ON
-  - _NOISEDISTORTIONENABLED_ON
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords:
   - _ADD_PRECOMPUTED_VELOCITY
   - _DISABLE_SSR
-  - _DISABLE_SSR_TRANSPARENT
+  - _RAMPOFPROCEDRUAL_ON
+  - _RAMPORPROCEDRUAL_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -29,12 +28,25 @@ Material:
     MotionVector: User
     RenderType: Transparent
   disabledShaderPasses:
+  - DistortionVectors
   - TransparentBackface
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Cubemap:
+        m_Texture: {fileID: 8900000, guid: d281eb77a0ac44d48c5b03b7a71a50c7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CubemapReflection:
+        m_Texture: {fileID: 8900000, guid: d281eb77a0ac44d48c5b03b7a71a50c7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HitWaveRampMask:
+        m_Texture: {fileID: 2800000, guid: aa34123ff5374ed7a40a6e309a2b6e85, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MaskAppearNoise:
-        m_Texture: {fileID: 2800000, guid: 8e25e122f59145a9abb4414cf2ff063a, type: 3}
+        m_Texture: {fileID: 2800000, guid: f93b3d6263af4b6e8df28a5a1914f769, type: 3}
         m_Scale: {x: 3, y: 0.25}
         m_Offset: {x: 0, y: 0}
     - _MaskAppearRamp:
@@ -42,15 +54,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Noise01:
-        m_Texture: {fileID: 2800000, guid: 944be4a819c1444a960aa9df0803919d, type: 3}
+        m_Texture: {fileID: 2800000, guid: f93b3d6263af4b6e8df28a5a1914f769, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Noise02:
-        m_Texture: {fileID: 2800000, guid: 944be4a819c1444a960aa9df0803919d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 36fb71d46b354a9aa19192111857ff83, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseDistortion:
-        m_Texture: {fileID: 2800000, guid: 8e25e122f59145a9abb4414cf2ff063a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 66819fafe6a64db797e1a5f6086c487f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Ramp:
@@ -70,10 +82,18 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample6:
-        m_Texture: {fileID: 2800000, guid: f93b3d6263af4b6e8df28a5a1914f769, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3c4ea3a033cf4ed09936c7bd439486a4, type: 3}
+        m_Scale: {x: 3, y: 0.01}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample7:
+        m_Texture: {fileID: 2800000, guid: bfb5d11eb2154099bda5558461f45026, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TopTexture1:
+        m_Texture: {fileID: 2800000, guid: 944be4a819c1444a960aa9df0803919d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TopTexture2:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -88,54 +108,76 @@ Material:
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 10
     - _AlphaSrcBlend: 1
+    - _AppearMaskRemapLocalY: 0.5
     - _BlendMode: 0
+    - _CubemapEnabled: 0
+    - _CubemapReflectionEnabled: 0
     - _CullMode: 2
     - _CullModeForward: 2
     - _DepthFadeDistance: 2
     - _DepthFadeExp: 4
+    - _DistortionEnable: 0
+    - _DistortionOnly: 0
     - _DoubleSidedEnable: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 10
     - _EnableFogOnTransparent: 1
-    - _FinalPower: 0
-    - _Float0: 0
-    - _Float4: 0.25
+    - _FinalPower: 20
+    - _FinalPowerAdjust: -0.086
+    - _FinalPowerSubtract: -1
+    - _Float0: 0.5
+    - _Float1: 0
+    - _Float13: 2.48
+    - _Float17: -0.5
+    - _Float21: 0.5
+    - _Float5: 0
     - _FresnelExp: 4
-    - _LocalNoisePosition: 1
+    - _HitWaveDistortionPower: 0.4
+    - _HitWaveFadeDistance: 5
+    - _HitWaveFadeDistancePower: 2
+    - _HitWaveLength: 0.25
+    - _HitWaveNoiseNegate: 1
+    - _LocalNoisePosition: 0
+    - _MaskAppearAdd: 1
     - _MaskAppearInvert: 0
     - _MaskAppearLocalYAdd: 0
-    - _MaskAppearLocalYRemap: 0.5
-    - _MaskAppearNoiseTriplanar: 0
-    - _MaskAppearNoiseTriplanarTiling: 0.1
-    - _MaskAppearProgress: -1.0772848
+    - _MaskAppearLocalYRamap: 0.5
+    - _MaskAppearMultiply: 6
+    - _MaskAppearNoiseNegate: 1
+    - _MaskAppearNoiseTriplanar: 1
+    - _MaskAppearNoiseTriplanarTiling: 1.3
+    - _MaskAppearPower: 0.5
+    - _MaskAppearProgress: -1.0586458
+    - _MaskAppearRemapLocalY: 0.5
+    - _MaskAppearSubtract: 0.25
     - _MaskAppearUseWorldPosition: 0
-    - _MaskDepthFadeDistance: 12
+    - _MaskDepthFadeDistance: 0.07
     - _MaskDepthFadeEnabled: 1
-    - _MaskDepthFadeExp: 2
+    - _MaskDepthFadeExp: 4.33
     - _MaskFresnelExp: 0.2
-    - _MaskSoftBorders: 1
-    - _MaskSoftBordersExp: 20
-    - _MaskSoftBordersMultiply: 1.01
-    - _Noise01ScrollSpeed: 0.25
-    - _Noise01Tiling: 0.1
+    - _Noise01ScrollSpeed: 0.92
+    - _Noise01Tiling: 0.125
     - _Noise02Enabled: 0
     - _Noise02ScrollSpeed: 0.1
     - _Noise02Tiling: 0.35
-    - _NoiseDistortionEnabled: 1
-    - _NoiseDistortionPower: 1.125
-    - _NoiseDistortionTiling: 0.075
-    - _NoiseMaskAdd: 0.25
-    - _NoiseMaskPower: 2
+    - _NoiseDistortionEnabled: 0
+    - _NoiseDistortionPower: 2
+    - _NoiseDistortionTiling: 0.1
+    - _NoiseMaskAdd: 0
+    - _NoiseMaskPower: 1.74
     - _NoisePower: 1
-    - _NormalVertexOffset: 0.02
+    - _NormalVertexOffset: 0.04
+    - _OpacityPower: 1.7
+    - _OpacityPowerAdd: 0
+    - _ProcedrualGradientEnabled: 0
     - _RampFlip: 0
-    - _RampMultiplyTiling: 1
+    - _RampMultiplyTiling: 10
+    - _RampofProcedrual: 1
+    - _RamporProcedrual: 1
     - _ReceivesSSR: 0
-    - _ReceivesSSRTransparent: 0
     - _RenderQueueType: 4
     - _RequireSplitLighting: 0
-    - _ScreenDistortionPower: 0.025
-    - _ScreenDistortionPowerHDRP: 1000
+    - _ScreenDistortionPower: 1
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 0
@@ -147,22 +189,26 @@ Material:
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
-    - _SupportDecals: 1
     - _SurfaceType: 1
+    - _Til: 0.25
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
     - _TransparentSortPriority: 0
     - _TransparentZWrite: 0
     - _UseShadowThreshold: 0
-    - _VisualizeMask: 0
-    - _VisualizeMaskDebug: 0
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
     - _ZWrite: 0
     - __dirty: 0
     m_Colors:
-    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _Color0: {r: 1, g: 0, b: 0, a: 1}
+    - _Color1: {r: 1, g: 0.72413796, b: 0, a: 1}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RampColorTint: {r: 1, g: 0.53676474, b: 0.53676474, a: 1}
+    - _ProvedrualColor00: {r: 1, g: 0, b: 0, a: 1}
+    - _ProvedrualColor100: {r: 1, g: 0.72413796, b: 0, a: 1}
+    - _ProvedrualColorEnd: {r: 1, g: 0.7306288, b: 0.3897058, a: 1}
+    - _ProvedrualColorStart: {r: 1, g: 0.24604455, b: 0.07352937, a: 1}
+    - _RampColorTint: {r: 0.26099145, g: 0.6581402, b: 0.8018868, a: 1}
   m_BuildTextureStacks: []

@@ -7555,18 +7555,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3712231321629328840, guid: 289fcb5d805215d4fbd389fab94e3bc2,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.09000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3712231321629328840, guid: 289fcb5d805215d4fbd389fab94e3bc2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.09000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3712231321629328840, guid: 289fcb5d805215d4fbd389fab94e3bc2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.09000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3712231321629328840, guid: 289fcb5d805215d4fbd389fab94e3bc2,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.014198303
       objectReference: {fileID: 0}
     - target: {fileID: 3712231321629328840, guid: 289fcb5d805215d4fbd389fab94e3bc2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.36
+      value: 3.245
       objectReference: {fileID: 0}
     - target: {fileID: 3712231321629328840, guid: 289fcb5d805215d4fbd389fab94e3bc2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0349617
+      value: 1.03
       objectReference: {fileID: 0}
     - target: {fileID: 3712231321629328840, guid: 289fcb5d805215d4fbd389fab94e3bc2,
         type: 3}
@@ -7603,6 +7618,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3712231321629328840, guid: 289fcb5d805215d4fbd389fab94e3bc2,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3712231321860969012, guid: 289fcb5d805215d4fbd389fab94e3bc2,
         type: 3}
       propertyPath: m_Name
@@ -7613,6 +7633,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Barricade
       objectReference: {fileID: 0}
+    - target: {fileID: 3712231321860969013, guid: 289fcb5d805215d4fbd389fab94e3bc2,
+        type: 3}
+      propertyPath: affectorCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3712231321860969013, guid: 289fcb5d805215d4fbd389fab94e3bc2,
+        type: 3}
+      propertyPath: materialLayers.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c82fc7b33ac2de469d7e4aa19bbb1dc, type: 2}
+    - target: {fileID: 3712231321860969013, guid: 289fcb5d805215d4fbd389fab94e3bc2,
+        type: 3}
+      propertyPath: materialLayers.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ec1ec963d85de5f459d5cac5381ce000, type: 2}
     - target: {fileID: 3712231322806675912, guid: 289fcb5d805215d4fbd389fab94e3bc2,
         type: 3}
       propertyPath: m_LocalScale.x
