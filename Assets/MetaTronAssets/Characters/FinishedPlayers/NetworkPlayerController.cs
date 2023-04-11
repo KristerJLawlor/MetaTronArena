@@ -227,10 +227,6 @@ public class NetworkPlayerController : HighLevelEntity
             myRig.velocity = transform.forward * LastInput.y * speed + transform.right * LastInput.x *speed;
             
             myRig.angularVelocity = new Vector3(0, AimVector.x, 0);
-            if(Physics.Raycast(AimPosition, AimDirection, out hit))
-            {
-                Debug.Log("Something is in view " + hit.transform.gameObject.tag);
-            }
             Debug.DrawRay(AimPosition, AimDirection, Color.green);
            
             

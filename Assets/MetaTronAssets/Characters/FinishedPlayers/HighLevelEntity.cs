@@ -27,10 +27,12 @@ public class HighLevelEntity : NetworkComponent
         if(IsClient && flag == "SHIELD")
         {
             OverShield=int.Parse(value);
+            Debug.Log("I was Hit");
         }
         if(IsClient && flag == "HP")
         {
             HP=int.Parse(value);
+            Debug.Log("I was Hit");
         }
     }
 
