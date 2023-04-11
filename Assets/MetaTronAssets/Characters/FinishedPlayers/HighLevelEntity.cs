@@ -13,16 +13,25 @@ public class HighLevelEntity : NetworkComponent
     {
         if (OverShield > 0)
         {
-            OverShield--;
+            OverShield=OverShield-5;
+            SendUpdate("SHIELD", OverShield.ToString());
         }
         else
         {
-            HP--;
+            HP=HP-5;
+            SendUpdate("HP", HP.ToString());
         }
     }
     public override void HandleMessage(string flag, string value)
     {
-        
+        if(IsClient && flag == "SHIELD")
+        {
+            OverShield=int.Parse(value);
+        }
+        if(IsClient && flag == "HP")
+        {
+            HP=int.Parse(value);
+        }
     }
 
     public override void NetworkedStart()

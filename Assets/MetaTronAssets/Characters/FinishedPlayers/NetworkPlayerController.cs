@@ -99,9 +99,12 @@ public class NetworkPlayerController : HighLevelEntity
     }
     public IEnumerator ROF()
     {
-        yield return new WaitForSeconds(.25f);
-        canShoot = true;
-        SendUpdate("CANSHOOT", canShoot.ToString());
+        if (Overheat < 100)
+        {
+            yield return new WaitForSeconds(.25f);
+            canShoot = true;
+            SendUpdate("CANSHOOT", canShoot.ToString());
+        }
     }
     public IEnumerator OH()
     {
@@ -169,15 +172,14 @@ public class NetworkPlayerController : HighLevelEntity
             if(lastFire && canShoot)
             {
                 
-                if(Physics.Raycast(transform.position, transform.forward,out hit))
+                if(Physics.Raycast(AimPosition, AimDirection,out hit))
                 {
                     if(hit.collider.tag=="Entity")
                     {
                         hit.transform.GetComponent<HighLevelEntity>().Damage();
+                        Debug.Log("An entity was hit");
                     }
                 }
-                Debug.Log("Aiming position is " + AimPosition);
-                Debug.Log("Aiming direction is " + AimDirection);
                 Overheat = Overheat + 5;
                 SendUpdate("OH", Overheat.ToString());
                 canShoot = false;
@@ -190,7 +192,7 @@ public class NetworkPlayerController : HighLevelEntity
                 SendUpdate("CANSHOOT", canShoot.ToString());
                 StartCoroutine(OH());
             }
-            if (!lastFire && Overheat > 0)
+            if (!lastFire && Overheat > 0 && Overheat<100)
             {
                 Overheat= Overheat - .1f;
                 SendUpdate("OH", Overheat.ToString());
@@ -225,10 +227,9 @@ public class NetworkPlayerController : HighLevelEntity
             myRig.velocity = transform.forward * LastInput.y * speed + transform.right * LastInput.x *speed;
             
             myRig.angularVelocity = new Vector3(0, AimVector.x, 0);
-            
-            if (Physics.Raycast(AimPosition, AimDirection, out hit))
+            if(Physics.Raycast(AimPosition, AimDirection, out hit))
             {
-                Debug.Log("Something is in sight "+ hit.collider.gameObject.name);
+                Debug.Log("Something is in view " + hit.transform.gameObject.tag);
             }
             Debug.DrawRay(AimPosition, AimDirection, Color.green);
            
