@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Entity
   - Barricade
+  - NetworkManager
+  - NetworkPlayerManager
+  - Gamemaster
   layers:
   - Default
   - TransparentFX

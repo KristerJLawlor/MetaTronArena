@@ -13,7 +13,9 @@ public class GameMusicScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameMusic = GetComponent<AudioSource>();
         GameMusic.loop = true;
+        GameMusic.clip = MenuClip;
         GameMusic.Play();
     }
 
@@ -21,6 +23,12 @@ public class GameMusicScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void PlayGameMusic()
+    {
+        GameMusic.clip = ArenaClip;
+        GameMusic.Play();
     }
 
 }

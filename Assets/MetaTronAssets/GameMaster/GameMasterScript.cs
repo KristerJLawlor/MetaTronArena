@@ -23,6 +23,10 @@ public class GameMasterScript : NetworkComponent
                     //npm.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
                     npm.transform.GetChild(0).gameObject.SetActive(false);
                     Debug.Log("SETTING UI INACTIVE");
+
+                    //Start the arena theme music
+                    GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<GameMusicScript>().PlayGameMusic();
+                    Debug.Log("STARTING GAME MUSIC");
                 }
             }
         }
