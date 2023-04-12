@@ -65,9 +65,34 @@ MonoBehaviour:
     type: 2}
   m_RenderPipelineRayTracingResources: {fileID: 0}
   beforeTransparentCustomPostProcesses: []
-  beforePostProcessCustomPostProcesses: []
+  beforePostProcessCustomPostProcesses:
+  - UnityEngine.Rendering.HighDefinition.Compositor.AlphaInjection, Unity.RenderPipelines.HighDefinition.Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - UnityEngine.Rendering.HighDefinition.Compositor.ChromaKeying, Unity.RenderPipelines.HighDefinition.Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   afterPostProcessBlursCustomPostProcesses: []
-  afterPostProcessCustomPostProcesses: []
+  afterPostProcessCustomPostProcesses:
+  - LimitlessGlitch1Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch10Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch11Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch12Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch13Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch14Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch15Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch16Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch17Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch18Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch19Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch20Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch21Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch2Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch3Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch4Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch5Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch6Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch7Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch8Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - LimitlessGlitch9Effect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   beforeTAACustomPostProcesses: []
   lightLayerName0: Light Layer default
   lightLayerName1: Light Layer 1
