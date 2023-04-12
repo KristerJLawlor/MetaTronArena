@@ -145,7 +145,7 @@ Material:
     - Vector1_96d7852d68794b6eb02e9c06d59a2306: 0.154
     - Vector1_a389ff6a766b445a9bc082894e1c7b38: 0.1
     - Vector1_a815db51863c4607a7f8dba43598ae9a: 0
-    - Vector1_ba4f48854f9948b4938f6bd21176ff46: 283.3
+    - Vector1_ba4f48854f9948b4938f6bd21176ff46: 100.1
     - _AddPrecomputedVelocity: 0
     - _AdvancedInpector: 0
     - _AlphaClip: 0
@@ -228,7 +228,7 @@ Material:
     - _UVTilling: 1
     - _UseEmission: 0
     - _UseShadowThreshold: 0
-    - _Width: 0.176
+    - _Width: 0.23
     - _WorkflowMode: 1
     - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 4
@@ -236,8 +236,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_3303ac7cc4494cedbf5860986dc151f1: {r: 0, g: 0, b: 0, a: 0}
-    - Color_91b2aa55f3ad46949c504dd7b5c57d54: {r: 144.56471, g: 708.62476, b: 766.9961,
-        a: 0}
+    - Color_91b2aa55f3ad46949c504dd7b5c57d54: {r: 0.6965084, g: 0, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
