@@ -4244,7 +4244,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: -1447049440201156890}
         m_TargetAssemblyTypeName: NetworkPlayerController, Assembly-CSharp
         m_MethodName: ActionHandler
         m_Mode: 0
@@ -4260,7 +4260,7 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: -1447049440201156890}
         m_TargetAssemblyTypeName: NetworkPlayerController, Assembly-CSharp
         m_MethodName: Aiming
         m_Mode: 0
@@ -4276,7 +4276,7 @@ MonoBehaviour:
     m_ActionName: Player/Look[/Mouse/position]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: -1447049440201156890}
         m_TargetAssemblyTypeName: NetworkPlayerController, Assembly-CSharp
         m_MethodName: Shoot
         m_Mode: 0
@@ -4332,7 +4332,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: -1447049440201156890}
         m_TargetAssemblyTypeName: NetworkPlayerController, Assembly-CSharp
         m_MethodName: HeatVent
         m_Mode: 0

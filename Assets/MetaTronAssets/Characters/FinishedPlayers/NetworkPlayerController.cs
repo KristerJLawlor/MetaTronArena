@@ -144,12 +144,12 @@ public class NetworkPlayerController : HighLevelEntity
         if(IsClient && flag == "CANSHOOT")
         {
             canShoot= bool.Parse(value);
-            Debug.Log("CanShoot has been set to "+ value);
+            
         }
         if(IsClient && flag == "OH")
         {
             Overheat = float.Parse(value);
-            Debug.Log("Overheat level is " + value);
+         
         }
         if(IsServer && flag == "RELOAD")
         {
@@ -191,7 +191,7 @@ public class NetworkPlayerController : HighLevelEntity
                     if(hit.collider.tag=="Entity")
                     {
                         hit.transform.GetComponent<HighLevelEntity>().Damage();
-                        Debug.Log("An entity was hit");
+                        
                     }
                 }
                 Overheat = Overheat + 5;
@@ -232,21 +232,21 @@ public class NetworkPlayerController : HighLevelEntity
     }
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         myRig = GetComponent<Rigidbody>();
         SpawnLoc= myRig.position;
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (IsServer && HP>0)
         {
             myRig.velocity = transform.forward * LastInput.y * speed + transform.right * LastInput.x *speed;
             
             myRig.angularVelocity = new Vector3(0, AimVector.x, 0);
-            Debug.DrawRay(AimPosition, AimDirection, Color.green);
+            
            
             
             
@@ -256,7 +256,7 @@ public class NetworkPlayerController : HighLevelEntity
         {
             Camera.main.transform.position = transform.position + transform.forward * .5f + this.transform.up;
             Camera.main.transform.forward = transform.forward;
-            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward, Color.red);
+            
 
 
 
