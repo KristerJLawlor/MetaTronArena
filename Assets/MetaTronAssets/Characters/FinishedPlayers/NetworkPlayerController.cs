@@ -21,6 +21,7 @@ public class NetworkPlayerController : HighLevelEntity
     public float Overheat = 0;
     public bool canShoot = true;
     public bool lastFire=false;
+    public bool passiveActive = false;
     public string pname;
     RaycastHit hit;
     public Vector3 SpawnLoc;
