@@ -62,6 +62,7 @@ public class GameMasterScript : NetworkComponent
             {
 
                 GameObject temp = MyCore.NetCreateObject(npm.ClassSelected, npm.Owner, SpawnLoc[npm.Owner].transform.position, Quaternion.identity);
+                
             }
             SendUpdate("GAMESTART", GameStarted.ToString());
         }
