@@ -133,9 +133,9 @@ Material:
     - _TransparentSortPriority: 0
     - _TransparentZWrite: 0
     - _UseShadowThreshold: 0
-    - _WallColorMult: 0.045
+    - _WallColorMult: 0
     - _WallOpening: 0
-    - _WallOutlineColorMult: 0.86
+    - _WallOutlineColorMult: 1
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
