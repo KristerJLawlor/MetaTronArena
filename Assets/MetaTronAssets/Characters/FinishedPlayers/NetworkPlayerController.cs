@@ -175,7 +175,10 @@ public class NetworkPlayerController : HighLevelEntity
     {
       
     }
-
+    public virtual float OnDamage(float d, GameObject o)
+    {
+        return d;
+    }
     public override IEnumerator SlowUpdate()
     {
         while(IsServer)
@@ -187,7 +190,7 @@ public class NetworkPlayerController : HighLevelEntity
                 {
                         if(hit.collider.tag=="Entity")
                     {
-                        hit.transform.GetComponent<HighLevelEntity>().Damage(this.DamageScalar);
+                        hit.transform.GetComponent<HighLevelEntity>().Damage(OnDamage( this.DamageScalar, hit.transform.gameObject));
                     }
                     
                 }

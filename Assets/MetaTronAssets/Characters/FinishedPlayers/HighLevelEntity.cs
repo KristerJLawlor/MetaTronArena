@@ -10,8 +10,10 @@ public class HighLevelEntity : NetworkComponent
     public float DamageScalar = 1;
 
 
+    
     public void Damage(float DMGMod)
     {
+        
         if (OverShield > 0)
         {
             OverShield=OverShield-(5*DMGMod);
