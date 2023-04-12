@@ -7,17 +7,18 @@ public class Ability_Icon_Switcher : MonoBehaviour
 {
     public Sprite[] Icons;
     // Start is called before the first frame update
+    public int tester = 2;
     void Start()
     {
-        
+        setAbility(tester);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        setAbility(tester);
     }
-    void setAbility(int a)
+    public void setAbility(int a)
     {
         switch (a)
         {
