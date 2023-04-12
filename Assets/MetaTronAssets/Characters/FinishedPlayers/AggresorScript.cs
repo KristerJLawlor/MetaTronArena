@@ -12,12 +12,12 @@ public class AggresorScript : NetworkPlayerController
         if(IsClient && flag == "PA")
         {
             passiveActive=bool.Parse(value);
-            Debug.Log("In client passive handle message");
+            
         }
         if(IsClient && flag == "SCALAR")
         {
             DamageScalar=float.Parse(value);
-            Debug.Log("In client scalar handle message");
+            
         }
     }
     public override void NetworkedStart()
@@ -32,7 +32,6 @@ public class AggresorScript : NetworkPlayerController
     {
         base.Start();
         Entity = GameObject.FindGameObjectsWithTag("Entity");
-
     }
 
     // Update is called once per frame
@@ -43,7 +42,11 @@ public class AggresorScript : NetworkPlayerController
         {
             foreach (var entity in Entity)
             {
-                if (entity != this && (entity.transform.position - transform.position).magnitude < 5)
+                if(entity == this)
+                {
+                    continue;
+                }
+                if ((entity.transform.position - transform.position).magnitude < 15)
                 {
                     passiveActive = true;
                     DamageScalar = 1.5f;

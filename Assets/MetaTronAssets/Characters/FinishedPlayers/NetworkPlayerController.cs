@@ -4,13 +4,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 using NETWORK_ENGINE;
-
-
-
+using Unity.VisualScripting;
 
 public class NetworkPlayerController : HighLevelEntity
 {
-
 
     public Vector2 LastInput;
     public Vector2 AimVector;
@@ -188,11 +185,11 @@ public class NetworkPlayerController : HighLevelEntity
                 
                 if(Physics.Raycast(AimPosition, AimDirection,out hit))
                 {
-                    if(hit.collider.tag=="Entity")
+                        if(hit.collider.tag=="Entity")
                     {
-                        hit.transform.GetComponent<HighLevelEntity>().Damage();
-                        
+                        hit.transform.GetComponent<HighLevelEntity>().Damage(this.DamageScalar);
                     }
+                    
                 }
                 Overheat = Overheat + 5;
                 SendUpdate("OH", Overheat.ToString());
@@ -236,6 +233,7 @@ public class NetworkPlayerController : HighLevelEntity
     {
         myRig = GetComponent<Rigidbody>();
         SpawnLoc= myRig.position;
+        
     }
 
     // Update is called once per frame
