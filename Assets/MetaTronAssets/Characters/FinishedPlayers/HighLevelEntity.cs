@@ -5,20 +5,21 @@ using NETWORK_ENGINE;
 
 public class HighLevelEntity : NetworkComponent
 {
-    public int HP=100;
-    public int OverShield=50;
+    public float HP=100;
+    public float OverShield=50;
+    public float DamageScalar = 1;
 
 
     public void Damage()
     {
         if (OverShield > 0)
         {
-            OverShield=OverShield-5;
+            OverShield=OverShield-(5*DamageScalar);
             SendUpdate("SHIELD", OverShield.ToString());
         }
         else
         {
-            HP=HP-5;
+            HP=HP-(5*DamageScalar);
             SendUpdate("HP", HP.ToString());
         }
     }
@@ -26,13 +27,13 @@ public class HighLevelEntity : NetworkComponent
     {
         if(IsClient && flag == "SHIELD")
         {
-            OverShield=int.Parse(value);
-            Debug.Log("I was Hit");
+            OverShield=float.Parse(value);
+            
         }
         if(IsClient && flag == "HP")
         {
-            HP=int.Parse(value);
-            Debug.Log("I was Hit");
+            HP=float.Parse(value);
+            
         }
     }
 

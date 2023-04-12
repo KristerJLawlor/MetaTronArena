@@ -4028,11 +4028,11 @@ GameObject:
   - component: {fileID: 1855893786657730315}
   - component: {fileID: 149522372549389100}
   - component: {fileID: 322204392371912279}
-  - component: {fileID: 2102399153273211779}
   - component: {fileID: 3358588248722112981}
   - component: {fileID: 2558624259644699479}
   - component: {fileID: -4878495747329717143}
   - component: {fileID: -1632664089967872682}
+  - component: {fileID: -1447049440201156890}
   m_Layer: 0
   m_Name: Aggressor
   m_TagString: Entity
@@ -4196,34 +4196,6 @@ MonoBehaviour:
   IsLocalPlayer: 0
   UpdateFrequency: 0.1
   MyCore: {fileID: 0}
---- !u!114 &2102399153273211779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5627945925265988317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9d5270e2f41f3d4ca04e61e214b7fd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MyCore: {fileID: 0}
-  MyId: {fileID: 0}
-  IsDirty: 0
-  HP: 100
-  OverShield: 50
-  LastInput: {x: 0, y: 0}
-  AimVector: {x: 0, y: 0}
-  AimPosition: {x: 0, y: 0, z: 0}
-  AimDirection: {x: 0, y: 0, z: 0}
-  myRig: {fileID: 0}
-  speed: 5
-  Overheat: 0
-  canShoot: 1
-  lastFire: 0
-  pname: 
-  SpawnLoc: {x: 0, y: 0, z: 0}
 --- !u!114 &3358588248722112981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4272,7 +4244,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2102399153273211779}
+      - m_Target: {fileID: -1447049440201156890}
         m_TargetAssemblyTypeName: NetworkPlayerController, Assembly-CSharp
         m_MethodName: ActionHandler
         m_Mode: 0
@@ -4288,7 +4260,7 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2102399153273211779}
+      - m_Target: {fileID: -1447049440201156890}
         m_TargetAssemblyTypeName: NetworkPlayerController, Assembly-CSharp
         m_MethodName: Aiming
         m_Mode: 0
@@ -4304,7 +4276,7 @@ MonoBehaviour:
     m_ActionName: Player/Look[/Mouse/position]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2102399153273211779}
+      - m_Target: {fileID: -1447049440201156890}
         m_TargetAssemblyTypeName: NetworkPlayerController, Assembly-CSharp
         m_MethodName: Shoot
         m_Mode: 0
@@ -4360,7 +4332,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2102399153273211779}
+      - m_Target: {fileID: -1447049440201156890}
         m_TargetAssemblyTypeName: NetworkPlayerController, Assembly-CSharp
         m_MethodName: HeatVent
         m_Mode: 0
@@ -4500,6 +4472,37 @@ MonoBehaviour:
   TimerAudio: {fileID: 8300000, guid: c2d9be951814b274794d48585fd5fa15, type: 3}
   PickupAudio: {fileID: 8300000, guid: deedcb657b2ee134ebb4377b8d6c2565, type: 3}
   ScoreUpAudio: {fileID: 8300000, guid: 711be1345db48974c9261fc31d65d4d7, type: 3}
+--- !u!114 &-1447049440201156890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5627945925265988317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f18e15cf1ccfdcc4baab712bf8467007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyCore: {fileID: 0}
+  MyId: {fileID: 0}
+  IsDirty: 0
+  HP: 100
+  OverShield: 50
+  DamageScalar: 1
+  LastInput: {x: 0, y: 0}
+  AimVector: {x: 0, y: 0}
+  AimPosition: {x: 0, y: 0, z: 0}
+  AimDirection: {x: 0, y: 0, z: 0}
+  myRig: {fileID: 0}
+  speed: 5
+  Overheat: 0
+  canShoot: 1
+  lastFire: 0
+  passiveActive: 0
+  pname: 
+  SpawnLoc: {x: 0, y: 0, z: 0}
+  Entity: []
 --- !u!1 &5681559356532002949
 GameObject:
   m_ObjectHideFlags: 0
