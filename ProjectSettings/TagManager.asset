@@ -9,6 +9,8 @@ TagManager:
   - NetworkManager
   - NetworkPlayerManager
   - Gamemaster
+  - SineBullet
+  - Overshield
   layers:
   - Default
   - TransparentFX

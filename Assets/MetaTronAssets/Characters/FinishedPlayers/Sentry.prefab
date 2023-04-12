@@ -7901,6 +7901,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2051638031195382290, guid: f92da1d462879a245b57b824478ff861,
+        type: 3}
+      propertyPath: m_TagString
+      value: Overshield
+      objectReference: {fileID: 0}
     - target: {fileID: 2051638031195382291, guid: f92da1d462879a245b57b824478ff861,
         type: 3}
       propertyPath: affectorCount
