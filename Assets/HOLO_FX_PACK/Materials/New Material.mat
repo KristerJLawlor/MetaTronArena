@@ -288,7 +288,7 @@ Material:
     - _UVSec: 0
     - _UseEmissiveIntensity: 0
     - _UseShadowThreshold: 0
-    - _WireThickness: 596
+    - _WireThickness: 0
     - _WireframeSize: 1
     - _ZTest: 4
     - _ZTestDepthEqualForOpaque: 3

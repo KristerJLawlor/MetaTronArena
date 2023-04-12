@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/NetworkEngine/NetworkEngine_4_9/NetworkEngine_4_9/NetworkEngine/TemplateAssets/Template_Scenes/MainMenu.unity
     guid: 44a73099d6321fc44bd0422326ec77db
-  - enabled: 1
+  - enabled: 0
     path: Assets/NetworkEngine/NetworkEngine_4_9/NetworkEngine_4_9/NetworkEngine/TemplateAssets/Template_Scenes/WAN_Game.unity
     guid: 646d32d828b9ece4bae9613529fd952c
-  - enabled: 1
+  - enabled: 0
     path: Assets/NetworkEngine/NetworkEngine_4_9/NetworkEngine_4_9/NetworkEngine/TemplateAssets/Template_Scenes/LANMenu.unity
     guid: 1c15f2452767a5e44bbca5d7122dba90
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Menu/MainMenu.unity
     guid: 9e9db51a6fbba8b4c8513fb4498bf80f
   m_configObjects:

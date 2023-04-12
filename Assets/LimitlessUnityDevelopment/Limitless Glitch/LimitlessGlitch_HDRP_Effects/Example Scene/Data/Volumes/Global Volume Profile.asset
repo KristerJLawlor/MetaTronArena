@@ -1,0 +1,1135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9151421510045675738
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb1bf07c05b73c4787fe5373961f283, type: 3}
+  m_Name: LimitlessGlitch19Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  NoiseTexture:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 0c9e778154207ad44affa1eb7d6c88ec, type: 3}
+  stop:
+    m_OverrideState: 1
+    m_Value: 0
+  ShiftSeed:
+    m_OverrideState: 1
+    m_Value: 16
+    min: 6
+    max: 16
+  speed:
+    m_OverrideState: 1
+    m_Value: 0.11
+    min: 0
+    max: 1
+  amplitude:
+    m_OverrideState: 1
+    m_Value: 0.1
+    min: 0
+    max: 1
+  fade:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  randomActivateAmount:
+    m_OverrideState: 1
+    m_Value: 0.9
+    min: 0
+    max: 1
+--- !u!114 &-8958044838405248951
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdfe230c97413540a2fe3c9dd165ca7, type: 3}
+  m_Name: LimitlessGlitch18Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  stop:
+    m_OverrideState: 1
+    m_Value: 0
+  speed:
+    m_OverrideState: 1
+    m_Value: 100
+    min: 0
+    max: 100
+  offset:
+    m_OverrideState: 1
+    m_Value: 0.016
+    min: 0
+    max: 1
+  fade:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  randomActivateAmount:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+--- !u!114 &-8678963185450285772
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af3ae9155480134c9282fad3cca6027, type: 3}
+  m_Name: LimitlessGlitch11Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  amount:
+    m_OverrideState: 1
+    m_Value: 0.0021
+    min: 0
+    max: 0.02
+  linesAmount:
+    m_OverrideState: 1
+    m_Value: 3.19
+    min: 0
+    max: 10
+  speed:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 10
+  mask:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+--- !u!114 &-8548740030199902961
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 384c4d03a551c44448145f4093304119, type: 3}
+  m_Name: ScreenSpaceReflection
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  quality:
+    m_OverrideState: 1
+    m_Value: 2
+  enabled:
+    m_OverrideState: 1
+    m_Value: 1
+  rayTracing:
+    m_OverrideState: 1
+    m_Value: 0
+  minSmoothness:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  smoothnessFadeStart:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  reflectSky:
+    m_OverrideState: 1
+    m_Value: 1
+  depthBufferThickness:
+    m_OverrideState: 1
+    m_Value: 0.235
+    min: 0
+    max: 1
+  screenFadeDistance:
+    m_OverrideState: 1
+    m_Value: 0.453
+    min: 0
+    max: 1
+  layerMask:
+    m_OverrideState: 1
+    m_Value:
+      serializedVersion: 2
+      m_Bits: 4294967295
+  rayLength:
+    m_OverrideState: 1
+    m_Value: 10
+    min: 0.001
+    max: 50
+  clampValue:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0.001
+    max: 10
+  denoise:
+    m_OverrideState: 1
+    m_Value: 0
+  denoiserRadius:
+    m_OverrideState: 1
+    m_Value: 8
+    min: 1
+    max: 32
+  mode:
+    m_OverrideState: 1
+    m_Value: 2
+  upscaleRadius:
+    m_OverrideState: 1
+    m_Value: 2
+  fullResolution:
+    m_OverrideState: 1
+    m_Value: 0
+  sampleCount:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 1
+    max: 32
+  bounceCount:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 1
+    max: 31
+  m_RayMaxIterations:
+    m_OverrideState: 1
+    m_Value: 32
+--- !u!114 &-8389406081107240784
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85d389ba8f1fca547970b1be36819121, type: 3}
+  m_Name: LimitlessGlitch17Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  stop:
+    m_OverrideState: 1
+    m_Value: 0
+  strength:
+    m_OverrideState: 1
+    m_Value: 0.01
+    min: 0
+    max: 0.5
+  speed:
+    m_OverrideState: 1
+    m_Value: 2.6
+    min: 0
+    max: 100
+  size:
+    m_OverrideState: 1
+    m_Value: 3.69
+    min: 0
+    max: 10
+  RGBSplit:
+    m_OverrideState: 1
+    m_Value: 1.1
+    min: 0
+    max: 2
+  fade:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  randomActivateAmount:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+--- !u!114 &-8149331782104326219
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2109bafae46ae9943822f23c2b9ac394, type: 3}
+  m_Name: LimitlessGlitch16Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  stop:
+    m_OverrideState: 1
+    m_Value: 0
+  fade:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  amount:
+    m_OverrideState: 1
+    m_Value: 30
+    min: 0
+    max: 30
+  speed:
+    m_OverrideState: 1
+    m_Value: 0.8
+    min: 0
+    max: 5
+  randomActivateAmount:
+    m_OverrideState: 1
+    m_Value: 0.823
+    min: 0
+    max: 1
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+--- !u!114 &-8033498229730984452
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f688e64eec69741b62245326b0b56d, type: 3}
+  m_Name: LimitlessGlitch5Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  offsetAxis:
+    m_OverrideState: 1
+    m_Value: 0
+  shiftMode:
+    m_OverrideState: 1
+    m_Value: 0
+  stretchResolution:
+    m_OverrideState: 1
+    m_Value: 1033.1
+  interval:
+    m_OverrideState: 1
+    m_Value: 0
+  minMax:
+    m_OverrideState: 1
+    m_Value: {x: 0.5, y: 2.4}
+    min: 0
+    max: 60
+  frequency:
+    m_OverrideState: 1
+    m_Value: 6.9
+    min: 0
+    max: 25
+  rate:
+    m_OverrideState: 1
+    m_Value: 0.735
+    min: 0
+    max: 1
+  amount:
+    m_OverrideState: 1
+    m_Value: 19.7
+    min: 0
+    max: 50
+  speed:
+    m_OverrideState: 1
+    m_Value: 0.471
+    min: 0
+    max: 1
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+  unscaledTime:
+    m_OverrideState: 1
+    m_Value: 0
+  t: 0
+--- !u!114 &-6012283624675155766
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262f5e60004870f46972a5c89f344588, type: 3}
+  m_Name: LimitlessGlitch13Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  stop:
+    m_OverrideState: 1
+    m_Value: 0
+  fade:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  linesWidth:
+    m_OverrideState: 1
+    m_Value: 0.15
+    min: 0
+    max: 2
+  LinesAmount:
+    m_OverrideState: 1
+    m_Value: 0.15
+    min: 0
+    max: 2
+  offset:
+    m_OverrideState: 1
+    m_Value: 0.15
+    min: 0
+    max: 2
+  randomActivateAmount:
+    m_OverrideState: 1
+    m_Value: 0.9
+    min: 0
+    max: 1
+  speed:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 20
+  mask:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+--- !u!114 &-3064652077177288515
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4383ea437b67cff4680b3938e3f53ddd, type: 3}
+  m_Name: LimitlessGlitch10Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  width:
+    m_OverrideState: 1
+    m_Value: 0.343
+    min: 0
+    max: 0.5
+  fade:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  mask:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+--- !u!114 &-2209334606559335121
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fc39beb990f4644bafd7bf62cac949, type: 3}
+  m_Name: LimitlessGlitch20Effect
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  stop:
+    m_OverrideState: 1
+    m_Value: 0
+  strength:
+    m_OverrideState: 1
+    m_Value: 0.011
+    min: 0
+    max: 0.5
+  speed:
+    m_OverrideState: 1
+    m_Value: 85
+    min: 0
+    max: 200
+  fade:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  randomActivateAmount:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 8400000, guid: 4c2f1eb4343810d43966ed50126d85ce, type: 2}
+--- !u!114 &-1921784236126065052
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8886133b88bbb2c449ee0378363385e7, type: 3}
+  m_Name: LimitlessGlitch4Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  interval:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 21
+  rate:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  RGBSplit:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 50
+  speed:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  amount:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 2
+  customResolution:
+    m_OverrideState: 1
+    m_Value: 0
+  resolution:
+    m_OverrideState: 1
+    m_Value: {x: 640, y: 480}
+  mask:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+--- !u!114 &-1747246936991895152
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b41d57f2b94ea34caaa94904b250f67, type: 3}
+  m_Name: LimitlessGlitch1Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  x:
+    m_OverrideState: 1
+    m_Value: 4
+    min: -2
+    max: 200
+  y:
+    m_OverrideState: 1
+    m_Value: 6
+    min: -2
+    max: 10002
+  z:
+    m_OverrideState: 1
+    m_Value: 4
+    min: -2
+    max: 200
+  amount:
+    m_OverrideState: 1
+    m_Value: 0.32
+    min: 0
+    max: 2
+  stretch:
+    m_OverrideState: 1
+    m_Value: 0.07
+    min: 0
+    max: 4
+  speed:
+    m_OverrideState: 1
+    m_Value: 0.479
+    min: 0
+    max: 1
+  fade:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  rMultiplier:
+    m_OverrideState: 1
+    m_Value: 1
+    min: -1
+    max: 2
+  gMultiplier:
+    m_OverrideState: 1
+    m_Value: 1
+    min: -1
+    max: 2
+  bMultiplier:
+    m_OverrideState: 1
+    m_Value: 0
+    min: -1
+    max: 2
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+--- !u!114 &-1516360417709672649
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ffcd427cc8f684b893ea8773dc6c56, type: 3}
+  m_Name: LimitlessGlitch14Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  stop:
+    m_OverrideState: 1
+    m_Value: 0
+  fade:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  amount:
+    m_OverrideState: 1
+    m_Value: 0.03
+    min: 0
+    max: 2
+  speed:
+    m_OverrideState: 1
+    m_Value: 8.8
+    min: 0
+    max: 50
+  RandomActivationSpeed:
+    m_OverrideState: 1
+    m_Value: 0.2
+    min: 0
+    max: 5
+  randomActivateAmount:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  mask:
+    m_OverrideState: 0
+    m_Value: {fileID: 8400000, guid: 4c2f1eb4343810d43966ed50126d85ce, type: 2}
+--- !u!114 &-1485960622262125747
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51a78e223a2e504bb88a059b55229ea, type: 3}
+  m_Name: WhiteBalance
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  temperature:
+    m_OverrideState: 1
+    m_Value: 17
+    min: -100
+    max: 100
+  tint:
+    m_OverrideState: 1
+    m_Value: 22
+    min: -100
+    max: 100
+--- !u!114 &-1386750013027319715
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0f6939cff16944787753d7a9c74dbd, type: 3}
+  m_Name: LimitlessGlitch6Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  interval:
+    m_OverrideState: 1
+    m_Value: 0
+  minMax:
+    m_OverrideState: 1
+    m_Value: {x: 0.1, y: 2}
+    min: 0
+    max: 60
+  frequency:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 25
+  rate:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  amount:
+    m_OverrideState: 1
+    m_Value: 160
+    min: 0
+    max: 200
+  speed:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 15
+  unscaledTime:
+    m_OverrideState: 1
+    m_Value: 0
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+  t: 0
+--- !u!114 &-1253598083525159932
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e76e41ebc30f51d458ef1bada78d1ae4, type: 3}
+  m_Name: LimitlessGlitch15Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  dropoutIntensity:
+    m_OverrideState: 1
+    m_Value: 0.86
+    min: 0
+    max: 2
+  interlaceIntesnsity:
+    m_OverrideState: 1
+    m_Value: 0.15
+    min: 0
+    max: 2
+  mask:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+--- !u!114 &-678880500957063809
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deab155861cd56743bc8a01c1878c607, type: 3}
+  m_Name: LimitlessGlitch7Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  Fade:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  Speed:
+    m_OverrideState: 1
+    m_Value: 0.42
+    min: 0
+    max: 1
+  Amount:
+    m_OverrideState: 1
+    m_Value: 10
+    min: 0
+    max: 10
+  unscaledTime:
+    m_OverrideState: 1
+    m_Value: 0
+  mask:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: Global Volume Profile
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: -1485960622262125747}
+  - {fileID: 4317293602569220614}
+  - {fileID: -1747246936991895152}
+  - {fileID: 1954225368170220243}
+  - {fileID: -1921784236126065052}
+  - {fileID: -8033498229730984452}
+  - {fileID: -1386750013027319715}
+  - {fileID: -678880500957063809}
+  - {fileID: 190824630301630144}
+  - {fileID: 2376766825128701004}
+  - {fileID: -3064652077177288515}
+  - {fileID: -8678963185450285772}
+  - {fileID: 6917598231690872919}
+  - {fileID: -6012283624675155766}
+  - {fileID: -1516360417709672649}
+  - {fileID: -1253598083525159932}
+  - {fileID: -8149331782104326219}
+  - {fileID: -8389406081107240784}
+  - {fileID: -8958044838405248951}
+  - {fileID: -9151421510045675738}
+  - {fileID: -2209334606559335121}
+  - {fileID: 7632625446397476187}
+  - {fileID: -8548740030199902961}
+--- !u!114 &190824630301630144
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da652bc824d7ab49ae8c38343cdbfd9, type: 3}
+  m_Name: LimitlessGlitch8Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  Amount:
+    m_OverrideState: 1
+    m_Value: 0.361
+    min: 0
+    max: 1
+  LinesWidth:
+    m_OverrideState: 1
+    m_Value: 1.3
+    min: 0.1
+    max: 20
+  Speed:
+    m_OverrideState: 1
+    m_Value: 0.865
+    min: 0
+    max: 1
+  Offset:
+    m_OverrideState: 1
+    m_Value: 1.7
+    min: 0
+    max: 13
+  alpha:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  unscaledTime:
+    m_OverrideState: 1
+    m_Value: 0
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 8400000, guid: 4c2f1eb4343810d43966ed50126d85ce, type: 2}
+--- !u!114 &1954225368170220243
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 023171254293db54b9461ac978294348, type: 3}
+  m_Name: LimitlessGlitch2Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  speed:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  amount:
+    m_OverrideState: 1
+    m_Value: 0.538
+    min: 0
+    max: 1
+  ColorIntencity:
+    m_OverrideState: 1
+    m_Value: 0.479
+    min: 0
+    max: 1
+  resolutionMultiplier:
+    m_OverrideState: 1
+    m_Value: 1.395
+    min: 1
+    max: 2
+  stretchMultiplier:
+    m_OverrideState: 1
+    m_Value: 0.984
+    min: 0
+    max: 1
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+--- !u!114 &2376766825128701004
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bb00f241394154998cc50c5fff1964, type: 3}
+  m_Name: LimitlessGlitch9Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  fade:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  amount:
+    m_OverrideState: 1
+    m_Value: 0.117
+    min: 0
+    max: 1
+  randomActivateAmount:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  size:
+    m_OverrideState: 1
+    m_Value: {x: 120, y: 120}
+  light:
+    m_OverrideState: 1
+    m_Value: 0
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+--- !u!114 &4317293602569220614
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d08ce26990eb1a4a9177b860541e702, type: 3}
+  m_Name: Exposure
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  mode:
+    m_OverrideState: 1
+    m_Value: 0
+  meteringMode:
+    m_OverrideState: 1
+    m_Value: 1
+  luminanceSource:
+    m_OverrideState: 1
+    m_Value: 1
+  fixedExposure:
+    m_OverrideState: 1
+    m_Value: 14.14
+  compensation:
+    m_OverrideState: 1
+    m_Value: 1.5
+  limitMin:
+    m_OverrideState: 1
+    m_Value: -6.56
+  limitMax:
+    m_OverrideState: 1
+    m_Value: 24.73
+  curveMap:
+    m_OverrideState: 1
+    m_Value:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -10
+        value: -10
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 20
+        value: 20
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  adaptationMode:
+    m_OverrideState: 1
+    m_Value: 1
+  adaptationSpeedDarkToLight:
+    m_OverrideState: 1
+    m_Value: 4.3
+    min: 0.001
+  adaptationSpeedLightToDark:
+    m_OverrideState: 1
+    m_Value: 0.001
+    min: 0.001
+--- !u!114 &6917598231690872919
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223f65bd7d678ef42b2270c21de4d5b7, type: 3}
+  m_Name: LimitlessGlitch12Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  stop:
+    m_OverrideState: 1
+    m_Value: 0
+  fade:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  amount:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1.5
+  randomActivateAmount:
+    m_OverrideState: 1
+    m_Value: 0.9
+    min: 0
+    max: 1
+  size:
+    m_OverrideState: 1
+    m_Value: 16
+    min: 0
+    max: 24
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 0fb9b2b843d413045ae0a75c2f9596b1, type: 3}
+--- !u!114 &7632625446397476187
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe48c6e39a863ae4eb11ef71f74f4b0f, type: 3}
+  m_Name: LimitlessGlitch3Effect
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  speed:
+    m_OverrideState: 1
+    m_Value: 16.4
+    min: 0
+    max: 50
+  density:
+    m_OverrideState: 1
+    m_Value: 2.44
+    min: 0
+    max: 5
+  maxDisplace:
+    m_OverrideState: 1
+    m_Value: 1.64
+    min: 0
+    max: 5
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 0fb9b2b843d413045ae0a75c2f9596b1, type: 3}

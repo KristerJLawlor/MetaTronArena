@@ -14,6 +14,8 @@ public class NetworkPlayerController : HighLevelEntity
 
     public Vector2 LastInput;
     public Vector2 AimVector;
+    public Vector3 AimPosition;
+    public Vector3 AimDirection;
     public Rigidbody myRig;
     public float speed = 5;
     public float Overheat = 0;
@@ -21,6 +23,7 @@ public class NetworkPlayerController : HighLevelEntity
     public bool lastFire=false;
     public string pname;
     RaycastHit hit;
+    public Vector3 SpawnLoc;
 
     public Vector2 ParseV2(string v)
     {
@@ -28,6 +31,15 @@ public class NetworkPlayerController : HighLevelEntity
         string[] args = v.Trim('(').Trim(')').Split(',');
         temp.x = float.Parse(args[0]); 
         temp.y = float.Parse(args[1]);
+        return temp;
+    }
+    public Vector3 ParseV3(string v)
+    {
+        Vector3 temp = new Vector3();
+        string[] args = v.Trim('(').Trim(')').Split(',');
+        temp.x = float.Parse(args[0]);
+        temp.y = float.Parse(args[1]);
+        temp.z = float.Parse(args[2]);
         return temp;
     }
 
@@ -88,9 +100,12 @@ public class NetworkPlayerController : HighLevelEntity
     }
     public IEnumerator ROF()
     {
-        yield return new WaitForSeconds(.25f);
-        canShoot = true;
-        SendUpdate("CANSHOOT", canShoot.ToString());
+        if (Overheat < 100)
+        {
+            yield return new WaitForSeconds(.25f);
+            canShoot = true;
+            SendUpdate("CANSHOOT", canShoot.ToString());
+        }
     }
     public IEnumerator OH()
     {
@@ -103,7 +118,16 @@ public class NetworkPlayerController : HighLevelEntity
     
     public override void HandleMessage(string flag, string value)
     {
-        if(IsServer && flag == "MVC")
+        base.HandleMessage(flag, value);
+        if (IsClient && flag == "SHIELD")
+        {
+            OverShield = int.Parse(value);
+        }
+        if (IsClient && flag == "HP")
+        {
+            HP = int.Parse(value);
+        }
+        if (IsServer && flag == "MVC")
         {
             LastInput = ParseV2(value);
         }
@@ -119,15 +143,28 @@ public class NetworkPlayerController : HighLevelEntity
         if(IsClient && flag == "CANSHOOT")
         {
             canShoot= bool.Parse(value);
+            Debug.Log("CanShoot has been set to "+ value);
         }
         if(IsClient && flag == "OH")
         {
-            Overheat = int.Parse(value);
+            Overheat = float.Parse(value);
+            Debug.Log("Overheat level is " + value);
         }
         if(IsServer && flag == "RELOAD")
         {
             canShoot = false;
+            SendUpdate("CANSHOOT", "False");
             StartCoroutine(Reload());
+        }
+        if(IsServer && flag == "AP")
+        {
+            AimPosition = ParseV3(value);
+            
+        }
+        if(IsServer && flag == "AD")
+        {
+            AimDirection= ParseV3(value);
+            
         }
         
         if(flag == "PN")
@@ -148,11 +185,12 @@ public class NetworkPlayerController : HighLevelEntity
             if(lastFire && canShoot)
             {
                 
-                if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward,out hit))
+                if(Physics.Raycast(AimPosition, AimDirection,out hit))
                 {
-                    if(hit.collider == GameObject.FindGameObjectWithTag("Entity"))
+                    if(hit.collider.tag=="Entity")
                     {
                         hit.transform.GetComponent<HighLevelEntity>().Damage();
+                        Debug.Log("An entity was hit");
                     }
                 }
                 Overheat = Overheat + 5;
@@ -167,7 +205,7 @@ public class NetworkPlayerController : HighLevelEntity
                 SendUpdate("CANSHOOT", canShoot.ToString());
                 StartCoroutine(OH());
             }
-            if (!lastFire && Overheat > 0)
+            if (!lastFire && Overheat > 0 && Overheat<100)
             {
                 Overheat= Overheat - .1f;
                 SendUpdate("OH", Overheat.ToString());
@@ -178,7 +216,17 @@ public class NetworkPlayerController : HighLevelEntity
                 SendUpdate("MVC", myRig.velocity.ToString());
                 IsDirty= false;
             }
-            yield return new WaitForSeconds(.05f);
+            if (HP <= 0)
+            {
+                StartCoroutine(Respawn());
+            }
+            yield return new WaitForSeconds(.1f);
+        }
+        while (IsLocalPlayer)
+        {
+            SendCommand("AP", Camera.main.transform.position.ToString());
+            SendCommand("AD", Camera.main.transform.forward.ToString());
+            yield return new WaitForSeconds(.1f);
         }
     }
 
@@ -186,31 +234,41 @@ public class NetworkPlayerController : HighLevelEntity
     void Start()
     {
         myRig = GetComponent<Rigidbody>();
+        SpawnLoc= myRig.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (IsServer)
+        if (IsServer && HP>0)
         {
             myRig.velocity = transform.forward * LastInput.y * speed + transform.right * LastInput.x *speed;
             
             myRig.angularVelocity = new Vector3(0, AimVector.x, 0);
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit))
-            {
-                Debug.Log("Something is in sight");
-                if (hit.collider == GameObject.FindGameObjectWithTag("Entity"))
-                {
-                    Debug.Log("Player in sight");
-                }
-            }
+            Debug.DrawRay(AimPosition, AimDirection, Color.green);
+           
+            
+            
 
         }
         if (IsLocalPlayer)
         {
             Camera.main.transform.position = transform.position + transform.forward * .5f + this.transform.up;
             Camera.main.transform.forward = transform.forward;
-            
+            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward, Color.red);
+
+
+
         }
+    }
+    
+    public IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(3);
+        myRig.position= SpawnLoc;
+        HP = 100;
+        OverShield=50;
+        SendUpdate("SHIELD", OverShield.ToString());
+        SendUpdate("HP", HP.ToString());
     }
 }

@@ -48,6 +48,7 @@ public class NPMScript : NetworkComponent
         if (!IsLocalPlayer)
         {
             this.transform.GetChild(0).gameObject.SetActive(false);
+
         }
     }
 
