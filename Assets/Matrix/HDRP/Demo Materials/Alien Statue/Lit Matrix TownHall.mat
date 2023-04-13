@@ -19,7 +19,7 @@ Material:
   - _METALLICSPECGLOSSMAP
   - _NORMALMAP
   - _OCCLUSIONMAP
-  m_LightmapFlags: 2
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2225
@@ -135,7 +135,7 @@ Material:
     - _DropExponent: 20
     - _DropHeadShrink: 0.1
     - _DropLength: 30
-    - _DropSpeed: 0.87
+    - _DropSpeed: 0.01
     - _DstBlend: 0
     - _EditorEnd: 0
     - _EditorStart: 0

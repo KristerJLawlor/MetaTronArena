@@ -135,7 +135,7 @@ Material:
     - _DropExponent: 20
     - _DropHeadShrink: 0.1
     - _DropLength: 30
-    - _DropSpeed: 0.87
+    - _DropSpeed: 0.1
     - _DstBlend: 0
     - _EditorEnd: 0
     - _EditorStart: 0
@@ -183,7 +183,7 @@ Material:
     - _TransparentSortPriority: 0
     - _TransparentWritingMotionVec: 0
     - _TransparentZWrite: 1
-    - _UVTilling: 0.597
+    - _UVTilling: 1
     - _UseEmission: 0
     - _UseShadowThreshold: 0
     - _UseTriplanar: 0
