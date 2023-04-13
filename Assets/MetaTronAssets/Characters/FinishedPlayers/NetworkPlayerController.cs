@@ -180,6 +180,7 @@ public class NetworkPlayerController : HighLevelEntity
         }
         if(flag == "ISATTACKING")
         {
+            Debug.Log("flag ISATTACKING = " + value);
             isAttacking = bool.Parse(value);
             if(IsServer)
             {
@@ -188,7 +189,12 @@ public class NetworkPlayerController : HighLevelEntity
         }
         if(flag == "ISDYING")
         {
+            Debug.Log("flag ISDYING = " + value);
             isDying = bool.Parse(value);
+            if (IsServer)
+            {
+                SendUpdate("ISDYING", isDying.ToString());
+            }
         }
     }
 
@@ -291,6 +297,7 @@ public class NetworkPlayerController : HighLevelEntity
         //Animations in IsClient
         if(IsClient)
         {
+            Debug.Log("isAttacking = " + isAttacking + " : Velocity = " + this.myRig.velocity.magnitude + " : isDying = " + isDying);
             if(isAttacking && myRig.velocity.magnitude > 0.1f)
             {
                 Debug.Log("WALK ATTACK ANIMATION");
