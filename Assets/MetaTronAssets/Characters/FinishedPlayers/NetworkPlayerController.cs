@@ -77,15 +77,15 @@ public class NetworkPlayerController : HighLevelEntity
             if (s.started)
             {
                 Debug.Log("Shoot function");
-                SendCommand("FIRE", "True");
-                SendCommand("ISATTACKING", "True");
+                SendCommand("FIRE", "true");
+                SendCommand("ISATTACKING", true.ToString());
                 //isAttacking = true;
             }
 
             else if (s.canceled)
             {
-                SendCommand("FIRE", "False");
-                SendCommand("ISATTACKING", "False");
+                SendCommand("FIRE", "false");
+                SendCommand("ISATTACKING", false.ToString());
                 //isAttacking = false;
             }
         }
@@ -161,7 +161,7 @@ public class NetworkPlayerController : HighLevelEntity
         if(IsServer && flag == "RELOAD")
         {
             canShoot = false;
-            SendUpdate("CANSHOOT", "False");
+            SendUpdate("CANSHOOT", "false");
             StartCoroutine(Reload());
         }
         if(IsServer && flag == "AP")
@@ -249,7 +249,7 @@ public class NetworkPlayerController : HighLevelEntity
             {
                 //Send update to client that this player is dying
                 isDying = true;
-                SendUpdate("ISDYING", "True");
+                SendUpdate("ISDYING", "true");
                 StartCoroutine(Respawn());
             }
             yield return new WaitForSeconds(.1f);
@@ -297,30 +297,49 @@ public class NetworkPlayerController : HighLevelEntity
         //Animations in IsClient
         if(IsClient)
         {
+            PlayerAnimation.SetBool("Idle", false);
             Debug.Log("isAttacking = " + isAttacking + " : Velocity = " + this.myRig.velocity.magnitude + " : isDying = " + isDying);
             if(isAttacking && myRig.velocity.magnitude > 0.1f)
             {
                 Debug.Log("WALK ATTACK ANIMATION");
                 PlayerAnimation.SetBool("WalkAttack", true);
+
+                PlayerAnimation.SetBool("Idle", false);
+                PlayerAnimation.SetBool("Attack", false);
+                PlayerAnimation.SetBool("Walk", false);
             }
             else if(isAttacking && myRig.velocity.magnitude <= 0.1f)
             {
                 Debug.Log("SHOOT ANIMATION");
-                PlayerAnimation.SetTrigger("Shoot");
+                //PlayerAnimation.SetTrigger("Shoot");
+                PlayerAnimation.SetBool("Attack", true);
+
+                PlayerAnimation.SetBool("Idle", false);
+                PlayerAnimation.SetBool("WalkAttack", false);
+                PlayerAnimation.SetBool("Walk", false);
+
             }
             
-            if(!isAttacking && myRig.velocity.magnitude > 0.1f)
+            else if(!isAttacking && myRig.velocity.magnitude > 0.1f)
             {
                 Debug.Log("WALK ANIMATION");
                 PlayerAnimation.SetBool("Walk", true);
+
+                PlayerAnimation.SetBool("Idle", false);
+                PlayerAnimation.SetBool("Attack", false);
+                PlayerAnimation.SetBool("WalkAttack", false);
             }
             else if(!isAttacking && myRig.velocity.magnitude <= 0.1f)
             {
                 Debug.Log("IDLE ANIMATION");
                 PlayerAnimation.SetBool("Idle", true);
+
+                PlayerAnimation.SetBool("WalkAttack", false);
+                PlayerAnimation.SetBool("Attack", false);
+                PlayerAnimation.SetBool("Walk", false);
             }
 
-            if(isDying)
+            else if(HP <= 0)
             {
                 Debug.Log("DYING ANIMATION");
                 PlayerAnimation.SetTrigger("Die");
@@ -338,6 +357,6 @@ public class NetworkPlayerController : HighLevelEntity
         SendUpdate("HP", HP.ToString());
         //Send update to client that this player is no longer dying
         isDying = false;
-        SendUpdate("ISDYING", "False");
+        SendUpdate("ISDYING", "false");
     }
 }
