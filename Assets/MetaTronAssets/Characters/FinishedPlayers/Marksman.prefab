@@ -6838,7 +6838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34ca87a457962d459c49c36b9753ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
+  Type: 1
   Owner: -10
   NetId: -10
   IsInit: 0
