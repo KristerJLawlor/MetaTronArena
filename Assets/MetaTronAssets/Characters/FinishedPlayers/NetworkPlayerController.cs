@@ -23,6 +23,12 @@ public class NetworkPlayerController : HighLevelEntity
     RaycastHit hit;
     public Vector3 SpawnLoc;
 
+
+    //Variables for animators
+    public Animator PlayerAnimation;
+    public bool isAttacking = false;
+    public bool isDying = false;
+
     public Vector2 ParseV2(string v)
     {
         Vector2 temp = new Vector2();
@@ -70,13 +76,17 @@ public class NetworkPlayerController : HighLevelEntity
         {
             if (s.started)
             {
+                Debug.Log("Shoot function");
                 SendCommand("FIRE", "True");
-                
+                SendCommand("ISATTACKING", "True");
+                //isAttacking = true;
             }
 
             else if (s.canceled)
             {
                 SendCommand("FIRE", "False");
+                SendCommand("ISATTACKING", "False");
+                //isAttacking = false;
             }
         }
     }
@@ -168,6 +178,18 @@ public class NetworkPlayerController : HighLevelEntity
         {
             pname = value;
         }
+        if(flag == "ISATTACKING")
+        {
+            isAttacking = bool.Parse(value);
+            if(IsServer)
+            {
+                SendUpdate("ISATTACKING", isAttacking.ToString());
+            }
+        }
+        if(flag == "ISDYING")
+        {
+            isDying = bool.Parse(value);
+        }
     }
 
     public override void NetworkedStart()
@@ -219,6 +241,9 @@ public class NetworkPlayerController : HighLevelEntity
             }
             if (HP <= 0)
             {
+                //Send update to client that this player is dying
+                isDying = true;
+                SendUpdate("ISDYING", "True");
                 StartCoroutine(Respawn());
             }
             yield return new WaitForSeconds(.1f);
@@ -235,6 +260,7 @@ public class NetworkPlayerController : HighLevelEntity
     public void Start()
     {
         myRig = GetComponent<Rigidbody>();
+        PlayerAnimation = GetComponent<Animator>();
         SpawnLoc= myRig.position;
         
     }
@@ -262,6 +288,37 @@ public class NetworkPlayerController : HighLevelEntity
 
 
         }
+        //Animations in IsClient
+        if(IsClient)
+        {
+            if(isAttacking && myRig.velocity.magnitude > 0.1f)
+            {
+                Debug.Log("WALK ATTACK ANIMATION");
+                PlayerAnimation.SetBool("WalkAttack", true);
+            }
+            else if(isAttacking && myRig.velocity.magnitude <= 0.1f)
+            {
+                Debug.Log("SHOOT ANIMATION");
+                PlayerAnimation.SetTrigger("Shoot");
+            }
+            
+            if(!isAttacking && myRig.velocity.magnitude > 0.1f)
+            {
+                Debug.Log("WALK ANIMATION");
+                PlayerAnimation.SetBool("Walk", true);
+            }
+            else if(!isAttacking && myRig.velocity.magnitude <= 0.1f)
+            {
+                Debug.Log("IDLE ANIMATION");
+                PlayerAnimation.SetBool("Idle", true);
+            }
+
+            if(isDying)
+            {
+                Debug.Log("DYING ANIMATION");
+                PlayerAnimation.SetTrigger("Die");
+            }
+        }
     }
     
     public IEnumerator Respawn()
@@ -272,5 +329,8 @@ public class NetworkPlayerController : HighLevelEntity
         OverShield=50;
         SendUpdate("SHIELD", OverShield.ToString());
         SendUpdate("HP", HP.ToString());
+        //Send update to client that this player is no longer dying
+        isDying = false;
+        SendUpdate("ISDYING", "False");
     }
 }
