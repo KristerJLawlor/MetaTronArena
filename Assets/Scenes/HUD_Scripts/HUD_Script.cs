@@ -53,7 +53,7 @@ public class HUD_Script : MonoBehaviour
         if (Heatlvl < 0) Heatlvl = 0;
         Owner.MyId.IsInit &&
         */
-        if (!Owner.IsLocalPlayer)
+        if (Owner.MyId.IsInit && !Owner.IsLocalPlayer)
         {
             this.gameObject.SetActive(false);
         }
