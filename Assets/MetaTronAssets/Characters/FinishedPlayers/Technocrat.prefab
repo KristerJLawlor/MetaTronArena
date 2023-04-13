@@ -469,6 +469,7 @@ MonoBehaviour:
   IsDirty: 0
   HP: 100
   OverShield: 50
+  DamageScalar: 1
   LastInput: {x: 0, y: 0}
   AimVector: {x: 0, y: 0}
   AimPosition: {x: 0, y: 0, z: 0}
@@ -478,6 +479,7 @@ MonoBehaviour:
   Overheat: 0
   canShoot: 1
   lastFire: 0
+  passiveActive: 0
   pname: 
   SpawnLoc: {x: 0, y: 0, z: 0}
 --- !u!114 &1455179593715378672

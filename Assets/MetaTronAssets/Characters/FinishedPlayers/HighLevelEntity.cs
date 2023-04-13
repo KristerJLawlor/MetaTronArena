@@ -10,16 +10,18 @@ public class HighLevelEntity : NetworkComponent
     public float DamageScalar = 1;
 
 
-    public void Damage()
+    
+    public void Damage(float DMGMod)
     {
+        
         if (OverShield > 0)
         {
-            OverShield=OverShield-(5*DamageScalar);
+            OverShield=OverShield-(5*DMGMod);
             SendUpdate("SHIELD", OverShield.ToString());
         }
         else
         {
-            HP=HP-(5*DamageScalar);
+            HP=HP-(5*DMGMod);
             SendUpdate("HP", HP.ToString());
         }
     }

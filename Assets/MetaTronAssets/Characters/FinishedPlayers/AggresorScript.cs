@@ -12,12 +12,12 @@ public class AggresorScript : NetworkPlayerController
         if(IsClient && flag == "PA")
         {
             passiveActive=bool.Parse(value);
-            Debug.Log("In client passive handle message");
+            
         }
         if(IsClient && flag == "SCALAR")
         {
             DamageScalar=float.Parse(value);
-            Debug.Log("In client scalar handle message");
+            
         }
     }
     public override void NetworkedStart()
@@ -32,7 +32,6 @@ public class AggresorScript : NetworkPlayerController
     {
         base.Start();
         Entity = GameObject.FindGameObjectsWithTag("Entity");
-
     }
 
     // Update is called once per frame
@@ -41,24 +40,33 @@ public class AggresorScript : NetworkPlayerController
         base.Update();
         if (IsServer)
         {
+            passiveActive = false;
             foreach (var entity in Entity)
             {
-                if (entity != this && (entity.transform.position - transform.position).magnitude < 5)
+                if (entity.gameObject == this.gameObject)
+                {
+                    continue;
+                }
+                if ((entity.transform.position - this.transform.position).magnitude < 15)
                 {
                     passiveActive = true;
-                    DamageScalar = 1.5f;
-                    SendUpdate("PA", "true");
-                    SendUpdate("SCALAR", DamageScalar.ToString());
-                    Debug.Log("Server knows entity is in range");
+                    Debug.Log(entity.transform.name);
+                    break;
                 }
-                else
-                {
-                    passiveActive = false;
-                    DamageScalar = 1;
-                    SendUpdate("SCALAR", DamageScalar.ToString());
-                    SendUpdate("PA", "false");
-                }
+
             }
+            SendUpdate("PA", passiveActive.ToString());
         }
+    }
+    public override float OnDamage(float d, GameObject o)
+    {
+        if (passiveActive)
+        {
+            return d * 1.5f;
+        }
+        return d;
+        
+       
+      
     }
 }
