@@ -15,7 +15,6 @@ Material:
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords:
   - _ADD_PRECOMPUTED_VELOCITY
-  - _ANIMATEDOPENING_ON
   - _DEBUGCOLOR1_ON
   - _DISABLE_SSR
   m_LightmapFlags: 0
@@ -85,7 +84,7 @@ Material:
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 10
     - _AlphaSrcBlend: 1
-    - _AnimatedOpening: 1
+    - _AnimatedOpening: 0
     - _BlendMode: 0
     - _Blur: 2.5
     - _CullMode: 2
@@ -108,13 +107,13 @@ Material:
     - _Hue: 180
     - _Hue1: 83
     - _MaskDistortion: 1
-    - _OutlinesMult: 0
+    - _OutlinesMult: 0.19
     - _PushMult: -50
     - _ReceivesSSR: 0
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
     - _Speed: 1.2
-    - _SpeedAnimatedMode: 1.24
+    - _SpeedAnimatedMode: 0
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 0
@@ -135,7 +134,7 @@ Material:
     - _UseShadowThreshold: 0
     - _WallColorMult: 0
     - _WallOpening: 0
-    - _WallOutlineColorMult: 1
+    - _WallOutlineColorMult: 0.8
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
@@ -146,5 +145,5 @@ Material:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _HUE: {r: 0, g: 0, b: 0, a: 0}
-    - _MainColor: {r: 0, g: 0.8584018, b: 1, a: 0}
+    - _MainColor: {r: 0.21306513, g: 0.530396, b: 0.7924528, a: 1}
   m_BuildTextureStacks: []
