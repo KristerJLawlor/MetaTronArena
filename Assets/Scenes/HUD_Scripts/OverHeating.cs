@@ -23,6 +23,7 @@ public class OverHeating : MonoBehaviour
     void Update()
     {
         if (Heatlvl > MaxHeat) Heatlvl = MaxHeat;
+        if (Heatlvl < 0) Heatlvl = 0;
 
         LerpSpeed = 3f * Time.deltaTime;
 

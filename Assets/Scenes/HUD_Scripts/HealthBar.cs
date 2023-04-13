@@ -27,6 +27,8 @@ public class HealthBar : MonoBehaviour
     {
         if(CurShields > MaxShields) CurShields = MaxShields;
         if (CurHealth > MaxHealth) CurHealth = MaxHealth;
+        if (CurShields < 0) CurShields = 0;
+        if (CurHealth < 0) CurHealth = 0;
 
         LerpSpeed = 3f * Time.deltaTime;
 
