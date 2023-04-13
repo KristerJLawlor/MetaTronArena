@@ -11,6 +11,7 @@ public class HighLevelEntity : NetworkComponent
     public float maxOverShield = 50;
     public float DamageScalar = 1;
     public bool beenDamaged;
+    public float RegenTimer;
 
 
     
@@ -28,6 +29,7 @@ public class HighLevelEntity : NetworkComponent
             SendUpdate("HP", HP.ToString());
         }
         beenDamaged = true;
+        RegenTimer = 5.0f;
         SendUpdate("BD", beenDamaged.ToString());
     }
     public override void HandleMessage(string flag, string value)

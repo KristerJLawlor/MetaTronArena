@@ -47,16 +47,15 @@ public class SentryScript : NetworkPlayerController
             {
                 passiveActive = false;
                 SendUpdate("PA", passiveActive.ToString());
-                StartCoroutine(ShieldRegen());
+            }
+            RegenTimer -= Time.deltaTime;
+            if (RegenTimer <= 0.0f)
+            {
+                beenDamaged = false;
+                passiveActive = true;
+                SendUpdate("BD", beenDamaged.ToString());
+                SendUpdate("PA", passiveActive.ToString());
             }
         }
-    }
-    public IEnumerator ShieldRegen()
-    {
-        yield return new WaitForSeconds(2);
-        beenDamaged = false;
-        passiveActive = true;
-        SendUpdate("BD", beenDamaged.ToString());
-        SendUpdate("PA", passiveActive.ToString());
     }
 }
