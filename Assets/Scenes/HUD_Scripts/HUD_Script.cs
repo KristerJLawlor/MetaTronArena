@@ -51,8 +51,9 @@ public class HUD_Script : MonoBehaviour
         if (CurHealth < 0) CurHealth = 0;
         if (Heatlvl > MaxHeat) Heatlvl = MaxHeat;
         if (Heatlvl < 0) Heatlvl = 0;
+        Owner.MyId.IsInit &&
         */
-        if (Owner.MyId.IsInit && !Owner.IsLocalPlayer)
+        if (!Owner.IsLocalPlayer)
         {
             this.gameObject.SetActive(false);
         }
