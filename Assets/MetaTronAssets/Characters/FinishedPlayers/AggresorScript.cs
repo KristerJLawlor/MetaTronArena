@@ -14,11 +14,6 @@ public class AggresorScript : NetworkPlayerController
             passiveActive=bool.Parse(value);
             
         }
-        if(IsClient && flag == "SCALAR")
-        {
-            DamageScalar=float.Parse(value);
-            
-        }
     }
     public override void NetworkedStart()
     {
@@ -50,7 +45,6 @@ public class AggresorScript : NetworkPlayerController
                 if ((entity.transform.position - this.transform.position).magnitude < 15)
                 {
                     passiveActive = true;
-                    Debug.Log(entity.transform.name);
                     break;
                 }
 
@@ -65,8 +59,5 @@ public class AggresorScript : NetworkPlayerController
             return d * 1.5f;
         }
         return d;
-        
-       
-      
     }
 }

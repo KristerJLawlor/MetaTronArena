@@ -5,14 +5,58 @@ using UnityEngine;
 public class SentryScript : NetworkPlayerController
 {
     // Start is called before the first frame update
+    public override void HandleMessage(string flag, string value)
+    {
+        base.HandleMessage(flag, value);
+        if (IsClient && flag == "PA")
+        {
+            passiveActive = bool.Parse(value);
+
+        }
+    }
+    public override void NetworkedStart()
+    {
+        base.NetworkedStart();
+    }
+    public override IEnumerator SlowUpdate()
+    {
+        return base.SlowUpdate();
+       
+        
+       
+    }
     void Start()
     {
-        
+        base.Start();
+        passiveActive = true;
+        SendUpdate("PA", "true");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        base.Update();
+        if(IsServer)
+        {
+            if (passiveActive && OverShield < maxOverShield)
+            {
+                OverShield++;
+                SendUpdate("SHIELD", OverShield.ToString());
+            }
+            if (beenDamaged)
+            {
+                passiveActive = false;
+                SendUpdate("PA", passiveActive.ToString());
+                StartCoroutine(ShieldRegen());
+            }
+        }
+    }
+    public IEnumerator ShieldRegen()
+    {
+        yield return new WaitForSeconds(2);
+        beenDamaged = false;
+        passiveActive = true;
+        SendUpdate("BD", beenDamaged.ToString());
+        SendUpdate("PA", passiveActive.ToString());
     }
 }

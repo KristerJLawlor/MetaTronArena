@@ -164,7 +164,6 @@ public class NetworkPlayerController : HighLevelEntity
             AimDirection= ParseV3(value);
             
         }
-        
         if(flag == "PN")
         {
             pname = value;
@@ -191,6 +190,7 @@ public class NetworkPlayerController : HighLevelEntity
                         if(hit.collider.tag=="Entity")
                     {
                         hit.transform.GetComponent<HighLevelEntity>().Damage(OnDamage( this.DamageScalar, hit.transform.gameObject));
+                        
                     }
                     
                 }
