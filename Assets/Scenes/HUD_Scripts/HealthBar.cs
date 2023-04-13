@@ -7,6 +7,7 @@ public class HealthBar : MonoBehaviour
 {
     public Image ShieldBar;
     public Image[] HPoints;
+    public NetworkPlayerController Owner;
 
     float LerpSpeed;
     //temp values
@@ -18,6 +19,7 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Owner = transform.parent.gameObject.GetComponent<NetworkPlayerController>();
         CurHealth = MaxHealth;
         CurShields = MaxShields;
     }
@@ -25,11 +27,15 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if(CurShields > MaxShields) CurShields = MaxShields;
         if (CurHealth > MaxHealth) CurHealth = MaxHealth;
         if (CurShields < 0) CurShields = 0;
-        if (CurHealth < 0) CurHealth = 0;
-
+        if (CurHealth < 0) CurHealth = 0;*/
+        if(Owner.MyId.IsInit && !Owner.IsLocalPlayer)
+        {
+            this.gameObject.SetActive(false);
+        }
         LerpSpeed = 3f * Time.deltaTime;
 
         HealthbarFill();
@@ -37,15 +43,16 @@ public class HealthBar : MonoBehaviour
 
     public void HealthbarFill()
     {
-        ShieldBar.fillAmount = Mathf.Lerp(ShieldBar.fillAmount, CurShields / MaxShields, LerpSpeed);
+        ShieldBar.fillAmount = Mathf.Lerp(ShieldBar.fillAmount, Owner.OverShield/ Owner.maxOverShield, LerpSpeed);
         
         for(int i = 0; i< HPoints.Length; i++)
         {
-            HPoints[i].enabled = !DisplayHitPoint(CurHealth, i);
+            HPoints[i].enabled = !DisplayHitPoint(Owner.HP, i);
         }
     }
     public bool DisplayHitPoint(float health, int Hpoint)
     {
-        return ((Hpoint * 10) >= health);
+        return ((Hpoint * (Owner.maxHP/10)) >= health);
+        //Owner.NetId =tester
     }
 }
