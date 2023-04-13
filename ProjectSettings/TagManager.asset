@@ -12,6 +12,8 @@ TagManager:
   - MKS
   - STY
   - TCH
+  - SineBullet
+  - TurretSpawn
   layers:
   - Default
   - TransparentFX
