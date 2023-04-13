@@ -655,7 +655,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6918066807882455938}
   - component: {fileID: 6918066807882455941}
-  - component: {fileID: 6918066807882455940}
   m_Layer: 5
   m_Name: SuperAbility1
   m_TagString: Untagged
@@ -737,19 +736,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6918066807882455940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6918066807882455939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6618324edf7f75849a66836aa3d19b6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  A_Ability: {fileID: 6918066807882455941}
 --- !u!1 &6918066807976185907
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,9 +961,6 @@ GameObject:
   - component: {fileID: 6918066808000274981}
   - component: {fileID: 6918066808000274985}
   - component: {fileID: 6918066808000274984}
-  - component: {fileID: 6918066808000274987}
-  - component: {fileID: 6918066808000274986}
-  - component: {fileID: 6918066808000274989}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -1116,52 +1099,6 @@ MonoBehaviour:
   - {fileID: 6918066807983564429}
   - {fileID: 6918066807515272005}
   - {fileID: 6918066808387015350}
-  MaxHealth: 100
-  CurHealth: 0
-  MaxShields: 50
-  CurShields: 0
---- !u!114 &6918066808000274987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6918066808000274978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 816931a449d0bdb4a8f7739d53f9d053, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MTimer: {fileID: 6918066808012555621}
-  StartTime: 900
-  timer: 0
---- !u!114 &6918066808000274986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6918066808000274978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de5e44b323161964192789c651811212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OVBar: {fileID: 6918066807767564572}
-  MaxHeat: 100
-  Heatlvl: 0
---- !u!114 &6918066808000274989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6918066808000274978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed1e8f6f6585eb48a382d93949bc31e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   Icons:
   - {fileID: 21300000, guid: bcef3bb3e863a0b47bc29230664c187c, type: 3}
   - {fileID: 21300000, guid: 8c27f27f721c286448525b0b2549c3fd, type: 3}
@@ -1171,7 +1108,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4f61544908dd21c4b8398ba50b63a0d5, type: 3}
   - {fileID: 21300000, guid: b17f6817766118d45930fb33b327f92c, type: 3}
   - {fileID: 21300000, guid: ac85f5c2c44b66d4390c9159a97e8086, type: 3}
-  tester: 2
+  OVBar: {fileID: 6918066807767564572}
+  Owner: {fileID: 0}
+  MTimer: {fileID: 6918066808012555621}
+  A_Ability: {fileID: 6918066808022832492}
+  S_Ability: {fileID: 6918066807882455941}
+  StartTime: 900
+  timer: 0
+  MaxHealth: 100
+  CurHealth: 0
+  MaxShields: 50
+  CurShields: 0
+  MaxHeat: 100
+  Heatlvl: 0
 --- !u!1 &6918066808012555619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,7 +1211,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6918066808022832493}
   - component: {fileID: 6918066808022832492}
-  - component: {fileID: 6918066808022832495}
   m_Layer: 5
   m_Name: ActiveAbility1
   m_TagString: Untagged
@@ -1344,19 +1292,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6918066808022832495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6918066808022832490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6618324edf7f75849a66836aa3d19b6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  A_Ability: {fileID: 6918066808022832492}
 --- !u!1 &6918066808024319514
 GameObject:
   m_ObjectHideFlags: 0
