@@ -10,7 +10,6 @@ public class HighLevelEntity : NetworkComponent
     public float maxHP = 100;
     public float maxOverShield = 50;
     public float DamageScalar = 1;
-    public bool beenDamaged;
     public float RegenTimer;
 
 
@@ -28,9 +27,7 @@ public class HighLevelEntity : NetworkComponent
             HP=HP-(5*DMGMod);
             SendUpdate("HP", HP.ToString());
         }
-        beenDamaged = true;
         RegenTimer = 5.0f;
-        SendUpdate("BD", beenDamaged.ToString());
     }
     public override void HandleMessage(string flag, string value)
     {
@@ -43,10 +40,6 @@ public class HighLevelEntity : NetworkComponent
         {
             HP=float.Parse(value);
             
-        }
-        if(IsClient && flag == "BD")
-        {
-            beenDamaged=bool.Parse(value);
         }
     }
 

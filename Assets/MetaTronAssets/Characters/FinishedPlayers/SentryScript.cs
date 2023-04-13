@@ -43,17 +43,15 @@ public class SentryScript : NetworkPlayerController
                 OverShield++;
                 SendUpdate("SHIELD", OverShield.ToString());
             }
-            if (beenDamaged)
+            if (RegenTimer>0.0f)
             {
                 passiveActive = false;
                 SendUpdate("PA", passiveActive.ToString());
             }
             RegenTimer -= Time.deltaTime;
             if (RegenTimer <= 0.0f)
-            {
-                beenDamaged = false;
+            { 
                 passiveActive = true;
-                SendUpdate("BD", beenDamaged.ToString());
                 SendUpdate("PA", passiveActive.ToString());
             }
         }
