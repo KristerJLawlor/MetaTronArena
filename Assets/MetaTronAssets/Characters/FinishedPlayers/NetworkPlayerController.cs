@@ -20,6 +20,8 @@ public class NetworkPlayerController : HighLevelEntity
     public bool lastFire=false;
     public bool passiveActive = false;
     public string pname;
+    public int AbilityCharge = 1800;
+    public bool AbilityinUse = false;
     RaycastHit hit;
     public Vector3 SpawnLoc;
 
@@ -174,6 +176,10 @@ public class NetworkPlayerController : HighLevelEntity
             AimDirection= ParseV3(value);
             
         }
+        if(IsClient && flag == "ACHARGE")
+        {
+            AbilityCharge=int.Parse(value);
+        }
         if(flag == "PN")
         {
             pname = value;
@@ -251,6 +257,11 @@ public class NetworkPlayerController : HighLevelEntity
                 isDying = true;
                 SendUpdate("ISDYING", "true");
                 StartCoroutine(Respawn());
+            }
+            if(AbilityCharge < 1800 && !AbilityinUse)
+            {
+                AbilityCharge++;
+                SendUpdate("ACHARGE", AbilityCharge.ToString());
             }
             yield return new WaitForSeconds(.1f);
         }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MarksmanScript : NetworkPlayerController
 {// Start is called before the first frame update
@@ -12,6 +13,11 @@ public class MarksmanScript : NetworkPlayerController
         {
             passiveActive = bool.Parse(value);
 
+        }
+        if(IsServer && flag == "MINE")
+        {
+            AbilityCharge = 0;
+            SendUpdate("ACHARGE", AbilityCharge.ToString());
         }
     }
     public override void NetworkedStart()
@@ -58,5 +64,16 @@ public class MarksmanScript : NetworkPlayerController
             return d * 2.5f;
         }
         return d;
+    }
+    public void PlaceMine(InputAction.CallbackContext m)
+    {
+        if (IsLocalPlayer)
+        {
+            if (AbilityCharge == 1800)
+            {
+                SendCommand("MINE", " ");
+            }
+        }
+        
     }
 }
