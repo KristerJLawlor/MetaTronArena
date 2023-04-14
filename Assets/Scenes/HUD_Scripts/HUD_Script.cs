@@ -39,6 +39,8 @@ public class HUD_Script : MonoBehaviour
         CurShields = MaxShields;
         setAbility(Owner.Type);
         StartCoroutine(Timing());
+
+        ActiveMax(Owner.maxCharge);
     }
 
     // Update is called once per frame
@@ -60,8 +62,9 @@ public class HUD_Script : MonoBehaviour
         LerpSpeed = 3f * Time.deltaTime;
 
         HealthbarFill();
-        setAbility(Owner.Type);
+        //setAbility(Owner.Type);
         HeatbarFill();
+        ActiveValue(Owner.AbilityCharge);
         //Add owner values going to active ability and super abilities cooldowns here
 
     }
