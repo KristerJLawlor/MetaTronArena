@@ -4072,6 +4072,7 @@ MonoBehaviour:
   passiveActive: 0
   pname: 
   AbilityCharge: 1800
+  maxCharge: 1800
   AbilityinUse: 0
   SpawnLoc: {x: 0, y: 0, z: 0}
   PlayerAnimation: {fileID: 0}

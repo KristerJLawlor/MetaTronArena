@@ -64,10 +64,12 @@ public class SentryScript : NetworkPlayerController
             {
                 AbilityCharge = AbilityCharge - 3;
                 SendUpdate("ACHARGE", AbilityCharge.ToString());
+                GameObject.FindGameObjectWithTag("Barricade").SetActive(true);
             }
             else
             {
                 AbilityinUse = false;
+                GameObject.FindGameObjectWithTag("Barricade").SetActive(false);
             }
         }
     }
