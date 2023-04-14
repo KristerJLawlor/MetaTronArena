@@ -67,7 +67,7 @@ public class HUD_Script : MonoBehaviour
     }
     public void HeatbarFill()
     {
-        OVBar.fillAmount = Mathf.Lerp(OVBar.fillAmount, Heatlvl / MaxHeat, LerpSpeed);
+        OVBar.fillAmount = Mathf.Lerp(OVBar.fillAmount, Owner.Overheat / MaxHeat, LerpSpeed);
     }
     public void HealthbarFill()
     {
