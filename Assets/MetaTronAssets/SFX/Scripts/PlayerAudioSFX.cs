@@ -22,7 +22,7 @@ public class PlayerAudioSFX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,61 +33,61 @@ public class PlayerAudioSFX : MonoBehaviour
 
     public void PlayLazerAudio()
     {
-
+        PlayerAudio.PlayOneShot(LazerAudio);
     }
 
     public void PlayOverheatAudio()
     {
-
+        PlayerAudio.PlayOneShot(OverheatAudio);
     }
 
     public void PlayShieldHitAudio()
     {
-
+        PlayerAudio.PlayOneShot(ShieldHitAudio);
     }
 
     public void PlayShieldBreakAudio()
     {
-
+        PlayerAudio.PlayOneShot(ShieldBreakAudio);
     }
 
     public void PlayShieldRegenAudio()
     {
-
+        PlayerAudio.PlayOneShot(ShieldRegenAudio);
     }
 
     public void PlayWalkAudio()
     {
-
+        PlayerAudio.PlayOneShot(WalkAudio);
     }
 
     public void PlayRunAudio()
     {
-
+        PlayerAudio.PlayOneShot(RunAudio);
     }
 
     public void PlayHealthLowAudio()
     {
-
+        PlayerAudio.PlayOneShot(HealthLowAudio);
     }
 
     public void PlayDeathAudio()
     {
-
+        PlayerAudio.PlayOneShot(DeathAudio);
     }
 
     public void PlayTimerAudio()
     {
-
+        PlayerAudio.PlayOneShot(TimerAudio);
     }
 
     public void PlayPickupAudio()
     {
-
+        PlayerAudio.PlayOneShot(PickupAudio);
     }
 
     public void PlayScoreUpAudio()
     {
-
+        PlayerAudio.PlayOneShot(ScoreUpAudio);
     }
 }

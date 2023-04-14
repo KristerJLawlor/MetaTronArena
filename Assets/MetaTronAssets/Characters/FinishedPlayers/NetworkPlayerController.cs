@@ -30,6 +30,9 @@ public class NetworkPlayerController : HighLevelEntity
     public Animator PlayerAnimation;
     public bool isAttacking = false;
     public bool isDying = false;
+    //Variable for particle effect
+    public GameObject LaserPrefab;
+    public GameObject LaserBeam;
 
     public Vector2 ParseV2(string v)
     {
@@ -81,14 +84,14 @@ public class NetworkPlayerController : HighLevelEntity
                 Debug.Log("Shoot function");
                 SendCommand("FIRE", "true");
                 SendCommand("ISATTACKING", true.ToString());
-                //isAttacking = true;
+                
             }
 
             else if (s.canceled)
             {
                 SendCommand("FIRE", "false");
                 SendCommand("ISATTACKING", false.ToString());
-                //isAttacking = false;
+                
             }
         }
     }
@@ -124,6 +127,7 @@ public class NetworkPlayerController : HighLevelEntity
         canShoot= true;
         SendUpdate("CANSHOOT", canShoot.ToString());
         SendUpdate("OH", Overheat.ToString());
+        
     }
     
     public override void HandleMessage(string flag, string value)
@@ -145,11 +149,22 @@ public class NetworkPlayerController : HighLevelEntity
         {
             AimVector = ParseV2(value);
         }
+
+
+        if(IsClient && flag == "FIRE")
+        {
+            lastFire = bool.Parse(value);
+        }
+
+
         if(IsServer && flag == "FIRE")
         {
             lastFire = bool.Parse(value);
-            
+
+            //Sendupdate to client
+            SendUpdate("FIRE", lastFire.ToString());
         }
+
         if(IsClient && flag == "CANSHOOT")
         {
             canShoot= bool.Parse(value);
@@ -322,7 +337,6 @@ public class NetworkPlayerController : HighLevelEntity
             else if(isAttacking && myRig.velocity.magnitude <= 0.1f)
             {
                 Debug.Log("SHOOT ANIMATION");
-                //PlayerAnimation.SetTrigger("Shoot");
                 PlayerAnimation.SetBool("Attack", true);
 
                 PlayerAnimation.SetBool("Idle", false);
@@ -355,6 +369,18 @@ public class NetworkPlayerController : HighLevelEntity
                 Debug.Log("DYING ANIMATION");
                 PlayerAnimation.SetTrigger("Die");
             }
+
+            if(canShoot && isAttacking)
+            {
+                Debug.Log("Spawn Laser");
+                Destroy(LaserBeam);
+                LaserBeam = Instantiate(LaserPrefab, myRig.transform.position + new Vector3(0, 1.0f, 1.0f), myRig.transform.rotation);
+            }
+            else if(!canShoot && !isAttacking)
+            {
+                Destroy(LaserBeam, 1);
+            }
+
         }
     }
     

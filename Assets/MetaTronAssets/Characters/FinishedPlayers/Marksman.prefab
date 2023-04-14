@@ -7175,6 +7175,8 @@ MonoBehaviour:
   PlayerAnimation: {fileID: 0}
   isAttacking: 0
   isDying: 0
+  LaserPrefab: {fileID: 1395565506770744, guid: 9d5dbdf2d3c3c6b4eadc51123699d237,
+    type: 3}
   Entity: []
 --- !u!1 &8587882358522888354
 GameObject:

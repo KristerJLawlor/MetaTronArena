@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Hovl_Laser : MonoBehaviour
 {
-    public int damageOverTime = 30;
+    //public int damageOverTime = 30;
 
     public GameObject HitEffect;
     public float HitOffset = 0;
