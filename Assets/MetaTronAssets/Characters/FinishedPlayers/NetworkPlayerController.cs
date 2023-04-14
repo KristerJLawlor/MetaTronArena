@@ -16,6 +16,7 @@ public class NetworkPlayerController : HighLevelEntity
     public Rigidbody myRig;
     public float speed = 5;
     public float Overheat = 0;
+    public float MaxHeat = 100;
     public bool canShoot = true;
     public bool lastFire=false;
     public bool passiveActive = false;
