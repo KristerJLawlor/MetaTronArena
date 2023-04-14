@@ -15,10 +15,10 @@ public class HighLevelEntity : NetworkComponent
 
 
     
-    public void Damage(float DMGMod)
+    public void Damage(float DMGMod, bool piercing)
     {
         
-        if (OverShield > 0 && !AProunds)
+        if (OverShield > 0 && !piercing)
         {
             OverShield=OverShield-(5*DMGMod);
             SendUpdate("SHIELD", OverShield.ToString());

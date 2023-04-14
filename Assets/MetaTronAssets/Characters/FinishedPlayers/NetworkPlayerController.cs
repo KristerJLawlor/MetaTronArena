@@ -21,6 +21,7 @@ public class NetworkPlayerController : HighLevelEntity
     public bool passiveActive = false;
     public string pname;
     public int AbilityCharge = 1800;
+    public int maxCharge = 1800;
     public bool AbilityinUse = false;
     RaycastHit hit;
     public Vector3 SpawnLoc;
@@ -238,7 +239,7 @@ public class NetworkPlayerController : HighLevelEntity
                 {
                         if(hit.collider.tag=="Entity")
                     {
-                        hit.transform.GetComponent<HighLevelEntity>().Damage(OnDamage( this.DamageScalar, hit.transform.gameObject));
+                        hit.transform.GetComponent<HighLevelEntity>().Damage(OnDamage( this.DamageScalar, hit.transform.gameObject), this.AProunds);
                         
                     }
                     
@@ -273,7 +274,7 @@ public class NetworkPlayerController : HighLevelEntity
                 SendUpdate("ISDYING", "true");
                 StartCoroutine(Respawn());
             }
-            if(AbilityCharge < 1800 && !AbilityinUse)
+            if(AbilityCharge < maxCharge && !AbilityinUse)
             {
                 AbilityCharge++;
                 SendUpdate("ACHARGE", AbilityCharge.ToString());

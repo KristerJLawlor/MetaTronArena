@@ -27,7 +27,7 @@ public class TechnocratScript : NetworkPlayerController
             AbilityCharge = 0;
             SendUpdate("ACHARGE", AbilityCharge.ToString());
             DamageScalar = DamageScalar * .85f;
-            AProunds= true;
+            AProunds = true;
             SendUpdate("SETAPR", AProunds.ToString());
             StartCoroutine(APRTimer());
         }
