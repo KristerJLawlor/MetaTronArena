@@ -38,6 +38,7 @@ public class HUD_Script : MonoBehaviour
     void Start()
     {
         Owner = transform.parent.gameObject.GetComponent<NetworkPlayerController>();
+        ScoreList = new SortedList<string, int>();
         CurHealth = MaxHealth;
         CurShields = MaxShields;
         setAbility(Owner.Type);

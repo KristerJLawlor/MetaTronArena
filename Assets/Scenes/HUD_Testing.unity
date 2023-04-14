@@ -557,10 +557,23 @@ MonoBehaviour:
   - {fileID: 792026050}
   - {fileID: 862499212}
   - {fileID: 1129523568}
+  Icons: []
+  OVBar: {fileID: 0}
+  Owner: {fileID: 0}
+  MTimer: {fileID: 0}
+  IndScore: {fileID: 0}
+  ScoreBoard: {fileID: 0}
+  A_Ability: {fileID: 0}
+  S_Ability: {fileID: 0}
+  StartTime: 900
+  timer: 0
+  billScore: 1
   MaxHealth: 100
   CurHealth: 0
   MaxShields: 50
   CurShields: 0
+  MaxHeat: 100
+  Heatlvl: 0
 --- !u!114 &807146738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1601,6 +1614,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 94873709483914546, guid: d0d6a531d0701564bb345b940d9adfc1,
+        type: 3}
+      propertyPath: m_Text
+      value: 'ScoreBoard:
+
+        Name : 0
+
+        Name : 0
+
+        Name : 0
+
+        Name
+        : 0'
+      objectReference: {fileID: 0}
     - target: {fileID: 6918066808000274978, guid: d0d6a531d0701564bb345b940d9adfc1,
         type: 3}
       propertyPath: m_Name
