@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TechnocratScript : NetworkPlayerController
 {
@@ -19,6 +20,20 @@ public class TechnocratScript : NetworkPlayerController
         if(IsClient && flag == "HP")
         {
             HP=float.Parse(value);
+        }
+        if(IsServer && flag == "APR")
+        {
+            AbilityinUse = true;
+            AbilityCharge = 0;
+            SendUpdate("ACHARGE", AbilityCharge.ToString());
+            DamageScalar = DamageScalar * .85f;
+            AProunds= true;
+            SendUpdate("SETAPR", AProunds.ToString());
+            StartCoroutine(APRTimer());
+        }
+        if(IsClient && flag == "SETAPR")
+        {
+            AProunds = bool.Parse(value);
         }
     }
     public override void NetworkedStart()
@@ -57,5 +72,25 @@ public class TechnocratScript : NetworkPlayerController
             }
         }
         return d;
+    }
+    public void APRounds(InputAction.CallbackContext ap)
+    {
+        if (IsLocalPlayer)
+        {
+            if(AbilityCharge == 1800)
+            {
+                SendCommand("APR", " ");
+            }
+        }
+    }
+    public IEnumerator APRTimer()
+    {
+        yield return new WaitForSeconds(10);
+        DamageScalar = 1;
+        AProunds = false;
+        SendUpdate("SETAPR", AProunds.ToString());
+        AbilityinUse= false;
+        SendUpdate("ACHARGE", AbilityCharge.ToString());
+
     }
 }

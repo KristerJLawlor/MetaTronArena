@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SentryScript : NetworkPlayerController
 {
@@ -12,6 +14,10 @@ public class SentryScript : NetworkPlayerController
         {
             passiveActive = bool.Parse(value);
 
+        }
+        if(IsServer && flag == "RIOT")
+        {
+            AbilityinUse= bool.Parse(value);
         }
     }
     public override void NetworkedStart()
@@ -53,6 +59,33 @@ public class SentryScript : NetworkPlayerController
             { 
                 passiveActive = true;
                 SendUpdate("PA", passiveActive.ToString());
+            }
+            if (AbilityinUse && AbilityCharge > 0)
+            {
+                AbilityCharge = AbilityCharge - 3;
+                SendUpdate("ACHARGE", AbilityCharge.ToString());
+            }
+            else
+            {
+                AbilityinUse = false;
+            }
+        }
+    }
+    public void RiotShield(InputAction.CallbackContext rs)
+    {
+        if(IsLocalPlayer)
+        {
+            if(rs.started)
+            {
+                if (AbilityCharge > 0)
+                {
+                    SendCommand("RIOT", "true");
+                }
+            }
+            
+            if(rs.canceled)
+            {
+                SendCommand("RIOT", "false");
             }
         }
     }

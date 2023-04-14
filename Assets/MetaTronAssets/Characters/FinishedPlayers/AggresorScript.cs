@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AggresorScript : NetworkPlayerController
 {
@@ -13,6 +14,10 @@ public class AggresorScript : NetworkPlayerController
         {
             passiveActive=bool.Parse(value);
             
+        }
+        if(IsServer && flag == "SPRINT")
+        {
+            AbilityinUse=bool.Parse(value);
         }
     }
     public override void NetworkedStart()
@@ -50,6 +55,17 @@ public class AggresorScript : NetworkPlayerController
 
             }
             SendUpdate("PA", passiveActive.ToString());
+            if (AbilityinUse && AbilityCharge>0)
+            {
+                AbilityCharge = AbilityCharge - 3;
+                speed = 10;
+                SendUpdate("ACHARGE", AbilityCharge.ToString());
+            }
+            else
+            {
+                speed = 5;
+                AbilityinUse= false;
+            }
         }
     }
     public override float OnDamage(float d, GameObject o)
@@ -59,5 +75,22 @@ public class AggresorScript : NetworkPlayerController
             return d * 1.5f;
         }
         return d;
+    }
+    public void Sprint(InputAction.CallbackContext sp)
+    {
+        if (IsLocalPlayer)
+        {
+            if(sp.started)
+            {
+                if (AbilityCharge > 0)
+                {
+                    SendCommand("SPRINT", "true");
+                }
+            }
+            if(sp.canceled)
+            {
+                SendCommand("SPRINT", "false");
+            }
+        }
     }
 }

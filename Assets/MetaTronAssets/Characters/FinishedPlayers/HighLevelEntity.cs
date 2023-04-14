@@ -11,13 +11,14 @@ public class HighLevelEntity : NetworkComponent
     public float maxOverShield = 50;
     public float DamageScalar = 1;
     public float RegenTimer;
+    public bool AProunds = false;
 
 
     
     public void Damage(float DMGMod)
     {
         
-        if (OverShield > 0)
+        if (OverShield > 0 && !AProunds)
         {
             OverShield=OverShield-(5*DMGMod);
             SendUpdate("SHIELD", OverShield.ToString());
