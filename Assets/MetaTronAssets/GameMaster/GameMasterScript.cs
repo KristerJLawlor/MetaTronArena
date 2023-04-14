@@ -84,7 +84,7 @@ public class GameMasterScript : NetworkComponent
 
     public IEnumerator Playing()
     {
-        yield return new WaitForSeconds(100);
+        yield return new WaitForSeconds(1000);
 
         StartCoroutine(MyCore.DisconnectServer());
     }
