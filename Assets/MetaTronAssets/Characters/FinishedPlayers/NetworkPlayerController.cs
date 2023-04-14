@@ -30,7 +30,7 @@ public class NetworkPlayerController : HighLevelEntity
     public Animator PlayerAnimation;
     public bool isAttacking = false;
     public bool isDying = false;
-    //Variable for particle effect
+    //Variables for particle effect
     public GameObject LaserPrefab;
     public GameObject LaserBeam;
 
@@ -374,11 +374,11 @@ public class NetworkPlayerController : HighLevelEntity
             {
                 Debug.Log("Spawn Laser");
                 Destroy(LaserBeam);
-                LaserBeam = Instantiate(LaserPrefab, myRig.transform.position + new Vector3(0, 1.0f, 1.0f), myRig.transform.rotation);
+                LaserBeam = Instantiate(LaserPrefab, myRig.transform.forward + myRig.transform.position + new Vector3(0, 1.0f, 0), myRig.transform.rotation);
             }
-            else if(!canShoot && !isAttacking)
+            else
             {
-                Destroy(LaserBeam, 1);
+                Destroy(LaserBeam, 0.5f);
             }
 
         }
