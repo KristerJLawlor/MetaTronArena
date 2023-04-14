@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class SentryScript : NetworkPlayerController
 {
     // Start is called before the first frame update
+    public GameObject RiotShields;
     public override void HandleMessage(string flag, string value)
     {
         base.HandleMessage(flag, value);
@@ -64,12 +65,12 @@ public class SentryScript : NetworkPlayerController
             {
                 AbilityCharge = AbilityCharge - 3;
                 SendUpdate("ACHARGE", AbilityCharge.ToString());
-                GameObject.FindGameObjectWithTag("Barricade").SetActive(true);
+                RiotShields.SetActive(true);
             }
             else
             {
                 AbilityinUse = false;
-                GameObject.FindGameObjectWithTag("Barricade").SetActive(false);
+                RiotShields.SetActive(false);
             }
         }
     }
