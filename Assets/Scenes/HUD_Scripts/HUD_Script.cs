@@ -32,7 +32,7 @@ public class HUD_Script : MonoBehaviour
     public float MaxShields = 50;
     public float CurShields;
 
-    public float MaxHeat = 100;
+    public float MaxHeatTemp = 100;
     public float Heatlvl = 0;
     // Start is called before the first frame update
     void Start()
@@ -67,13 +67,6 @@ public class HUD_Script : MonoBehaviour
         }
         LerpSpeed = 3f * Time.deltaTime;
 
-        ScoreList.Add(Owner.pname, Owner.Score);
-        ScoreList.Add("Bill", billScore);
-        foreach (KeyValuePair<string, int> t in ScoreList)
-        {
-            Debug.Log(t.Key + "," + t.Value);
-        }
-
         MakeScore();
         billScore++;
         HealthbarFill();
@@ -82,6 +75,13 @@ public class HUD_Script : MonoBehaviour
         ActiveValue(Owner.AbilityCharge);
         ChangeScore();
         //Add owner values going to active ability and super abilities cooldowns here
+
+        ScoreList.Add(Owner.pname, Owner.Score);
+        ScoreList.Add("Bill", billScore);
+        foreach (KeyValuePair<string, int> t in ScoreList)
+        {
+            Debug.Log(t.Key + "," + t.Value);
+        }
 
     }
     public void MakeScore()
@@ -98,7 +98,7 @@ public class HUD_Script : MonoBehaviour
     }
     public void HeatbarFill()
     {
-        OVBar.fillAmount = Mathf.Lerp(OVBar.fillAmount, Owner.Overheat / MaxHeat, LerpSpeed);
+        OVBar.fillAmount = Mathf.Lerp(OVBar.fillAmount, Owner.Overheat / Owner.MaxHeat, LerpSpeed);
     }
     public void HealthbarFill()
     {
