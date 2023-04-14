@@ -25,6 +25,7 @@ public class NetworkPlayerController : HighLevelEntity
     public bool AbilityinUse = false;
     RaycastHit hit;
     public Vector3 SpawnLoc;
+    public int Score = 0;
 
 
     //Variables for animators

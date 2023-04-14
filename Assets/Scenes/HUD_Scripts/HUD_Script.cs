@@ -12,6 +12,8 @@ public class HUD_Script : MonoBehaviour
     public Image OVBar;
     public NetworkPlayerController Owner;
     public Text MTimer;
+    public Text IndScore;
+    public Text ScoreBoard;
     public Slider A_Ability;
     public Slider S_Ability;
 
@@ -21,8 +23,9 @@ public class HUD_Script : MonoBehaviour
 
     //keep
     float LerpSpeed;
-
+    public SortedList<string, int> ScoreList;
     //temp values
+    public int billScore = 1;
     public float MaxHealth = 100;
     public float CurHealth;
 
@@ -46,6 +49,8 @@ public class HUD_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         /*//Just in case
         if(CurShields > MaxShields) CurShields = MaxShields;
         if (CurHealth > MaxHealth) CurHealth = MaxHealth;
@@ -61,12 +66,34 @@ public class HUD_Script : MonoBehaviour
         }
         LerpSpeed = 3f * Time.deltaTime;
 
+        ScoreList.Add(Owner.pname, Owner.Score);
+        ScoreList.Add("Bill", billScore);
+        foreach (KeyValuePair<string, int> t in ScoreList)
+        {
+            Debug.Log(t.Key + "," + t.Value);
+        }
+
+        MakeScore();
+        billScore++;
         HealthbarFill();
         //setAbility(Owner.Type);
         HeatbarFill();
         ActiveValue(Owner.AbilityCharge);
+        ChangeScore();
         //Add owner values going to active ability and super abilities cooldowns here
 
+    }
+    public void MakeScore()
+    {
+        ScoreBoard.text = "ScoreBoard: \n";
+        foreach(KeyValuePair<string, int> scores in ScoreList)
+        {
+            ScoreBoard.text += scores.Key + ":" + scores.Value + "\n";
+        }
+    }
+    public void ChangeScore()
+    {
+        IndScore.text = "Score: " + Owner.Score;
     }
     public void HeatbarFill()
     {
