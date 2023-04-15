@@ -75,7 +75,13 @@ public class HUD_Script : MonoBehaviour
         ChangeScore();
         //Add owner values going to active ability and super abilities cooldowns here
 
-        ScoreList.Add(Owner.pname, Owner.Score);
+
+        foreach (var npm in GameObject.FindObjectsOfType<NetworkPlayerController>())
+        {
+            ScoreList.Add(npm.pname, npm.Score);
+        }
+
+
         ScoreList.Add("Bill", billScore);
         foreach (KeyValuePair<string, int> t in ScoreList)
         {
