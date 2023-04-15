@@ -18,7 +18,7 @@ public class MarksmanScript : NetworkPlayerController
         {
             AbilityCharge = 0;
             SendUpdate("ACHARGE", AbilityCharge.ToString());
-            GameObject temp = MyCore.NetCreateObject(5, this.Owner, this.transform.position);
+            GameObject temp = MyCore.NetCreateObject(5, this.Owner, this.transform.position+this.transform.up*-.3f);
         }
     }
     public override void NetworkedStart()
