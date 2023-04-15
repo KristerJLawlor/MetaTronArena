@@ -4527,6 +4527,11 @@ MonoBehaviour:
   DamageScalar: 1
   RegenTimer: 0
   AProunds: 0
+  PlayerOvershield: {fileID: 4963673896364119130}
+  ShieldIsHit: 0
+  ShieldIsBroken: 0
+  HealthIsLow: 0
+  ShieldRegen: 0
   LastInput: {x: 0, y: 0}
   AimVector: {x: 0, y: 0}
   AimPosition: {x: 0, y: 0, z: 0}
@@ -7656,6 +7661,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 661304926548269690, guid: de9c4d2c1e5cdf643bbd0df2e3edb142,
+        type: 3}
+      propertyPath: m_TagString
+      value: Overshield
+      objectReference: {fileID: 0}
     - target: {fileID: 661304926948823227, guid: de9c4d2c1e5cdf643bbd0df2e3edb142,
         type: 3}
       propertyPath: m_RootOrder
@@ -7728,6 +7738,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de9c4d2c1e5cdf643bbd0df2e3edb142, type: 3}
+--- !u!1 &4963673896364119130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 661304926548269690, guid: de9c4d2c1e5cdf643bbd0df2e3edb142,
+    type: 3}
+  m_PrefabInstance: {fileID: 5606962086829198880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4963673897033113243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 661304926948823227, guid: de9c4d2c1e5cdf643bbd0df2e3edb142,

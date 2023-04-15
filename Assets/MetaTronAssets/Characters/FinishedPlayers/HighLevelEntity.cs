@@ -12,6 +12,13 @@ public class HighLevelEntity : NetworkComponent
     public float DamageScalar = 1;
     public float RegenTimer;
     public bool AProunds = false;
+    public GameObject PlayerOvershield;
+
+    //SFX required variables
+    public bool ShieldIsHit = false;
+    public bool ShieldIsBroken = false;
+    public bool HealthIsLow = false;
+    public bool ShieldRegen = false;
 
 
     
@@ -22,6 +29,11 @@ public class HighLevelEntity : NetworkComponent
         {
             OverShield=OverShield-(5*DMGMod);
             SendUpdate("SHIELD", OverShield.ToString());
+            if(OverShield <= 0)
+            {
+                SendUpdate("SHIELDBREAK", true.ToString());
+            }
+
             if (!this.GetComponent<SentryScript>().SentryPassive && this.GetComponent<NetworkPlayerController>().SuperCharge < this.GetComponent<NetworkPlayerController>().maxSuperCharge)
             {
                 this.GetComponent<NetworkPlayerController>().SuperCharge += 2;
@@ -70,6 +82,10 @@ public class HighLevelEntity : NetworkComponent
         {
             this.GetComponent<NetworkPlayerController>().SuperCharge=int.Parse(value);
         }
+        if (IsClient && flag == "SHIELDBREAK")
+        {
+            ShieldIsBroken = bool.Parse(value);
+        }
     }
 
     public override void NetworkedStart()
@@ -85,12 +101,31 @@ public class HighLevelEntity : NetworkComponent
     // Start is called before the first frame update
     void Start()
     {
-        
+        //GameObject AudioScript = GameObject.GetComponent<PlayerAudioSFX>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(IsClient)
+        {
+            if(OverShield <= 0)
+            {
+                PlayerOvershield.SetActive(false);
+            }
+            else 
+            { 
+                PlayerOvershield.SetActive(true);
+            }
+
+            if(ShieldIsBroken)
+            {
+                ShieldIsBroken = false;
+                Debug.Log("Shield is Broken");
+                //Play Shield Broken SFX
+
+
+            }
+        }
     }
 }
