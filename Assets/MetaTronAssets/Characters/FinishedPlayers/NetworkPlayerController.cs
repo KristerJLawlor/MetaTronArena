@@ -26,7 +26,7 @@ public class NetworkPlayerController : HighLevelEntity
     public int SuperCharge = 0;
     public int maxSuperCharge = 50;
     public bool AbilityinUse = false;
-    RaycastHit hit;
+    public  RaycastHit hit;
     public Vector3 SpawnLoc;
     public int Score = 0;
 
@@ -127,7 +127,7 @@ public class NetworkPlayerController : HighLevelEntity
     }
     public IEnumerator OH()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5);
         Overheat= 0;
         canShoot= true;
         SendUpdate("CANSHOOT", canShoot.ToString());

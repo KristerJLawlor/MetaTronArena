@@ -47,6 +47,13 @@ public class HighLevelEntity : NetworkComponent
         }
         
     }
+    public void gotRailed()
+    {
+        OverShield = 0;
+        HP = 0;
+        SendUpdate("SHIELD",OverShield.ToString());
+        SendUpdate("HP", HP.ToString());
+    }
     public override void HandleMessage(string flag, string value)
     {
         if(IsClient && flag == "SHIELD")

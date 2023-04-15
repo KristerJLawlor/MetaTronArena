@@ -20,6 +20,12 @@ public class MarksmanScript : NetworkPlayerController
             SendUpdate("ACHARGE", AbilityCharge.ToString());
             GameObject temp = MyCore.NetCreateObject(5, this.Owner, this.transform.position+this.transform.up*-.3f);
         }
+        if(IsServer && flag == "RAIL")
+        {
+            SuperCharge= 0;
+            SendUpdate("SCHARGE", SuperCharge.ToString());
+            StartCoroutine(RailShot());
+        }
     }
     public override void NetworkedStart()
     {
@@ -79,6 +85,23 @@ public class MarksmanScript : NetworkPlayerController
     }
     public void Railgun(InputAction.CallbackContext rg)
     {
-
+        if(IsLocalPlayer)
+        {
+            if(SuperCharge==maxSuperCharge)
+            {
+                SendCommand("RAIL", " ");
+            }
+        }
+    }
+    public IEnumerator RailShot()
+    {
+        yield return new WaitForSeconds(1.5f);
+        if (Physics.Raycast(AimPosition, AimDirection, out hit))
+        {
+            if (hit.collider.tag == "Entity")
+            {
+                hit.transform.GetComponent<HighLevelEntity>().gotRailed();
+            }
+        }
     }
 }

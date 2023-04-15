@@ -36,6 +36,17 @@ public class TechnocratScript : NetworkPlayerController
         {
             AProunds = bool.Parse(value);
         }
+        if (IsServer && flag == "CLONE")
+        {
+            SuperCharge = 0;
+            SendUpdate("SCHARGE", SuperCharge.ToString());
+            GameObject temp = MyCore.NetCreateObject(6, this.Owner, this.transform.position + this.transform.right * .5f);
+            GameObject temp2 = MyCore.NetCreateObject(6, this.Owner, this.transform.position + this.transform.right * -.5f);
+        }
+        if(IsClient && flag == "SCHARGE")
+        {
+            SuperCharge=int.Parse(value);
+        }
     }
     public override void NetworkedStart()
     {
@@ -86,7 +97,13 @@ public class TechnocratScript : NetworkPlayerController
     }
     public void Clone(InputAction.CallbackContext cl)
     {
-
+        if (IsLocalPlayer)
+        {
+            if(SuperCharge == maxSuperCharge)
+            {
+                SendCommand("CLONE", " ");
+            }
+        }
     }
     public IEnumerator APRTimer()
     {
