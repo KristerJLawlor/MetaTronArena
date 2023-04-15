@@ -62,12 +62,12 @@ public class TechnocratScript : NetworkPlayerController
         {
             if(o.GetComponent<HighLevelEntity>().OverShield > 0 && OverShield<maxOverShield)
             {
-                OverShield+=2;
+                OverShield+=1;
                 SendUpdate("SHIELD", OverShield.ToString());
             }
-            else if(HP<maxHP)
+            else if(HP<maxHP && o.GetComponent<HighLevelEntity>().OverShield<=0)
             {
-                HP+=2;
+                HP+=1;
                 SendUpdate("HP", HP.ToString());
             }
         }
