@@ -308,16 +308,11 @@ public class NetworkPlayerController : HighLevelEntity
             myRig.velocity = transform.forward * LastInput.y * speed + transform.right * LastInput.x *speed;
             
             myRig.angularVelocity = new Vector3(0, AimVector.x, 0);
-            
-           
-            
-            
-
         }
         if (IsLocalPlayer)
         {
-            Camera.main.transform.position = transform.position + transform.forward * .5f + this.transform.up;
-            Camera.main.transform.forward = transform.forward;
+            Camera.main.transform.position = this.GetComponent<Rigidbody>().position + this.GetComponent<Rigidbody>().rotation*Vector3.forward * .8f + this.GetComponent<Rigidbody>().rotation*Vector3.up;
+            Camera.main.transform.forward = this.GetComponent<Rigidbody>().rotation*Vector3.forward;
             
 
 
