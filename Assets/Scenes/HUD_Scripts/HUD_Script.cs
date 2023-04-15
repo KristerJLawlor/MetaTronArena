@@ -50,8 +50,8 @@ public class HUD_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
+        setAbility(Owner.Type);
         /*//Just in case
         if(CurShields > MaxShields) CurShields = MaxShields;
         if (CurHealth > MaxHealth) CurHealth = MaxHealth;
@@ -67,7 +67,6 @@ public class HUD_Script : MonoBehaviour
         }
         LerpSpeed = 3f * Time.deltaTime;
 
-        MakeScore();
         billScore++;
         HealthbarFill();
         //setAbility(Owner.Type);
@@ -82,6 +81,7 @@ public class HUD_Script : MonoBehaviour
         {
             Debug.Log(t.Key + "," + t.Value);
         }
+        MakeScore();
 
     }
     public void MakeScore()
