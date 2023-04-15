@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class HUD_Script : MonoBehaviour
 {
@@ -76,13 +77,14 @@ public class HUD_Script : MonoBehaviour
         //Add owner values going to active ability and super abilities cooldowns here
 
 
-        foreach (var npm in GameObject.FindObjectsOfType<NetworkPlayerController>())
+        /*foreach (var npm in GameObject.FindObjectsOfType<NetworkPlayerController>())
         {
-            ScoreList.Add(npm.pname, npm.Score);
-        }
+            ScoreList[npm.Owner] = npm.Score;
+        }*/
 
 
-        ScoreList.Add("Bill", billScore);
+        ScoreList.Add(Owner.pname, Owner.Score);
+        ScoreList.Add("bill", billScore);
         foreach (KeyValuePair<string, int> t in ScoreList)
         {
             Debug.Log(t.Key + "," + t.Value);
@@ -92,10 +94,18 @@ public class HUD_Script : MonoBehaviour
     }
     public void MakeScore()
     {
+        
+
         ScoreBoard.text = "ScoreBoard: \n";
         foreach(KeyValuePair<string, int> scores in ScoreList)
         {
-            ScoreBoard.text += scores.Key + ":" + scores.Value + "\n";
+            /*var npm = FindObjectsOfType<NetworkPlayerController>().First((n) => n.Owner == scores.Key);
+            string pname = "Bill";
+            if(npm != null)
+            {
+                name = npm.pname;
+            }*/
+            ScoreBoard.text += Owner.pname + ":" + Owner.Score + "\n";
         }
     }
     public void ChangeScore()
