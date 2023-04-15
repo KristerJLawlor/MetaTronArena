@@ -774,13 +774,16 @@ MonoBehaviour:
   myRig: {fileID: 0}
   speed: 5
   Overheat: 0
+  MaxHeat: 100
   canShoot: 1
   lastFire: 0
   passiveActive: 0
   pname: 
   AbilityCharge: 1800
+  maxCharge: 1800
   AbilityinUse: 0
   SpawnLoc: {x: 0, y: 0, z: 0}
+  Score: 0
   PlayerAnimation: {fileID: 0}
   isAttacking: 0
   isDying: 0
@@ -7630,6 +7633,10 @@ PrefabInstance:
     - target: {fileID: 1065601003, guid: d7b7dbb3d1bbac444a7401f340375d09, type: 3}
       propertyPath: m_Name
       value: GreenField
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065601003, guid: d7b7dbb3d1bbac444a7401f340375d09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2023540076, guid: d7b7dbb3d1bbac444a7401f340375d09, type: 3}
       propertyPath: m_RootOrder

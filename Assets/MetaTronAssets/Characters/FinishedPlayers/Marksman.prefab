@@ -7158,6 +7158,7 @@ MonoBehaviour:
   maxOverShield: 50
   DamageScalar: 1
   RegenTimer: 0
+  AProunds: 0
   LastInput: {x: 0, y: 0}
   AimVector: {x: 0, y: 0}
   AimPosition: {x: 0, y: 0, z: 0}
@@ -7165,18 +7166,22 @@ MonoBehaviour:
   myRig: {fileID: 0}
   speed: 5
   Overheat: 0
+  MaxHeat: 100
   canShoot: 1
   lastFire: 0
   passiveActive: 0
   pname: 
   AbilityCharge: 1800
+  maxCharge: 1800
   AbilityinUse: 0
   SpawnLoc: {x: 0, y: 0, z: 0}
+  Score: 0
   PlayerAnimation: {fileID: 0}
   isAttacking: 0
   isDying: 0
   LaserPrefab: {fileID: 1395565506770744, guid: 9d5dbdf2d3c3c6b4eadc51123699d237,
     type: 3}
+  LaserBeam: {fileID: 0}
   Entity: []
 --- !u!1 &8587882358522888354
 GameObject:
@@ -7696,6 +7701,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PurpleField
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987940628898721873, guid: 3e6c7c3ddfa169541983193cdd69e973,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e6c7c3ddfa169541983193cdd69e973, type: 3}
