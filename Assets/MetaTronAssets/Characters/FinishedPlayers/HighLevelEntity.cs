@@ -22,10 +22,13 @@ public class HighLevelEntity : NetworkComponent
         {
             OverShield=OverShield-(5*DMGMod);
             SendUpdate("SHIELD", OverShield.ToString());
-            if (!this.GetComponent<SentryScript>().SentryPassive && this.GetComponent<NetworkPlayerController>().SuperCharge < this.GetComponent<NetworkPlayerController>().maxSuperCharge)
+            if (this.GetComponent<NetworkPlayerController>().IsServer)
             {
-                this.GetComponent<NetworkPlayerController>().SuperCharge += 2;
-                SendUpdate("SCHARGE", this.GetComponent<NetworkPlayerController>().SuperCharge.ToString());
+                if(this.GetComponent<NetworkPlayerController>().SuperCharge < this.GetComponent<NetworkPlayerController>().maxSuperCharge)
+                {
+                    this.GetComponent<NetworkPlayerController>().SuperCharge += 2;
+                    SendUpdate("SCHARGE", this.GetComponent<NetworkPlayerController>().SuperCharge.ToString());
+                }
             }
         }
         else
@@ -37,14 +40,8 @@ public class HighLevelEntity : NetworkComponent
     }
     public void trippedMine()
     {
-        if (OverShield > 0)
-        {
-            OverShield = 0;
-        }
-        else
-        {
-            HP -= 25;
-        }
+        HP -= 50;
+        RegenTimer = 5.0f;
         
     }
     public void gotRailed()

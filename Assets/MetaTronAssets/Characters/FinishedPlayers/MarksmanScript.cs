@@ -17,7 +17,6 @@ public class MarksmanScript : NetworkPlayerController
         if(IsServer && flag == "MINE")
         {
             AbilityCharge = 0;
-            SendUpdate("ACHARGE", AbilityCharge.ToString());
             GameObject temp = MyCore.NetCreateObject(5, this.Owner, this.transform.position+this.transform.up*-.3f);
         }
         if(IsServer && flag == "RAIL")
@@ -78,6 +77,7 @@ public class MarksmanScript : NetworkPlayerController
         {
             if (AbilityCharge == 1800)
             {
+                AbilityCharge = 0;
                 SendCommand("MINE", " ");
             }
         }

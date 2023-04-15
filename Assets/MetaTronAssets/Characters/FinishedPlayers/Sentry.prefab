@@ -3969,13 +3969,14 @@ MonoBehaviour:
   AbilityinUse: 0
   SpawnLoc: {x: 0, y: 0, z: 0}
   Score: 0
+  isSentry: 0
   PlayerAnimation: {fileID: 0}
   isAttacking: 0
   isDying: 0
   LaserPrefab: {fileID: 1395565506770744, guid: 9d5dbdf2d3c3c6b4eadc51123699d237,
     type: 3}
   LaserBeam: {fileID: 0}
-  RiotShields: {fileID: 0}
+  RiotShields: {fileID: 3146569116870129443}
   SentryPassive: 0
 --- !u!1 &4542501329015732162
 GameObject:
@@ -7812,6 +7813,12 @@ PrefabInstance:
 --- !u!4 &3146569116833521887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5886154616200946356, guid: 9b2f154ac2cc3da40aaf071ae2b675cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 8792444426715480683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3146569116870129443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5886154615971345736, guid: 9b2f154ac2cc3da40aaf071ae2b675cf,
     type: 3}
   m_PrefabInstance: {fileID: 8792444426715480683}
   m_PrefabAsset: {fileID: 0}
