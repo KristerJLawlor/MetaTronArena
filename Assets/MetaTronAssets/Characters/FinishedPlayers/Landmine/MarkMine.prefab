@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7897625406634090111}
   - component: {fileID: 7897625406634090110}
   - component: {fileID: 1534397288176391790}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MarkMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}

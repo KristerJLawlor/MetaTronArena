@@ -29,6 +29,7 @@ public class NetworkPlayerController : HighLevelEntity
     public  RaycastHit hit;
     public Vector3 SpawnLoc;
     public int Score = 0;
+    public bool isSentry = false;
 
 
     //Variables for animators

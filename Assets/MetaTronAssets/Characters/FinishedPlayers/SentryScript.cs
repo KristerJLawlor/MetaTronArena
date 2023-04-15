@@ -38,6 +38,7 @@ public class SentryScript : NetworkPlayerController
         base.Start();
         SentryPassive = true;
         SendUpdate("SP", "true");
+        isSentry = true;
     }
 
     // Update is called once per frame
