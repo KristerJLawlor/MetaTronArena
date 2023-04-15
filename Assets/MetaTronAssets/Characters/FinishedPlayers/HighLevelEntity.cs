@@ -30,6 +30,10 @@ public class HighLevelEntity : NetworkComponent
         }
         RegenTimer = 5.0f;
     }
+    public void trippedMine()
+    {
+        HP -= 25;
+    }
     public override void HandleMessage(string flag, string value)
     {
         if(IsClient && flag == "SHIELD")

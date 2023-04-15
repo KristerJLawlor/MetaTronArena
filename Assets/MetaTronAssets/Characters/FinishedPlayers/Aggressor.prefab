@@ -4510,6 +4510,7 @@ MonoBehaviour:
   maxOverShield: 50
   DamageScalar: 1
   RegenTimer: 0
+  AProunds: 0
   LastInput: {x: 0, y: 0}
   AimVector: {x: 0, y: 0}
   AimPosition: {x: 0, y: 0, z: 0}
@@ -4517,13 +4518,16 @@ MonoBehaviour:
   myRig: {fileID: 0}
   speed: 5
   Overheat: 0
+  MaxHeat: 100
   canShoot: 1
   lastFire: 0
   passiveActive: 0
   pname: 
   AbilityCharge: 1800
+  maxCharge: 1800
   AbilityinUse: 0
   SpawnLoc: {x: 0, y: 0, z: 0}
+  Score: 0
   PlayerAnimation: {fileID: 0}
   isAttacking: 0
   isDying: 0
@@ -7627,6 +7631,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RedForceField
+      objectReference: {fileID: 0}
+    - target: {fileID: 661304926548269690, guid: de9c4d2c1e5cdf643bbd0df2e3edb142,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 661304926948823227, guid: de9c4d2c1e5cdf643bbd0df2e3edb142,
         type: 3}
