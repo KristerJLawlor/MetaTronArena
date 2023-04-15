@@ -7,6 +7,7 @@ public class AggresorScript : NetworkPlayerController
 {
     // Start is called before the first frame update
     public GameObject[] Entity;
+    public bool SuperinUse = false;
     public override void HandleMessage(string flag, string value)
     {
         base.HandleMessage(flag, value);
@@ -14,6 +15,14 @@ public class AggresorScript : NetworkPlayerController
         {
             passiveActive=bool.Parse(value);
             
+        }
+        if (IsClient && flag == "OH")
+        {
+            Overheat=float.Parse(value);
+        }
+        if(IsClient && flag == "SCHARGE")
+        {
+            SuperCharge=int.Parse(value);
         }
         if(IsServer && flag == "SPRINT")
         {
@@ -66,6 +75,11 @@ public class AggresorScript : NetworkPlayerController
                 speed = 5;
                 AbilityinUse= false;
             }
+            if(SuperinUse)
+            {
+                Overheat = 0;
+                SendUpdate("OH", Overheat.ToString());
+            }
         }
     }
     public override float OnDamage(float d, GameObject o)
@@ -92,5 +106,23 @@ public class AggresorScript : NetworkPlayerController
                 SendCommand("SPRINT", "false");
             }
         }
+    }
+    public void Rage(InputAction.CallbackContext r)
+    {
+        if(IsLocalPlayer)
+        {
+            if(SuperCharge == maxSuperCharge)
+            {
+                SuperinUse = true;
+                StartCoroutine(endRage());
+            }
+        }
+    }
+    public IEnumerator endRage()
+    {
+        yield return new WaitForSeconds(15);
+        SuperinUse = false;
+        SuperCharge = 0;
+        SendUpdate("SCHARGE", SuperCharge.ToString());
     }
 }

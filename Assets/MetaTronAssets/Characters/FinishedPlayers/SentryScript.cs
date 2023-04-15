@@ -8,6 +8,7 @@ public class SentryScript : NetworkPlayerController
 {
     // Start is called before the first frame update
     public GameObject RiotShields;
+    public bool SentryPassive;
     public override void HandleMessage(string flag, string value)
     {
         base.HandleMessage(flag, value);
@@ -35,8 +36,8 @@ public class SentryScript : NetworkPlayerController
     void Start()
     {
         base.Start();
-        passiveActive = true;
-        SendUpdate("PA", "true");
+        SentryPassive = true;
+        SendUpdate("SP", "true");
     }
 
     // Update is called once per frame
@@ -45,21 +46,21 @@ public class SentryScript : NetworkPlayerController
         base.Update();
         if(IsServer)
         {
-            if (passiveActive && OverShield < maxOverShield)
+            if (SentryPassive && OverShield < maxOverShield)
             {
                 OverShield++;
                 SendUpdate("SHIELD", OverShield.ToString());
             }
             if (RegenTimer>0.0f)
             {
-                passiveActive = false;
-                SendUpdate("PA", passiveActive.ToString());
+                SentryPassive = false;
+                SendUpdate("SP", SentryPassive.ToString());
             }
             RegenTimer -= Time.deltaTime;
             if (RegenTimer <= 0.0f)
             { 
-                passiveActive = true;
-                SendUpdate("PA", passiveActive.ToString());
+                SentryPassive = true;
+                SendUpdate("SP", SentryPassive.ToString());
             }
             if (AbilityinUse && AbilityCharge > 0)
             {
@@ -91,5 +92,9 @@ public class SentryScript : NetworkPlayerController
                 SendCommand("RIOT", "false");
             }
         }
+    }
+    public void CapacitorBurst(InputAction.CallbackContext cb)
+    {
+
     }
 }

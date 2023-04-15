@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -82,6 +83,10 @@ public class TechnocratScript : NetworkPlayerController
                 SendCommand("APR", " ");
             }
         }
+    }
+    public void Clone(InputAction.CallbackContext cl)
+    {
+
     }
     public IEnumerator APRTimer()
     {

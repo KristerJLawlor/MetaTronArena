@@ -77,4 +77,8 @@ public class MarksmanScript : NetworkPlayerController
         }
         
     }
+    public void Railgun(InputAction.CallbackContext rg)
+    {
+
+    }
 }

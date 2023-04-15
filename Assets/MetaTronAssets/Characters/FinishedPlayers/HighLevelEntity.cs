@@ -22,6 +22,11 @@ public class HighLevelEntity : NetworkComponent
         {
             OverShield=OverShield-(5*DMGMod);
             SendUpdate("SHIELD", OverShield.ToString());
+            if (!this.GetComponent<SentryScript>().SentryPassive && this.GetComponent<NetworkPlayerController>().SuperCharge < this.GetComponent<NetworkPlayerController>().maxSuperCharge)
+            {
+                this.GetComponent<NetworkPlayerController>().SuperCharge += 2;
+                SendUpdate("SCHARGE", this.GetComponent<NetworkPlayerController>().SuperCharge.ToString());
+            }
         }
         else
         {
@@ -32,7 +37,15 @@ public class HighLevelEntity : NetworkComponent
     }
     public void trippedMine()
     {
-        HP -= 25;
+        if (OverShield > 0)
+        {
+            OverShield = 0;
+        }
+        else
+        {
+            HP -= 25;
+        }
+        
     }
     public override void HandleMessage(string flag, string value)
     {
@@ -45,6 +58,10 @@ public class HighLevelEntity : NetworkComponent
         {
             HP=float.Parse(value);
             
+        }
+        if(IsClient && flag == "SCHARGE")
+        {
+            this.GetComponent<NetworkPlayerController>().SuperCharge=int.Parse(value);
         }
     }
 

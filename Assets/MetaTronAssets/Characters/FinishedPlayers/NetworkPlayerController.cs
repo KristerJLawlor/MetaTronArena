@@ -23,6 +23,8 @@ public class NetworkPlayerController : HighLevelEntity
     public string pname;
     public int AbilityCharge = 1800;
     public int maxCharge = 1800;
+    public int SuperCharge = 0;
+    public int maxSuperCharge = 50;
     public bool AbilityinUse = false;
     RaycastHit hit;
     public Vector3 SpawnLoc;
@@ -198,6 +200,10 @@ public class NetworkPlayerController : HighLevelEntity
         {
             AbilityCharge=int.Parse(value);
         }
+        if(IsClient && flag == "SCHARGE")
+        {
+            SuperCharge=int.Parse(value);
+        }
         if(flag == "PN")
         {
             pname = value;
@@ -242,6 +248,11 @@ public class NetworkPlayerController : HighLevelEntity
                         if(hit.collider.tag=="Entity")
                     {
                         hit.transform.GetComponent<HighLevelEntity>().Damage(OnDamage( this.DamageScalar, hit.transform.gameObject), this.AProunds);
+                        if(passiveActive && SuperCharge<maxSuperCharge)
+                        {
+                            SuperCharge += 2;
+                            SendUpdate("SCHARGE", SuperCharge.ToString());
+                        }
                         
                     }
                     
