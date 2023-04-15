@@ -120,7 +120,7 @@ public class HighLevelEntity : NetworkComponent
                 ShieldIsBroken = false;
                 Debug.Log("Shield is Broken");
                 //Play Shield Broken SFX
-
+                this.GetComponent<PlayerAudioSFX>().PlayShieldBreakAudio();
 
             }
         }
