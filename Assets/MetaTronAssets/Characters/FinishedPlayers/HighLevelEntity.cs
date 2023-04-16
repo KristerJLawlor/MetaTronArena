@@ -81,11 +81,11 @@ public class HighLevelEntity : NetworkComponent
         {
             this.GetComponent<NetworkPlayerController>().SuperCharge=int.Parse(value);
         }
-        if (IsClient && flag == "SHIELDBREAK")
+        if(IsClient && flag == "SHIELDBREAK")
         {
             //will always tell client that ShieldIsBroken = true
             Debug.Log("Inside SHIELDBREAK HM");
-            ShieldIsBroken = bool.Parse(value);
+            ShieldIsBroken = true;
         }
     }
 
@@ -125,12 +125,12 @@ public class HighLevelEntity : NetworkComponent
                 this.transform.GetChild(2).gameObject.SetActive(true);
             }
             Debug.Log("Shield is Broken = " + ShieldIsBroken);
-            if (ShieldIsBroken)
+            if (IsLocalPlayer && ShieldIsBroken)
             {
                 ShieldIsBroken = false;
                 Debug.Log("Shield is Broken");
                 //Play Shield Broken SFX
-                AudioScript.PlayShieldBreakAudio();
+                this.GetComponent<PlayerAudioSFX>().PlayShieldBreakAudio();
                 Debug.Log("Playing OneShot");
             }
         }
