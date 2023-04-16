@@ -28,6 +28,11 @@ public class AggresorScript : NetworkPlayerController
         {
             AbilityinUse=bool.Parse(value);
         }
+        if(IsServer && flag == "RAGE")
+        {
+            SuperinUse = true;
+            StartCoroutine(endRage());
+        }
     }
     public override void NetworkedStart()
     {
@@ -113,8 +118,7 @@ public class AggresorScript : NetworkPlayerController
         {
             if(SuperCharge == maxSuperCharge)
             {
-                SuperinUse = true;
-                StartCoroutine(endRage());
+                SendCommand("RAGE", " ");
             }
         }
     }

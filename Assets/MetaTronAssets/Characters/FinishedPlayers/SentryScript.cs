@@ -26,6 +26,10 @@ public class SentryScript : NetworkPlayerController
         {
             isRegen = bool.Parse(value);
         }
+        if(IsClient && flag == "SHACTIVE")
+        {
+            RiotShields.SetActive(bool.Parse(value));
+        }
     }
     public override void NetworkedStart()
     {
@@ -74,11 +78,13 @@ public class SentryScript : NetworkPlayerController
                 AbilityCharge = AbilityCharge - 3;
                 SendUpdate("ACHARGE", AbilityCharge.ToString());
                 RiotShields.SetActive(true);
+                SendUpdate("SHACTIVE", "true");
             }
             else
             {
                 AbilityinUse = false;
                 RiotShields.SetActive(false);
+                SendUpdate("SHACTIVE", "false");
             }
         }
         if(IsLocalPlayer)
