@@ -83,8 +83,8 @@ public class HUD_Script : MonoBehaviour
         }*/
 
 
-        ScoreList.Add(Owner.pname, Owner.Score);
-        ScoreList.Add("bill", billScore);
+        //ScoreList.Add(Owner.pname, Owner.Score);
+        //ScoreList.Add("bill", billScore);
         foreach (KeyValuePair<string, int> t in ScoreList)
         {
             Debug.Log(t.Key + "," + t.Value);

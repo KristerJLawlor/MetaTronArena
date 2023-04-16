@@ -211,7 +211,7 @@ public class NetworkPlayerController : HighLevelEntity
         }
         if(flag == "ISATTACKING")
         {
-            Debug.Log("flag ISATTACKING = " + value);
+            //Debug.Log("flag ISATTACKING = " + value);
             isAttacking = bool.Parse(value);
             if(IsServer)
             {
@@ -220,7 +220,7 @@ public class NetworkPlayerController : HighLevelEntity
         }
         if(flag == "ISDYING")
         {
-            Debug.Log("flag ISDYING = " + value);
+            //Debug.Log("flag ISDYING = " + value);
             isDying = bool.Parse(value);
             if (IsServer)
             {
@@ -315,6 +315,7 @@ public class NetworkPlayerController : HighLevelEntity
     // Update is called once per frame
     public void Update()
     {
+        base.Update();
         if (IsServer && HP>0)
         {
             myRig.velocity = transform.forward * LastInput.y * speed + transform.right * LastInput.x *speed;
@@ -334,10 +335,10 @@ public class NetworkPlayerController : HighLevelEntity
         if(IsClient)
         {
             PlayerAnimation.SetBool("Idle", false);
-            Debug.Log("isAttacking = " + isAttacking + " : Velocity = " + this.myRig.velocity.magnitude + " : isDying = " + isDying);
+            
             if(isAttacking && myRig.velocity.magnitude > 0.1f)
             {
-                Debug.Log("WALK ATTACK ANIMATION");
+                //Debug.Log("WALK ATTACK ANIMATION");
                 PlayerAnimation.SetBool("WalkAttack", true);
 
                 PlayerAnimation.SetBool("Idle", false);
@@ -346,7 +347,7 @@ public class NetworkPlayerController : HighLevelEntity
             }
             else if(isAttacking && myRig.velocity.magnitude <= 0.1f)
             {
-                Debug.Log("SHOOT ANIMATION");
+                //Debug.Log("SHOOT ANIMATION");
                 PlayerAnimation.SetBool("Attack", true);
 
                 PlayerAnimation.SetBool("Idle", false);
@@ -357,7 +358,7 @@ public class NetworkPlayerController : HighLevelEntity
             
             else if(!isAttacking && myRig.velocity.magnitude > 0.1f)
             {
-                Debug.Log("WALK ANIMATION");
+                //Debug.Log("WALK ANIMATION");
                 PlayerAnimation.SetBool("Walk", true);
 
                 PlayerAnimation.SetBool("Idle", false);
@@ -366,7 +367,7 @@ public class NetworkPlayerController : HighLevelEntity
             }
             else if(!isAttacking && myRig.velocity.magnitude <= 0.1f)
             {
-                Debug.Log("IDLE ANIMATION");
+                //Debug.Log("IDLE ANIMATION");
                 PlayerAnimation.SetBool("Idle", true);
 
                 PlayerAnimation.SetBool("WalkAttack", false);
@@ -376,13 +377,13 @@ public class NetworkPlayerController : HighLevelEntity
 
             else if(HP <= 0)
             {
-                Debug.Log("DYING ANIMATION");
+                //Debug.Log("DYING ANIMATION");
                 PlayerAnimation.SetTrigger("Die");
             }
 
             if(canShoot && isAttacking)
             {
-                Debug.Log("Spawn Laser");
+                //Debug.Log("Spawn Laser");
                 Destroy(LaserBeam);
                 LaserBeam = Instantiate(LaserPrefab, myRig.transform.forward + myRig.transform.position + new Vector3(0, 1.0f, 0), myRig.transform.rotation);
             }

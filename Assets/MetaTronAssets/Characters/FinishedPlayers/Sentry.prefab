@@ -3817,7 +3817,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c2d9be951814b274794d48585fd5fa15, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3951,6 +3951,7 @@ MonoBehaviour:
   RegenTimer: 0
   AProunds: 0
   PlayerOvershield: {fileID: 5104472370617209038}
+  AudioScript: {fileID: 0}
   ShieldIsHit: 0
   ShieldIsBroken: 0
   HealthIsLow: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAudioSFX : MonoBehaviour
 {
     public AudioSource PlayerAudio;
+
     public AudioClip LazerAudio;
     public AudioClip OverheatAudio;
     public AudioClip ShieldHitAudio;
@@ -33,61 +34,61 @@ public class PlayerAudioSFX : MonoBehaviour
 
     public void PlayLazerAudio()
     {
-        PlayerAudio.PlayOneShot(LazerAudio);
+        PlayerAudio.PlayOneShot(LazerAudio, 1);
     }
 
     public void PlayOverheatAudio()
     {
-        PlayerAudio.PlayOneShot(OverheatAudio);
+        PlayerAudio.PlayOneShot(OverheatAudio, 1);
     }
 
     public void PlayShieldHitAudio()
     {
-        PlayerAudio.PlayOneShot(ShieldHitAudio);
+        PlayerAudio.PlayOneShot(ShieldHitAudio, 1);
     }
 
     public void PlayShieldBreakAudio()
     {
-        PlayerAudio.PlayOneShot(ShieldBreakAudio);
+        PlayerAudio.PlayOneShot(ShieldBreakAudio, 1);
     }
 
     public void PlayShieldRegenAudio()
     {
-        PlayerAudio.PlayOneShot(ShieldRegenAudio);
+        PlayerAudio.PlayOneShot(ShieldRegenAudio, 1);
     }
 
     public void PlayWalkAudio()
     {
-        PlayerAudio.PlayOneShot(WalkAudio);
+        PlayerAudio.PlayOneShot(WalkAudio, 1);
     }
 
     public void PlayRunAudio()
     {
-        PlayerAudio.PlayOneShot(RunAudio);
+        PlayerAudio.PlayOneShot(RunAudio, 1);
     }
 
     public void PlayHealthLowAudio()
     {
-        PlayerAudio.PlayOneShot(HealthLowAudio);
+        PlayerAudio.PlayOneShot(HealthLowAudio, 1);
     }
 
     public void PlayDeathAudio()
     {
-        PlayerAudio.PlayOneShot(DeathAudio);
+        PlayerAudio.PlayOneShot(DeathAudio, 1);
     }
 
     public void PlayTimerAudio()
     {
-        PlayerAudio.PlayOneShot(TimerAudio);
+        PlayerAudio.PlayOneShot(TimerAudio, 1);
     }
 
     public void PlayPickupAudio()
     {
-        PlayerAudio.PlayOneShot(PickupAudio);
+        PlayerAudio.PlayOneShot(PickupAudio, 1);
     }
 
     public void PlayScoreUpAudio()
     {
-        PlayerAudio.PlayOneShot(ScoreUpAudio);
+        PlayerAudio.PlayOneShot(ScoreUpAudio, 1);
     }
 }
