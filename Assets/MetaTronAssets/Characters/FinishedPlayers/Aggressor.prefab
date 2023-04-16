@@ -4495,6 +4495,7 @@ MonoBehaviour:
   PlayerAudio: {fileID: -4878495747329717143}
   LazerAudio: {fileID: 8300000, guid: 8f263da03d16d5345b2cb23f7143423e, type: 3}
   OverheatAudio: {fileID: 8300000, guid: 11cc00851f508354c88ac36ec6b60121, type: 3}
+  ExhaustAudio: {fileID: 8300000, guid: 42508f47469a22e4c88b1a8162d0e2b3, type: 3}
   ShieldHitAudio: {fileID: 8300000, guid: bfae77ff7cec84a45bcf342fb41473b0, type: 3}
   ShieldBreakAudio: {fileID: 8300000, guid: a8c6f0c2954e04446ac993fd157bf817, type: 3}
   ShieldRegenAudio: {fileID: 8300000, guid: 37d585722c5668040b8c49502a4356b3, type: 3}
@@ -4528,6 +4529,7 @@ MonoBehaviour:
   RegenTimer: 0
   AProunds: 0
   PlayerOvershield: {fileID: 4963673896364119130}
+  AudioScript: {fileID: 0}
   ShieldIsHit: 0
   ShieldIsBroken: 0
   HealthIsLow: 0
@@ -4551,12 +4553,16 @@ MonoBehaviour:
   AbilityinUse: 0
   SpawnLoc: {x: 0, y: 0, z: 0}
   Score: 0
+  isSentry: 0
   PlayerAnimation: {fileID: 0}
   isAttacking: 0
   isDying: 0
   LaserPrefab: {fileID: 1395565506770744, guid: 9d5dbdf2d3c3c6b4eadc51123699d237,
     type: 3}
   LaserBeam: {fileID: 0}
+  isOH: 0
+  canPew: 1
+  isReloading: 0
   Entity: []
   SuperinUse: 0
 --- !u!1 &5681559356532002949

@@ -30,6 +30,7 @@ public class HighLevelEntity : NetworkComponent
         {
             OverShield=OverShield-(5*DMGMod);
             SendUpdate("SHIELD", OverShield.ToString());
+            SendUpdate("SHIELDHIT", true.ToString());
             if (OverShield <= 0)
             {
                 Debug.Log("Sendupdate for shieldbreak");
@@ -75,6 +76,11 @@ public class HighLevelEntity : NetworkComponent
         if(IsClient && flag == "HP")
         {
             HP=float.Parse(value);
+
+            if(HP == 50)
+            {
+                HealthIsLow = true;
+            }
             
         }
         if(IsClient && flag == "SCHARGE")
@@ -86,6 +92,12 @@ public class HighLevelEntity : NetworkComponent
             //will always tell client that ShieldIsBroken = true
             Debug.Log("Inside SHIELDBREAK HM");
             ShieldIsBroken = true;
+        }
+        if(IsClient && flag == "SHIELDHIT")
+        {
+            //will always tell client that ShieldIsHit = true
+            Debug.Log("Inside SHIELDHIT HM");
+            ShieldIsHit = true;
         }
     }
 
@@ -102,7 +114,7 @@ public class HighLevelEntity : NetworkComponent
     // Start is called before the first frame update
     void Start()
     {
-        AudioScript = this.GetComponent<PlayerAudioSFX>();
+        //AudioScript = this.GetComponent<PlayerAudioSFX>();
 
     }
 
@@ -125,14 +137,35 @@ public class HighLevelEntity : NetworkComponent
                 this.transform.GetChild(2).gameObject.SetActive(true);
             }
             Debug.Log("Shield is Broken = " + ShieldIsBroken);
-            if (IsLocalPlayer && ShieldIsBroken)
+
+            if (IsLocalPlayer)
             {
-                ShieldIsBroken = false;
-                Debug.Log("Shield is Broken");
-                //Play Shield Broken SFX
-                this.GetComponent<PlayerAudioSFX>().PlayShieldBreakAudio();
-                Debug.Log("Playing OneShot");
+                if(ShieldIsHit && OverShield > 0)
+                {
+                    ShieldIsHit = false;
+                    Debug.Log("Shield is hit");
+                    //Play shield hit audio SFX
+                    this.GetComponent<PlayerAudioSFX>().PlayShieldHitAudio();
+                }
+
+
+                if(ShieldIsBroken)
+                {
+                    ShieldIsBroken = false;
+                    Debug.Log("Shield is Broken");
+                    //Play Shield Broken SFX
+                    this.GetComponent<PlayerAudioSFX>().PlayShieldBreakAudio();
+                    Debug.Log("Playing OneShot");
+                }
+
+                if(HealthIsLow)
+                {
+                    HealthIsLow = false;
+                    //Play health low alert SFX
+                    this.GetComponent<PlayerAudioSFX>().PlayHealthLowAudio();
+                }
             }
+
         }
     }
 }

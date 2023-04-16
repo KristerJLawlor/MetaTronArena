@@ -8,6 +8,7 @@ public class PlayerAudioSFX : MonoBehaviour
 
     public AudioClip LazerAudio;
     public AudioClip OverheatAudio;
+    public AudioClip ExhaustAudio;
     public AudioClip ShieldHitAudio;
     public AudioClip ShieldBreakAudio;
     public AudioClip ShieldRegenAudio;
@@ -42,6 +43,11 @@ public class PlayerAudioSFX : MonoBehaviour
         PlayerAudio.PlayOneShot(OverheatAudio, 1);
     }
 
+    public void PlayExhaustAudio()
+    {
+        PlayerAudio.PlayOneShot(ExhaustAudio, 1);
+    }
+
     public void PlayShieldHitAudio()
     {
         PlayerAudio.PlayOneShot(ShieldHitAudio, 1);
@@ -69,26 +75,26 @@ public class PlayerAudioSFX : MonoBehaviour
 
     public void PlayHealthLowAudio()
     {
-        PlayerAudio.PlayOneShot(HealthLowAudio, 1);
+        PlayerAudio.PlayOneShot(HealthLowAudio, .5f);
     }
 
     public void PlayDeathAudio()
     {
-        PlayerAudio.PlayOneShot(DeathAudio, 1);
+        PlayerAudio.PlayOneShot(DeathAudio, .5f);
     }
 
     public void PlayTimerAudio()
     {
-        PlayerAudio.PlayOneShot(TimerAudio, 1);
+        PlayerAudio.PlayOneShot(TimerAudio, .5f);
     }
 
     public void PlayPickupAudio()
     {
-        PlayerAudio.PlayOneShot(PickupAudio, 1);
+        PlayerAudio.PlayOneShot(PickupAudio, .8f);
     }
 
     public void PlayScoreUpAudio()
     {
-        PlayerAudio.PlayOneShot(ScoreUpAudio, 1);
+        PlayerAudio.PlayOneShot(ScoreUpAudio, .8f);
     }
 }

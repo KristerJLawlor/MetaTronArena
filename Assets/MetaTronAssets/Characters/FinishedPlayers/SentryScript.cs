@@ -9,6 +9,7 @@ public class SentryScript : NetworkPlayerController
     // Start is called before the first frame update
     public GameObject RiotShields;
     public bool SentryPassive;
+    public bool isRegen = false;
     public override void HandleMessage(string flag, string value)
     {
         base.HandleMessage(flag, value);
@@ -20,6 +21,10 @@ public class SentryScript : NetworkPlayerController
         if(IsServer && flag == "RIOT")
         {
             AbilityinUse= bool.Parse(value);
+        }
+        if(IsClient && flag == "ISREGEN")
+        {
+            isRegen = bool.Parse(value);
         }
     }
     public override void NetworkedStart()
@@ -51,6 +56,7 @@ public class SentryScript : NetworkPlayerController
             {
                 OverShield++;
                 SendUpdate("SHIELD", OverShield.ToString());
+                SendUpdate("ISREGEN", true.ToString());
             }
             if (RegenTimer>0.0f)
             {
@@ -73,6 +79,14 @@ public class SentryScript : NetworkPlayerController
             {
                 AbilityinUse = false;
                 RiotShields.SetActive(false);
+            }
+        }
+        if(IsLocalPlayer)
+        {
+            if(isRegen)
+            {
+                isRegen = false;
+                this.GetComponent<PlayerAudioSFX>().PlayShieldRegenAudio();
             }
         }
     }

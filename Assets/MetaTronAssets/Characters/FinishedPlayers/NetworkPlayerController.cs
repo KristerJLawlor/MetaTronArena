@@ -40,6 +40,12 @@ public class NetworkPlayerController : HighLevelEntity
     public GameObject LaserPrefab;
     public GameObject LaserBeam;
 
+    //Variables for audio
+    public bool isOH = false;
+    public bool canPew = true;
+    public bool isReloading = false;
+    public bool canWalk = true;
+
     public Vector2 ParseV2(string v)
     {
         Vector2 temp = new Vector2();
@@ -115,7 +121,9 @@ public class NetworkPlayerController : HighLevelEntity
         Overheat = 0;
         SendUpdate("OH", Overheat.ToString());
         SendUpdate("CANSHOOT", canShoot.ToString());
-       
+        
+
+
     }
     public IEnumerator ROF()
     {
@@ -124,16 +132,30 @@ public class NetworkPlayerController : HighLevelEntity
             yield return new WaitForSeconds(.25f);
             canShoot = true;
             SendUpdate("CANSHOOT", canShoot.ToString());
+            
+        }
+    }
+
+    public IEnumerator ROFSFX()
+    {
+        if (Overheat < 100)
+        {
+            yield return new WaitForSeconds(.5f);
+            canPew = true;
+            SendUpdate("CANPEWPEW", canPew.ToString());
         }
     }
     public IEnumerator OH()
     {
+        isOH = true;
+        SendUpdate("ISOVERHEATING", isOH.ToString());
         yield return new WaitForSeconds(5);
         Overheat= 0;
+        
         canShoot= true;
         SendUpdate("CANSHOOT", canShoot.ToString());
         SendUpdate("OH", Overheat.ToString());
-        
+
     }
     
     public override void HandleMessage(string flag, string value)
@@ -148,8 +170,9 @@ public class NetworkPlayerController : HighLevelEntity
             HP = int.Parse(value);
         }
         if (IsServer && flag == "MVC")
-        {
+        { 
             LastInput = ParseV2(value);
+            StartCoroutine(Walk());            
         }
         if(IsServer && flag == "AIM")
         {
@@ -185,6 +208,8 @@ public class NetworkPlayerController : HighLevelEntity
         {
             canShoot = false;
             SendUpdate("CANSHOOT", "false");
+            isReloading = true;
+            SendUpdate("ISRELOADING", true.ToString());
             StartCoroutine(Reload());
         }
         if(IsServer && flag == "AP")
@@ -227,6 +252,22 @@ public class NetworkPlayerController : HighLevelEntity
                 SendUpdate("ISDYING", isDying.ToString());
             }
         }
+        if(IsClient && flag == "ISOVERHEATING")
+        {
+            isOH = true;
+        }
+        if (IsClient && flag == "ISRELOADING")
+        {
+            isReloading = true;
+        }
+        if (IsClient && flag == "CANPEWPEW")
+        {
+            canPew = bool.Parse(value);
+        }
+        if(IsClient && flag == "CANWALK")
+        {
+            canWalk = bool.Parse(value);
+        }
     }
 
     public override void NetworkedStart()
@@ -263,11 +304,16 @@ public class NetworkPlayerController : HighLevelEntity
                 canShoot = false;
                 SendUpdate("CANSHOOT", canShoot.ToString());
                 StartCoroutine(ROF());
+                StartCoroutine(ROFSFX());
             }
             if (Overheat >= 100)
             {
                 canShoot = false;
+                
                 SendUpdate("CANSHOOT", canShoot.ToString());
+
+                //isOH = true;
+                //SendUpdate("ISOVERHEATING", true.ToString());
                 StartCoroutine(OH());
             }
             if (!lastFire && Overheat > 0 && Overheat<100)
@@ -335,63 +381,104 @@ public class NetworkPlayerController : HighLevelEntity
         if(IsClient)
         {
             PlayerAnimation.SetBool("Idle", false);
-            
-            if(isAttacking && myRig.velocity.magnitude > 0.1f)
+
+            if (!isDying)
             {
-                //Debug.Log("WALK ATTACK ANIMATION");
-                PlayerAnimation.SetBool("WalkAttack", true);
 
-                PlayerAnimation.SetBool("Idle", false);
-                PlayerAnimation.SetBool("Attack", false);
-                PlayerAnimation.SetBool("Walk", false);
+
+                if (isAttacking && myRig.velocity.magnitude > 0.1f)
+                {
+                    //Debug.Log("WALK ATTACK ANIMATION");
+                    PlayerAnimation.SetBool("WalkAttack", true);
+
+                    PlayerAnimation.SetBool("Idle", false);
+                    PlayerAnimation.SetBool("Attack", false);
+                    PlayerAnimation.SetBool("Walk", false);
+
+                }
+                else if (isAttacking && myRig.velocity.magnitude <= 0.1f)
+                {
+                    //Debug.Log("SHOOT ANIMATION");
+                    PlayerAnimation.SetBool("Attack", true);
+
+                    PlayerAnimation.SetBool("Idle", false);
+                    PlayerAnimation.SetBool("WalkAttack", false);
+                    PlayerAnimation.SetBool("Walk", false);
+
+                }
+
+                else if (!isAttacking && myRig.velocity.magnitude > 0.1f)
+                {
+                    //Debug.Log("WALK ANIMATION");
+                    PlayerAnimation.SetBool("Walk", true);
+
+                    PlayerAnimation.SetBool("Idle", false);
+                    PlayerAnimation.SetBool("Attack", false);
+                    PlayerAnimation.SetBool("WalkAttack", false);
+
+
+                }
+                else if (!isAttacking && myRig.velocity.magnitude <= 0.1f)
+                {
+                    //Debug.Log("IDLE ANIMATION");
+                    PlayerAnimation.SetBool("Idle", true);
+
+                    PlayerAnimation.SetBool("WalkAttack", false);
+                    PlayerAnimation.SetBool("Attack", false);
+                    PlayerAnimation.SetBool("Walk", false);
+                }
+
+
+
             }
-            else if(isAttacking && myRig.velocity.magnitude <= 0.1f)
-            {
-                //Debug.Log("SHOOT ANIMATION");
-                PlayerAnimation.SetBool("Attack", true);
-
-                PlayerAnimation.SetBool("Idle", false);
-                PlayerAnimation.SetBool("WalkAttack", false);
-                PlayerAnimation.SetBool("Walk", false);
-
-            }
-            
-            else if(!isAttacking && myRig.velocity.magnitude > 0.1f)
-            {
-                //Debug.Log("WALK ANIMATION");
-                PlayerAnimation.SetBool("Walk", true);
-
-                PlayerAnimation.SetBool("Idle", false);
-                PlayerAnimation.SetBool("Attack", false);
-                PlayerAnimation.SetBool("WalkAttack", false);
-            }
-            else if(!isAttacking && myRig.velocity.magnitude <= 0.1f)
-            {
-                //Debug.Log("IDLE ANIMATION");
-                PlayerAnimation.SetBool("Idle", true);
-
-                PlayerAnimation.SetBool("WalkAttack", false);
-                PlayerAnimation.SetBool("Attack", false);
-                PlayerAnimation.SetBool("Walk", false);
-            }
-
-            else if(HP <= 0)
+            else
             {
                 //Debug.Log("DYING ANIMATION");
                 PlayerAnimation.SetTrigger("Die");
+
+                //Play death audio SFX
+                this.GetComponent<PlayerAudioSFX>().PlayDeathAudio();
             }
 
-            if(canShoot && isAttacking)
+            if (canShoot && isAttacking)
             {
                 //Debug.Log("Spawn Laser");
                 Destroy(LaserBeam);
                 LaserBeam = Instantiate(LaserPrefab, myRig.transform.forward + myRig.transform.position + new Vector3(0, 1.0f, 0), myRig.transform.rotation);
+                
+                if(canPew)
+                {
+                    canPew = false;
+                    this.GetComponent<PlayerAudioSFX>().PlayLazerAudio();
+                }
+
             }
             else
             {
                 Destroy(LaserBeam, 0.5f);
             }
 
+            if(canWalk && myRig.velocity.magnitude > 0.1f)
+            {
+                canWalk = false;
+                this.GetComponent<PlayerAudioSFX>().PlayWalkAudio();
+            }
+
+            if (IsLocalPlayer)
+            {
+                if (!canShoot && isOH)
+                {
+                    //play overheat SFX
+                    isOH = false;
+                    this.GetComponent<PlayerAudioSFX>().PlayOverheatAudio();
+                }
+                if (!canShoot && isReloading)
+                {
+                    //play reload SFX
+                    isReloading = false;
+                    this.GetComponent<PlayerAudioSFX>().PlayExhaustAudio();
+                }
+            }
         }
     }
     
@@ -407,4 +494,13 @@ public class NetworkPlayerController : HighLevelEntity
         isDying = false;
         SendUpdate("ISDYING", "false");
     }
+
+    public IEnumerator Walk()
+    {
+        yield return new WaitForSeconds(1);
+        canWalk = true;
+        SendUpdate("CANWALK", canWalk.ToString());
+    }
+
+
 }
