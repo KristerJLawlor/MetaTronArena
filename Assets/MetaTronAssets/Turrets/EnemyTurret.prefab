@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 3899111341338796619}
   - component: {fileID: -312924803660291502}
   - component: {fileID: -1800980540316448145}
+  - component: {fileID: 974054139000109588}
   m_Layer: 0
   m_Name: EnemyTurret
   m_TagString: Turret
@@ -484,6 +485,7 @@ MonoBehaviour:
   canShoot: 1
   SpawnLoc: {x: 0, y: 0, z: 0}
   TargetNear: 0
+  isDying: 0
   LaserPrefab: {fileID: 1818483698145146, guid: 6028b5b4fbbf45e45a362de709aa2e18,
     type: 3}
   LaserBeam: {fileID: 0}
@@ -598,3 +600,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &974054139000109588
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3893526631815951815}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.78, y: 0.95, z: 1.24}
+  m_Center: {x: 0, y: 0.45, z: 0.27}
