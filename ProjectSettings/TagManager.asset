@@ -20,6 +20,7 @@ TagManager:
   - PickupSpawn
   - Stage
   - Turret
+  - Clone
   layers:
   - Default
   - TransparentFX
