@@ -75,7 +75,7 @@ public class PlayerAudioSFX : MonoBehaviour
 
     public void PlayHealthLowAudio()
     {
-        PlayerAudio.PlayOneShot(HealthLowAudio, .5f);
+        PlayerAudio.PlayOneShot(HealthLowAudio, 1);
     }
 
     public void PlayDeathAudio()

@@ -77,8 +77,9 @@ public class HighLevelEntity : NetworkComponent
         {
             HP=float.Parse(value);
 
-            if(HP == 50)
+            if(HP <= 50 && HP >= 45)
             {
+                Debug.Log("HEALTH IS LOW");
                 HealthIsLow = true;
             }
             
@@ -160,6 +161,7 @@ public class HighLevelEntity : NetworkComponent
 
                 if(HealthIsLow)
                 {
+                    Debug.Log("PLAYING HEALTH IS LOW SFX");
                     HealthIsLow = false;
                     //Play health low alert SFX
                     this.GetComponent<PlayerAudioSFX>().PlayHealthLowAudio();
