@@ -73,6 +73,7 @@ public class GameMasterScript : NetworkComponent
         if (GameStarted)
         {
             StartCoroutine(Playing());
+            StartCoroutine(TenSecTimer());
         }
     }
 
@@ -84,9 +85,16 @@ public class GameMasterScript : NetworkComponent
 
     public IEnumerator Playing()
     {
-        yield return new WaitForSeconds(120);
+        yield return new WaitForSeconds(900);
 
         StartCoroutine(MyCore.DisconnectServer());
     }
-    
+
+    public IEnumerator TenSecTimer()
+    {
+        yield return new WaitForSeconds(890);
+        GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<TimerAudio>().PlayTimerAudio();
+
+    }
+
 }

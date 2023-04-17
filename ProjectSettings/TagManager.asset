@@ -18,6 +18,7 @@ TagManager:
   - AA
   - Pickup
   - PickupSpawn
+  - Stage
   layers:
   - Default
   - TransparentFX
