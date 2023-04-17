@@ -45,6 +45,7 @@ public class NetworkPlayerController : HighLevelEntity
     public bool canPew = true;
     public bool isReloading = false;
     public bool canWalk = true;
+    public bool canOverheat = true;
 
     public Vector2 ParseV2(string v)
     {
@@ -121,8 +122,8 @@ public class NetworkPlayerController : HighLevelEntity
         Overheat = 0;
         SendUpdate("OH", Overheat.ToString());
         SendUpdate("CANSHOOT", canShoot.ToString());
-        
 
+        
 
     }
     public IEnumerator ROF()
@@ -147,15 +148,14 @@ public class NetworkPlayerController : HighLevelEntity
     }
     public IEnumerator OH()
     {
-        isOH = true;
-        SendUpdate("ISOVERHEATING", isOH.ToString());
+
         yield return new WaitForSeconds(5);
-        Overheat= 0;
-        
+        Overheat= 0;       
         canShoot= true;
         SendUpdate("CANSHOOT", canShoot.ToString());
         SendUpdate("OH", Overheat.ToString());
-
+        canOverheat = true;
+        SendUpdate("CANOVERHEAT", true.ToString());
     }
     
     public override void HandleMessage(string flag, string value)
@@ -268,6 +268,10 @@ public class NetworkPlayerController : HighLevelEntity
         {
             canWalk = bool.Parse(value);
         }
+        if(flag == "CANOVERHEAT")
+        {
+            canOverheat = bool.Parse(value);
+        }
     }
 
     public override void NetworkedStart()
@@ -312,9 +316,16 @@ public class NetworkPlayerController : HighLevelEntity
                 
                 SendUpdate("CANSHOOT", canShoot.ToString());
 
-                //isOH = true;
-                //SendUpdate("ISOVERHEATING", true.ToString());
-                StartCoroutine(OH());
+                isOH = true;
+                SendUpdate("ISOVERHEATING", true.ToString());
+
+                if(canOverheat)
+                {
+                    canOverheat = false;
+                    StartCoroutine(OH());
+                }
+                
+
             }
             if (!lastFire && Overheat > 0 && Overheat<100)
             {
@@ -466,10 +477,11 @@ public class NetworkPlayerController : HighLevelEntity
 
             if (IsLocalPlayer)
             {
-                if (!canShoot && isOH)
+                if (!canShoot && isOH && canOverheat)
                 {
                     //play overheat SFX
                     isOH = false;
+                    canOverheat = false;
                     this.GetComponent<PlayerAudioSFX>().PlayOverheatAudio();
                 }
                 if (!canShoot && isReloading)

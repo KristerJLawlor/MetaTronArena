@@ -123,27 +123,27 @@ public class HighLevelEntity : NetworkComponent
     { 
         if(IsClient)
         {
-            Debug.Log("If is client");
+            
             if (this.OverShield <= 0)
             {
-                Debug.Log("Overshield <= 0");
+                
                 //PlayerOvershield.SetActive(false);
                 this.transform.GetChild(2).gameObject.SetActive(false);
             }
             else 
             {
-                Debug.Log("Overshield > 0");
+                
                 //PlayerOvershield.SetActive(true);
                 this.transform.GetChild(2).gameObject.SetActive(true);
             }
-            Debug.Log("Shield is Broken = " + ShieldIsBroken);
+            
 
             if (IsLocalPlayer)
             {
                 if(ShieldIsHit && OverShield > 0)
                 {
                     ShieldIsHit = false;
-                    Debug.Log("Shield is hit");
+                    
                     //Play shield hit audio SFX
                     this.GetComponent<PlayerAudioSFX>().PlayShieldHitAudio();
                 }
@@ -152,7 +152,7 @@ public class HighLevelEntity : NetworkComponent
                 if(ShieldIsBroken)
                 {
                     ShieldIsBroken = false;
-                    Debug.Log("Shield is Broken");
+                    
                     //Play Shield Broken SFX
                     this.GetComponent<PlayerAudioSFX>().PlayShieldBreakAudio();
                     Debug.Log("Playing OneShot");
