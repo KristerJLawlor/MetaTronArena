@@ -46,6 +46,7 @@ public class HUD_Script : MonoBehaviour
         StartCoroutine(Timing());
 
         ActiveMax(Owner.maxCharge);
+        SuperMax(Owner.maxSuperCharge);
     }
 
     // Update is called once per frame
@@ -73,6 +74,7 @@ public class HUD_Script : MonoBehaviour
         //setAbility(Owner.Type);
         HeatbarFill();
         ActiveValue(Owner.AbilityCharge);
+        SuperValue(Owner.SuperCharge);
         ChangeScore();
         //Add owner values going to active ability and super abilities cooldowns here
 
