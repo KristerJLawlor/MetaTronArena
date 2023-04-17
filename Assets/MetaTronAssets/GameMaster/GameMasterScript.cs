@@ -66,6 +66,8 @@ public class GameMasterScript : NetworkComponent
             //Spawn Map 
             GameObject Map = MyCore.NetCreateObject(Random.Range(8, 10), -1, Vector3.zero, Quaternion.identity);
 
+            SpawnLoc = GameObject.FindGameObjectsWithTag("Respawn");
+
             foreach (NPMScript npm in GameObject.FindObjectsOfType<NPMScript>())
             {
 
