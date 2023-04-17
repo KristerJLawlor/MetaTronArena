@@ -148,7 +148,7 @@ public class NetworkPlayerController : HighLevelEntity
     }
     public IEnumerator OH()
     {
-
+        Debug.Log("start OH coroutine");
         yield return new WaitForSeconds(5);
         Overheat= 0;       
         canShoot= true;
@@ -156,6 +156,7 @@ public class NetworkPlayerController : HighLevelEntity
         SendUpdate("OH", Overheat.ToString());
         canOverheat = true;
         SendUpdate("CANOVERHEAT", true.ToString());
+        Debug.Log("end OH coroutine");
     }
     
     public override void HandleMessage(string flag, string value)
@@ -254,7 +255,7 @@ public class NetworkPlayerController : HighLevelEntity
         }
         if(IsClient && flag == "ISOVERHEATING")
         {
-            isOH = true;
+            isOH = bool.Parse(value);
         }
         if (IsClient && flag == "ISRELOADING")
         {
@@ -477,8 +478,10 @@ public class NetworkPlayerController : HighLevelEntity
 
             if (IsLocalPlayer)
             {
-                if (!canShoot && isOH && canOverheat)
+                if (!canShoot && isOH && canOverheat && Overheat >= 100)
                 {
+                    Debug.Log("Playing Overheat.");
+
                     //play overheat SFX
                     isOH = false;
                     canOverheat = false;
