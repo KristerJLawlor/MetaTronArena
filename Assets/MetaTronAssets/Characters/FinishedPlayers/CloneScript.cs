@@ -7,6 +7,8 @@ using NETWORK_ENGINE;
 public class CloneScript : HighLevelEntity
 {
     GameObject[] Players;
+    public RaycastHit hit;
+    public Rigidbody body;
     public override void HandleMessage(string flag, string value)
     {
         base.HandleMessage(flag, value);
@@ -15,14 +17,7 @@ public class CloneScript : HighLevelEntity
     public override void NetworkedStart()
     {
         base.NetworkedStart();
-        if(IsServer)
-        {
-            Players = GameObject.FindGameObjectsWithTag("Entity");
-            OverShield = 0;
-            SendUpdate("SHIELD", OverShield.ToString());
-            HP = 25;
-            SendUpdate("HP", HP.ToString());
-        }
+        
     }
 
     public override IEnumerator SlowUpdate()
@@ -32,13 +27,31 @@ public class CloneScript : HighLevelEntity
         {
             foreach(var p in Players)
             {
+                body.velocity = Vector3.zero;
+                Debug.Log("A"+ Players.Length);
                 if(this.Owner == p.GetComponent<NetworkID>().Owner)
                 {
+                    Debug.Log("B");
                     continue;
                 }
-                if ((transform.position - p.transform.position).magnitude < 20)
+                Debug.Log("B2");
+                if ((transform.position - p.transform.position).magnitude < 25)
                 {
-
+                    //transform.LookAt(p.transform.position);
+                    Debug.Log("C");
+                    if(Physics.Raycast(transform.position, (p.transform.position-transform.position).normalized, out hit))
+                    {
+                       Debug.Log("D");
+                        if (hit.collider.tag == "Entity")
+                        {
+                            //move toward target
+                            body.velocity = (p.transform.position - transform.position).normalized * 5;
+                            hit.transform.GetComponent<HighLevelEntity>().Damage(1, false);
+                            this.transform.forward = (p.transform.position - transform.position).normalized;
+                            Debug.Log("E");
+                            break;
+                        }
+                    }
                 }
             }
             yield return new WaitForSeconds(.1f);
@@ -49,7 +62,15 @@ public class CloneScript : HighLevelEntity
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (IsServer)
+        {
+            Players = GameObject.FindGameObjectsWithTag("Entity");
+            OverShield = 0;
+            SendUpdate("SHIELD", OverShield.ToString());
+            HP = 25;
+            SendUpdate("HP", HP.ToString());
+            body=GetComponent<Rigidbody>();
+        }
     }
 
     // Update is called once per frame
