@@ -39,7 +39,6 @@ public class TechnocratScript : NetworkPlayerController
         if (IsServer && flag == "CLONE")
         {
             SuperCharge = 0;
-            SendUpdate("SCHARGE", SuperCharge.ToString());
             GameObject temp = MyCore.NetCreateObject(6, this.Owner, this.transform.position + this.transform.right * .5f);
             GameObject temp2 = MyCore.NetCreateObject(6, this.Owner, this.transform.position + this.transform.right * -.5f);
         }
@@ -101,6 +100,7 @@ public class TechnocratScript : NetworkPlayerController
         {
             if(SuperCharge == maxSuperCharge)
             {
+                SuperCharge = 0;
                 SendCommand("CLONE", " ");
             }
         }
