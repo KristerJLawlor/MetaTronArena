@@ -61,7 +61,6 @@ public class TechnocratScript : NetworkPlayerController
         base.Start();
         passiveActive= true;
         SendUpdate("PA", passiveActive.ToString());
-        maxSuperCharge = 75;
     }
 
     // Update is called once per frame
