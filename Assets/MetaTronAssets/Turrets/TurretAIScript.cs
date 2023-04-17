@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NETWORK_ENGINE;
+using Unity.VisualScripting;
 
 public class TurretAIScript : HighLevelEntity
 {
 
     GameObject[] Players;
     GameObject Target;
+    List<GameObject> TargetList;
     Vector3 TargetLoc;
     public Transform LaserOrigin;
     public float Range = 20f;
@@ -119,8 +121,9 @@ public class TurretAIScript : HighLevelEntity
             foreach (var p in Players)
             {
 
-                if ((transform.position - p.transform.position).magnitude < 20)
+                if ((this.transform.position - p.transform.position).magnitude < 20)
                 {
+                    //TargetList.Add(p);
                     Target = p;
                     TargetNear = true;
                     SendUpdate("TARGETNEAR", TargetNear.ToString());

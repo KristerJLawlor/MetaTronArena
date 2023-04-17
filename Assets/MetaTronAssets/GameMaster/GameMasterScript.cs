@@ -8,6 +8,7 @@ public class GameMasterScript : NetworkComponent
     public bool GameStarted = false;
 
     public GameObject[] SpawnLoc;
+    public GameObject[] TurretSpawn;
     public override void HandleMessage(string flag, string value)
     {
         //will only affect clientside
