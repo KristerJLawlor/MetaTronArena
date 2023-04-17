@@ -19,6 +19,7 @@ public class TurretAIScript : HighLevelEntity
     public RaycastHit hit;
     public Vector3 SpawnLoc;
     public bool TargetNear = false;
+    public bool isDying = false;
 
     //Variables for particle effect
     public GameObject LaserPrefab;
@@ -76,6 +77,16 @@ public class TurretAIScript : HighLevelEntity
         {
             AimDirection = ParseV3(value);
 
+        }
+
+        if (flag == "ISDYING")
+        {
+            //Debug.Log("flag ISDYING = " + value);
+            isDying = bool.Parse(value);
+            if (IsServer)
+            {
+                SendUpdate("ISDYING", isDying.ToString());
+            }
         }
 
     }
@@ -149,6 +160,14 @@ public class TurretAIScript : HighLevelEntity
 
             }
 
+            if (HP <= 0)
+            {
+                //Send update to client that this player is dying
+                isDying = true;
+                SendUpdate("ISDYING", "true");
+                StartCoroutine(Respawn());
+            }
+
         }
 
     }
@@ -176,13 +195,32 @@ public class TurretAIScript : HighLevelEntity
             {
                 Destroy(LaserBeam);
                 LaserBeam = Instantiate(LaserPrefab, LaserOrigin.transform.position, transform.rotation);
+
+                this.GetComponent<EnemyAudio>().PlayLazerAudio();
             }
             else
             {
                 Destroy(LaserBeam, 0.5f);
             }
 
+            if(isDying)
+            {
+                this.GetComponent<EnemyAudio>().PlayDeathAudio();
+            }
+
         }
         
     }
+
+
+    public IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(20);
+        this.transform.position = SpawnLoc;
+        HP = 50;
+        SendUpdate("HP", HP.ToString());
+        isDying = false;
+        SendUpdate("ISDYING", "false");
+    }
+
 }
