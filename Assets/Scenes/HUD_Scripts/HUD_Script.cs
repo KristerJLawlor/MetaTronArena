@@ -53,6 +53,11 @@ public class HUD_Script : MonoBehaviour
     void Update()
     {
 
+        if(Owner.Overheat == Owner.MaxHeat)
+        {
+            OVBar.color = Color.red;
+        }
+
         setAbility(Owner.Type);
         /*//Just in case
         if(CurShields > MaxShields) CurShields = MaxShields;
