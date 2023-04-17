@@ -35,9 +35,11 @@ public class HUD_Script : MonoBehaviour
 
     public float MaxHeatTemp = 100;
     public float Heatlvl = 0;
+    public Color tempColor;
     // Start is called before the first frame update
     void Start()
     {
+        tempColor = OVBar.color;
         Owner = transform.parent.gameObject.GetComponent<NetworkPlayerController>();
         ScoreList = new SortedList<string, int>();
         CurHealth = MaxHealth;
@@ -56,6 +58,10 @@ public class HUD_Script : MonoBehaviour
         if(Owner.Overheat == Owner.MaxHeat)
         {
             OVBar.color = Color.red;
+        }
+        else
+        {
+            OVBar.color = tempColor;
         }
 
         setAbility(Owner.Type);
