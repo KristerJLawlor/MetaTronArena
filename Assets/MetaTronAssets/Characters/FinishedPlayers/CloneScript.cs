@@ -37,7 +37,6 @@ public class CloneScript : HighLevelEntity
                 Debug.Log("B2");
                 if ((transform.position - p.transform.position).magnitude < 25)
                 {
-                    //transform.LookAt(p.transform.position);
                     Debug.Log("C");
                     if(Physics.Raycast(transform.position+transform.up*.5f, (p.transform.position-transform.position).normalized, out hit))
                     {
