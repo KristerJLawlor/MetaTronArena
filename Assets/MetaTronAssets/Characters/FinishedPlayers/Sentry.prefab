@@ -3986,8 +3986,11 @@ MonoBehaviour:
   isOH: 0
   canPew: 1
   isReloading: 0
+  canWalk: 1
+  canOverheat: 1
   RiotShields: {fileID: 3146569116870129443}
   SentryPassive: 0
+  isRegen: 0
 --- !u!1 &4542501329015732162
 GameObject:
   m_ObjectHideFlags: 0

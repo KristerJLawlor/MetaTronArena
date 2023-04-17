@@ -460,6 +460,7 @@ GameObject:
   - component: {fileID: 341518586886751702}
   - component: {fileID: 793729122167549843}
   - component: {fileID: 3853672017843024673}
+  - component: {fileID: 2479449982436793143}
   m_Layer: 0
   m_Name: AI Robot
   m_TagString: Untagged
@@ -517,6 +518,561 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabProjectPath: Assets/Etasphera03/PreFab/BaseMesh_prefab/BaseMesh.prefab
+--- !u!114 &2479449982436793143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385579087536936900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a054274092705d47b8cc27f27aab3bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataContainer:
+    rid: 8622177069444890746
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 8622177069444890746
+      type: {class: DataContainer, ns: BrainFailProductions.PolyFew, asm: Assembly-CSharp}
+      data:
+        objectsHistory:
+          rid: 8622177069444890747
+        objectMeshPairs:
+          rid: 8622177069444890748
+        currentLodLevelSettings:
+        - reductionStrength: 0
+          transitionHeight: 0.6
+          preserveUVFoldover: 0
+          preserveUVSeams: 0
+          preserveBorders: 0
+          useEdgeSort: 1
+          recalculateNormals: 0
+          aggressiveness: 7
+          maxIterations: 100
+          regardCurvature: 0
+          regardTolerance: 0
+          combineMeshes: 0
+          simplificationOptionsFoldout: 0
+          intensityFoldout: 0
+          clearBlendshapesComplete: 0
+          generateUV2: 0
+          sphereIntensities: []
+        - reductionStrength: 30
+          transitionHeight: 0.4
+          preserveUVFoldover: 0
+          preserveUVSeams: 0
+          preserveBorders: 0
+          useEdgeSort: 1
+          recalculateNormals: 0
+          aggressiveness: 7
+          maxIterations: 100
+          regardCurvature: 0
+          regardTolerance: 0
+          combineMeshes: 0
+          simplificationOptionsFoldout: 0
+          intensityFoldout: 0
+          clearBlendshapesComplete: 0
+          generateUV2: 0
+          sphereIntensities: []
+        - reductionStrength: 60
+          transitionHeight: 0.15
+          preserveUVFoldover: 0
+          preserveUVSeams: 0
+          preserveBorders: 0
+          useEdgeSort: 1
+          recalculateNormals: 0
+          aggressiveness: 7
+          maxIterations: 100
+          regardCurvature: 0
+          regardTolerance: 0
+          combineMeshes: 0
+          simplificationOptionsFoldout: 0
+          intensityFoldout: 0
+          clearBlendshapesComplete: 0
+          generateUV2: 0
+          sphereIntensities: []
+        toleranceSpheres: []
+        lodBackup:
+          rid: -2
+        textureArraysSettings:
+          rid: 8622177069444890749
+        materialsToRestore: []
+        lastObjMaterialLinks: {fileID: 0}
+        relocateMaterialLinks: 0
+        reInitializeTempMatProps: 0
+        choiceTextureMap: 0
+        choiceDiffuseColorSpace: 0
+        batchFewSavePath: 
+        existingTextureArrays: []
+        existingTextureArraysFoldout: 0
+        existingTextureArraysSize: 0
+        textureArraysPropsFoldout: 0
+        existingArraysProps:
+          rid: -2
+        choiceColorSpace: 0
+        preserveBorders: 0
+        preserveUVSeams: 0
+        preserveUVFoldover: 0
+        useEdgeSort: 0
+        recalculateNormals: 0
+        maxIterations: 100
+        aggressiveness: 7
+        regardCurvature: 0
+        considerChildren: 0
+        isPreservationActive: 0
+        sphereDiameter: 0.5
+        oldSphereScale: {x: 0, y: 0, z: 0}
+        reductionStrength: 0
+        reductionPending: 0
+        prevFeasibleTarget: {fileID: 385579087536936900}
+        runOnThreads: 0
+        triangleCount: 0
+        lastDrawer: {fileID: 0}
+        foldoutAutoLOD: 0
+        foldoutBatchFew: 0
+        foldoutAutoLODMultiple: 0
+        objPositionPrevFrame: {x: 0.011344212, y: 2.51, z: -0.13287593}
+        objScalePrevFrame: {x: 1.0000004, y: 1, z: 1.0000004}
+        considerChildrenBatchFew: 1
+        autoLODSavePath: Assets/
+        foldoutAdditionalOpts: 0
+        generateUV2: 0
+        copyParentStaticFlags: 0
+        copyParentTag: 0
+        copyParentLayer: 0
+        createAsChildren: 0
+        removeLODBackupComponent: 0
+        generateUV2batchfew: 0
+        removeMaterialLinksComponent: 0
+        clearBlendshapesComplete: 0
+        clearBlendshapesNormals: 0
+        clearBlendshapesTangents: 0
+        isPlainSkin: 0
+    - rid: 8622177069444890747
+      type: {class: DataContainer/UndoRedoOps, ns: BrainFailProductions.PolyFew, asm: Assembly-CSharp}
+      data:
+        gameObject: {fileID: 385579087536936900}
+        undoOperations: []
+        redoOperations: []
+    - rid: 8622177069444890748
+      type: {class: DataContainer/ObjectMeshPair, ns: BrainFailProductions.PolyFew,
+        asm: Assembly-CSharp}
+      data:
+        _Buckets: ffffffff290000002b00000009000000ffffffffffffffff0100000002000000ffffffff23000000ffffffff0c0000001c000000ffffffffffffffff1d000000ffffffffffffffffffffffffffffffff1a0000002a000000ffffffff06000000ffffffff040000002500000015000000ffffffffffffffffffffffffffffffffffffffffffffffff000000002200000024000000ffffffff14000000ffffffff0700000026000000ffffffff0a000000ffffffff18000000ffffffff280000002e000000ffffffff10000000ffffffff0500000021000000ffffffff1e0000002c0000000d0000000f000000ffffffffffffffffffffffff1600000012000000ffffffffffffffffffffffff27000000ffffffffffffffff1f0000001b000000ffffffff20000000ffffffffffffffffffffffffffffffffffffffff19000000ffffffffffffffffffffffffffffffffffffffffffffffff110000002d00000003000000
+        _HashCodes: 56f003003af00300e2ef03008cf00300f4ef0300b6ef0300f2ef03005cf00300beee030090f0030054ef0300acee030034ef0300b0ee030036f00300bcef030002ef0300d8ef030068ef0300b2ef03005af0030044ef03000eef0300d4f0030056ef03002af00300e4ee030070ef030040f0030038ef0300c4f00300c8ef0300d6f00300c2f003004cef030096f00300a6ef03004ef00300b6f00300d0f003000af003002aef0300f0ef030084ef0300baef030080ef030064f00300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff08000000ffffffffffffffffffffffff17000000ffffffffffffffffffffffffffffffffffffffff0b000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0e000000ffffffffffffffff13000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        _Count: 47
+        _Version: 47
+        _FreeList: -1
+        _FreeCount: 0
+        _Keys:
+        - {fileID: 7231522532998775235}
+        - {fileID: 6860161066552805167}
+        - {fileID: 5784414224950893106}
+        - {fileID: 8099472646443162516}
+        - {fileID: 6009712678362334196}
+        - {fileID: 4975108103333712149}
+        - {fileID: 6001787797687903452}
+        - {fileID: 7424351219011734901}
+        - {fileID: 334358050930016712}
+        - {fileID: 8144213301099572195}
+        - {fileID: 3319962163466848954}
+        - {fileID: 160786734889695493}
+        - {fileID: 2708040664502186667}
+        - {fileID: 304613512458339090}
+        - {fileID: 6822496762505535239}
+        - {fileID: 5099363695598727509}
+        - {fileID: 1481926665409557146}
+        - {fileID: 5621816339229529386}
+        - {fileID: 3518367579309830047}
+        - {fileID: 4899888855021582841}
+        - {fileID: 7292565485016738930}
+        - {fileID: 2954737858824649635}
+        - {fileID: 1921204782917313952}
+        - {fileID: 9136349776536749317}
+        - {fileID: 3331598494403390966}
+        - {fileID: 6696483234828233091}
+        - {fileID: 1042951059122815048}
+        - {fileID: 3688774112025565619}
+        - {fileID: 6938705417806508882}
+        - {fileID: 2825641299525252774}
+        - {fileID: 9012415115310741276}
+        - {fileID: 5323129591092898867}
+        - {fileID: 9175217455140996535}
+        - {fileID: 8984651708761016367}
+        - {fileID: 3033565112395664440}
+        - {fileID: 8253630333158227204}
+        - {fileID: 4631912039749879181}
+        - {fileID: 7077427440336065533}
+        - {fileID: 8810379765731743493}
+        - {fileID: 9116527376531097012}
+        - {fileID: 6171804867313863641}
+        - {fileID: 2493222310683520849}
+        - {fileID: 5972832764804974974}
+        - {fileID: 4044833188840583966}
+        - {fileID: 5075216388280762518}
+        - {fileID: 4025629573708951230}
+        - {fileID: 7584241503781965047}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        _Values:
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 945b3b3558722ad46b3bef424af53b4e, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 5380b0b88a081034ab5f34a194bd3fc8, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 76ef4349b76a18e479d8ad1c9969a188, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 053f38aa8c1756d4da7bfa23ca3d4b28, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: dc9f794b75a21d3459f9f232abe5b593, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 6269326af5209504cb7f37dc0ceb8b5c, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 3b7431fabce6ac743850ac5d4b1e66cf, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 3124f3a84fef292449e8fb890630cd4e, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 2ebe5d5df7faa1f49b8c30091bcce0f8, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: feff9abd39d10e443bbf46a47888f554, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 02266750406566c41b1509205480c36f, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 45ed784078a44ad43bf277057da22e28, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 943b3eab3f68d1f4b8f0f73ceeac4fb7, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 96831f7fda6af8d48bb5ffade8d46f26, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 48768c8151e65e14fbbebece87aebb20, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 619fb4dcd255f3d41818f083da109a14, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 78958283c20cf0b439df6ae8d418c47e, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: eb5bcb316c120084d8015b399c712f81, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 3b877507c3a42b44786c7243189f2485, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: ffb5a3d4e1bb647438e2154ec6cec04d, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 211e06eaef82095479783e913ef5f131, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: f3eac25146bc78d4f8652eb97bfd837f, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: a4895a267337fa444a9369becd44c2c3, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: ff19fc068badb034da18a8393b107ac7, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: ff7eb2b83241bf943a9e3ec3e7ff7ee7, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: afdd9f8db9789dc4198bea68a0281f6f, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 9ce9cde3106b3d64eaa0b2c14f3d6fc5, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 94670558866b09d40a2728077ff699a7, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: ba04ccfef797fff45abe8d9293165ec7, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 4b8de9c30edfc7f4e999ec275135edad, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 00dc419a5006f1346a55b36936130532, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 51a2d2ccc5565614a9153591969cd5d7, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: e666e96480830c744aab19491325a532, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: b7da9963cc1a3fc41bbecf74693c52fa, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 271e65e8dd364d545a001f1ee97abef2, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 96f0475c8f7e17c488a2f05399eb7a68, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: fba0e83d13300114295bca396b83288a, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: bebf925ea521650468d3d27a76891704, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: a180013b18f3b174c98b26f291169685, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: eb786a17811638044ae6ca6bae3392db, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: ac65465a350415042b9a67bfc2d9f286, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 569439ee38e54f84aa5b73defe6df978, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: ca25786a94b73584992edb69d9ac66d3, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 612134fe9db0f93429e56a6e5f571905, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: c5fbc0a78e99fd640bf3ff5bad2c2ee2, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 8f275feb93627a44c97a94332ef3561c, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: bea1c1b569f63ff47a81df050fe0da38, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+    - rid: 8622177069444890749
+      type: {class: CombiningInformation/TextureArrayGroup, ns: BrainFailProductions.PolyFew,
+        asm: Assembly-CSharp}
+      data:
+        diffuseArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        metallicArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        specularArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        normalArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        heightArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        occlusionArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        emissiveArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        detailMaskArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        detailAlbedoArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        detailNormalArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
 --- !u!1 &571767094729733096
 GameObject:
   m_ObjectHideFlags: 0
