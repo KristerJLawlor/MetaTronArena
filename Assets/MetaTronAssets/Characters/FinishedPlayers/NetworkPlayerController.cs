@@ -292,7 +292,7 @@ public class NetworkPlayerController : HighLevelEntity
                 
                 if(Physics.Raycast(AimPosition, AimDirection,out hit))
                 {
-                        if(hit.collider.tag=="Entity")
+                        if(hit.collider.tag=="Entity" || hit.collider.tag=="Clone")
                     {
                         hit.transform.GetComponent<HighLevelEntity>().Damage(OnDamage( this.DamageScalar, hit.transform.gameObject), this.AProunds);
                         if(passiveActive && SuperCharge<maxSuperCharge)

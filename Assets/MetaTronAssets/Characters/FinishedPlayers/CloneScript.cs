@@ -39,14 +39,15 @@ public class CloneScript : HighLevelEntity
                 {
                     //transform.LookAt(p.transform.position);
                     Debug.Log("C");
-                    if(Physics.Raycast(transform.position, (p.transform.position-transform.position).normalized, out hit))
+                    if(Physics.Raycast(transform.position+transform.up*.5f, (p.transform.position-transform.position).normalized, out hit))
                     {
-                       Debug.Log("D");
+                       Debug.Log("D" + hit.collider.name);
+                        Debug.DrawRay(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, Color.blue);
                         if (hit.collider.tag == "Entity")
                         {
                             //move toward target
-                            body.velocity = (p.transform.position - transform.position).normalized * 5;
-                            hit.transform.GetComponent<HighLevelEntity>().Damage(1, false);
+                            body.velocity = (p.transform.position - transform.position).normalized * 1.5f;
+                            hit.transform.GetComponent<HighLevelEntity>().Damage(.4f, false);
                             this.transform.forward = (p.transform.position - transform.position).normalized;
                             Debug.Log("E");
                             break;
@@ -76,6 +77,13 @@ public class CloneScript : HighLevelEntity
     // Update is called once per frame
     void Update()
     {
-        
+        base.Update();
+        if (IsServer)
+        {
+            if (HP <= 0)
+            {
+                MyCore.NetDestroyObject(this.NetId);
+            }
+        }
     }
 }
