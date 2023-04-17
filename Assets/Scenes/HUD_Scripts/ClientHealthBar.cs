@@ -22,7 +22,7 @@ public class ClientHealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Owner = transform.parent.gameObject.GetComponent<NetworkPlayerController>();
     }
 
     // Update is called once per frame
