@@ -70,46 +70,53 @@ public class TurretScript : HighLevelEntity
         {
             body.velocity = Vector3.zero + new Vector3(0, body.velocity.y, 0);
             Debug.Log("A1" + Players.Length);
-            foreach (var p in Players)
+
+            if (canShoot)
             {
-                Debug.Log("B1");
-                
-                if ((transform.position - p.transform.position).magnitude < 25 && canShoot)
+                foreach (var p in Players)
                 {
-                    this.transform.forward = (p.transform.position - transform.position).normalized;
-                    TargetNear = true;
-                    SendUpdate("TARGETNEAR", TargetNear.ToString());
-                    Debug.Log("C1");
-                    if (Physics.Raycast(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, out hit))
+                    Debug.Log("B1");
+
+                    if ((transform.position - p.transform.position).magnitude < 25)
                     {
-                        //this.transform.forward = (p.transform.position - transform.position).normalized;
-                        Debug.Log("D1" + hit.collider.name);
-                        //Debug.DrawRay(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, Color.red);
-                        if (hit.collider.tag == "Entity")
+                        TargetNear = true;
+                        SendUpdate("TARGETNEAR", TargetNear.ToString());
+
+                        this.transform.forward = (p.transform.position - transform.position).normalized;
+
+                        Debug.Log("C1");
+                        if (Physics.Raycast(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, out hit))
                         {
-                            //move toward target
-                            //body.velocity = (p.transform.position - transform.position).normalized * 1.5f;
-                            hit.transform.GetComponent<HighLevelEntity>().Damage(.4f, false);
-                            this.transform.forward = (p.transform.position - transform.position).normalized;
-                            Debug.Log("E1");
-                            
+                            //this.transform.forward = (p.transform.position - transform.position).normalized;
+                            Debug.Log("D1" + hit.collider.name);
+                            //Debug.DrawRay(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, Color.red);
+                            if (hit.collider.tag == "Entity")
+                            {
+                                //move toward target
+                                //body.velocity = (p.transform.position - transform.position).normalized * 1.5f;
+                                hit.transform.GetComponent<HighLevelEntity>().Damage(.4f, false);
+                                this.transform.forward = (p.transform.position - transform.position).normalized;
+                                Debug.Log("E1");
+
+                            }
                         }
+
+                        canShoot = false;
+                        SendUpdate("CANSHOOT", canShoot.ToString());
+                        StartCoroutine(ROF());
+                        Debug.Log("BREAK");
+                        break;
                     }
 
-                    canShoot = false;
-                    SendUpdate("CANSHOOT", canShoot.ToString());
-                    StartCoroutine(ROF());
-                    Debug.Log("BREAK");
-                    break;
-                }
-                
 
-                else if((transform.position - p.transform.position).magnitude >= 25)
-                {
-                    TargetNear = false;
-                    SendUpdate("TARGETNEAR", TargetNear.ToString());
+                    else if ((transform.position - p.transform.position).magnitude >= 25)
+                    {
+                        TargetNear = false;
+                        SendUpdate("TARGETNEAR", TargetNear.ToString());
+                    }
+
+
                 }
-                
 
             }
 
@@ -142,7 +149,7 @@ public class TurretScript : HighLevelEntity
         }
         if (IsClient)
         {
-            this.transform.forward = Vector3.zero;
+            this.transform.forward = (this.transform.position - Vector3.zero).normalized;
         }
     }
 
@@ -192,13 +199,13 @@ public class TurretScript : HighLevelEntity
     public IEnumerator Respawn()
     {
         Debug.Log("In Respawn");
-        this.gameObject.SetActive(false);
+        this.transform.gameObject.SetActive(false);
         yield return new WaitForSeconds(20);
         HP = 50;
         SendUpdate("HP", HP.ToString());
         isDying = false;
         SendUpdate("ISACTIVE", true.ToString());
-        this.gameObject.SetActive(true);
+        this.transform.gameObject.SetActive(true);
 
     }
 
