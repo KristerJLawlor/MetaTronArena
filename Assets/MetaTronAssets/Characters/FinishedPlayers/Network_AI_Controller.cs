@@ -19,11 +19,55 @@ public class Network_AI_Controller : HighLevelEntity
         base.NetworkedStart();
 
     }
+    public override IEnumerator SlowUpdate()
+    {
+        base.SlowUpdate();
+        while (IsServer)
+        {
+            foreach (var p in Players)
+            {
+                body.velocity = Vector3.zero;
+                //Debug.Log("A" + Players.Length);
+                if (this.Owner == p.GetComponent<NetworkID>().Owner)
+                {
+                    //Debug.Log("B");
+                    continue;
+                }
+                //Debug.Log("B2");
+                if ((transform.position - p.transform.position).magnitude < 25)
+                {
+                    //Debug.Log("C");
+                    if (Physics.Raycast(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, out hit))
+                    {
+                        //Debug.Log("D" + hit.collider.name);
+                        //Debug.DrawRay(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, Color.blue);
+                        if (hit.collider.tag == "Entity")
+                        {
+                            //move toward target
+                            body.velocity = (p.transform.position - transform.position).normalized * 2f;
+                            this.transform.forward = (p.transform.position - transform.position).normalized;
+                            //Debug.Log("E");
+                            break;
+                        }
+                    }
+                }
+            }
+            yield return new WaitForSeconds(.1f);
+        }
 
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (IsServer)
+        {
+            Players = GameObject.FindGameObjectsWithTag("Entity");
+            OverShield = 0;
+            SendUpdate("SHIELD", OverShield.ToString());
+            HP = 25;
+            SendUpdate("HP", HP.ToString());
+            body = GetComponent<Rigidbody>();
+        }
     }
 
     // Update is called once per frame
@@ -36,6 +80,21 @@ public class Network_AI_Controller : HighLevelEntity
             {
                 MyCore.NetDestroyObject(this.NetId);
             }
+        }
+    }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.tag == "Entity")
+        {
+            collision.transform.GetComponent<HighLevelEntity>().Damage(.4f, false);
+        }
+        
+    }
+    public void nCollisionStay(Collision collision)
+    {
+        if (collision.transform.tag == "Entity")
+        {
+            collision.transform.GetComponent<HighLevelEntity>().Damage(.1f, false);
         }
     }
 }

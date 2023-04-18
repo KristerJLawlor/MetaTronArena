@@ -50,6 +50,11 @@ public class TurretScript : HighLevelEntity
             canShoot = bool.Parse(value);
 
         }
+
+        if (flag == "HP")
+        {
+            HP = int.Parse(value);
+        }
     }
 
     public override void NetworkedStart()
@@ -71,13 +76,15 @@ public class TurretScript : HighLevelEntity
                 
                 if ((transform.position - p.transform.position).magnitude < 25 && canShoot)
                 {
+                    this.transform.forward = (p.transform.position - transform.position).normalized;
                     TargetNear = true;
                     SendUpdate("TARGETNEAR", TargetNear.ToString());
                     Debug.Log("C1");
                     if (Physics.Raycast(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, out hit))
                     {
+                        //this.transform.forward = (p.transform.position - transform.position).normalized;
                         Debug.Log("D1" + hit.collider.name);
-                        Debug.DrawRay(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, Color.red);
+                        //Debug.DrawRay(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, Color.red);
                         if (hit.collider.tag == "Entity")
                         {
                             //move toward target
@@ -85,14 +92,12 @@ public class TurretScript : HighLevelEntity
                             hit.transform.GetComponent<HighLevelEntity>().Damage(.4f, false);
                             this.transform.forward = (p.transform.position - transform.position).normalized;
                             Debug.Log("E1");
-
-                            canShoot = false;
-                            SendUpdate("CANSHOOT", canShoot.ToString());
-
                             
                         }
                     }
 
+                    canShoot = false;
+                    SendUpdate("CANSHOOT", canShoot.ToString());
                     StartCoroutine(ROF());
                     Debug.Log("BREAK");
                     break;
@@ -186,6 +191,7 @@ public class TurretScript : HighLevelEntity
 
     public IEnumerator Respawn()
     {
+        Debug.Log("In Respawn");
         this.gameObject.SetActive(false);
         yield return new WaitForSeconds(20);
         HP = 50;

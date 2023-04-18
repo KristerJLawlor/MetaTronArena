@@ -9,6 +9,7 @@ public class GameMasterScript : NetworkComponent
 
     public GameObject[] SpawnLoc;
     public GameObject[] TurretSpawn;
+    public GameObject[] ChaserSpawn;
     public override void HandleMessage(string flag, string value)
     {
         //will only affect clientside
@@ -76,6 +77,13 @@ public class GameMasterScript : NetworkComponent
                 GameObject temp = MyCore.NetCreateObject( 7, -1, TurretSpawn[i].transform.position, Quaternion.identity);
             }
 
+            //ChaserSpawn = GameObject.FindGameObjectsWithTag("ChaserSpawn");
+            ChaserSpawn = TurretSpawn;
+
+            for (int i = 0; i < 4; i++)
+            {
+                GameObject temp = MyCore.NetCreateObject(11, -1, ChaserSpawn[i].transform.position + new Vector3(3, 0, 3), Quaternion.identity);
+            }
             //Spawn Players in
             SpawnLoc = GameObject.FindGameObjectsWithTag("Respawn");
 
@@ -84,7 +92,7 @@ public class GameMasterScript : NetworkComponent
 
                 GameObject temp = MyCore.NetCreateObject(npm.ClassSelected, npm.Owner, SpawnLoc[npm.Owner].transform.position, Quaternion.identity);
                 NetworkPlayerController pc = temp.GetComponent<NetworkPlayerController>();
-                pc.pname = npm.name;
+                pc.pname = npm.PName;
             }
 
 
