@@ -520,6 +520,7 @@ public class NetworkPlayerController : HighLevelEntity
         //Send update to client that this player is no longer dying
         isDying = false;
         SendUpdate("ISDYING", "false");
+        myRig.transform.forward = Vector3.zero;
     }
 
     public IEnumerator Walk()
