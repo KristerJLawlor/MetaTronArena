@@ -190,6 +190,7 @@ public class TurretAIScript : HighLevelEntity
     // Update is called once per frame
     void Update()
     {
+        base.Update();
         if(IsClient)
         {
             this.transform.LookAt(TargetLoc);

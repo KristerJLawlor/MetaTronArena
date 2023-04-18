@@ -67,6 +67,16 @@ public class GameMasterScript : NetworkComponent
             //Spawn Map 
             GameObject Map = MyCore.NetCreateObject(Random.Range(8, 10), -1, Vector3.zero, Quaternion.identity);
 
+
+            //Spawn Turrets in
+            TurretSpawn = GameObject.FindGameObjectsWithTag("TurretSpawn");
+
+            for (int i = 0; i < 4; i++)
+            {
+                GameObject temp = MyCore.NetCreateObject( 7, -1, TurretSpawn[i].transform.position, Quaternion.identity);
+            }
+
+            //Spawn Players in
             SpawnLoc = GameObject.FindGameObjectsWithTag("Respawn");
 
             foreach (NPMScript npm in GameObject.FindObjectsOfType<NPMScript>())
@@ -75,6 +85,8 @@ public class GameMasterScript : NetworkComponent
                 GameObject temp = MyCore.NetCreateObject(npm.ClassSelected, npm.Owner, SpawnLoc[npm.Owner].transform.position, Quaternion.identity);
                 
             }
+
+
             SendUpdate("GAMESTART", GameStarted.ToString());
         }
         if (GameStarted)
