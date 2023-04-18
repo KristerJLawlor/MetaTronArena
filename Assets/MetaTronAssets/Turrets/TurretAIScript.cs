@@ -121,7 +121,7 @@ public class TurretAIScript : HighLevelEntity
             foreach (var p in Players)
             {
 
-                if ((this.transform.position - p.transform.position).magnitude < 20)
+                if ((this.transform.position - p.transform.position).magnitude < 10)
                 {
                     //TargetList.Add(p);
                     Target = p;
@@ -150,7 +150,7 @@ public class TurretAIScript : HighLevelEntity
                     if (hit.collider.tag == "Entity")
                     {
                         //LaserLine.SetPosition(1, hit.point);
-                        hit.transform.GetComponent<HighLevelEntity>().Damage(OnDamage(this.DamageScalar, hit.transform.gameObject), this.AProunds);
+                        hit.transform.GetComponent<HighLevelEntity>().Damage(.2f, false);
                     }
 
 
@@ -167,6 +167,8 @@ public class TurretAIScript : HighLevelEntity
             {
                 //Send update to client that this player is dying
                 isDying = true;
+                canShoot= false;
+                SendUpdate("CANSHOOT", canShoot.ToString());
                 SendUpdate("ISDYING", "true");
                 StartCoroutine(Respawn());
             }
@@ -219,9 +221,10 @@ public class TurretAIScript : HighLevelEntity
 
     public IEnumerator Respawn()
     {
-        yield return new WaitForSeconds(20);
-        this.transform.position = SpawnLoc;
+        yield return new WaitForSeconds(30);
         HP = 50;
+        canShoot = true;
+        SendUpdate("CANSHOOT", canShoot.ToString());
         SendUpdate("HP", HP.ToString());
         isDying = false;
         SendUpdate("ISDYING", "false");

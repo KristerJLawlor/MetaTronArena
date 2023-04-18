@@ -46,7 +46,7 @@ public class CloneScript : HighLevelEntity
                         {
                             //move toward target
                             body.velocity = (p.transform.position - transform.position).normalized * 1.5f;
-                            hit.transform.GetComponent<HighLevelEntity>().Damage(.4f, false);
+                            hit.transform.GetComponent<HighLevelEntity>().Damage(.2f, false);
                             this.transform.forward = (p.transform.position - transform.position).normalized;
                             Debug.Log("E");
                             break;
