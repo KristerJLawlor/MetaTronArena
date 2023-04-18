@@ -71,12 +71,12 @@ public class TechnocratScript : NetworkPlayerController
     {
         if (passiveActive)
         {
-            if(o.GetComponent<HighLevelEntity>().OverShield > 0 && OverShield<maxOverShield)
+            if(o.GetComponent<HighLevelEntity>().OverShield > 0 && OverShield<maxOverShield && !AProunds)
             {
                 OverShield+=1;
                 SendUpdate("SHIELD", OverShield.ToString());
             }
-            else if(HP<maxHP && o.GetComponent<HighLevelEntity>().OverShield<=0)
+            else if(HP<maxHP && (o.GetComponent<HighLevelEntity>().OverShield<=0 || AProunds))
             {
                 HP+=1;
                 SendUpdate("HP", HP.ToString());

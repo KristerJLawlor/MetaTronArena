@@ -37,8 +37,8 @@ public class SentryScript : NetworkPlayerController
             allHit = Physics.SphereCastAll(AimPosition, 15, AimDirection);
             foreach(var h in allHit)
             {
-                if(h.collider==this) continue;
-                if(h.collider.tag=="Entity" || h.collider.tag == "Clone")
+                if(h.collider.gameObject==this.gameObject) continue;
+                if(h.collider.tag=="Entity" || h.collider.tag == "Clone" || hit.collider.tag=="Turret")
                 {
                     h.transform.GetComponent<HighLevelEntity>().gotBusted();
                 }

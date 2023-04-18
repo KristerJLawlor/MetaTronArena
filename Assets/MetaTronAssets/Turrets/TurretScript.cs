@@ -63,11 +63,12 @@ public class TurretScript : HighLevelEntity
         base.SlowUpdate();
         while (IsServer)
         {
-            body.velocity = Vector3.zero;
+            body.velocity = Vector3.zero + new Vector3(0, body.velocity.y, 0);
             Debug.Log("A1" + Players.Length);
             foreach (var p in Players)
             {
                 Debug.Log("B1");
+                
                 if ((transform.position - p.transform.position).magnitude < 25 && canShoot)
                 {
                     TargetNear = true;
@@ -84,21 +85,26 @@ public class TurretScript : HighLevelEntity
                             hit.transform.GetComponent<HighLevelEntity>().Damage(.4f, false);
                             this.transform.forward = (p.transform.position - transform.position).normalized;
                             Debug.Log("E1");
-                            break;
+
+                            canShoot = false;
+                            SendUpdate("CANSHOOT", canShoot.ToString());
+
+                            
                         }
                     }
 
-                    canShoot = false;
-                    SendUpdate("CANSHOOT", canShoot.ToString());
-
                     StartCoroutine(ROF());
-
+                    Debug.Log("BREAK");
+                    break;
                 }
+                
+
                 else if((transform.position - p.transform.position).magnitude >= 25)
                 {
                     TargetNear = false;
                     SendUpdate("TARGETNEAR", TargetNear.ToString());
                 }
+                
 
             }
 
