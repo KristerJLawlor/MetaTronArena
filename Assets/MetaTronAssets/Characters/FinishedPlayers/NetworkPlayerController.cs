@@ -21,8 +21,8 @@ public class NetworkPlayerController : HighLevelEntity
     public bool lastFire=false;
     public bool passiveActive = false;
     public string pname;
-    public int AbilityCharge = 1800;
-    public int maxCharge = 1800;
+    public int AbilityCharge = 1000;
+    public int maxCharge = 1000;
     public int SuperCharge = 0;
     public int maxSuperCharge = 50;
     public bool AbilityinUse = false;

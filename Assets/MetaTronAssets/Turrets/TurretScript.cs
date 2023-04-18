@@ -110,6 +110,7 @@ public class TurretScript : HighLevelEntity
 
             if (HP <= 0)
             {
+                Debug.Log("Turret deceased");
                 isDying = true;
                 SendUpdate("ISDYING", isDying.ToString());
                 isActive = false;
