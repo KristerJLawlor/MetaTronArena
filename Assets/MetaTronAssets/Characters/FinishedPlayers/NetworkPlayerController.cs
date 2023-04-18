@@ -273,7 +273,7 @@ public class NetworkPlayerController : HighLevelEntity
         {
             canOverheat = bool.Parse(value);
         }
-        if(IsLocalPlayer && flag == "SCORE")
+        if(IsClient && flag == "SCORE")
         {
             Score = int.Parse(value);
         }
