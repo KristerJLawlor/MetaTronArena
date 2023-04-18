@@ -94,7 +94,7 @@ public class HUD_Script : MonoBehaviour
 
         foreach (NetworkPlayerController npc in FindObjectsOfType<NetworkPlayerController>())
         {
-            ScoreList.Add(npc.name, npc.Score);
+            ScoreList.Add(npc.pname, npc.Score);
             //ScoreList[npc.name] = npc.Score;
         }
 
