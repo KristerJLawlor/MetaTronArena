@@ -293,7 +293,7 @@ public class NetworkPlayerController : HighLevelEntity
         {
             if (npm.Owner == this.Owner)
             {
-                SendUpdate("PN",npm.name);
+                SendUpdate("PN",npm.PName);
                 //or pname = npm.name;
             }
         }
