@@ -273,6 +273,10 @@ public class NetworkPlayerController : HighLevelEntity
         {
             canOverheat = bool.Parse(value);
         }
+        if(IsLocalPlayer && flag == "SCORE")
+        {
+            Score = int.Parse(value);
+        }
     }
 
     public override void NetworkedStart()
