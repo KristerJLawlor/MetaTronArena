@@ -66,6 +66,13 @@ public class HighLevelEntity : NetworkComponent
         SendUpdate("SHIELD",OverShield.ToString());
         SendUpdate("HP", HP.ToString());
     }
+    public void gotBusted()
+    {
+        OverShield = 0;
+        HP -= 25;
+        SendUpdate("SHIELD", OverShield.ToString());
+        SendUpdate("HP", HP.ToString());
+    }
     public override void HandleMessage(string flag, string value)
     {
         if(IsClient && flag == "SHIELD")

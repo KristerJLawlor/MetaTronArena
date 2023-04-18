@@ -10,6 +10,7 @@ public class SentryScript : NetworkPlayerController
     public GameObject RiotShields;
     public bool SentryPassive;
     public bool isRegen = false;
+    RaycastHit[] allHit;
     public override void HandleMessage(string flag, string value)
     {
         base.HandleMessage(flag, value);
@@ -29,6 +30,19 @@ public class SentryScript : NetworkPlayerController
         if(IsClient && flag == "SHACTIVE")
         {
             RiotShields.SetActive(bool.Parse(value));
+        }
+        if(IsServer && flag == "BURST")
+        {
+            SuperCharge = 0;
+            allHit = Physics.SphereCastAll(AimPosition, 15, AimDirection);
+            foreach(var h in allHit)
+            {
+                if(h.collider==this) continue;
+                if(h.collider.tag=="Entity" || h.collider.tag == "Clone")
+                {
+                    h.transform.GetComponent<HighLevelEntity>().gotBusted();
+                }
+            }
         }
     }
     public override void NetworkedStart()
@@ -116,6 +130,13 @@ public class SentryScript : NetworkPlayerController
     }
     public void CapacitorBurst(InputAction.CallbackContext cb)
     {
-
+        if (IsLocalPlayer) 
+        { 
+            if(SuperCharge==maxSuperCharge)
+            {
+                SuperCharge = 0;
+                SendCommand("BURST", " ");
+            }
+        }
     }
 }
