@@ -211,9 +211,7 @@ GameObject:
   - component: {fileID: 3916634368945133613}
   - component: {fileID: 3988670106726820429}
   - component: {fileID: -8442629232524556160}
-  - component: {fileID: -143413448158082869}
   - component: {fileID: 8408830703944062536}
-  - component: {fileID: 3899111341338796619}
   - component: {fileID: -312924803660291502}
   - component: {fileID: -1800980540316448145}
   - component: {fileID: 974054139000109588}
@@ -334,26 +332,6 @@ MonoBehaviour:
   IsLocalPlayer: 0
   UpdateFrequency: 0.1
   MyCore: {fileID: 0}
---- !u!114 &-143413448158082869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3893526631815951815}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49f09cce6b36a4949b0cb02e02ff7506, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MyCore: {fileID: 0}
-  MyId: {fileID: 0}
-  IsDirty: 0
-  LastPosition: {x: 0, y: 0, z: 0}
-  LastRotation: {x: 0, y: 0, z: 0}
-  LastScale: {x: 0, y: 0, z: 0}
-  threshold: 0.1
-  maxThreshold: 5
 --- !u!120 &8408830703944062536
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -453,46 +431,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &3899111341338796619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3893526631815951815}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46e29a6cebc15c642a8613bc7c0e9840, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MyCore: {fileID: 0}
-  MyId: {fileID: 0}
-  IsDirty: 0
-  HP: 100
-  OverShield: 50
-  maxHP: 100
-  maxOverShield: 50
-  DamageScalar: 1
-  RegenTimer: 0
-  AProunds: 0
-  PlayerOvershield: {fileID: 0}
-  AudioScript: {fileID: 0}
-  ShieldIsHit: 0
-  ShieldIsBroken: 0
-  HealthIsLow: 0
-  ShieldRegen: 0
-  LaserOrigin: {fileID: 2170927527576002620}
-  Range: 20
-  LaserDuration: 0.05
-  AimPosition: {x: 0, y: 0, z: 0}
-  AimDirection: {x: 0, y: 0, z: 0}
-  canShoot: 1
-  SpawnLoc: {x: 0, y: 0, z: 0}
-  TargetNear: 0
-  isDying: 0
-  LaserPrefab: {fileID: 1818483698145146, guid: 6028b5b4fbbf45e45a362de709aa2e18,
-    type: 3}
-  LaserBeam: {fileID: 0}
 --- !u!114 &-312924803660291502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,6 +589,7 @@ MonoBehaviour:
   canShoot: 1
   TargetNear: 0
   isActive: 1
+  ForwardVector: {x: 0, y: 0, z: 0}
   LaserPrefab: {fileID: 1818483698145146, guid: 6028b5b4fbbf45e45a362de709aa2e18,
     type: 3}
   LaserBeam: {fileID: 0}

@@ -14,6 +14,7 @@ public class TurretScript : HighLevelEntity
     public bool canShoot = true;
     public bool TargetNear = false;
     public bool isActive = true;
+    public Vector3 ForwardVector;
 
 
     //Variables for particle effect
@@ -21,13 +22,25 @@ public class TurretScript : HighLevelEntity
     public GameObject LaserBeam;
     public Transform LaserOrigin;
 
+
+
+    public Vector3 ParseV3(string v)
+    {
+        Vector3 temp = new Vector3();
+        string[] args = v.Trim('(').Trim(')').Split(',');
+        temp.x = float.Parse(args[0]);
+        temp.y = float.Parse(args[1]);
+        temp.z = float.Parse(args[2]);
+        return temp;
+    }
+
     public override void HandleMessage(string flag, string value)
     {
         base.HandleMessage(flag, value);
 
         if (flag == "ISDYING")
         {
-            //Debug.Log("flag ISDYING = " + value);
+            Debug.Log("flag ISDYING = " + value);
             isDying = bool.Parse(value);
             if (IsServer)
             {
@@ -37,23 +50,32 @@ public class TurretScript : HighLevelEntity
 
         if (IsClient && flag == "TARGETNEAR")
         {
+            Debug.Log("flag TARGETNEAR = " + value);
             TargetNear = bool.Parse(value);
         }
 
         if (IsClient && flag == "ISACTIVE")
         {
+            Debug.Log("flag ISACTIVE = " + value);
             isActive = bool.Parse(value);
         }
 
         if (IsClient && flag == "CANSHOOT")
         {
+            Debug.Log("flag CANSHOOT = " + value);
             canShoot = bool.Parse(value);
 
         }
 
         if (flag == "HP")
+            Debug.Log("flag HP = " + value);
         {
             HP = int.Parse(value);
+        }
+
+        if(flag == "FORWARD" && IsClient)
+        {
+            ForwardVector = ParseV3(value);
         }
     }
 
@@ -83,6 +105,7 @@ public class TurretScript : HighLevelEntity
                         SendUpdate("TARGETNEAR", TargetNear.ToString());
 
                         this.transform.forward = (p.transform.position - transform.position).normalized;
+                        SendUpdate("FORWARD", this.transform.forward.ToString());
 
                         Debug.Log("C1");
                         if (Physics.Raycast(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, out hit))
@@ -96,6 +119,7 @@ public class TurretScript : HighLevelEntity
                                 //body.velocity = (p.transform.position - transform.position).normalized * 1.5f;
                                 hit.transform.GetComponent<HighLevelEntity>().Damage(.4f, false);
                                 this.transform.forward = (p.transform.position - transform.position).normalized;
+                                SendUpdate("FORWARD", this.transform.forward.ToString());
                                 Debug.Log("E1");
 
                             }
@@ -125,8 +149,7 @@ public class TurretScript : HighLevelEntity
                 Debug.Log("Turret deceased");
                 isDying = true;
                 SendUpdate("ISDYING", isDying.ToString());
-                isActive = false;
-                SendUpdate("ISACTIVE", false.ToString());
+                
                 StartCoroutine(Respawn());
             }
 
@@ -165,17 +188,20 @@ public class TurretScript : HighLevelEntity
         if (IsClient)
         {
             
-
-            if (canShoot && TargetNear)
+            if(TargetNear)
             {
-                Destroy(LaserBeam);
-                LaserBeam = Instantiate(LaserPrefab, LaserOrigin.transform.position, transform.rotation);
+                this.transform.forward = ForwardVector;
+                if (canShoot)
+                {
+                    Destroy(LaserBeam);
+                    LaserBeam = Instantiate(LaserPrefab, LaserOrigin.transform.position, transform.rotation);
 
-                this.GetComponent<EnemyAudio>().PlayLazerAudio();
-            }
-            else
-            {
-                Destroy(LaserBeam, 0.5f);
+                    this.GetComponent<EnemyAudio>().PlayLazerAudio();
+                }
+                else
+                {
+                    Destroy(LaserBeam, 0.5f);
+                }
             }
 
             if (isDying)
@@ -197,8 +223,11 @@ public class TurretScript : HighLevelEntity
     }
 
     public IEnumerator Respawn()
-    {
+    {   
         Debug.Log("In Respawn");
+        isActive = false;
+        SendUpdate("ISACTIVE", false.ToString());
+        
         this.transform.gameObject.SetActive(false);
         yield return new WaitForSeconds(20);
         HP = 50;
