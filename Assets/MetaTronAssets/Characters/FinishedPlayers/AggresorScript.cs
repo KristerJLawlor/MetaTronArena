@@ -69,9 +69,9 @@ public class AggresorScript : NetworkPlayerController
 
             }
             SendUpdate("PA", passiveActive.ToString());
-            if (AbilityinUse && AbilityCharge>0)
+            if (AbilityinUse && AbilityCharge<maxCharge)
             {
-                AbilityCharge = AbilityCharge - 3;
+                AbilityCharge = AbilityCharge + 3;
                 speed = 10;
                 SendUpdate("ACHARGE", AbilityCharge.ToString());
             }
@@ -101,7 +101,7 @@ public class AggresorScript : NetworkPlayerController
         {
             if(sp.started)
             {
-                if (AbilityCharge > 0)
+                if (AbilityCharge < maxCharge)
                 {
                     SendCommand("SPRINT", "true");
                 }

@@ -4412,10 +4412,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 1.3
   m_Height: 2.1
   m_Direction: 1
-  m_Center: {x: 0, y: 1.2, z: 0}
+  m_Center: {x: 0, y: 1.4, z: 0}
 --- !u!114 &8139079841712729079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4804,8 +4804,8 @@ MonoBehaviour:
   lastFire: 0
   passiveActive: 0
   pname: 
-  AbilityCharge: 1800
-  maxCharge: 1800
+  AbilityCharge: 0
+  maxCharge: 1000
   SuperCharge: 0
   maxSuperCharge: 50
   AbilityinUse: 0

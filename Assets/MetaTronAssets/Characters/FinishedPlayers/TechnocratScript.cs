@@ -25,7 +25,7 @@ public class TechnocratScript : NetworkPlayerController
         if(IsServer && flag == "APR")
         {
             AbilityinUse = true;
-            AbilityCharge = 0;
+            AbilityCharge = maxCharge;
             SendUpdate("ACHARGE", AbilityCharge.ToString());
             DamageScalar = DamageScalar * .85f;
             AProunds = true;
@@ -88,7 +88,7 @@ public class TechnocratScript : NetworkPlayerController
     {
         if (IsLocalPlayer)
         {
-            if(AbilityCharge == 1800)
+            if(AbilityCharge == 0)
             {
                 SendCommand("APR", " ");
             }

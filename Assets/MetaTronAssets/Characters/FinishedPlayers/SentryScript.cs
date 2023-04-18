@@ -87,9 +87,9 @@ public class SentryScript : NetworkPlayerController
                 SentryPassive = true;
                 SendUpdate("SP", SentryPassive.ToString());
             }
-            if (AbilityinUse && AbilityCharge > 0)
+            if (AbilityinUse && AbilityCharge < maxCharge)
             {
-                AbilityCharge = AbilityCharge - 3;
+                AbilityCharge = AbilityCharge + 3;
                 SendUpdate("ACHARGE", AbilityCharge.ToString());
                 RiotShields.SetActive(true);
                 SendUpdate("SHACTIVE", "true");
@@ -116,7 +116,7 @@ public class SentryScript : NetworkPlayerController
         {
             if(rs.started)
             {
-                if (AbilityCharge > 0)
+                if (AbilityCharge < maxCharge)
                 {
                     SendCommand("RIOT", "true");
                 }

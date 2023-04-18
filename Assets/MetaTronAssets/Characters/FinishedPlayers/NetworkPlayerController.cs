@@ -21,7 +21,7 @@ public class NetworkPlayerController : HighLevelEntity
     public bool lastFire=false;
     public bool passiveActive = false;
     public string pname;
-    public int AbilityCharge = 1000;
+    public int AbilityCharge = 0;
     public int maxCharge = 1000;
     public int SuperCharge = 0;
     public int maxSuperCharge = 50;
@@ -358,9 +358,9 @@ public class NetworkPlayerController : HighLevelEntity
                 SendUpdate("ISDYING", "true");
                 StartCoroutine(Respawn());
             }
-            if(AbilityCharge < maxCharge && !AbilityinUse)
+            if(AbilityCharge > 0 && !AbilityinUse)
             {
-                AbilityCharge++;
+                AbilityCharge-=2;
                 SendUpdate("ACHARGE", AbilityCharge.ToString());
             }
             yield return new WaitForSeconds(.1f);
