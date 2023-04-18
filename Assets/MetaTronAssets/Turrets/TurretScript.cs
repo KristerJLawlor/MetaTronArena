@@ -106,7 +106,8 @@ public class TurretScript : HighLevelEntity
             {
                 isDying = true;
                 SendUpdate("ISDYING", isDying.ToString());
-                SendUpdate("ISREADY", false.ToString());
+                isActive = false;
+                SendUpdate("ISACTIVE", false.ToString());
                 StartCoroutine(Respawn());
             }
 
@@ -155,7 +156,7 @@ public class TurretScript : HighLevelEntity
             }
             else
             {
-                Destroy(LaserBeam, 0.1f);
+                Destroy(LaserBeam, 0.5f);
             }
 
             if (isDying)
@@ -183,7 +184,7 @@ public class TurretScript : HighLevelEntity
         HP = 50;
         SendUpdate("HP", HP.ToString());
         isDying = false;
-        SendUpdate("ISREADY", true.ToString());
+        SendUpdate("ISACTIVE", true.ToString());
         this.gameObject.SetActive(true);
 
     }
@@ -191,7 +192,7 @@ public class TurretScript : HighLevelEntity
     public IEnumerator ROF()
     {
         Debug.Log("IN ROF");
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.5f);
         canShoot = true;
         SendUpdate("CANSHOOT", canShoot.ToString());
 
