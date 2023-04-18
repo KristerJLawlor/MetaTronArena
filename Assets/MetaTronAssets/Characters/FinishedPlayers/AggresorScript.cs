@@ -116,7 +116,7 @@ public class AggresorScript : NetworkPlayerController
     {
         if(IsLocalPlayer)
         {
-            if(SuperCharge == maxSuperCharge)
+            if(SuperCharge == 0)
             {
                 SendCommand("RAGE", " ");
             }
@@ -126,7 +126,7 @@ public class AggresorScript : NetworkPlayerController
     {
         yield return new WaitForSeconds(15);
         SuperinUse = false;
-        SuperCharge = 0;
+        SuperCharge = maxSuperCharge;
         SendUpdate("SCHARGE", SuperCharge.ToString());
     }
 }

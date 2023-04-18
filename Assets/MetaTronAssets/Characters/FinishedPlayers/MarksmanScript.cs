@@ -21,7 +21,7 @@ public class MarksmanScript : NetworkPlayerController
         }
         if(IsServer && flag == "RAIL")
         {
-            SuperCharge= 0;
+            SuperCharge = maxSuperCharge;
             SendUpdate("SCHARGE", SuperCharge.ToString());
             StartCoroutine(RailShot());
         }
@@ -87,7 +87,7 @@ public class MarksmanScript : NetworkPlayerController
     {
         if(IsLocalPlayer)
         {
-            if(SuperCharge==maxSuperCharge)
+            if(SuperCharge==0)
             {
                 SendCommand("RAIL", " ");
             }
@@ -95,7 +95,7 @@ public class MarksmanScript : NetworkPlayerController
     }
     public IEnumerator RailShot()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(.5f);
         if (Physics.Raycast(AimPosition, AimDirection, out hit))
         {
             if (hit.collider.tag == "Entity")

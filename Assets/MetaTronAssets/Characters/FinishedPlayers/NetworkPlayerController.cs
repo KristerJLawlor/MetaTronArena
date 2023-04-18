@@ -23,7 +23,7 @@ public class NetworkPlayerController : HighLevelEntity
     public string pname;
     public int AbilityCharge = 0;
     public int maxCharge = 1000;
-    public int SuperCharge = 0;
+    public int SuperCharge = 50;
     public int maxSuperCharge = 50;
     public bool AbilityinUse = false;
     public  RaycastHit hit;
@@ -307,9 +307,9 @@ public class NetworkPlayerController : HighLevelEntity
                         if(hit.collider.tag=="Entity" || hit.collider.tag=="Clone" || hit.collider.tag=="Turret")
                     {
                         hit.transform.GetComponent<HighLevelEntity>().Damage(OnDamage( this.DamageScalar, hit.transform.gameObject), this.AProunds);
-                        if(passiveActive && SuperCharge<maxSuperCharge)
+                        if(passiveActive && SuperCharge>0)
                         {
-                            SuperCharge += 2;
+                            SuperCharge -= 2;
                             SendUpdate("SCHARGE", SuperCharge.ToString());
                         }
                         

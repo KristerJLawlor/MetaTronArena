@@ -196,10 +196,10 @@ public class HUD_Script : MonoBehaviour
     }
     public void SuperValue(float Scooldown)
     {
-        A_Ability.value = Scooldown;
+        S_Ability.value = Scooldown;
     }
     public void SuperMax(float SCTime)
     {
-        A_Ability.maxValue = SCTime;
+        S_Ability.maxValue = SCTime;
     }
 }

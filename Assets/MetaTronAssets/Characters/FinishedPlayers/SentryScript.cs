@@ -33,7 +33,7 @@ public class SentryScript : NetworkPlayerController
         }
         if(IsServer && flag == "BURST")
         {
-            SuperCharge = 0;
+            SuperCharge = maxSuperCharge;
             allHit = Physics.SphereCastAll(AimPosition, 15, AimDirection);
             foreach(var h in allHit)
             {
@@ -132,9 +132,9 @@ public class SentryScript : NetworkPlayerController
     {
         if (IsLocalPlayer) 
         { 
-            if(SuperCharge==maxSuperCharge)
+            if(SuperCharge==0)
             {
-                SuperCharge = 0;
+                SuperCharge = maxSuperCharge;
                 SendCommand("BURST", " ");
             }
         }

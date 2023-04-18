@@ -38,9 +38,9 @@ public class HighLevelEntity : NetworkComponent
             }
             if (this.GetComponent<NetworkPlayerController>().isSentry)
             {
-                if(!this.GetComponent<SentryScript>().SentryPassive && this.GetComponent<NetworkPlayerController>().SuperCharge < this.GetComponent<NetworkPlayerController>().maxSuperCharge)
+                if(!this.GetComponent<SentryScript>().SentryPassive && this.GetComponent<NetworkPlayerController>().SuperCharge > 0)
                 {
-                    this.GetComponent<NetworkPlayerController>().SuperCharge += 2;
+                    this.GetComponent<NetworkPlayerController>().SuperCharge -= 2;
                     SendUpdate("SCHARGE", this.GetComponent<NetworkPlayerController>().SuperCharge.ToString());
                 }
             }
