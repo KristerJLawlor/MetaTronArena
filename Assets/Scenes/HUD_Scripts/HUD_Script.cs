@@ -57,7 +57,7 @@ public class HUD_Script : MonoBehaviour
         ActiveMax(Owner.maxCharge);
         SuperMax(Owner.maxSuperCharge);
 
-        if (Owner.Overheat == Owner.MaxHeat)
+        if (Owner.Overheat >= Owner.MaxHeat)
         {
             OVBar.color = Color.red;
         }
