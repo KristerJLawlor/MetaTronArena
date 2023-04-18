@@ -285,6 +285,14 @@ public class NetworkPlayerController : HighLevelEntity
     }
     public override IEnumerator SlowUpdate()
     {
+        foreach(NPMScript npm in GameObject.FindObjectsOfType<NPMScript>())
+        {
+            if (npm.Owner == this.Owner)
+            {
+                SendUpdate("PN",npm.name);
+                //or pname = npm.name;
+            }
+        }
         while(IsServer)
         {
             if(lastFire && canShoot)

@@ -83,7 +83,8 @@ public class GameMasterScript : NetworkComponent
             {
 
                 GameObject temp = MyCore.NetCreateObject(npm.ClassSelected, npm.Owner, SpawnLoc[npm.Owner].transform.position, Quaternion.identity);
-                
+                NetworkPlayerController pc = temp.GetComponent<NetworkPlayerController>();
+                pc.pname = npm.name;
             }
 
 
