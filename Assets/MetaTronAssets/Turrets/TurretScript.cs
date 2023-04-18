@@ -92,14 +92,12 @@ public class TurretScript : HighLevelEntity
                             hit.transform.GetComponent<HighLevelEntity>().Damage(.4f, false);
                             this.transform.forward = (p.transform.position - transform.position).normalized;
                             Debug.Log("E1");
-
-                            canShoot = false;
-                            SendUpdate("CANSHOOT", canShoot.ToString());
-
                             
                         }
                     }
 
+                    canShoot = false;
+                    SendUpdate("CANSHOOT", canShoot.ToString());
                     StartCoroutine(ROF());
                     Debug.Log("BREAK");
                     break;

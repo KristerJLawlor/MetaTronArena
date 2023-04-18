@@ -77,11 +77,12 @@ public class GameMasterScript : NetworkComponent
                 GameObject temp = MyCore.NetCreateObject( 7, -1, TurretSpawn[i].transform.position, Quaternion.identity);
             }
 
-            ChaserSpawn = GameObject.FindGameObjectsWithTag("ChaserSpawn");
+            //ChaserSpawn = GameObject.FindGameObjectsWithTag("ChaserSpawn");
+            ChaserSpawn = TurretSpawn;
 
             for (int i = 0; i < 4; i++)
             {
-                GameObject temp = MyCore.NetCreateObject(7, -1, ChaserSpawn[i].transform.position, Quaternion.identity);
+                GameObject temp = MyCore.NetCreateObject(11, -1, ChaserSpawn[i].transform.position + new Vector3(3, 0, 3), Quaternion.identity);
             }
             //Spawn Players in
             SpawnLoc = GameObject.FindGameObjectsWithTag("Respawn");
