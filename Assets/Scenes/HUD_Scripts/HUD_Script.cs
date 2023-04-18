@@ -54,8 +54,10 @@ public class HUD_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ActiveMax(Owner.maxCharge);
+        SuperMax(Owner.maxSuperCharge);
 
-        if(Owner.Overheat == Owner.MaxHeat)
+        if (Owner.Overheat == Owner.MaxHeat)
         {
             OVBar.color = Color.red;
         }
