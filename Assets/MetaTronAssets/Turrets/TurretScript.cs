@@ -36,7 +36,7 @@ public class TurretScript : HighLevelEntity
 
     public override void HandleMessage(string flag, string value)
     {
-        base.HandleMessage(flag, value);
+        //base.HandleMessage(flag, value);
 
         if (flag == "ISDYING")
         {
@@ -87,7 +87,7 @@ public class TurretScript : HighLevelEntity
 
     public override IEnumerator SlowUpdate()
     {
-        base.SlowUpdate();
+        //base.SlowUpdate();
         while (IsServer)
         {
             body.velocity = Vector3.zero + new Vector3(0, body.velocity.y, 0);
@@ -119,6 +119,7 @@ public class TurretScript : HighLevelEntity
                                 //body.velocity = (p.transform.position - transform.position).normalized * 1.5f;
                                 hit.transform.GetComponent<HighLevelEntity>().Damage(.4f, false);
                                 this.transform.forward = (p.transform.position - transform.position).normalized;
+                                Debug.Log("Turret forward rotation serverside: " + this.transform.forward.ToString());
                                 SendUpdate("FORWARD", this.transform.forward.ToString());
                                 Debug.Log("E1");
 
@@ -179,7 +180,7 @@ public class TurretScript : HighLevelEntity
     // Update is called once per frame
     void Update()
     {
-        base.Update();
+        //base.Update();
         if (IsServer)
         {
 
@@ -190,6 +191,7 @@ public class TurretScript : HighLevelEntity
             
             if(TargetNear)
             {
+                Debug.Log("Forward vector" + ForwardVector);
                 this.transform.forward = ForwardVector;
                 if (canShoot)
                 {
@@ -212,11 +214,11 @@ public class TurretScript : HighLevelEntity
 
             if(isActive)
             {
-                this.gameObject.SetActive(true);
+                this.transform.gameObject.SetActive(true);
             }
             if (!isActive)
             {
-                this.gameObject.SetActive(false);
+                this.transform.gameObject.SetActive(false);
             }
 
         }
@@ -229,13 +231,15 @@ public class TurretScript : HighLevelEntity
         SendUpdate("ISACTIVE", false.ToString());
         
         this.transform.gameObject.SetActive(false);
-        yield return new WaitForSeconds(20);
+        Debug.Log("Starting Wait");
+        yield return new WaitForSeconds(5.0f);
+        Debug.Log("Wait finished");
         HP = 50;
         SendUpdate("HP", HP.ToString());
         isDying = false;
         SendUpdate("ISACTIVE", true.ToString());
         this.transform.gameObject.SetActive(true);
-
+        Debug.Log("Exiting Respawn");
     }
 
     public IEnumerator ROF()
