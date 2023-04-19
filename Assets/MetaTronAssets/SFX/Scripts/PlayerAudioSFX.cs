@@ -100,6 +100,6 @@ public class PlayerAudioSFX : MonoBehaviour
     }
     public void RailgunShot()
     {
-        PlayerAudio.PlayOneShot(Railgun, 1);
+        PlayerAudio.PlayOneShot(Railgun, 3);
     }
 }

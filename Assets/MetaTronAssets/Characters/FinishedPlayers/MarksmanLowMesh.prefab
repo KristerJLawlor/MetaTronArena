@@ -4059,7 +4059,6 @@ GameObject:
   - component: {fileID: 1610173097976526726}
   - component: {fileID: 344393591411802000}
   - component: {fileID: 7845054270897418407}
-  - component: {fileID: 4662297744857091048}
   m_Layer: 0
   m_Name: group1
   m_TagString: Untagged
@@ -5267,18 +5266,6 @@ MonoBehaviour:
           choiceFilteringMode: 0
           choiceCompressionQuality: 1
           choiceCompressionType: 0
---- !u!114 &4662297744857091048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5404679020309806189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6643f2ddd2d70e24ca75125fe058d9fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5410253972817290193
 GameObject:
   m_ObjectHideFlags: 0
@@ -8763,6 +8750,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6918066808022832492, guid: d0d6a531d0701564bb345b940d9adfc1,
+        type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6918066808070511317, guid: d0d6a531d0701564bb345b940d9adfc1,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -8771,6 +8763,11 @@ PrefabInstance:
     - target: {fileID: 6918066808434140027, guid: d0d6a531d0701564bb345b940d9adfc1,
         type: 3}
       propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918066808434140027, guid: d0d6a531d0701564bb345b940d9adfc1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
