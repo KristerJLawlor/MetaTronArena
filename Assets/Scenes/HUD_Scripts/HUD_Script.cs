@@ -8,6 +8,8 @@ public class HUD_Script : MonoBehaviour
 {
     //UI and Owner
     public Image ShieldBar;
+    public Image AcoolBar;
+    public Image ScoolBar;
     public Image[] HPoints;
     public Sprite[] Icons;
     public Image OVBar;
@@ -47,15 +49,13 @@ public class HUD_Script : MonoBehaviour
         setAbility(Owner.Type);
         StartCoroutine(Timing());
 
-        ActiveMax(Owner.maxCharge);
-        SuperMax(Owner.maxSuperCharge);
+        //ActiveMax(Owner.maxCharge);
     }
 
     // Update is called once per frame
     void Update()
     {
-        ActiveMax(Owner.maxCharge);
-        SuperMax(Owner.maxSuperCharge);
+        //ActiveMax(Owner.maxCharge);
 
         if (Owner.Overheat >= Owner.MaxHeat)
         {
@@ -86,8 +86,8 @@ public class HUD_Script : MonoBehaviour
         HealthbarFill();
         //setAbility(Owner.Type);
         HeatbarFill();
-        ActiveValue(Owner.AbilityCharge);
-        SuperValue(Owner.SuperCharge);
+        ActiveAbilityC();
+        SuperAbilityC();
         ChangeScore();
         //Add owner values going to active ability and super abilities cooldowns here
 
@@ -186,20 +186,13 @@ public class HUD_Script : MonoBehaviour
 
         MTimer.text = minutes + ":" + seconds;
     }
-    public void ActiveValue(float Acooldown)
-    {
-        A_Ability.value = Acooldown;
+    public void ActiveAbilityC()
+    {//1- ()
+        AcoolBar.fillAmount = Mathf.Lerp(OVBar.fillAmount, Owner.AbilityCharge / Owner.maxCharge, LerpSpeed);
     }
-    public void ActiveMax(float ACTime)
-    {
-        A_Ability.maxValue = ACTime;
+    public void SuperAbilityC()
+    {//1- ()
+        ScoolBar.fillAmount = Mathf.Lerp(OVBar.fillAmount, Owner.SuperCharge / Owner.maxSuperCharge, LerpSpeed);
     }
-    public void SuperValue(float Scooldown)
-    {
-        S_Ability.value = Scooldown;
-    }
-    public void SuperMax(float SCTime)
-    {
-        S_Ability.maxValue = SCTime;
-    }
+
 }
