@@ -214,7 +214,8 @@ public class TurretScript : HighLevelEntity
             if (isDying)
             {
                 isDying = false;
-                this.GetComponent<EnemyAudio>().PlayDeathAudio();
+                SendCommand("ISDYING", false.ToString());
+                //this.GetComponent<EnemyAudio>().PlayDeathAudio();
                 StartCoroutine(DeathEffect());
             }
 
@@ -227,8 +228,8 @@ public class TurretScript : HighLevelEntity
         Debug.Log("In Death");
 
 
-        yield return new WaitForSeconds(2.0f);
-        Destroy(this);
+        yield return new WaitForSeconds(3.0f);
+        MyCore.NetDestroyObject(this.NetId);
 
 
     }
@@ -236,7 +237,7 @@ public class TurretScript : HighLevelEntity
     public IEnumerator DeathEffect()
     {
         Debug.Log("In DeathFX");
-
+        this.GetComponent<EnemyAudio>().PlayDeathAudio();
         yield return new WaitForSeconds(0.5f);
         GameObject temp = Instantiate(ExplosionEffect, this.transform);
         yield return new WaitForSeconds(1.5f);
@@ -253,4 +254,6 @@ public class TurretScript : HighLevelEntity
         SendUpdate("CANSHOOT", canShoot.ToString());
 
     }
+
+
 }
