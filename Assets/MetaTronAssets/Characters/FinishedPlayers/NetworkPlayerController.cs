@@ -285,6 +285,7 @@ public class NetworkPlayerController : HighLevelEntity
     }
     public virtual float OnDamage(float d, GameObject o)
     {
+
         return d;
     }
     public override IEnumerator SlowUpdate()
@@ -307,6 +308,10 @@ public class NetworkPlayerController : HighLevelEntity
                         if(hit.collider.tag=="Entity" || hit.collider.tag=="Clone" || hit.collider.tag=="Turret")
                     {
                         hit.transform.GetComponent<HighLevelEntity>().Damage(OnDamage( this.DamageScalar, hit.transform.gameObject), this.AProunds);
+                        if(hit.transform.GetComponent<HighLevelEntity>().HP <= 0)
+                        {
+                            Score++;
+                        }
                         if(passiveActive && SuperCharge>0)
                         {
                             SuperCharge -= 2;
