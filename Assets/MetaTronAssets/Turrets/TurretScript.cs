@@ -36,7 +36,7 @@ public class TurretScript : HighLevelEntity
 
     public override void HandleMessage(string flag, string value)
     {
-        //base.HandleMessage(flag, value);
+        base.HandleMessage(flag, value);
 
         if (flag == "ISDYING")
         {
@@ -73,7 +73,7 @@ public class TurretScript : HighLevelEntity
             HP = int.Parse(value);
         }
 
-        if(flag == "FORWARD")
+        if(IsClient && flag == "FORWARD")
         {
             Debug.Log("forward raw " + value);
             ForwardVector = ParseV3(value);
@@ -112,7 +112,7 @@ public class TurretScript : HighLevelEntity
                         Debug.Log("C1");
                         if (Physics.Raycast(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, out hit))
                         {
-                            //this.transform.forward = (p.transform.position - transform.position).normalized;
+                            this.transform.forward = (p.transform.position - transform.position).normalized;
                             Debug.Log("D1" + hit.collider.name);
                             Debug.DrawRay(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, Color.red);
                             if (hit.collider.tag == "Entity")
@@ -176,7 +176,7 @@ public class TurretScript : HighLevelEntity
         }
         if(IsClient)
         {
-            ForwardVector = Vector3.zero;
+            //ForwardVector = Vector3.zero;
         }
 
     }

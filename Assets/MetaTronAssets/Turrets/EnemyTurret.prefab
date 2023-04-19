@@ -339,7 +339,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3893526631815951815}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -583,7 +583,7 @@ MonoBehaviour:
   ShieldIsBroken: 0
   HealthIsLow: 0
   ShieldRegen: 0
-  body: {fileID: 0}
+  body: {fileID: 742212463202201296}
   SpawnLoc: {x: 0, y: 0, z: 0}
   isDying: 0
   canShoot: 1
