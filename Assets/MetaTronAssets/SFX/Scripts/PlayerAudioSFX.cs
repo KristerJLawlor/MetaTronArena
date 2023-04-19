@@ -19,6 +19,7 @@ public class PlayerAudioSFX : MonoBehaviour
     public AudioClip TimerAudio;
     public AudioClip PickupAudio;
     public AudioClip ScoreUpAudio;
+    public AudioClip Railgun;
 
 
     // Start is called before the first frame update
@@ -96,5 +97,9 @@ public class PlayerAudioSFX : MonoBehaviour
     public void PlayScoreUpAudio()
     {
         PlayerAudio.PlayOneShot(ScoreUpAudio, .8f);
+    }
+    public void RailgunShot()
+    {
+        PlayerAudio.PlayOneShot(Railgun, 1);
     }
 }

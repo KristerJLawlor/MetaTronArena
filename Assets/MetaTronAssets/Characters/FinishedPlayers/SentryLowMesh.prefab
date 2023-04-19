@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 6808323900026831078}
   - component: {fileID: 5540541624442177776}
   - component: {fileID: 1155504374495283859}
-  - component: {fileID: 7871681254365618698}
   m_Layer: 0
   m_Name: group1
   m_TagString: Untagged
@@ -1253,18 +1252,6 @@ MonoBehaviour:
           choiceFilteringMode: 0
           choiceCompressionQuality: 1
           choiceCompressionType: 0
---- !u!114 &7871681254365618698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226652820574784269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6643f2ddd2d70e24ca75125fe058d9fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &230079644647986353
 GameObject:
   m_ObjectHideFlags: 0
@@ -5055,6 +5042,7 @@ MonoBehaviour:
   TimerAudio: {fileID: 8300000, guid: c2d9be951814b274794d48585fd5fa15, type: 3}
   PickupAudio: {fileID: 8300000, guid: deedcb657b2ee134ebb4377b8d6c2565, type: 3}
   ScoreUpAudio: {fileID: 8300000, guid: 711be1345db48974c9261fc31d65d4d7, type: 3}
+  Railgun: {fileID: 8300000, guid: f68e1d6c0ec1e3e429c34cd73fecba41, type: 3}
 --- !u!114 &4452257543145264409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5083,6 +5071,7 @@ MonoBehaviour:
   ShieldIsBroken: 0
   HealthIsLow: 0
   ShieldRegen: 0
+  TripMineEffect: {fileID: 0}
   LastInput: {x: 0, y: 0}
   AimVector: {x: 0, y: 0}
   AimPosition: {x: 0, y: 0, z: 0}

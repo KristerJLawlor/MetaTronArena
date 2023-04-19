@@ -8280,6 +8280,7 @@ MonoBehaviour:
   TimerAudio: {fileID: 8300000, guid: c2d9be951814b274794d48585fd5fa15, type: 3}
   PickupAudio: {fileID: 8300000, guid: deedcb657b2ee134ebb4377b8d6c2565, type: 3}
   ScoreUpAudio: {fileID: 8300000, guid: 711be1345db48974c9261fc31d65d4d7, type: 3}
+  Railgun: {fileID: 8300000, guid: f68e1d6c0ec1e3e429c34cd73fecba41, type: 3}
 --- !u!114 &523297582224616935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8308,6 +8309,7 @@ MonoBehaviour:
   ShieldIsBroken: 0
   HealthIsLow: 0
   ShieldRegen: 0
+  TripMineEffect: {fileID: 0}
   LastInput: {x: 0, y: 0}
   AimVector: {x: 0, y: 0}
   AimPosition: {x: 0, y: 0, z: 0}
