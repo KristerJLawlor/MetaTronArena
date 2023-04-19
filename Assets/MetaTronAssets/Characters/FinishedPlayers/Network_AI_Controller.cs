@@ -136,15 +136,9 @@ public class Network_AI_Controller : HighLevelEntity
     {
         if(collision.transform.tag == "Entity")
         {
-            collision.transform.GetComponent<HighLevelEntity>().Damage(.4f, false);
+            collision.transform.GetComponent<HighLevelEntity>().trippedMine();
         }
         
     }
-    public void OnCollisionStay(Collision collision)
-    {
-        if (collision.transform.tag == "Entity")
-        {
-            collision.transform.GetComponent<HighLevelEntity>().Damage(.1f, false);
-        }
-    }
+    
 }

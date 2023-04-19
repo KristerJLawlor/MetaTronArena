@@ -684,7 +684,7 @@ GameObject:
   - component: {fileID: 2320377313873264034}
   m_Layer: 0
   m_Name: AI Robot
-  m_TagString: Untagged
+  m_TagString: Clone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
