@@ -26,7 +26,7 @@ public class HUD_Script : MonoBehaviour
     float LerpSpeed;
     public SortedList<string, int> ScoreList;
     //temp values
-    public int billScore = 1;
+    //public int billScore = 1;
     public float MaxHealth = 100;
     public float CurHealth;
 
@@ -82,7 +82,7 @@ public class HUD_Script : MonoBehaviour
         }
         LerpSpeed = 3f * Time.deltaTime;
 
-        billScore++;
+        //billScore++;
         HealthbarFill();
         //setAbility(Owner.Type);
         HeatbarFill();
@@ -100,7 +100,7 @@ public class HUD_Script : MonoBehaviour
 
 
         //ScoreList.Add(Owner.pname, Owner.Score);
-        ScoreList.Add("bill", billScore);
+        //ScoreList.Add("bill", billScore);
         foreach (KeyValuePair<string, int> t in ScoreList)
         {
             Debug.Log(t.Key + "," + t.Value);
