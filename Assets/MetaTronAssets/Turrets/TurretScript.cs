@@ -36,7 +36,7 @@ public class TurretScript : HighLevelEntity
 
     public override void HandleMessage(string flag, string value)
     {
-        base.HandleMessage(flag, value);
+        //base.HandleMessage(flag, value);
 
         if (flag == "ISDYING")
         {
@@ -73,9 +73,11 @@ public class TurretScript : HighLevelEntity
             HP = int.Parse(value);
         }
 
-        if(flag == "FORWARD" && IsClient)
+        if(flag == "FORWARD")
         {
+            Debug.Log("forward raw " + value);
             ForwardVector = ParseV3(value);
+            Debug.Log("forward parsed " + ParseV3(value));
         }
     }
 
@@ -105,7 +107,7 @@ public class TurretScript : HighLevelEntity
                         SendUpdate("TARGETNEAR", TargetNear.ToString());
 
                         this.transform.forward = (p.transform.position - transform.position).normalized;
-                        SendUpdate("FORWARD", this.transform.forward.ToString());
+                        SendUpdate("FORWARD", body.transform.forward.ToString());
 
                         Debug.Log("C1");
                         if (Physics.Raycast(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, out hit))
@@ -116,12 +118,12 @@ public class TurretScript : HighLevelEntity
                             if (hit.collider.tag == "Entity")
                             {
                                 //move toward target
-                                //body.velocity = (p.transform.position - transform.position).normalized * 1.5f;
+                                body.velocity = (p.transform.position - transform.position).normalized * 1.5f;
                                 hit.transform.GetComponent<HighLevelEntity>().Damage(.4f, false);
                                 this.transform.forward = (p.transform.position - transform.position).normalized;
                                 Debug.Log("transform.forward " + this.transform.forward);
                                 Debug.Log("Turret forward rotation serverside: " + this.transform.forward.ToString());
-                                SendUpdate("FORWARD", this.transform.forward.ToString());
+                                SendUpdate("FORWARD", body.transform.forward.ToString());
                                 Debug.Log("E1");
 
                             }
@@ -172,6 +174,10 @@ public class TurretScript : HighLevelEntity
             SendUpdate("HP", HP.ToString());
             body = GetComponent<Rigidbody>();
         }
+        if(IsClient)
+        {
+            ForwardVector = Vector3.zero;
+        }
 
     }
 
@@ -190,7 +196,7 @@ public class TurretScript : HighLevelEntity
             if(TargetNear)
             {
                 Debug.Log("Forward vector" + ForwardVector);
-                //this.transform.forward = ForwardVector;
+                this.transform.forward = ForwardVector;
                 if (canShoot)
                 {
                     Destroy(LaserBeam);
