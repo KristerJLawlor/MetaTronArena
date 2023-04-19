@@ -19,7 +19,7 @@ public class HUD_Script : MonoBehaviour
     public Slider S_Ability;
 
     //maybe temp
-    public float StartTime = 900f;
+    public float StartTime = 600f;
     public float timer = 0f;
 
     //keep
