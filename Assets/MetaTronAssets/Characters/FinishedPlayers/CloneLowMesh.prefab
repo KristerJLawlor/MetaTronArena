@@ -288,7 +288,6 @@ GameObject:
   - component: {fileID: 8731738579581714435}
   - component: {fileID: 8111178944672293925}
   - component: {fileID: 1791804052336867785}
-  - component: {fileID: -7735476447360327004}
   m_Layer: 0
   m_Name: CloneLowMesh
   m_TagString: Clone
@@ -576,6 +575,7 @@ MonoBehaviour:
   ShieldIsBroken: 0
   HealthIsLow: 0
   ShieldRegen: 0
+  TripMineEffect: {fileID: 0}
   body: {fileID: 0}
   PlayerAnimation: {fileID: 0}
   isAttacking: 0
@@ -627,68 +627,7 @@ MonoBehaviour:
   TimerAudio: {fileID: 0}
   PickupAudio: {fileID: 0}
   ScoreUpAudio: {fileID: 0}
---- !u!114 &-7735476447360327004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 315373771734730485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f18e15cf1ccfdcc4baab712bf8467007, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MyCore: {fileID: 0}
-  MyId: {fileID: 0}
-  IsDirty: 0
-  HP: 100
-  OverShield: 50
-  maxHP: 100
-  maxOverShield: 50
-  DamageScalar: 1
-  RegenTimer: 0
-  AProunds: 0
-  PlayerOvershield: {fileID: 4963673896364119130, guid: c96aad903e4024547bb3ba3b84d6c715,
-    type: 3}
-  AudioScript: {fileID: 0}
-  ShieldIsHit: 0
-  ShieldIsBroken: 0
-  HealthIsLow: 0
-  ShieldRegen: 0
-  LastInput: {x: 0, y: 0}
-  AimVector: {x: 0, y: 0}
-  AimPosition: {x: 0, y: 0, z: 0}
-  AimDirection: {x: 0, y: 0, z: 0}
-  myRig: {fileID: 0}
-  speed: 5
-  Overheat: 0
-  MaxHeat: 100
-  canShoot: 1
-  lastFire: 0
-  passiveActive: 0
-  pname: 
-  AbilityCharge: 0
-  maxCharge: 1000
-  SuperCharge: 50
-  maxSuperCharge: 50
-  AbilityinUse: 0
-  SpawnLoc: {x: 0, y: 0, z: 0}
-  Score: 0
-  isSentry: 0
-  PlayerAnimation: {fileID: 0}
-  isAttacking: 0
-  isDying: 0
-  LaserPrefab: {fileID: 1395565506770744, guid: 9d5dbdf2d3c3c6b4eadc51123699d237,
-    type: 3}
-  LaserBeam: {fileID: 0}
-  isOH: 0
-  canPew: 1
-  isReloading: 0
-  canWalk: 1
-  canOverheat: 1
-  Entity: []
-  SuperinUse: 0
+  Railgun: {fileID: 0}
 --- !u!1 &334077706936011949
 GameObject:
   m_ObjectHideFlags: 0
@@ -3746,7 +3685,6 @@ GameObject:
   - component: {fileID: 7414885922016746517}
   - component: {fileID: 8392744562780066819}
   - component: {fileID: 6230008906690594728}
-  - component: {fileID: 5033323885643501979}
   m_Layer: 0
   m_Name: group1
   m_TagString: Untagged
@@ -4954,18 +4892,6 @@ MonoBehaviour:
           choiceFilteringMode: 0
           choiceCompressionQuality: 1
           choiceCompressionType: 0
---- !u!114 &5033323885643501979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4305382403092764670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6643f2ddd2d70e24ca75125fe058d9fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4345759694285455191
 GameObject:
   m_ObjectHideFlags: 0
