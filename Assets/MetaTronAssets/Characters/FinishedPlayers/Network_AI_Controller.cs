@@ -58,7 +58,7 @@ public class Network_AI_Controller : HighLevelEntity
                         {
                             //move toward target
                             SendUpdate("ISATTACKING", true.ToString());
-                            body.velocity = (p.transform.position - transform.position).normalized * 2f;
+                            body.velocity = (p.transform.position - transform.position).normalized * 5;
                             this.transform.forward = (p.transform.position - transform.position).normalized;
                             //Debug.Log("E");
                             break;

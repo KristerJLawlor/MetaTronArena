@@ -46,28 +46,26 @@ public class CloneScript : HighLevelEntity
             foreach (var p in Players)
             {
                 body.velocity = Vector3.zero;
-                Debug.Log("A" + Players.Length);
+                
                 if (this.Owner == p.GetComponent<NetworkID>().Owner)
                 {
-                    Debug.Log("B");
                     continue;
                 }
-                Debug.Log("B2");
+                
                 if ((transform.position - p.transform.position).magnitude < 25)
                 {
-                    Debug.Log("C");
+                    
                     if (Physics.Raycast(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, out hit))
                     {
-                        Debug.Log("D" + hit.collider.name);
-                        Debug.DrawRay(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, Color.blue);
+                       
                         if (hit.collider.tag == "Entity")
                         {
                             //move toward target
                             SendUpdate("ISATTACKING", true.ToString());
-                            body.velocity = (p.transform.position - transform.position).normalized * 1.5f;
+                            body.velocity = (p.transform.position - transform.position).normalized * 4;
                             hit.transform.GetComponent<HighLevelEntity>().Damage(.2f, false);
                             this.transform.forward = (p.transform.position - transform.position).normalized;
-                            Debug.Log("E");
+                            
                             break;
                         }
                         else
