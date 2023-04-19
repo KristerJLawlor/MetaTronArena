@@ -457,6 +457,7 @@ public class NetworkPlayerController : HighLevelEntity
             }
             else
             {
+                isDying = false;
                 //Debug.Log("DYING ANIMATION");
                 PlayerAnimation.SetTrigger("Die");
 
