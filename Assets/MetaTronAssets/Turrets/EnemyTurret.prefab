@@ -583,6 +583,7 @@ MonoBehaviour:
   ShieldIsBroken: 0
   HealthIsLow: 0
   ShieldRegen: 0
+  TripMineEffect: {fileID: 0}
   body: {fileID: 742212463202201296}
   SpawnLoc: {x: 0, y: 0, z: 0}
   isDying: 0
@@ -594,6 +595,8 @@ MonoBehaviour:
     type: 3}
   LaserBeam: {fileID: 0}
   LaserOrigin: {fileID: 2170927527576002620}
+  ExplosionEffect: {fileID: 1171190231128718, guid: d9467a10b94fb3b428cc539326c9579b,
+    type: 3}
 --- !u!114 &6525407030546674626
 MonoBehaviour:
   m_ObjectHideFlags: 0

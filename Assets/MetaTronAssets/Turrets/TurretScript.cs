@@ -21,6 +21,7 @@ public class TurretScript : HighLevelEntity
     public GameObject LaserPrefab;
     public GameObject LaserBeam;
     public Transform LaserOrigin;
+    public GameObject ExplosionEffect;
 
 
 
@@ -118,7 +119,7 @@ public class TurretScript : HighLevelEntity
                             if (hit.collider.tag == "Entity")
                             {
                                 //move toward target
-                                body.velocity = (p.transform.position - transform.position).normalized * 1.5f;
+                                body.velocity = (p.transform.position - transform.position).normalized;
                                 hit.transform.GetComponent<HighLevelEntity>().Damage(.4f, false);
                                 this.transform.forward = (p.transform.position - transform.position).normalized;
                                 Debug.Log("transform.forward " + this.transform.forward);
@@ -154,7 +155,7 @@ public class TurretScript : HighLevelEntity
                 isDying = true;
                 SendUpdate("ISDYING", isDying.ToString());
                 
-                StartCoroutine(Respawn());
+                StartCoroutine(Death());
             }
 
             yield return new WaitForSeconds(.1f);
@@ -214,37 +215,34 @@ public class TurretScript : HighLevelEntity
             {
                 isDying = false;
                 this.GetComponent<EnemyAudio>().PlayDeathAudio();
+                StartCoroutine(DeathEffect());
             }
 
-            if(isActive)
-            {
-                this.transform.gameObject.SetActive(true);
-            }
-            if (!isActive)
-            {
-                this.transform.gameObject.SetActive(false);
-            }
 
         }
     }
 
-    public IEnumerator Respawn()
+    public IEnumerator Death()
     {   
-        Debug.Log("In Respawn");
-        isActive = false;
-        SendUpdate("ISACTIVE", false.ToString());
-        
-        this.transform.gameObject.SetActive(false);
+        Debug.Log("In Death");
 
-        Debug.Log("Starting Wait");
-        yield return new WaitForSeconds(5.0f);
-        Debug.Log("Wait finished");
-        HP = 50;
-        SendUpdate("HP", HP.ToString());
-        isDying = false;
-        SendUpdate("ISACTIVE", true.ToString());
-        this.transform.gameObject.SetActive(true);
-        Debug.Log("Exiting Respawn");
+
+        yield return new WaitForSeconds(2.0f);
+        Destroy(this);
+
+
+    }
+
+    public IEnumerator DeathEffect()
+    {
+        Debug.Log("In DeathFX");
+
+        yield return new WaitForSeconds(0.5f);
+        GameObject temp = Instantiate(ExplosionEffect, this.transform);
+        yield return new WaitForSeconds(1.5f);
+        Destroy(temp);
+
+
     }
 
     public IEnumerator ROF()
