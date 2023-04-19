@@ -8049,6 +8049,8 @@ MonoBehaviour:
   canWalk: 1
   canOverheat: 1
   Entity: []
+  RailgunEffect: {fileID: 1395565506770744, guid: b5a7ed23b37846d48a19c100369afea8,
+    type: 3}
 --- !u!1 &8587882358522888354
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class MarksmanScript : NetworkPlayerController
 {// Start is called before the first frame update
     public GameObject[] Entity;
+    public GameObject RailgunEffect;
     public override void HandleMessage(string flag, string value)
     {
         base.HandleMessage(flag, value);
@@ -90,6 +91,7 @@ public class MarksmanScript : NetworkPlayerController
             if(SuperCharge==0)
             {
                 SendCommand("RAIL", " ");
+                
             }
         }
     }
@@ -102,6 +104,14 @@ public class MarksmanScript : NetworkPlayerController
             {
                 hit.transform.GetComponent<HighLevelEntity>().gotRailed();
             }
+            StartCoroutine(RailSpawn());
         }
+    }
+
+    public IEnumerator RailSpawn()
+    {
+        GameObject temp = Instantiate(RailgunEffect, this.transform);
+        yield return new WaitForSeconds(1.0f);
+        Destroy(temp);
     }
 }

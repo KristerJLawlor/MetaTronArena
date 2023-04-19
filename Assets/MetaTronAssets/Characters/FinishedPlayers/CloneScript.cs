@@ -9,9 +9,27 @@ public class CloneScript : HighLevelEntity
     GameObject[] Players;
     public RaycastHit hit;
     public Rigidbody body;
+
+    //Variables for animators
+    public Animator PlayerAnimation;
+    public bool isAttacking = false;
+
+    //Variables for particle effect
+    public GameObject LaserPrefab;
+    public GameObject LaserBeam;
     public override void HandleMessage(string flag, string value)
     {
         base.HandleMessage(flag, value);
+
+        if (flag == "ISATTACKING")
+        {
+            //Debug.Log("flag ISATTACKING = " + value);
+            isAttacking = bool.Parse(value);
+            if (IsServer)
+            {
+                SendUpdate("ISATTACKING", isAttacking.ToString());
+            }
+        }
     }
 
     public override void NetworkedStart()
@@ -45,11 +63,16 @@ public class CloneScript : HighLevelEntity
                         if (hit.collider.tag == "Entity")
                         {
                             //move toward target
+                            SendUpdate("ISATTACKING", true.ToString());
                             body.velocity = (p.transform.position - transform.position).normalized * 1.5f;
                             hit.transform.GetComponent<HighLevelEntity>().Damage(.2f, false);
                             this.transform.forward = (p.transform.position - transform.position).normalized;
                             Debug.Log("E");
                             break;
+                        }
+                        else
+                        {
+                            SendUpdate("ISATTACKING", false.ToString());
                         }
                     }
                 }
@@ -71,6 +94,7 @@ public class CloneScript : HighLevelEntity
             SendUpdate("HP", HP.ToString());
             body=GetComponent<Rigidbody>();
         }
+        PlayerAnimation = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -84,5 +108,54 @@ public class CloneScript : HighLevelEntity
                 MyCore.NetDestroyObject(this.NetId);
             }
         }
+
+
+        //Animations in IsClient
+        if (IsClient)
+        {
+            PlayerAnimation.SetBool("Idle", false);
+
+                if (isAttacking)
+                {
+                    //Debug.Log("WALK ATTACK ANIMATION");
+                    PlayerAnimation.SetBool("WalkAttack", true);
+
+                    PlayerAnimation.SetBool("Idle", false);
+                    PlayerAnimation.SetBool("Attack", false);
+                    PlayerAnimation.SetBool("Walk", false);
+
+                }
+
+                else if (!isAttacking)
+                {
+                    //Debug.Log("IDLE ANIMATION");
+                    PlayerAnimation.SetBool("Idle", true);
+
+                    PlayerAnimation.SetBool("WalkAttack", false);
+                    PlayerAnimation.SetBool("Attack", false);
+                    PlayerAnimation.SetBool("Walk", false);
+                }
+
+
+
+            }
+
+            if (isAttacking)
+            {
+                //Debug.Log("Spawn Laser");
+                Destroy(LaserBeam);
+                LaserBeam = Instantiate(LaserPrefab, body.transform.forward + this.transform.position + new Vector3(0, 1.0f, 0), this.transform.rotation);
+
+                //this.GetComponent<PlayerAudioSFX>().PlayLazerAudio();
+
+
+            }
+            else
+            {
+                Destroy(LaserBeam, 0.5f);
+            }
+
+        }
+
     }
 }

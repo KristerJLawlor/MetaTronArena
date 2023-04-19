@@ -4826,6 +4826,8 @@ MonoBehaviour:
   RiotShields: {fileID: 3146569116870129443}
   SentryPassive: 0
   isRegen: 0
+  BlastEffect: {fileID: 1481932562201786, guid: 7b11714ce9d7e1f47826b05270b779e1,
+    type: 3}
 --- !u!1 &4542501329015732162
 GameObject:
   m_ObjectHideFlags: 0

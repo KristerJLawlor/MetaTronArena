@@ -11,6 +11,7 @@ public class SentryScript : NetworkPlayerController
     public bool SentryPassive;
     public bool isRegen = false;
     RaycastHit[] allHit;
+    public GameObject BlastEffect;
     public override void HandleMessage(string flag, string value)
     {
         base.HandleMessage(flag, value);
@@ -136,7 +137,17 @@ public class SentryScript : NetworkPlayerController
             {
                 SuperCharge = maxSuperCharge;
                 SendCommand("BURST", " ");
+                StartCoroutine(SpawnBlast());
             }
+
         }
+    }
+
+    public IEnumerator SpawnBlast()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GameObject temp = Instantiate(BlastEffect, this.transform);
+        yield return new WaitForSeconds(1.5f);
+        Destroy(temp);
     }
 }
