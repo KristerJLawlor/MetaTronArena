@@ -81,7 +81,7 @@ Material:
     - Zoom: 10.89
     - _Amount: 1
     - _Amplitude: 100
-    - _Bias: 1
+    - _Bias: 0.572
     - _BumpScale: 1
     - _Circle_wave: 67.4
     - _Cutoff: 0.5
@@ -94,7 +94,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Opacity: 1
+    - _Opacity: 0.013
     - _Opacity_gl: 1
     - _OriginalUVSwitch: 0
     - _OrigineX: 0.674
@@ -102,7 +102,7 @@ Material:
     - _Parallax: 0.02
     - _Power: 3
     - _Rotation: 0
-    - _Scale: 10
+    - _Scale: 0.71
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 0
@@ -117,17 +117,17 @@ Material:
     - _Zoom: 1
     - _a: 12.5
     - _cut_level: 6
-    - _deform: 1.42
+    - _deform: 0.46
     - _dist_chrom: 0
     - _glitchColor: 1
     - _grey: 1
-    - _intensity: 10
+    - _intensity: 1.78
     - _mask_type: 0
     - _monochrom: 0
     - _noise_details: 1
     - _t: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.9802449, g: 1, b: 0.9779874, a: 1}
     - _Color_diff: {r: 0.25, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _diff_Color: {r: 1, g: 1, b: 1, a: 1}

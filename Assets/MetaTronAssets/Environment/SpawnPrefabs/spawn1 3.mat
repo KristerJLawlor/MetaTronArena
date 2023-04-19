@@ -81,7 +81,7 @@ Material:
     - Zoom: 10.89
     - _Amount: 1
     - _Amplitude: 100
-    - _Bias: 0.112
+    - _Bias: 0.841
     - _BumpScale: 1
     - _Circle_wave: 10.6
     - _Cutoff: 0.5
@@ -100,15 +100,15 @@ Material:
     - _OrigineX: 0.5
     - _OrigineY: 0
     - _Parallax: 0.02
-    - _Power: 1.364
+    - _Power: 3
     - _Rotation: 0
-    - _Scale: 9.9
+    - _Scale: 1.29
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 0.321
     - _Speed_Up: 10
     - _Speed_face: 10
-    - _Speed_wave: 10
+    - _Speed_wave: 7.35
     - _SrcBlend: 1
     - _UVSec: 0
     - _X: 1
@@ -117,11 +117,11 @@ Material:
     - _Zoom: 1
     - _a: 12.5
     - _cut_level: 6
-    - _deform: 1.42
+    - _deform: 0.94
     - _dist_chrom: 0
     - _glitchColor: 1
     - _grey: 1
-    - _intensity: 10
+    - _intensity: 0
     - _mask_type: 0
     - _monochrom: 0
     - _noise_details: 1.66
@@ -131,5 +131,5 @@ Material:
     - _Color_diff: {r: 0.25, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _diff_Color: {r: 1, g: 1, b: 1, a: 1}
-    - _glitchColor_c: {r: 0.14327422, g: 0.41089067, b: 0.7794118, a: 1}
+    - _glitchColor_c: {r: 0.14509805, g: 0.6240818, b: 0.78039217, a: 1}
   m_BuildTextureStacks: []

@@ -94,15 +94,15 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Opacity: 1
+    - _Opacity: 0
     - _Opacity_gl: 1
     - _OriginalUVSwitch: 0
     - _OrigineX: 0.5
     - _OrigineY: 0
     - _Parallax: 0.02
-    - _Power: 1.364
+    - _Power: 3
     - _Rotation: 0
-    - _Scale: 9.9
+    - _Scale: 4.22
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 0.321
@@ -117,14 +117,14 @@ Material:
     - _Zoom: 1
     - _a: 12.5
     - _cut_level: 6
-    - _deform: 1.42
+    - _deform: 1.08
     - _dist_chrom: 0
     - _glitchColor: 1
     - _grey: 1
     - _intensity: 10
     - _mask_type: 0
     - _monochrom: 0
-    - _noise_details: 7.39
+    - _noise_details: 1
     - _t: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

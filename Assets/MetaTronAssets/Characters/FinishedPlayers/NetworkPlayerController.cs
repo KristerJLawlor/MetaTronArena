@@ -395,7 +395,8 @@ public class NetworkPlayerController : HighLevelEntity
         if (IsLocalPlayer)
         {
             Camera.main.transform.position = this.GetComponent<Rigidbody>().position + this.GetComponent<Rigidbody>().rotation*Vector3.forward * .8f + this.GetComponent<Rigidbody>().rotation*Vector3.up;
-            Camera.main.transform.forward = this.GetComponent<Rigidbody>().rotation*Vector3.forward;
+            //Camera.main.transform.forward = this.GetComponent<Rigidbody>().rotation*Vector3.forward;
+            Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, this.GetComponent<Rigidbody>().rotation, Time.deltaTime*2);
             
 
 

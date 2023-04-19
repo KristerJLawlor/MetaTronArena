@@ -104,6 +104,7 @@ public class MarksmanScript : NetworkPlayerController
             {
                 hit.transform.GetComponent<HighLevelEntity>().gotRailed();
             }
+            this.GetComponent<PlayerAudioSFX>().RailgunShot();
             StartCoroutine(RailSpawn());
         }
     }
