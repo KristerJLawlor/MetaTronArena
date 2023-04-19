@@ -73,7 +73,7 @@ public class Network_AI_Controller : HighLevelEntity
     // Update is called once per frame
     void Update()
     {
-        base.Update();
+        //base.Update();
         if (IsServer)
         {
             if (HP <= 0)
