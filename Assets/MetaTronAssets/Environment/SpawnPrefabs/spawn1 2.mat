@@ -94,15 +94,15 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Opacity: 0.813
+    - _Opacity: 0.131
     - _Opacity_gl: 1
     - _OriginalUVSwitch: 0
     - _OrigineX: 0.5
     - _OrigineY: 0
     - _Parallax: 0.02
-    - _Power: 1.84
+    - _Power: 3
     - _Rotation: 0
-    - _Scale: 10
+    - _Scale: 2.98
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 0.082
@@ -121,7 +121,7 @@ Material:
     - _dist_chrom: 0
     - _glitchColor: 1
     - _grey: 1
-    - _intensity: 10
+    - _intensity: 2.65
     - _mask_type: 0
     - _monochrom: 0
     - _noise_details: 2.05
