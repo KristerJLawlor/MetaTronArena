@@ -35,19 +35,19 @@ public class CloneScript : HighLevelEntity
     public override void NetworkedStart()
     {
         base.NetworkedStart();
-        
+
     }
 
     public override IEnumerator SlowUpdate()
     {
         base.SlowUpdate();
-        while(IsServer)
+        while (IsServer)
         {
-            foreach(var p in Players)
+            foreach (var p in Players)
             {
                 body.velocity = Vector3.zero;
-                Debug.Log("A"+ Players.Length);
-                if(this.Owner == p.GetComponent<NetworkID>().Owner)
+                Debug.Log("A" + Players.Length);
+                if (this.Owner == p.GetComponent<NetworkID>().Owner)
                 {
                     Debug.Log("B");
                     continue;
@@ -56,9 +56,9 @@ public class CloneScript : HighLevelEntity
                 if ((transform.position - p.transform.position).magnitude < 25)
                 {
                     Debug.Log("C");
-                    if(Physics.Raycast(transform.position+transform.up*.5f, (p.transform.position-transform.position).normalized, out hit))
+                    if (Physics.Raycast(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, out hit))
                     {
-                       Debug.Log("D" + hit.collider.name);
+                        Debug.Log("D" + hit.collider.name);
                         Debug.DrawRay(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, Color.blue);
                         if (hit.collider.tag == "Entity")
                         {
@@ -79,7 +79,7 @@ public class CloneScript : HighLevelEntity
             }
             yield return new WaitForSeconds(.1f);
         }
-        
+
     }
 
     // Start is called before the first frame update
@@ -92,7 +92,7 @@ public class CloneScript : HighLevelEntity
             SendUpdate("SHIELD", OverShield.ToString());
             HP = 25;
             SendUpdate("HP", HP.ToString());
-            body=GetComponent<Rigidbody>();
+            body = GetComponent<Rigidbody>();
         }
         PlayerAnimation = GetComponent<Animator>();
     }
@@ -115,30 +115,30 @@ public class CloneScript : HighLevelEntity
         {
             PlayerAnimation.SetBool("Idle", false);
 
-                if (isAttacking)
-                {
-                    //Debug.Log("WALK ATTACK ANIMATION");
-                    PlayerAnimation.SetBool("WalkAttack", true);
+            if (isAttacking)
+            {
+                //Debug.Log("WALK ATTACK ANIMATION");
+                PlayerAnimation.SetBool("WalkAttack", true);
 
-                    PlayerAnimation.SetBool("Idle", false);
-                    PlayerAnimation.SetBool("Attack", false);
-                    PlayerAnimation.SetBool("Walk", false);
-
-                }
-
-                else if (!isAttacking)
-                {
-                    //Debug.Log("IDLE ANIMATION");
-                    PlayerAnimation.SetBool("Idle", true);
-
-                    PlayerAnimation.SetBool("WalkAttack", false);
-                    PlayerAnimation.SetBool("Attack", false);
-                    PlayerAnimation.SetBool("Walk", false);
-                }
-
-
+                PlayerAnimation.SetBool("Idle", false);
+                PlayerAnimation.SetBool("Attack", false);
+                PlayerAnimation.SetBool("Walk", false);
 
             }
+
+            else if (!isAttacking)
+            {
+                //Debug.Log("IDLE ANIMATION");
+                PlayerAnimation.SetBool("Idle", true);
+
+                PlayerAnimation.SetBool("WalkAttack", false);
+                PlayerAnimation.SetBool("Attack", false);
+                PlayerAnimation.SetBool("Walk", false);
+            }
+
+
+
+
 
             if (isAttacking)
             {
@@ -159,3 +159,5 @@ public class CloneScript : HighLevelEntity
 
     }
 }
+
+

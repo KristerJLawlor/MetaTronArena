@@ -142,6 +142,7 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _ConservativeDepthOffsetEnable: 0
     - _Cull: 2
     - _CullMode: 0
     - _CullModeForward: 0
@@ -150,11 +151,12 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DoubleSidedEnable: 1
+    - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 2
     - _DropExponent: 4.16
     - _DropHeadShrink: 1
     - _DropLength: 13
-    - _DropSpeed: 1.34
+    - _DropSpeed: 0.19
     - _DstBlend: 10
     - _EditorEnd: 0
     - _EditorStart: 0

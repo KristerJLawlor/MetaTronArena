@@ -174,7 +174,7 @@ Material:
     - _DropExponent: 4.16
     - _DropHeadShrink: 1
     - _DropLength: 13
-    - _DropSpeed: 1.34
+    - _DropSpeed: 0.12
     - _DstBlend: 0
     - _EditorEnd: 0
     - _EditorStart: 0

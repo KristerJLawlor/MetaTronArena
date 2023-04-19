@@ -4059,6 +4059,7 @@ GameObject:
   - component: {fileID: 1610173097976526726}
   - component: {fileID: 344393591411802000}
   - component: {fileID: 7845054270897418407}
+  - component: {fileID: 4662297744857091048}
   m_Layer: 0
   m_Name: group1
   m_TagString: Untagged
@@ -4174,13 +4175,293 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 5231176593628725261
+      type: {class: DataContainer/ObjectMeshPair, ns: BrainFailProductions.PolyFew,
+        asm: Assembly-CSharp}
+      data:
+        _Buckets: 26000000ffffffff16000000ffffffffffffffffffffffffffffffffffffffff14000000ffffffffffffffffffffffffffffffffffffffffffffffff27000000ffffffff0a000000ffffffffffffffffffffffff2e000000060000002500000029000000ffffffff07000000ffffffff23000000ffffffff0f0000002a0000001c000000ffffffffffffffff190000002c000000ffffffffffffffffffffffffffffffff15000000ffffffffffffffff12000000ffffffffffffffff08000000ffffffffffffffffffffffffffffffff2d0000001f0000001d000000ffffffffffffffffffffffff2f00000022000000170000000d000000ffffffff1e000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff180000002b000000ffffffffffffffff1b000000ffffffffffffffffffffffff240000002800000010000000ffffffffffffffff000000002000000021000000ffffffff
+        _HashCodes: deac020092ad0200b2ad020096ad020012ac020064ad020046ac0200fcac020006ac0200ceab0200e8ab02007cab0200aaab020014ac020084ad02009cab020082ac020098ac02005cac0200baab020086ab0200b2ac020032ac02006cac02002aad02005ead0200e4ad0200caab0200b4ad0200b4ab020016ac020070ad0200d4ab0200e0ac0200c4ac02004cac020080ac0200a0ac02007eab02004aad020028ac0200faac0200a8ac0200d2ac020054ac0200c8ad020050ad02001cad02000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff01000000ffffffffffffffffffffffff02000000ffffffffffffffff0c000000ffffffffffffffff050000000300000013000000ffffffffffffffff09000000ffffffffffffffffffffffffffffffffffffffffffffffff0b00000004000000ffffffff1a000000ffffffffffffffff11000000ffffffffffffffffffffffff0e000000ffffffffffffffffffffffffffffffff0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        _Count: 48
+        _Version: 48
+        _FreeList: -1
+        _FreeCount: 0
+        _Keys:
+        - {fileID: 5404679020309806189}
+        - {fileID: 7815905602206548391}
+        - {fileID: 8235307919817721837}
+        - {fileID: 7884104785109520429}
+        - {fileID: 2463812589927785240}
+        - {fileID: 7256517885080246458}
+        - {fileID: 3257535865256991053}
+        - {fileID: 5962364277905968506}
+        - {fileID: 2295710561459581899}
+        - {fileID: 1604868638930831446}
+        - {fileID: 1882322678499646176}
+        - {fileID: 118782323072913344}
+        - {fileID: 821071857481009900}
+        - {fileID: 2467992989063058888}
+        - {fileID: 7531845118989941568}
+        - {fileID: 571404280815831559}
+        - {fileID: 4058368554709596704}
+        - {fileID: 4300326398161966627}
+        - {fileID: 3526246051316195682}
+        - {fileID: 1102943578179344869}
+        - {fileID: 328589052324244783}
+        - {fileID: 4793210287120665189}
+        - {fileID: 3039705240314803358}
+        - {fileID: 3692025794288749762}
+        - {fileID: 6644076573349343433}
+        - {fileID: 7208779007383798885}
+        - {fileID: 8965684837814856089}
+        - {fileID: 1540310436780025251}
+        - {fileID: 8246533478995101160}
+        - {fileID: 983474916143139023}
+        - {fileID: 2484133866253214959}
+        - {fileID: 7393218447952220086}
+        - {fileID: 1628278084144458414}
+        - {fileID: 5410253972817290193}
+        - {fileID: 4924055719015562310}
+        - {fileID: 3283586153932426476}
+        - {fileID: 4040322319393492392}
+        - {fileID: 4410028560003417311}
+        - {fileID: 139781119996535889}
+        - {fileID: 7086111594132003156}
+        - {fileID: 2832368185935850876}
+        - {fileID: 5954795492131690279}
+        - {fileID: 4517826751342203380}
+        - {fileID: 5161350574038790241}
+        - {fileID: 3440506959579912082}
+        - {fileID: 8587882358522888354}
+        - {fileID: 7111150093835811171}
+        - {fileID: 6487659798216257436}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        _Values:
+        - attachedToMeshFilter: 1
+          mesh: {fileID: 4300000, guid: ab0edf2a10c88db4daaf4d365ed2b358, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: a066be5d2f3e68e48a7664baf546bba4, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 9a09318e16c89c94baa840bd18e5a8ab, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 7dc31536cdefc0944b029d314eb506ae, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 153fa822487d0dd4e9c38f0fbd21694f, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 025eb5845799b4a4ab20604dacb0f505, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 613d877f9c021664e8f85acdc2a01a3c, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: d1a62d470a1ed664ba97950d650c378b, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: ce128e0b3be59a245a0ceb6b15b1097a, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: de51c259f8468e945bd2710b8ef8b0d6, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 02123d614c8df2147a918d4bc767a32b, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: a8ccdb91ae937af4387d61930bc68f5c, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 9379ecf6f06dff149a3b34439155081b, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: f1da7c9e387bb9b448fce66606866f17, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: b3d1112587537e74c8ad47c54fe1ec75, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: dcefcae1be832a945b57f5587b86ebf7, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 5be2bc477a63e954db37f178838fca8b, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 265dfa7069cf87941b26257c30e6960c, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 334cc8dae71885e4983de676bc56184d, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 039193715dd948f43a2f106cf70b5c04, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 2b90d182b2720a04b82885239c49e100, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: b13b958ada87d1b4d8c441317ea41418, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 38aed50f7a0008b448b33b176d90a878, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 018ac0bdcf625f445817f44afeba4bbd, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: ebff919de23b3de4db234e383481e980, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 7a872a0225056f044912ce46d98cd346, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 051443de0308f0f4ab72f806dee7c3bf, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 22347ba0f1752384aa6c6808794fea6c, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 075881795577dbd4e952d8b75534ae7c, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 370194a9470df324599e54db5c0a357d, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 9c7a75556eec8f74bae0da599e91ecaf, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: aea7dc99224825046af60702d490a7ef, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 43aa70fa1f98f80419ea9846c2c843c6, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 82a480abccceb4d40b775b5ec7d6ed2f, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: e5ba07929d0c9574badb466de614ad4d, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 25d8bbdb5cd93dc49b1d14d96a3d9853, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 599349143a62e09409bc9e2285f92f38, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 7c8fcac7f1e79d84392f176036bbd765, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: e79f0aca0be4c854eba1664a559c0359, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: e2028379c102e27438b3b02ab6447d39, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 12b0835a5c42ed94584d6164dc84846d, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: a0c5cac74cfd1d0429fa0e98158c9a47, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 05ff6cdf2dbd2ac40adff92fa609ac56, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: affc77e7746ee6c488b18b5c2c95c3ff, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 291f09341c2c41742936f23f05bfedba, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 7517b25a005839841a78586eadc97b63, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 06bc5a566d8f5404cabaa0b4576853ba, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 4300000, guid: 460d114c2fcf40942a09cd2fa37a4003, type: 2}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
     - rid: 8622177069444890781
       type: {class: DataContainer, ns: BrainFailProductions.PolyFew, asm: Assembly-CSharp}
       data:
         objectsHistory:
           rid: 8622177069444890782
         objectMeshPairs:
-          rid: 8622177069444890786
+          rid: 5231176593628725261
         currentLodLevelSettings:
         - reductionStrength: 0
           transitionHeight: 0.6
@@ -4268,7 +4549,7 @@ MonoBehaviour:
         reductionPending: 0
         prevFeasibleTarget: {fileID: 5404679020309806189}
         runOnThreads: 1
-        triangleCount: 35040
+        triangleCount: 17519
         lastDrawer: {fileID: 0}
         foldoutAutoLOD: 0
         foldoutBatchFew: 0
@@ -4276,7 +4557,7 @@ MonoBehaviour:
         objPositionPrevFrame: {x: 3.5, y: 167.96689, z: 61.837357}
         objScalePrevFrame: {x: 1, y: 1, z: 1}
         considerChildrenBatchFew: 1
-        autoLODSavePath: Assets/
+        autoLODSavePath: 
         foldoutAdditionalOpts: 0
         generateUV2: 0
         copyParentStaticFlags: 0
@@ -4300,6 +4581,284 @@ MonoBehaviour:
             _Buckets: ffffffff0f0000002a000000ffffffff19000000ffffffffffffffff2c000000ffffffffffffffff05000000ffffffff15000000ffffffffffffffff12000000ffffffff2d00000008000000ffffffff1f000000ffffffffffffffffffffffffffffffff1d000000ffffffff2f000000ffffffffffffffff22000000170000000d000000ffffffff1e000000ffffffffffffffffffffffffffffffffffffffff0e00000018000000ffffffffffffffff2b0000001a000000ffffffff1b000000ffffffffffffffffffffffff24000000280000001000000001000000ffffffff030000002000000021000000ffffffff26000000ffffffff16000000ffffffffffffffffffffffffffffffffffffffff14000000ffffffffffffffffffffffffffffffff27000000ffffffff11000000ffffffff0a000000ffffffff2e000000ffffffffffffffff060000002500000029000000ffffffff1c000000ffffffff23000000
             _HashCodes: 76520400265304004453040028530400aa510400fa520400de510400945204009e51040066510400805104001451040042510400ac51040018530400345104001a52040030520400f4510400525104001e5104004a520400ca51040004520400c0520400f45204007653040062510400465304004c510400ae510400045304006c510400785204005c520400e4510400185204003852040016510400e0520400c051040092520400405204006a520400ec5104005a530400e6520400b25204000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
             _Next: ffffffffffffffffffffffff00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0c000000ffffffffffffffffffffffffffffffff13000000ffffffffffffffffffffffffffffffff07000000ffffffffffffffffffffffffffffffff0b00000004000000ffffffff09000000ffffffffffffffffffffffffffffffff02000000ffffffffffffffffffffffffffffffffffffffffffffffff0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+            _Count: 48
+            _Version: 48
+            _FreeList: -1
+            _FreeCount: 0
+            _Keys:
+            - {fileID: 5404679020309806189}
+            - {fileID: 7815905602206548391}
+            - {fileID: 8235307919817721837}
+            - {fileID: 7884104785109520429}
+            - {fileID: 2463812589927785240}
+            - {fileID: 7256517885080246458}
+            - {fileID: 3257535865256991053}
+            - {fileID: 5962364277905968506}
+            - {fileID: 2295710561459581899}
+            - {fileID: 1604868638930831446}
+            - {fileID: 1882322678499646176}
+            - {fileID: 118782323072913344}
+            - {fileID: 821071857481009900}
+            - {fileID: 2467992989063058888}
+            - {fileID: 7531845118989941568}
+            - {fileID: 571404280815831559}
+            - {fileID: 4058368554709596704}
+            - {fileID: 4300326398161966627}
+            - {fileID: 3526246051316195682}
+            - {fileID: 1102943578179344869}
+            - {fileID: 328589052324244783}
+            - {fileID: 4793210287120665189}
+            - {fileID: 3039705240314803358}
+            - {fileID: 3692025794288749762}
+            - {fileID: 6644076573349343433}
+            - {fileID: 7208779007383798885}
+            - {fileID: 8965684837814856089}
+            - {fileID: 1540310436780025251}
+            - {fileID: 8246533478995101160}
+            - {fileID: 983474916143139023}
+            - {fileID: 2484133866253214959}
+            - {fileID: 7393218447952220086}
+            - {fileID: 1628278084144458414}
+            - {fileID: 5410253972817290193}
+            - {fileID: 4924055719015562310}
+            - {fileID: 3283586153932426476}
+            - {fileID: 4040322319393492392}
+            - {fileID: 4410028560003417311}
+            - {fileID: 139781119996535889}
+            - {fileID: 7086111594132003156}
+            - {fileID: 2832368185935850876}
+            - {fileID: 5954795492131690279}
+            - {fileID: 4517826751342203380}
+            - {fileID: 5161350574038790241}
+            - {fileID: 3440506959579912082}
+            - {fileID: 8587882358522888354}
+            - {fileID: 7111150093835811171}
+            - {fileID: 6487659798216257436}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            - {fileID: 0}
+            _Values:
+            - attachedToMeshFilter: 1
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+            - attachedToMeshFilter: 0
+              mesh: {fileID: 0}
+        - isReduceDeep: 1
+          objectMeshPairs:
+            _Buckets: 26000000ffffffff16000000ffffffffffffffffffffffffffffffffffffffff14000000ffffffffffffffffffffffffffffffffffffffffffffffff27000000ffffffff0a000000ffffffffffffffffffffffff2e000000060000002500000029000000ffffffff07000000ffffffff23000000ffffffff0f0000002a0000001c000000ffffffffffffffff190000002c000000ffffffffffffffffffffffffffffffff15000000ffffffffffffffff12000000ffffffffffffffff08000000ffffffffffffffffffffffffffffffff2d0000001f0000001d000000ffffffffffffffffffffffff2f00000022000000170000000d000000ffffffff1e000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff180000002b000000ffffffffffffffff1b000000ffffffffffffffffffffffff240000002800000010000000ffffffffffffffff000000002000000021000000ffffffff
+            _HashCodes: deac020092ad0200b2ad020096ad020012ac020064ad020046ac0200fcac020006ac0200ceab0200e8ab02007cab0200aaab020014ac020084ad02009cab020082ac020098ac02005cac0200baab020086ab0200b2ac020032ac02006cac02002aad02005ead0200e4ad0200caab0200b4ad0200b4ab020016ac020070ad0200d4ab0200e0ac0200c4ac02004cac020080ac0200a0ac02007eab02004aad020028ac0200faac0200a8ac0200d2ac020054ac0200c8ad020050ad02001cad02000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+            _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff01000000ffffffffffffffffffffffff02000000ffffffffffffffff0c000000ffffffffffffffff050000000300000013000000ffffffffffffffff09000000ffffffffffffffffffffffffffffffffffffffffffffffff0b00000004000000ffffffff1a000000ffffffffffffffff11000000ffffffffffffffffffffffff0e000000ffffffffffffffffffffffffffffffff0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
             _Count: 48
             _Version: 48
             _FreeList: -1
@@ -4708,286 +5267,18 @@ MonoBehaviour:
           choiceFilteringMode: 0
           choiceCompressionQuality: 1
           choiceCompressionType: 0
-    - rid: 8622177069444890786
-      type: {class: DataContainer/ObjectMeshPair, ns: BrainFailProductions.PolyFew,
-        asm: Assembly-CSharp}
-      data:
-        _Buckets: ffffffff0f0000002a000000ffffffff19000000ffffffffffffffff2c000000ffffffffffffffff05000000ffffffff15000000ffffffffffffffff12000000ffffffff2d00000008000000ffffffff1f000000ffffffffffffffffffffffffffffffff1d000000ffffffff2f000000ffffffffffffffff22000000170000000d000000ffffffff1e000000ffffffffffffffffffffffffffffffffffffffff0e00000018000000ffffffffffffffff2b0000001a000000ffffffff1b000000ffffffffffffffffffffffff24000000280000001000000001000000ffffffff030000002000000021000000ffffffff26000000ffffffff16000000ffffffffffffffffffffffffffffffffffffffff14000000ffffffffffffffffffffffffffffffff27000000ffffffff11000000ffffffff0a000000ffffffff2e000000ffffffffffffffff060000002500000029000000ffffffff1c000000ffffffff23000000
-        _HashCodes: 76520400265304004453040028530400aa510400fa520400de510400945204009e51040066510400805104001451040042510400ac51040018530400345104001a52040030520400f4510400525104001e5104004a520400ca51040004520400c0520400f45204007653040062510400465304004c510400ae510400045304006c510400785204005c520400e4510400185204003852040016510400e0520400c051040092520400405204006a520400ec5104005a530400e6520400b25204000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-        _Next: ffffffffffffffffffffffff00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0c000000ffffffffffffffffffffffffffffffff13000000ffffffffffffffffffffffffffffffff07000000ffffffffffffffffffffffffffffffff0b00000004000000ffffffff09000000ffffffffffffffffffffffffffffffff02000000ffffffffffffffffffffffffffffffffffffffffffffffff0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-        _Count: 48
-        _Version: 48
-        _FreeList: -1
-        _FreeCount: 0
-        _Keys:
-        - {fileID: 5404679020309806189}
-        - {fileID: 7815905602206548391}
-        - {fileID: 8235307919817721837}
-        - {fileID: 7884104785109520429}
-        - {fileID: 2463812589927785240}
-        - {fileID: 7256517885080246458}
-        - {fileID: 3257535865256991053}
-        - {fileID: 5962364277905968506}
-        - {fileID: 2295710561459581899}
-        - {fileID: 1604868638930831446}
-        - {fileID: 1882322678499646176}
-        - {fileID: 118782323072913344}
-        - {fileID: 821071857481009900}
-        - {fileID: 2467992989063058888}
-        - {fileID: 7531845118989941568}
-        - {fileID: 571404280815831559}
-        - {fileID: 4058368554709596704}
-        - {fileID: 4300326398161966627}
-        - {fileID: 3526246051316195682}
-        - {fileID: 1102943578179344869}
-        - {fileID: 328589052324244783}
-        - {fileID: 4793210287120665189}
-        - {fileID: 3039705240314803358}
-        - {fileID: 3692025794288749762}
-        - {fileID: 6644076573349343433}
-        - {fileID: 7208779007383798885}
-        - {fileID: 8965684837814856089}
-        - {fileID: 1540310436780025251}
-        - {fileID: 8246533478995101160}
-        - {fileID: 983474916143139023}
-        - {fileID: 2484133866253214959}
-        - {fileID: 7393218447952220086}
-        - {fileID: 1628278084144458414}
-        - {fileID: 5410253972817290193}
-        - {fileID: 4924055719015562310}
-        - {fileID: 3283586153932426476}
-        - {fileID: 4040322319393492392}
-        - {fileID: 4410028560003417311}
-        - {fileID: 139781119996535889}
-        - {fileID: 7086111594132003156}
-        - {fileID: 2832368185935850876}
-        - {fileID: 5954795492131690279}
-        - {fileID: 4517826751342203380}
-        - {fileID: 5161350574038790241}
-        - {fileID: 3440506959579912082}
-        - {fileID: 8587882358522888354}
-        - {fileID: 7111150093835811171}
-        - {fileID: 6487659798216257436}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        _Values:
-        - attachedToMeshFilter: 1
-          mesh: {fileID: 4300000, guid: ab0edf2a10c88db4daaf4d365ed2b358, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: a066be5d2f3e68e48a7664baf546bba4, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 9a09318e16c89c94baa840bd18e5a8ab, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 7dc31536cdefc0944b029d314eb506ae, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 153fa822487d0dd4e9c38f0fbd21694f, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 025eb5845799b4a4ab20604dacb0f505, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 613d877f9c021664e8f85acdc2a01a3c, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: d1a62d470a1ed664ba97950d650c378b, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: ce128e0b3be59a245a0ceb6b15b1097a, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: de51c259f8468e945bd2710b8ef8b0d6, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 02123d614c8df2147a918d4bc767a32b, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: a8ccdb91ae937af4387d61930bc68f5c, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 9379ecf6f06dff149a3b34439155081b, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: f1da7c9e387bb9b448fce66606866f17, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: b3d1112587537e74c8ad47c54fe1ec75, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: dcefcae1be832a945b57f5587b86ebf7, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 5be2bc477a63e954db37f178838fca8b, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 265dfa7069cf87941b26257c30e6960c, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 334cc8dae71885e4983de676bc56184d, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 039193715dd948f43a2f106cf70b5c04, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 2b90d182b2720a04b82885239c49e100, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: b13b958ada87d1b4d8c441317ea41418, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 38aed50f7a0008b448b33b176d90a878, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 018ac0bdcf625f445817f44afeba4bbd, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: ebff919de23b3de4db234e383481e980, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 7a872a0225056f044912ce46d98cd346, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 051443de0308f0f4ab72f806dee7c3bf, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 22347ba0f1752384aa6c6808794fea6c, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 075881795577dbd4e952d8b75534ae7c, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 370194a9470df324599e54db5c0a357d, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 9c7a75556eec8f74bae0da599e91ecaf, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: aea7dc99224825046af60702d490a7ef, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 43aa70fa1f98f80419ea9846c2c843c6, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 82a480abccceb4d40b775b5ec7d6ed2f, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: e5ba07929d0c9574badb466de614ad4d, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 25d8bbdb5cd93dc49b1d14d96a3d9853, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 599349143a62e09409bc9e2285f92f38, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 7c8fcac7f1e79d84392f176036bbd765, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: e79f0aca0be4c854eba1664a559c0359, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: e2028379c102e27438b3b02ab6447d39, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 12b0835a5c42ed94584d6164dc84846d, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: a0c5cac74cfd1d0429fa0e98158c9a47, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 05ff6cdf2dbd2ac40adff92fa609ac56, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: affc77e7746ee6c488b18b5c2c95c3ff, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 291f09341c2c41742936f23f05bfedba, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 7517b25a005839841a78586eadc97b63, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 06bc5a566d8f5404cabaa0b4576853ba, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 4300000, guid: 460d114c2fcf40942a09cd2fa37a4003, type: 2}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
-        - attachedToMeshFilter: 0
-          mesh: {fileID: 0}
+--- !u!114 &4662297744857091048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404679020309806189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6643f2ddd2d70e24ca75125fe058d9fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5410253972817290193
 GameObject:
   m_ObjectHideFlags: 0

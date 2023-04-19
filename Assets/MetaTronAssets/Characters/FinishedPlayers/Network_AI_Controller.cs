@@ -9,9 +9,22 @@ public class Network_AI_Controller : HighLevelEntity
     public RaycastHit hit;
     public Rigidbody body;
 
+    //Variables for animators
+    public Animator PlayerAnimation;
+    public bool isAttacking = false;
     public override void HandleMessage(string flag, string value)
     {
         base.HandleMessage(flag, value);
+
+        if (flag == "ISATTACKING")
+        {
+            //Debug.Log("flag ISATTACKING = " + value);
+            isAttacking = bool.Parse(value);
+            if (IsServer)
+            {
+                SendUpdate("ISATTACKING", isAttacking.ToString());
+            }
+        }
     }
 
     public override void NetworkedStart()
@@ -44,10 +57,15 @@ public class Network_AI_Controller : HighLevelEntity
                         if (hit.collider.tag == "Entity")
                         {
                             //move toward target
+                            SendUpdate("ISATTACKING", true.ToString());
                             body.velocity = (p.transform.position - transform.position).normalized * 2f;
                             this.transform.forward = (p.transform.position - transform.position).normalized;
                             //Debug.Log("E");
                             break;
+                        }
+                        else
+                        {
+                            SendUpdate("ISATTACKING", false.ToString());
                         }
                     }
                 }
@@ -68,6 +86,7 @@ public class Network_AI_Controller : HighLevelEntity
             SendUpdate("HP", HP.ToString());
             body = GetComponent<Rigidbody>();
         }
+        PlayerAnimation = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -81,6 +100,37 @@ public class Network_AI_Controller : HighLevelEntity
                 MyCore.NetDestroyObject(this.NetId);
             }
         }
+
+
+        //Animations in IsClient
+        if (IsClient)
+        {
+            PlayerAnimation.SetBool("Idle", false);
+
+            if (isAttacking)
+            {
+                //Debug.Log("WALK ATTACK ANIMATION");
+                PlayerAnimation.SetBool("Walk", true);
+
+                PlayerAnimation.SetBool("Idle", false);
+                PlayerAnimation.SetBool("Attack", false);
+                PlayerAnimation.SetBool("WalkAttack", false);
+
+            }
+
+            else if (!isAttacking)
+            {
+                //Debug.Log("IDLE ANIMATION");
+                PlayerAnimation.SetBool("Idle", true);
+
+                PlayerAnimation.SetBool("WalkAttack", false);
+                PlayerAnimation.SetBool("Attack", false);
+                PlayerAnimation.SetBool("Walk", false);
+            }
+
+
+        }
+
     }
     public void OnCollisionEnter(Collision collision)
     {
@@ -90,7 +140,7 @@ public class Network_AI_Controller : HighLevelEntity
         }
         
     }
-    public void nCollisionStay(Collision collision)
+    public void OnCollisionStay(Collision collision)
     {
         if (collision.transform.tag == "Entity")
         {
