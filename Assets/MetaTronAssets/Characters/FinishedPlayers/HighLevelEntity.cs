@@ -20,7 +20,7 @@ public class HighLevelEntity : NetworkComponent
     public bool ShieldIsBroken = false;
     public bool HealthIsLow = false;
     public bool ShieldRegen = false;
-
+    public GameObject TripMineEffect;
 
     
     public void Damage(float DMGMod, bool piercing)
@@ -57,8 +57,17 @@ public class HighLevelEntity : NetworkComponent
         HP -= 50;
         RegenTimer = 5.0f;
        SendUpdate("HP", HP.ToString());
-        
+        StartCoroutine(MineExplosion());
     }
+
+    public IEnumerator MineExplosion()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GameObject temp = Instantiate(TripMineEffect, this.transform);
+        yield return new WaitForSeconds(1.5f);
+        Destroy(temp);
+    }
+
     public void gotRailed()
     {
         OverShield = 0;
