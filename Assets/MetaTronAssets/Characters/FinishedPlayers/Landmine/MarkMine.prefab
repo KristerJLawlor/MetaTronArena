@@ -134,3 +134,6 @@ MonoBehaviour:
   MyCore: {fileID: 0}
   MyId: {fileID: 0}
   IsDirty: 0
+  isTriggered: 0
+  TripMineEffect: {fileID: 1029683450922114, guid: 911d39b31e356794d971139c547d1e61,
+    type: 3}
