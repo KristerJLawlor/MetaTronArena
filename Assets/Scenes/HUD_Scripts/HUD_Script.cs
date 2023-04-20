@@ -7,6 +7,7 @@ using System.Linq;
 public class HUD_Script : MonoBehaviour
 {
     //UI and Owner
+    public GameObject ScoreBoard;
     public Image ShieldBar;
     public Image[] HPoints;
     public Sprite[] Icons;
@@ -14,17 +15,16 @@ public class HUD_Script : MonoBehaviour
     public NetworkPlayerController Owner;
     public Text MTimer;
     public Text IndScore;
-    public Text ScoreBoard;
     public Slider A_Ability;
     public Slider S_Ability;
 
     //maybe temp
     public float StartTime = 600f;
-    public float timer = 0f;
+    public float timer = 1f;
 
     //keep
     float LerpSpeed;
-    public SortedList<string, int> ScoreList;
+    //public SortedList<string, int> ScoreList;
     //temp values
     //public int billScore = 1;
     public float MaxHealth = 100;
@@ -39,9 +39,10 @@ public class HUD_Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ScoreBoard.SetActive(false);
         tempColor = OVBar.color;
         Owner = transform.parent.gameObject.GetComponent<NetworkPlayerController>();
-        ScoreList = new SortedList<string, int>();
+        //ScoreList = new SortedList<string, int>();
         CurHealth = MaxHealth;
         CurShields = MaxShields;
         setAbility(Owner.Type);
@@ -89,26 +90,29 @@ public class HUD_Script : MonoBehaviour
         ActiveValue(Owner.AbilityCharge);
         SuperValue(Owner.SuperCharge);
         ChangeScore();
+        if(timer <= 0)
+        {
+            ScoreBoard.SetActive(true);
+        }
         //Add owner values going to active ability and super abilities cooldowns here
 
 
-        foreach (NetworkPlayerController npc in FindObjectsOfType<NetworkPlayerController>())
+        /*foreach (NetworkPlayerController npc in FindObjectsOfType<NetworkPlayerController>())
         {
             ScoreList.Add(npc.pname, npc.Score);
             //ScoreList[npc.name] = npc.Score;
-        }
+        }*/
 
 
         //ScoreList.Add(Owner.pname, Owner.Score);
         //ScoreList.Add("bill", billScore);
-        foreach (KeyValuePair<string, int> t in ScoreList)
+        /*foreach (KeyValuePair<string, int> t in ScoreList)
         {
             Debug.Log(t.Key + "," + t.Value);
-        }
-        MakeScore();
-
+        }*/
+        //MakeScore();
     }
-    public void MakeScore()
+    /*public void MakeScore()
     {
         
 
@@ -120,10 +124,10 @@ public class HUD_Script : MonoBehaviour
             if(npm != null)
             {
                 name = npm.pname;
-            }*/
+            }
             ScoreBoard.text += scores.Key + ":" + scores.Value + "\n";
         }
-    }
+    }*/
     public void ChangeScore()
     {
         IndScore.text = "Score: " + Owner.Score;

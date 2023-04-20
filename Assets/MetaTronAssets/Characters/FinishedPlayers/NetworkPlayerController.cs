@@ -231,7 +231,7 @@ public class NetworkPlayerController : HighLevelEntity
         {
             SuperCharge=int.Parse(value);
         }
-        if(flag == "PN")
+        if(IsServer && flag == "PN")
         {
             pname = value;
         }
@@ -294,8 +294,8 @@ public class NetworkPlayerController : HighLevelEntity
         {
             if (npm.Owner == this.Owner)
             {
+                pname = npm.PName;
                 SendUpdate("PN",npm.PName);
-                //or pname = npm.name;
             }
         }
         while(IsServer)
@@ -311,6 +311,7 @@ public class NetworkPlayerController : HighLevelEntity
                         if(hit.transform.GetComponent<HighLevelEntity>().HP <= 0)
                         {
                             Score++;
+                            SendUpdate("SCORE", Score.ToString());
                         }
                         if(passiveActive && SuperCharge>0)
                         {

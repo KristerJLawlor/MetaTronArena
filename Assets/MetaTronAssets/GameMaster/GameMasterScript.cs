@@ -113,7 +113,7 @@ public class GameMasterScript : NetworkComponent
 
     public IEnumerator Playing()
     {
-        yield return new WaitForSeconds(900);
+        yield return new WaitForSeconds(615);
 
         StartCoroutine(MyCore.DisconnectServer());
     }
