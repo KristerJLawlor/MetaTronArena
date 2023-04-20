@@ -25,6 +25,11 @@ public class Network_AI_Controller : HighLevelEntity
                 SendUpdate("ISATTACKING", isAttacking.ToString());
             }
         }
+
+        if (IsClient && flag == "MINE")
+        {
+            isTriggered = bool.Parse(value);
+        }
     }
 
     public override void NetworkedStart()
@@ -128,6 +133,14 @@ public class Network_AI_Controller : HighLevelEntity
                 PlayerAnimation.SetBool("Walk", false);
             }
 
+            if (isTriggered)
+            {
+                isTriggered = false;
+                GameObject temp = Instantiate(TripMineEffect, this.transform);
+
+                Destroy(temp, 1.5f);
+            }
+
 
         }
 
@@ -137,10 +150,19 @@ public class Network_AI_Controller : HighLevelEntity
         if(collision.transform.tag == "Entity")
         {
             collision.transform.GetComponent<HighLevelEntity>().trippedMine();
-            
-            MyCore.NetDestroyObject(this.NetId);
+
+            isTriggered = true;
+            SendUpdate("MINE", isTriggered.ToString());
+            StartCoroutine(KillObj());
             
         }
         
+    }
+
+    public IEnumerator KillObj()
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        MyCore.NetDestroyObject(this.NetId);
     }
 }
