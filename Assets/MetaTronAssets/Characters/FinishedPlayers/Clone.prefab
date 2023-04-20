@@ -574,7 +574,13 @@ MonoBehaviour:
   ShieldIsBroken: 0
   HealthIsLow: 0
   ShieldRegen: 0
+  TripMineEffect: {fileID: 0}
   body: {fileID: 0}
+  PlayerAnimation: {fileID: 0}
+  isAttacking: 0
+  LaserPrefab: {fileID: 1395565506770744, guid: 9d5dbdf2d3c3c6b4eadc51123699d237,
+    type: 3}
+  LaserBeam: {fileID: 0}
 --- !u!114 &1214468426029425499
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -137,6 +137,7 @@ public class Network_AI_Controller : HighLevelEntity
         if(collision.transform.tag == "Entity")
         {
             collision.transform.GetComponent<HighLevelEntity>().trippedMine();
+            MyCore.NetDestroyObject(this.NetId);
         }
         
     }

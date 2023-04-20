@@ -9,12 +9,12 @@ public class TurretScript : HighLevelEntity
     GameObject[] Players;
     public RaycastHit hit;
     public Rigidbody body;
-    public Vector3 SpawnLoc;
+
     public bool isDying = false;
     public bool canShoot = true;
     public bool TargetNear = false;
-    public bool isActive = true;
-    public Vector3 ForwardVector;
+
+
 
 
     //Variables for particle effect
@@ -23,17 +23,6 @@ public class TurretScript : HighLevelEntity
     public Transform LaserOrigin;
     public GameObject ExplosionEffect;
 
-
-
-    public Vector3 ParseV3(string v)
-    {
-        Vector3 temp = new Vector3();
-        string[] args = v.Trim('(').Trim(')').Split(',');
-        temp.x = float.Parse(args[0]);
-        temp.y = float.Parse(args[1]);
-        temp.z = float.Parse(args[2]);
-        return temp;
-    }
 
     public override void HandleMessage(string flag, string value)
     {
@@ -55,11 +44,6 @@ public class TurretScript : HighLevelEntity
             TargetNear = bool.Parse(value);
         }
 
-        if (IsClient && flag == "ISACTIVE")
-        {
-            Debug.Log("flag ISACTIVE = " + value);
-            isActive = bool.Parse(value);
-        }
 
         if (IsClient && flag == "CANSHOOT")
         {
@@ -74,17 +58,12 @@ public class TurretScript : HighLevelEntity
             HP = int.Parse(value);
         }
 
-        if(IsClient && flag == "FORWARD")
-        {
-            Debug.Log("forward raw " + value);
-            ForwardVector = ParseV3(value);
-            Debug.Log("forward parsed " + ParseV3(value));
-        }
     }
 
     public override void NetworkedStart()
     {
         base.NetworkedStart();
+
 
     }
 
@@ -93,14 +72,14 @@ public class TurretScript : HighLevelEntity
         base.SlowUpdate();
         while (IsServer)
         {
-            body.velocity = Vector3.zero + new Vector3(0, body.velocity.y, 0);
-            Debug.Log("A1" + Players.Length);
+
+            body.velocity = new Vector3(0, body.velocity.y, 0);
+
 
             if (canShoot)
             {
                 foreach (var p in Players)
                 {
-                    Debug.Log("B1");
 
                     if ((transform.position - p.transform.position).magnitude < 25)
                     {
@@ -108,33 +87,32 @@ public class TurretScript : HighLevelEntity
                         SendUpdate("TARGETNEAR", TargetNear.ToString());
 
                         this.transform.forward = (p.transform.position - transform.position).normalized;
-                        SendUpdate("FORWARD", body.transform.forward.ToString());
+
 
                         Debug.Log("C1");
                         if (Physics.Raycast(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, out hit))
                         {
                             this.transform.forward = (p.transform.position - transform.position).normalized;
                             Debug.Log("D1" + hit.collider.name);
-                            Debug.DrawRay(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, Color.red);
+
                             if (hit.collider.tag == "Entity")
                             {
                                 //move toward target
                                 body.velocity = (p.transform.position - transform.position).normalized;
                                 hit.transform.GetComponent<HighLevelEntity>().Damage(.4f, false);
                                 this.transform.forward = (p.transform.position - transform.position).normalized;
-                                Debug.Log("transform.forward " + this.transform.forward);
-                                Debug.Log("Turret forward rotation serverside: " + this.transform.forward.ToString());
-                                SendUpdate("FORWARD", body.transform.forward.ToString());
+
                                 Debug.Log("E1");
+
+                                canShoot = false;
+                                SendUpdate("CANSHOOT", canShoot.ToString());
+                                StartCoroutine(ROF());
+                                Debug.Log("BREAK");
+                                break;
 
                             }
                         }
 
-                        canShoot = false;
-                        SendUpdate("CANSHOOT", canShoot.ToString());
-                        StartCoroutine(ROF());
-                        Debug.Log("BREAK");
-                        break;
                     }
 
 
@@ -172,14 +150,14 @@ public class TurretScript : HighLevelEntity
             OverShield = 0;
             SendUpdate("SHIELD", OverShield.ToString());
             HP = 50;
-            SendUpdate("HP", HP.ToString());
-            body = GetComponent<Rigidbody>();
+            SendUpdate("HP", HP.ToString());    
         }
-        if(IsClient)
+        if (IsClient)
         {
-            //ForwardVector = Vector3.zero;
+            
         }
-
+        Players = GameObject.FindGameObjectsWithTag("Entity");
+        body = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -196,8 +174,7 @@ public class TurretScript : HighLevelEntity
             
             if(TargetNear)
             {
-                Debug.Log("Forward vector" + ForwardVector);
-                this.transform.forward = ForwardVector;
+
                 if (canShoot)
                 {
                     Destroy(LaserBeam);

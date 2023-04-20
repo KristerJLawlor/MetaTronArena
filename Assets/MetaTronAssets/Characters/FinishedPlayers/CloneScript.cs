@@ -150,7 +150,7 @@ public class CloneScript : HighLevelEntity
             }
             else
             {
-                Destroy(LaserBeam, 0.5f);
+                Destroy(LaserBeam, 0.1f);
             }
 
         }
