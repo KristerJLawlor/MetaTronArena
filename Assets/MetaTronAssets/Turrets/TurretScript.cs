@@ -30,7 +30,7 @@ public class TurretScript : HighLevelEntity
 
         if (flag == "ISDYING")
         {
-            Debug.Log("flag ISDYING = " + value);
+            //Debug.Log("flag ISDYING = " + value);
             isDying = bool.Parse(value);
             if (IsServer)
             {
@@ -40,20 +40,20 @@ public class TurretScript : HighLevelEntity
 
         if (IsClient && flag == "TARGETNEAR")
         {
-            Debug.Log("flag TARGETNEAR = " + value);
+            //Debug.Log("flag TARGETNEAR = " + value);
             TargetNear = bool.Parse(value);
         }
 
 
         if (IsClient && flag == "CANSHOOT")
         {
-            Debug.Log("flag CANSHOOT = " + value);
+            //Debug.Log("flag CANSHOOT = " + value);
             canShoot = bool.Parse(value);
 
         }
 
         if (flag == "HP")
-            Debug.Log("flag HP = " + value);
+            //Debug.Log("flag HP = " + value);
         {
             HP = int.Parse(value);
         }
@@ -89,11 +89,11 @@ public class TurretScript : HighLevelEntity
                         this.transform.forward = (p.transform.position - transform.position).normalized;
 
 
-                        Debug.Log("C1");
+                        //Debug.Log("C1");
                         if (Physics.Raycast(transform.position + transform.up * .5f, (p.transform.position - transform.position).normalized, out hit))
                         {
                             this.transform.forward = (p.transform.position - transform.position).normalized;
-                            Debug.Log("D1" + hit.collider.name);
+                            //Debug.Log("D1" + hit.collider.name);
 
                             if (hit.collider.tag == "Entity")
                             {
@@ -130,7 +130,7 @@ public class TurretScript : HighLevelEntity
             if (HP <= 0 && !isDying)
             {
 
-                Debug.Log("Turret deceased");
+                //Debug.Log("Turret deceased");
                 isDying = true;
                 SendUpdate("ISDYING", isDying.ToString());
                 
@@ -203,7 +203,7 @@ public class TurretScript : HighLevelEntity
 
     public IEnumerator Death()
     {   
-        Debug.Log("In Death");
+        //Debug.Log("In Death");
 
 
         yield return new WaitForSeconds(3.0f);
@@ -214,7 +214,7 @@ public class TurretScript : HighLevelEntity
 
     public IEnumerator DeathEffect()
     {
-        Debug.Log("In DeathFX");
+        //Debug.Log("In DeathFX");
         this.GetComponent<EnemyAudio>().PlayDeathAudio();
         yield return new WaitForSeconds(0.5f);
         GameObject temp = Instantiate(ExplosionEffect, this.transform);
@@ -226,7 +226,7 @@ public class TurretScript : HighLevelEntity
 
     public IEnumerator ROF()
     {
-        Debug.Log("IN ROF");
+        //Debug.Log("IN ROF");
         yield return new WaitForSeconds(1.5f);
         canShoot = true;
         SendUpdate("CANSHOOT", canShoot.ToString());
