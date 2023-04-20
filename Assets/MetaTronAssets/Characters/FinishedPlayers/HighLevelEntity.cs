@@ -20,8 +20,8 @@ public class HighLevelEntity : NetworkComponent
     public bool ShieldIsBroken = false;
     public bool HealthIsLow = false;
     public bool ShieldRegen = false;
-    public GameObject TripMineEffect;
-    public bool isTriggered = false;
+    
+    
 
     
     public void Damage(float DMGMod, bool piercing)
@@ -58,8 +58,7 @@ public class HighLevelEntity : NetworkComponent
         HP -= 50;
         RegenTimer = 5.0f;
         SendUpdate("HP", HP.ToString());
-        isTriggered = true;
-        SendUpdate("MINE", isTriggered.ToString());
+
 
         //GameObject temp = Instantiate(TripMineEffect, this.transform);
 
@@ -117,10 +116,6 @@ public class HighLevelEntity : NetworkComponent
             ShieldIsHit = true;
         }
 
-        if(IsClient && flag == "MINE")
-        {
-            isTriggered = bool.Parse(value);
-        }
     }
 
     public override void NetworkedStart()
@@ -145,12 +140,7 @@ public class HighLevelEntity : NetworkComponent
     { 
         if(IsClient)
         {
-            if(isTriggered)
-            {
-                GameObject temp = Instantiate(TripMineEffect, this.transform);
 
-                Destroy(temp, 1.5f);
-            }
             
             if (this.OverShield <= 0)
             {

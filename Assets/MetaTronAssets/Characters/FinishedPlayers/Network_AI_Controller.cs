@@ -12,6 +12,8 @@ public class Network_AI_Controller : HighLevelEntity
     //Variables for animators
     public Animator PlayerAnimation;
     public bool isAttacking = false;
+    public bool isTriggered = false;
+    public GameObject TripMineEffect;
     public override void HandleMessage(string flag, string value)
     {
         base.HandleMessage(flag, value);
@@ -102,7 +104,12 @@ public class Network_AI_Controller : HighLevelEntity
         {
             if (HP <= 0)
             {
-                MyCore.NetDestroyObject(this.NetId);
+
+                isTriggered = true;
+                SendUpdate("MINE", isTriggered.ToString());
+
+                StartCoroutine(KillObj());
+
             }
         }
 
@@ -161,7 +168,7 @@ public class Network_AI_Controller : HighLevelEntity
 
     public IEnumerator KillObj()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
 
         MyCore.NetDestroyObject(this.NetId);
     }
