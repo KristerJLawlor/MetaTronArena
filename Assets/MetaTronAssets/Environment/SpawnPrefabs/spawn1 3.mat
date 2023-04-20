@@ -94,7 +94,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Opacity: 1
+    - _Opacity: 0
     - _Opacity_gl: 1
     - _OriginalUVSwitch: 0
     - _OrigineX: 0.5

@@ -127,8 +127,9 @@ public class TurretScript : HighLevelEntity
 
             }
 
-            if (HP <= 0)
+            if (HP <= 0 && !isDying)
             {
+
                 Debug.Log("Turret deceased");
                 isDying = true;
                 SendUpdate("ISDYING", isDying.ToString());
@@ -192,7 +193,7 @@ public class TurretScript : HighLevelEntity
             {
                 isDying = false;
                 SendCommand("ISDYING", false.ToString());
-                //this.GetComponent<EnemyAudio>().PlayDeathAudio();
+                this.GetComponent<EnemyAudio>().PlayDeathAudio();
                 StartCoroutine(DeathEffect());
             }
 
