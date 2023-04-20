@@ -56,17 +56,14 @@ public class HighLevelEntity : NetworkComponent
     {
         HP -= 50;
         RegenTimer = 5.0f;
-       SendUpdate("HP", HP.ToString());
-        StartCoroutine(MineExplosion());
+        SendUpdate("HP", HP.ToString());
+
+        GameObject temp = Instantiate(TripMineEffect, this.transform);
+
+        Destroy(temp, 1.5f);
     }
 
-    public IEnumerator MineExplosion()
-    {
-        yield return new WaitForSeconds(0.5f);
-        GameObject temp = Instantiate(TripMineEffect, this.transform);
-        yield return new WaitForSeconds(1.5f);
-        Destroy(temp);
-    }
+
 
     public void gotRailed()
     {

@@ -792,7 +792,8 @@ MonoBehaviour:
   ShieldIsBroken: 0
   HealthIsLow: 0
   ShieldRegen: 0
-  TripMineEffect: {fileID: 0}
+  TripMineEffect: {fileID: 1029683450922114, guid: 911d39b31e356794d971139c547d1e61,
+    type: 3}
   LastInput: {x: 0, y: 0}
   AimVector: {x: 0, y: 0}
   AimPosition: {x: 0, y: 0, z: 0}
