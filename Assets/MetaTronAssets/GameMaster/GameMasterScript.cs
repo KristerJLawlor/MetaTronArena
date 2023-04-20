@@ -46,7 +46,7 @@ public class GameMasterScript : NetworkComponent
             while (!GameStarted)
             {
                 //assume players are ready until the checks prove they are not
-                if (MyCore.Connections.Count > 1)
+                if (GameObject.FindObjectsOfType<NPMScript>().Length > 1)
                 {
 
                     GameStarted = true;
@@ -93,6 +93,7 @@ public class GameMasterScript : NetworkComponent
                 GameObject temp = MyCore.NetCreateObject(npm.ClassSelected, npm.Owner, SpawnLoc[npm.Owner].transform.position, Quaternion.identity);
                 NetworkPlayerController pc = temp.GetComponent<NetworkPlayerController>();
                 pc.pname = npm.PName;
+                Debug.Log(npm.PName);
             }
 
 
@@ -120,7 +121,7 @@ public class GameMasterScript : NetworkComponent
 
     public IEnumerator TenSecTimer()
     {
-        yield return new WaitForSeconds(890);
+        yield return new WaitForSeconds(590);
         GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<TimerAudio>().PlayTimerAudio();
 
     }
