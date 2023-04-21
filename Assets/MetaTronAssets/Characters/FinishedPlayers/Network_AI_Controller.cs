@@ -160,16 +160,12 @@ public class Network_AI_Controller : HighLevelEntity
 
             isTriggered = true;
             SendUpdate("MINE", isTriggered.ToString());
-            StartCoroutine(KillObj());
+            MyCore.NetDestroyObject(this.NetId);
+            
             
         }
         
     }
 
-    public IEnumerator KillObj()
-    {
-        yield return new WaitForSeconds(3.0f);
-
-        MyCore.NetDestroyObject(this.NetId);
-    }
+    
 }
