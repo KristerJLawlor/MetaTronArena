@@ -205,9 +205,9 @@ public class TurretScript : HighLevelEntity
     {   
         //Debug.Log("In Death");
 
-
         yield return new WaitForSeconds(3.0f);
-        MyCore.NetDestroyObject(this.NetId);
+        //MyCore.NetDestroyObject(this.NetId);
+        this.transform.gameObject.SetActive(false);
 
 
     }
@@ -220,6 +220,7 @@ public class TurretScript : HighLevelEntity
         GameObject temp = Instantiate(ExplosionEffect, this.transform);
         yield return new WaitForSeconds(1.5f);
         Destroy(temp);
+        this.transform.gameObject.SetActive(false);
 
 
     }
