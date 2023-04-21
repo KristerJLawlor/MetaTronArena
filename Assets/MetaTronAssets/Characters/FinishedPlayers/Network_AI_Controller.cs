@@ -145,7 +145,7 @@ public class Network_AI_Controller : HighLevelEntity
                 isTriggered = false;
                 GameObject temp = Instantiate(TripMineEffect, this.transform);
 
-                Destroy(temp, 1.5f);
+                Destroy(temp, 2.0f);
             }
 
 
@@ -168,7 +168,7 @@ public class Network_AI_Controller : HighLevelEntity
 
     public IEnumerator KillObj()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(3.0f);
 
         MyCore.NetDestroyObject(this.NetId);
     }

@@ -43,6 +43,7 @@ public class GameMasterScript : NetworkComponent
     {
         if (IsServer)
         {
+            /*
             while (!GameStarted)
             {
                 //assume players are ready until the checks prove they are not
@@ -63,7 +64,36 @@ public class GameMasterScript : NetworkComponent
                 }
                 yield return new WaitForSeconds(.1f);
             }
+            */
 
+            NPMScript[] players = FindObjectsOfType<NPMScript>();
+            while (!GameStarted)
+            {
+                players = FindObjectsOfType<NPMScript>();
+                //if(MyCore.Connections.Count> 0)
+                if (players.Length > 1)
+                {
+                    GameStarted = true;
+                    foreach (NPMScript p in players)
+                    {
+                        if (!p.IsReady)
+                        {
+                            GameStarted = false;
+                            break;
+                        }
+                    }
+                }
+                yield return new WaitForSeconds(.1f);
+            }
+
+            //This code will remove the game room from the lobby.
+            //And prevent people from joining the game once it starts.
+            if (FindObjectOfType<LobbyManager>() != null)
+            {
+                FindObjectOfType<LobbyManager>().NotifyGameStarted();
+            }
+            MyCore.StopListening();
+            //End of code snippit.
 
             //Spawn Map 
             GameObject Map = MyCore.NetCreateObject(Random.Range(8, 10), -1, Vector3.zero, Quaternion.identity);
