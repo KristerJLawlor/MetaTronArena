@@ -546,9 +546,10 @@ public class LobbyManager : GenericCore_Web
     /// <returns>IENumerators to allow for delays.</returns>
     public override IEnumerator MenuManager()
     {
-   
-            
-            this.transform.GetChild(0).GetChild(0).GetChild(1).gameObject.SetActive(true);
+
+        yield return new WaitUntil(() => !MyCore.IsConnected);
+
+        this.transform.GetChild(0).GetChild(0).GetChild(1).gameObject.SetActive(true);
             this.transform.GetChild(0).GetChild(0).GetChild(0).gameObject.SetActive(false);
             yield return new WaitUntil(() => MyCore.IsConnected);
             yield return new WaitForSeconds(1);
