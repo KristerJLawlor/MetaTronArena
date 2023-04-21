@@ -107,8 +107,8 @@ public class Network_AI_Controller : HighLevelEntity
 
                 isTriggered = true;
                 SendUpdate("MINE", isTriggered.ToString());
+                MyCore.NetDestroyObject(this.NetId);
 
-                StartCoroutine(KillObj());
 
             }
         }
@@ -161,8 +161,8 @@ public class Network_AI_Controller : HighLevelEntity
             isTriggered = true;
             SendUpdate("MINE", isTriggered.ToString());
             MyCore.NetDestroyObject(this.NetId);
-            
-            
+
+
         }
         
     }
