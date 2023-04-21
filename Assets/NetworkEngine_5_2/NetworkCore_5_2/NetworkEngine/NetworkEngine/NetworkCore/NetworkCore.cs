@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using NETWORK_ENGINE;
+using System.Transactions;
+using System.Threading.Tasks;
 
 ///This code was written by Dr. Bradford A. Towle Jr.
 ///And is intended for educational use only.
 ///4/11/2021
 
-public class NetworkCore     : GenericNetworkCore
+public class NetworkCore     : GenericCore_Web
 {
     public bool UseMenuManager = true;
     
@@ -33,17 +35,14 @@ public class NetworkCore     : GenericNetworkCore
     public ExclusiveString MasterMessage;
     public ExclusiveString UDPMasterMessage;
      
-    public int ConCounter
-    {
-        get { return NetSystem.ConCounter; }
-    }
     public int DefaultReturnScene = 0;
 
     /// <summary>
     /// Initializes the Network Core variables.
     /// </summary>
-    void Start()
+    new void Start()
     {
+        base.Start();
         UDPMasterMessage = new ExclusiveString();
         MasterMessage = new ExclusiveString();
         UDPMasterMessage.SetData("");
@@ -73,14 +72,18 @@ public class NetworkCore     : GenericNetworkCore
     /// <returns></returns>
     public override IEnumerator OnClientConnect(int id)
     {
+        Debug.Log("???");
         if (IsServer)
         {
-            yield return new WaitForSeconds(1);
+            Debug.Log("S4");
+           
+            yield return new WaitForSeconds(.15f);
             foreach (KeyValuePair<int, NetworkID> entry in NetObjs)
             {
                 while(!entry.Value.IsInit)
                 {
-                    yield return new WaitForSeconds(1);
+                   
+                    yield return new WaitForSeconds(.15f);
                 }
                 string MSG = "CREATE#" + entry.Value.Type + "#" + entry.Value.Owner +
                "#" + entry.Value.NetId + "#" + entry.Value.gameObject.transform.position.ToString() + "#"
@@ -88,8 +91,10 @@ public class NetworkCore     : GenericNetworkCore
                 //Connections[ConCounter - 1].Send(Encoding.ASCII.GetBytes(MSG));
                 Send(MSG, id);
             }
+            Debug.Log("S5");
             yield return new WaitForSeconds(.1f);
             NetCreateObject(-1, id);
+            Debug.Log("S6");
         }
         if(IsClient)
         {
@@ -145,11 +150,18 @@ public class NetworkCore     : GenericNetworkCore
             MasterMessage.Append(id.Value.GameObjectMessages.ToString() + "\n");
             //UDPMasterStringList.Add(id.Value.UDPGameObjectMessages.ReadAndClear() + "\n");
         }
-        //Send Master Message
-        List<int> bad = new List<int>();
+ 
 
         string msgToSend = MasterMessage.ReadAndClear();
-        foreach (KeyValuePair<int, Connector2> item in Connections)
+        /*if(IsServer)
+        {
+            wss.WebSocketServices.Broadcast(msgToSend);
+        }
+        if(IsClient)
+        {
+            Send(msgToSend,0);
+        }*/
+        foreach (KeyValuePair<int, GenCore> item in Connections)
         {
             try
             {
@@ -158,27 +170,13 @@ public class NetworkCore     : GenericNetworkCore
                 {
                     Send(msgToSend, item.Key);
                 }
-                /*foreach (string msg in UDPMasterStringList)
-                {
-                    if (msg.Trim() != "")
-                    {
-                        Send(msg, item.Key, false);
-                    }
-                }*/
+    
             }
             catch (System.Exception e)
             {
-                GenericNetworkCore.Logger("Exception occured in slow update: " + e.ToString());
-                bad.Add(item.Key);
+                Debug.Log("Exception occured in slow update: " + e.ToString());
             }
         }
-        //MasterMessage.SetData("");//delete old values.
-        foreach (int i in bad)
-        {
-            GenericNetworkCore.Logger("We are disconecting Connection " + i.ToString()+" from "+name+":"+this.GetType().ToString());
-            this.Disconnect(i);
-        }
-        
     }
     /// <summary>
     /// This function get's called from TCP and UDP receive functions.
@@ -228,7 +226,7 @@ public class NetworkCore     : GenericNetworkCore
                     catch(System.Exception e)
                     {
                         //Malformed packet.
-                        GenericNetworkCore.Logger("Exception occured inside create! "+e.ToString());
+                        Debug.Log("Exception occured inside create! "+e.ToString());
                     }
                 }
             }
@@ -247,7 +245,7 @@ public class NetworkCore     : GenericNetworkCore
                     }
                     catch (System.Exception e)
                     {
-                        GenericNetworkCore.Logger("ERROR OCCURED: " + e);
+                        Debug.Log("ERROR OCCURED: " + e);
                     }
                 }
             }
@@ -280,12 +278,12 @@ public class NetworkCore     : GenericNetworkCore
         }
         catch(System.FormatException)
         {
-            GenericNetworkCore.Logger("Dropping malformed packet " + commands);
+            Debug.Log("Dropping malformed packet " + commands);
         }
         catch(System.Exception e)
         {
-            GenericNetworkCore.Logger("Exception in handle message: "+e.ToString());
-            GenericNetworkCore.Logger(commands);
+            Debug.Log("Exception in handle message: "+e.ToString());
+            Debug.Log(commands);
         }
         
     }
@@ -302,17 +300,21 @@ public class NetworkCore     : GenericNetworkCore
     /// <returns>This function returns a pointer to the new game object.  (Server only)</returns>
     public GameObject NetCreateObject(int type, int ownMe, Vector3 initPos = new Vector3(), Quaternion rotation = new Quaternion())
     {
+   
         if (IsServer)
         {
+ 
             GameObject temp;
             lock (ObjLock)
             {
+      
                 if (type != -1)
                 {
                     temp = GameObject.Instantiate(SpawnPrefab[type].gameObject, initPos, rotation);
                 }
                 else
                 {
+          
                     temp = GameObject.Instantiate(NetworkPlayerManager, initPos, rotation);
                 }
                 temp.GetComponent<NetworkID>().Owner = ownMe;
@@ -321,17 +323,16 @@ public class NetworkCore     : GenericNetworkCore
                 NetObjs.Add(ObjectCounter, temp.GetComponent<NetworkID>());
                 string MSG = "CREATE#" + type + "#" + ownMe +
              "#" + (ObjectCounter) + "#" + initPos.ToString() + "#" +
-             rotation.eulerAngles.ToString() + "\n";
-                
+             rotation.eulerAngles.ToString() + "\n";         
                 ObjectCounter++;
                 if(ObjectCounter <0)
                 {
                     ObjectCounter = 0;
-                }
-                while(NetObjs.ContainsKey(ObjectCounter))
+                }    
+                while (NetObjs.ContainsKey(ObjectCounter))
                 {
                     ObjectCounter++;
-                }
+                }       
                 MasterMessage.Append(MSG);
                 foreach (NetworkComponent n in temp.GetComponents<NetworkComponent>())
                 {
@@ -434,13 +435,7 @@ public class NetworkCore     : GenericNetworkCore
 
     public void StopListening()
     {
-        
-        this.NetSystem.Listener.Dispose();
         IsListening = false;
-        if(!this.NetSystem.ThreadListener.Join(50))
-        {
-            this.NetSystem.ThreadListener.Abort();
-        }
     }
 
 
