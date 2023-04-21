@@ -44,9 +44,11 @@ public class GameRoom
 public class LobbyManager : GenericCore_Web
 {
     //You have to do this so you can connect to the correct one.
-    public string PublicIP = "71.44.212.42";
+    //public string PublicIP = "71.44.212.42";
+    public string PublicIP;
     //public string PublicIP = "127.0.0.1";
-    public string FloridaPolyIP = "10.200.208.182";
+    //public string FloridaPolyIP = "10.200.208.182";
+    public string FloridaPolyIP;
     //public string FloridaPolyIP = "127.0.0.1";
 
     //Variables to control different game states.
