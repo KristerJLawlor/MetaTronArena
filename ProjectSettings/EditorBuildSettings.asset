@@ -6,17 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/NetworkEngine/NetworkEngine_4_9/NetworkEngine_4_9/NetworkEngine/TemplateAssets/Template_Scenes/MainMenu.unity
+    path: Assets/NetworkEngine_5_2/NetworkCore_5_2/NetworkEngine/TemplateAssets/Template_Scenes/MainMenu.unity
     guid: 44a73099d6321fc44bd0422326ec77db
   - enabled: 0
-    path: Assets/NetworkEngine/NetworkEngine_4_9/NetworkEngine_4_9/NetworkEngine/TemplateAssets/Template_Scenes/WAN_Game.unity
+    path: Assets/NetworkEngine_5_2/NetworkCore_5_2/NetworkEngine/TemplateAssets/Template_Scenes/WAN_Game.unity
     guid: 646d32d828b9ece4bae9613529fd952c
   - enabled: 0
-    path: Assets/NetworkEngine/NetworkEngine_4_9/NetworkEngine_4_9/NetworkEngine/TemplateAssets/Template_Scenes/LANMenu.unity
+    path: Assets/NetworkEngine_5_2/NetworkCore_5_2/NetworkEngine/TemplateAssets/Template_Scenes/LANMenu.unity
     guid: 1c15f2452767a5e44bbca5d7122dba90
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu/MainMenu.unity
     guid: 9e9db51a6fbba8b4c8513fb4498bf80f
+  - enabled: 1
+    path: Assets/Scenes/Menu/WAN_MainMenu.unity
+    guid: 8682bcdb100d95242b570a66b627d2dd
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: f64b506abdff1b1418326350ebb0240f,
       type: 2}
