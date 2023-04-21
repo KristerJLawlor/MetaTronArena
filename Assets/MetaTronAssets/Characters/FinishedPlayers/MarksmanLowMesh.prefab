@@ -8296,7 +8296,6 @@ MonoBehaviour:
   ShieldIsBroken: 0
   HealthIsLow: 0
   ShieldRegen: 0
-  TripMineEffect: {fileID: 0}
   LastInput: {x: 0, y: 0}
   AimVector: {x: 0, y: 0}
   AimPosition: {x: 0, y: 0, z: 0}
@@ -8640,6 +8639,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9193310262681450460}
     m_Modifications:
+    - target: {fileID: 6918066807976185909, guid: d0d6a531d0701564bb345b940d9adfc1,
+        type: 3}
+      propertyPath: m_text
+      value: '___
+
+        (Space)'
+      objectReference: {fileID: 0}
     - target: {fileID: 6918066808000274978, guid: d0d6a531d0701564bb345b940d9adfc1,
         type: 3}
       propertyPath: m_Name
