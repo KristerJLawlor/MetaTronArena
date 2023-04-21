@@ -548,7 +548,7 @@ public class LobbyManager : GenericCore_Web
     {
 
         
-        this.transform.GetChild(0).GetChild(0).GetChild(1).gameObject.SetActive(true);
+            this.transform.GetChild(0).GetChild(0).GetChild(1).gameObject.SetActive(true);
             this.transform.GetChild(0).GetChild(0).GetChild(0).gameObject.SetActive(false);
             yield return new WaitUntil(() => MyCore.IsConnected);
             yield return new WaitForSeconds(1);
