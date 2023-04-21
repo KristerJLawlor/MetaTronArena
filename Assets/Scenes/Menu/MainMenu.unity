@@ -2902,6 +2902,11 @@ PrefabInstance:
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2166231145397619143, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
+        type: 3}
+      propertyPath: m_ChildScaleWidth
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2870623995689172996, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
       propertyPath: m_VerticalFit
