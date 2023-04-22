@@ -395,7 +395,7 @@ public class NetworkPlayerController : HighLevelEntity
         if (IsServer && HP>0)
         {
             myRig.velocity = transform.forward * LastInput.y * speed + transform.right * LastInput.x *speed;
-            myRig.angularVelocity = new Vector3(0, AimVector.x, 0);
+            myRig.angularVelocity = new Vector3(0, AimVector.x, 0)*.7f;
             
         }
         if (IsLocalPlayer)
