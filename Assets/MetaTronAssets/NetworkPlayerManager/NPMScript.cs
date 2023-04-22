@@ -56,6 +56,13 @@ public class NPMScript : NetworkComponent
     {
         while (IsConnected)
         {
+            if(IsClient)
+            {
+                if(FindObjectOfType<GameMasterScript>().GameStarted)
+                {
+                    this.transform.GetChild(0).gameObject.SetActive(false);
+                }
+            }
             if (IsServer)
             {
 

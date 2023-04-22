@@ -22,10 +22,12 @@ public class GameMasterScript : NetworkComponent
                 foreach (NPMScript npm in GameObject.FindObjectsOfType<NPMScript>())
                 {
                     //disable lobby UI
-                    //npm.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
-                    npm.transform.GetChild(0).gameObject.SetActive(false);
-                    Debug.Log("SETTING UI INACTIVE");
-
+                    npm.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
+                    if(npm.transform.GetChild(0) != null)
+                    {
+                        npm.transform.GetChild(0).gameObject.SetActive(false);
+                        Debug.Log("SETTING UI INACTIVE");
+                    }
                     //Start the arena theme music
                     GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<GameMusicScript>().PlayGameMusic();
                     Debug.Log("STARTING GAME MUSIC");
