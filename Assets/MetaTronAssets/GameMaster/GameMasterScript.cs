@@ -29,7 +29,7 @@ public class GameMasterScript : NetworkComponent
                         Debug.Log("SETTING UI INACTIVE");
                     }
                     //Start the arena theme music
-                    GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<GameMusicScript>().PlayGameMusic();
+                    GameObject.Find("WANNetworkManager").GetComponent<GameMusicScript>().PlayGameMusic();
                     Debug.Log("STARTING GAME MUSIC");
                 }
             }
