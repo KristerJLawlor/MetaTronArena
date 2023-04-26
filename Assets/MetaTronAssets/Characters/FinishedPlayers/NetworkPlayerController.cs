@@ -30,6 +30,7 @@ public class NetworkPlayerController : HighLevelEntity
     public Vector3 SpawnLoc;
     public int Score = 0;
     public bool isSentry = false;
+    public bool isMarksman = false;
 
 
     //Variables for animators
@@ -126,7 +127,7 @@ public class NetworkPlayerController : HighLevelEntity
         
 
     }
-    public IEnumerator ROF()
+    /*public IEnumerator ROF()
     {
         if (Overheat < 100)
         {
@@ -136,6 +137,7 @@ public class NetworkPlayerController : HighLevelEntity
             
         }
     }
+    */
 
     public IEnumerator ROFSFX()
     {
@@ -148,7 +150,6 @@ public class NetworkPlayerController : HighLevelEntity
     }
     public IEnumerator OH()
     {
-        Debug.Log("start OH coroutine");
         yield return new WaitForSeconds(5);
         Overheat= 0;       
         canShoot= true;
@@ -156,7 +157,6 @@ public class NetworkPlayerController : HighLevelEntity
         SendUpdate("OH", Overheat.ToString());
         canOverheat = true;
         SendUpdate("CANOVERHEAT", true.ToString());
-        Debug.Log("end OH coroutine");
     }
     
     public override void HandleMessage(string flag, string value)
@@ -284,8 +284,7 @@ public class NetworkPlayerController : HighLevelEntity
       
     }
     public virtual float OnDamage(float d, GameObject o)
-    {
-
+    { 
         return d;
     }
     public override IEnumerator SlowUpdate()
@@ -307,8 +306,20 @@ public class NetworkPlayerController : HighLevelEntity
                 {
                         if(hit.collider.tag=="Entity" || hit.collider.tag=="Clone" || hit.collider.tag=="Turret")
                     {
-                        hit.transform.GetComponent<HighLevelEntity>().Damage(OnDamage( this.DamageScalar, hit.transform.gameObject), this.AProunds);
-                        if(hit.transform.GetComponent<HighLevelEntity>().HP <= 0)
+                        if ((hit.transform.position - transform.position).magnitude >= 25 && isMarksman)
+                        {
+                            hit.transform.GetComponent<HighLevelEntity>().Damage(OnDamage(2.5f, hit.transform.gameObject), this.AProunds);
+                            if (SuperCharge > 0)
+                            {
+                                SuperCharge -= 2;
+                                SendUpdate("SCHARGE", SuperCharge.ToString());
+                            }
+                        }
+                        else
+                        {
+                            hit.transform.GetComponent<HighLevelEntity>().Damage(OnDamage(this.DamageScalar, hit.transform.gameObject), this.AProunds);
+                        }
+                        if (hit.transform.GetComponent<HighLevelEntity>().HP <= 0)
                         {
                             Score++;
                             SendUpdate("SCORE", Score.ToString());
@@ -322,11 +333,11 @@ public class NetworkPlayerController : HighLevelEntity
                     }
                     
                 }
-                Overheat = Overheat + 5;
+                Overheat = Overheat + 2;
                 SendUpdate("OH", Overheat.ToString());
-                canShoot = false;
-                SendUpdate("CANSHOOT", canShoot.ToString());
-                StartCoroutine(ROF());
+                //canShoot = false;
+                //SendUpdate("CANSHOOT", canShoot.ToString());
+                //StartCoroutine(ROF());
                 StartCoroutine(ROFSFX());
             }
             if (Overheat >= 100)

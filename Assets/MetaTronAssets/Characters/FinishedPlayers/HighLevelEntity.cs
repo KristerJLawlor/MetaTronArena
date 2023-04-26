@@ -29,7 +29,7 @@ public class HighLevelEntity : NetworkComponent
         
         if (OverShield > 0 && !piercing)
         {
-            OverShield=OverShield-(5*DMGMod);
+            OverShield=OverShield-(2*DMGMod);
             SendUpdate("SHIELD", OverShield.ToString());
             SendUpdate("SHIELDHIT", true.ToString());
             if (OverShield <= 0)
@@ -48,7 +48,7 @@ public class HighLevelEntity : NetworkComponent
         }
         else
         {
-            HP=HP-(5*DMGMod);
+            HP=HP-(2*DMGMod);
             SendUpdate("HP", HP.ToString());
         }
         RegenTimer = 5.0f;

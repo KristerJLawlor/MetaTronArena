@@ -39,12 +39,14 @@ public class MarksmanScript : NetworkPlayerController
     {
         base.Start();
         Entity = GameObject.FindGameObjectsWithTag("Entity");
+        isMarksman = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         base.Update();
+        /*
         if (IsServer)
         {
             passiveActive = false;
@@ -63,15 +65,14 @@ public class MarksmanScript : NetworkPlayerController
             }
             SendUpdate("PA", passiveActive.ToString());
         }
+        */
     }
+    /*
     public override float OnDamage(float d, GameObject o)
     {
-        if (passiveActive)
-        {
-            return d * 2.5f;
-        }
-        return d;
+        return d * 2.5f;
     }
+    */
     public void PlaceMine(InputAction.CallbackContext m)
     {
         if (IsLocalPlayer)
