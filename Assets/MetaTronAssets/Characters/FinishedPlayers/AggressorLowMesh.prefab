@@ -4550,12 +4550,13 @@ MonoBehaviour:
   pname: 
   AbilityCharge: 0
   maxCharge: 1000
-  SuperCharge: 50
-  maxSuperCharge: 50
+  SuperCharge: 100
+  maxSuperCharge: 100
   AbilityinUse: 0
   SpawnLoc: {x: 0, y: 0, z: 0}
   Score: 0
   isSentry: 0
+  isMarksman: 0
   PlayerAnimation: {fileID: 0}
   isAttacking: 0
   isDying: 0

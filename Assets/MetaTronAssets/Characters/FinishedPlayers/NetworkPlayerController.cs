@@ -23,8 +23,8 @@ public class NetworkPlayerController : HighLevelEntity
     public string pname;
     public int AbilityCharge = 0;
     public int maxCharge = 1000;
-    public int SuperCharge = 50;
-    public int maxSuperCharge = 50;
+    public int SuperCharge = 100;
+    public int maxSuperCharge = 100;
     public bool AbilityinUse = false;
     public  RaycastHit hit;
     public Vector3 SpawnLoc;
@@ -377,7 +377,7 @@ public class NetworkPlayerController : HighLevelEntity
             }
             if(AbilityCharge > 0 && !AbilityinUse)
             {
-                AbilityCharge-=2;
+                AbilityCharge-=4;
                 SendUpdate("ACHARGE", AbilityCharge.ToString());
             }
             yield return new WaitForSeconds(.1f);
@@ -406,14 +406,14 @@ public class NetworkPlayerController : HighLevelEntity
         if (IsServer && HP>0)
         {
             myRig.velocity = transform.forward * LastInput.y * speed + transform.right * LastInput.x *speed;
-            myRig.angularVelocity = new Vector3(0, AimVector.x, 0)*.7f;
-            
+            //myRig.angularVelocity = new Vector3(0, AimVector.x, 0)*.7f;
+            myRig.rotation = Quaternion.Lerp(myRig.rotation, Quaternion.Euler(myRig.rotation.eulerAngles + new Vector3(0, AimVector.x, 0)), Time.deltaTime * speed);
         }
         if (IsLocalPlayer)
         {
             Camera.main.transform.position = this.GetComponent<Rigidbody>().position + this.GetComponent<Rigidbody>().rotation*Vector3.forward * .8f + this.GetComponent<Rigidbody>().rotation*Vector3.up;
             //Camera.main.transform.forward = this.GetComponent<Rigidbody>().rotation*Vector3.forward;
-            Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, this.GetComponent<Rigidbody>().rotation, Time.deltaTime*4.5f);
+            Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, this.GetComponent<Rigidbody>().rotation, Time.deltaTime*speed);
             
 
 
