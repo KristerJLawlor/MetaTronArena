@@ -406,13 +406,12 @@ public class NetworkPlayerController : HighLevelEntity
         if (IsServer && HP>0)
         {
             myRig.velocity = transform.forward * LastInput.y * speed + transform.right * LastInput.x *speed;
-            //myRig.angularVelocity = new Vector3(0, AimVector.x, 0)*.7f;
-            myRig.rotation = Quaternion.Lerp(myRig.rotation, Quaternion.Euler(myRig.rotation.eulerAngles + new Vector3(0, AimVector.x, 0)), Time.deltaTime * speed);
+            myRig.angularVelocity = new Vector3(0, 0, 0);
+            myRig.rotation = Quaternion.Lerp(myRig.rotation, Quaternion.Euler(myRig.rotation.eulerAngles + new Vector3(0, AimVector.x, 0)), Time.deltaTime * 7f);
         }
         if (IsLocalPlayer)
         {
-            Camera.main.transform.position = this.GetComponent<Rigidbody>().position + this.GetComponent<Rigidbody>().rotation*Vector3.forward * .8f + this.GetComponent<Rigidbody>().rotation*Vector3.up;
-            //Camera.main.transform.forward = this.GetComponent<Rigidbody>().rotation*Vector3.forward;
+            Camera.main.transform.position = this.GetComponent<Rigidbody>().position + this.GetComponent<Rigidbody>().rotation*Vector3.forward * 1.6f + this.GetComponent<Rigidbody>().rotation*Vector3.up *1.2f;
             Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, this.GetComponent<Rigidbody>().rotation, Time.deltaTime*speed);
             
 
