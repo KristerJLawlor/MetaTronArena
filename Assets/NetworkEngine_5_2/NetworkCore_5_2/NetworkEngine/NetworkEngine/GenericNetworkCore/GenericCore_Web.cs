@@ -384,7 +384,7 @@ public class GenCore : WebSocketBehavior
     {
         try
         {
-            Debug.Log(e.Data);
+            
             if (e.Data.StartsWith("ID#"))
             {
                 if (int.Parse(e.Data.Split('#')[2]) == owner.AppNumber)

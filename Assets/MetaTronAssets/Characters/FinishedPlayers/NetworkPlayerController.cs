@@ -302,10 +302,10 @@ public class NetworkPlayerController : HighLevelEntity
             if(lastFire && canShoot)
             {
                 
-                if(Physics.Raycast(AimPosition, AimDirection,out hit))
+                if(Physics.Raycast(transform.position+transform.up*1.2f,transform.forward,out hit))
                 {
-                        if(hit.collider.tag=="Entity" || hit.collider.tag=="Clone" || hit.collider.tag=="Turret")
-                    {
+                    if(hit.collider.tag=="Entity" || hit.collider.tag=="Clone" || hit.collider.tag=="Turret")
+                       {
                         if ((hit.transform.position - transform.position).magnitude >= 25 && isMarksman)
                         {
                             hit.transform.GetComponent<HighLevelEntity>().Damage(OnDamage(2.5f, hit.transform.gameObject), this.AProunds);
@@ -330,7 +330,7 @@ public class NetworkPlayerController : HighLevelEntity
                             SendUpdate("SCHARGE", SuperCharge.ToString());
                         }
                         
-                    }
+                       }
                     
                 }
                 Overheat = Overheat + 2;
