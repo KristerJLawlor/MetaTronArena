@@ -302,7 +302,7 @@ public class NetworkPlayerController : HighLevelEntity
             if(lastFire && canShoot)
             {
                 
-                if(Physics.Raycast(transform.position+transform.up*1.2f,transform.forward,out hit))
+                if(Physics.Raycast(transform.position + transform.forward * 1.6f + transform.up * 1.2f, transform.forward, out hit))
                 {
                     if(hit.collider.tag=="Entity" || hit.collider.tag=="Clone" || hit.collider.tag=="Turret")
                        {
@@ -413,6 +413,7 @@ public class NetworkPlayerController : HighLevelEntity
         {
             Camera.main.transform.position = this.GetComponent<Rigidbody>().position + this.GetComponent<Rigidbody>().rotation*Vector3.forward * 1.6f + this.GetComponent<Rigidbody>().rotation*Vector3.up *1.2f;
             Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, this.GetComponent<Rigidbody>().rotation, Time.deltaTime*speed);
+            
             
 
 
