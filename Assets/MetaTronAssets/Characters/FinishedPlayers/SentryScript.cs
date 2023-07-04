@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,10 @@ public class SentryScript : NetworkPlayerController
     public override void HandleMessage(string flag, string value)
     {
         base.HandleMessage(flag, value);
+        if(IsClient && flag == "CANSHOOT")
+        {
+            canShoot=bool.Parse(value);
+        }
         if (IsClient && flag == "PA")
         {
             passiveActive = bool.Parse(value);
@@ -94,12 +99,16 @@ public class SentryScript : NetworkPlayerController
                 SendUpdate("ACHARGE", AbilityCharge.ToString());
                 RiotShields.SetActive(true);
                 SendUpdate("SHACTIVE", "true");
+                canShoot = false;
+                SendUpdate("CANSHOOT", "false");
             }
             else
             {
-                AbilityinUse = false;
+                //AbilityinUse = false;
                 RiotShields.SetActive(false);
                 SendUpdate("SHACTIVE", "false");
+                canShoot = true;
+                SendUpdate("CANSHOOT", "true");
             }
         }
         if(IsLocalPlayer)
