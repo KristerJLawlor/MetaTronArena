@@ -87,8 +87,6 @@ public class NetworkPlayerController : HighLevelEntity
         if(IsLocalPlayer)
         {
             SendCommand("AIM", a.ReadValue<Vector2>().ToString());
-            myRig.angularVelocity = new Vector3(0, 0, 0);
-            myRig.rotation = Quaternion.Lerp(myRig.rotation, Quaternion.Euler(myRig.rotation.eulerAngles + new Vector3(0, a.ReadValue<Vector2>().x, 0)), Time.deltaTime * 7f);
         }
     }
     public void Shoot(InputAction.CallbackContext s)
