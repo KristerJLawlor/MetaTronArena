@@ -11,6 +11,7 @@ public class NetworkPlayerController : HighLevelEntity
 
     public Vector2 LastInput;
     public Vector2 AimVector;
+    //public Vector2 c_aimvector;
     public Vector3 AimPosition;
     public Vector3 AimDirection;
     public Rigidbody myRig;
@@ -87,8 +88,7 @@ public class NetworkPlayerController : HighLevelEntity
         if(IsLocalPlayer)
         {
             SendCommand("AIM", a.ReadValue<Vector2>().ToString());
-            myRig.angularVelocity = new Vector3(0, 0, 0);
-            myRig.rotation = Quaternion.Lerp(myRig.rotation, Quaternion.Euler(myRig.rotation.eulerAngles + new Vector3(0, a.ReadValue<Vector2>().x, 0)), Time.deltaTime * 7f);
+            //c_aimvector = a.ReadValue<Vector2>();
         }
     }
     public void Shoot(InputAction.CallbackContext s)
@@ -413,10 +413,12 @@ public class NetworkPlayerController : HighLevelEntity
         }
         if (IsLocalPlayer)
         {
+            //myRig.angularVelocity = new Vector3(0, 0, 0);
+            //myRig.rotation = Quaternion.Lerp(myRig.rotation, Quaternion.Euler(myRig.rotation.eulerAngles + new Vector3(0, c_aimvector.x, 0)), Time.deltaTime * 7f);
             Camera.main.transform.position = this.GetComponent<Rigidbody>().position + this.GetComponent<Rigidbody>().rotation*Vector3.forward * 1.6f + this.GetComponent<Rigidbody>().rotation*Vector3.up *1.2f;
             Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, this.GetComponent<Rigidbody>().rotation, Time.deltaTime*speed);
             
-            
+
 
 
 
