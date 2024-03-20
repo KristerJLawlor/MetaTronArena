@@ -148,8 +148,11 @@ public class NetworkRigidbody : NetworkComponent
             {
                 myRig.velocity += AdaptiveVelocity;
             }
-            myRig.angularVelocity = LastAng;
-            myRig.rotation = Quaternion.Euler(LastRotation); 
+            if (!IsLocalPlayer)
+            {
+                myRig.angularVelocity = LastAng;
+                myRig.rotation = Quaternion.Euler(LastRotation);
+            }
         }
     }
 }
