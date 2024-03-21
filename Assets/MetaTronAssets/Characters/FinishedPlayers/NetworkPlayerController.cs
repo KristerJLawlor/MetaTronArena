@@ -5,12 +5,13 @@ using UnityEngine.InputSystem;
 
 using NETWORK_ENGINE;
 using Unity.VisualScripting;
+using System.Runtime.CompilerServices;
 
 public class NetworkPlayerController : HighLevelEntity
 {
 
     public Vector2 LastInput;
-    public Vector2 AimVector;
+    public Vector3 AimVector;
     public Vector3 AimPosition;
     public Vector3 AimDirection;
     public Rigidbody myRig;
@@ -88,7 +89,7 @@ public class NetworkPlayerController : HighLevelEntity
         {
             myRig.angularVelocity = new Vector3(0, 0, 0);
             myRig.rotation = Quaternion.Euler(0, a.ReadValue<Vector2>().x+myRig.rotation.eulerAngles.y, 0);
-            SendCommand("AIM", a.ReadValue<Vector2>().ToString());
+            SendCommand("AIM", myRig.rotation.eulerAngles.ToString());
         }
     }
     public void Shoot(InputAction.CallbackContext s)
@@ -179,7 +180,10 @@ public class NetworkPlayerController : HighLevelEntity
         }
         if(IsServer && flag == "AIM")
         {
-            AimVector = ParseV2(value);
+            AimVector = ParseV3(value);
+            
+            Debug.Log(AimVector.y);
+            
         }
 
 
@@ -409,7 +413,7 @@ public class NetworkPlayerController : HighLevelEntity
         {
             myRig.velocity = transform.forward * LastInput.y * speed + transform.right * LastInput.x *speed;
             myRig.angularVelocity = new Vector3(0, 0, 0);
-            myRig.rotation = Quaternion.Euler(0, AimVector.x + myRig.rotation.eulerAngles.y, 0); //Quaternion.Lerp(myRig.rotation, Quaternion.Euler(myRig.rotation.eulerAngles + new Vector3(0, AimVector.x, 0)), Time.deltaTime * 7f);
+            myRig.rotation = Quaternion.Euler(0, AimVector.y, 0); //Quaternion.Lerp(myRig.rotation, Quaternion.Euler(myRig.rotation.eulerAngles + new Vector3(0, AimVector.x, 0)), Time.deltaTime * 7f);
         }
         if (IsLocalPlayer)
         {
