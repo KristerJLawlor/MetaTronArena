@@ -202,7 +202,6 @@ MonoBehaviour:
   m_Script: {fileID: 374536859}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Entries: []
 --- !u!4 &158084946
 Transform:
   m_ObjectHideFlags: 19
@@ -1992,7 +1991,7 @@ PrefabInstance:
     - target: {fileID: 940889820986607274, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 92.5
+      value: 92.50003
       objectReference: {fileID: 0}
     - target: {fileID: 940889820986607274, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
@@ -2252,7 +2251,7 @@ PrefabInstance:
     - target: {fileID: 1798466400947498092, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 275.91498
+      value: 275.91504
       objectReference: {fileID: 0}
     - target: {fileID: 1798466400947498092, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
@@ -2452,7 +2451,7 @@ PrefabInstance:
     - target: {fileID: 1799248679040083478, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 92.5
+      value: 92.50003
       objectReference: {fileID: 0}
     - target: {fileID: 1799248679040083478, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
@@ -2482,7 +2481,7 @@ PrefabInstance:
     - target: {fileID: 1799248680319955256, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 275.91498
+      value: 275.91504
       objectReference: {fileID: 0}
     - target: {fileID: 1799248680319955256, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
@@ -2512,7 +2511,7 @@ PrefabInstance:
     - target: {fileID: 1799248680336362282, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 86.44
+      value: 86.44006
       objectReference: {fileID: 0}
     - target: {fileID: 1799248680336362282, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
@@ -2561,6 +2560,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1908474876606693172, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908474876606693172, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -2578,6 +2582,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayTextAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908474876606693172, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GenericCore_Web, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1908474876606693172, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
@@ -2668,6 +2677,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: NetworkManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011803837207473863, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
+        type: 3}
+      propertyPath: PortNumber
+      value: 9000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011803837207473863, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
+        type: 3}
+      propertyPath: MaxConnections
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2011803837207473863, guid: fa82ac6cf903f45459a52b9ad5c4abe5,
         type: 3}
