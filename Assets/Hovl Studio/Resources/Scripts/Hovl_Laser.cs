@@ -37,6 +37,12 @@ public class Hovl_Laser : MonoBehaviour
         //Save [1] and [3] textures speed
         //{ DISABLED AFTER UPDATE}
         //LaserSpeed = LaserStartSpeed;
+        StartCoroutine(KMS());
+    }
+    public IEnumerator KMS()
+    {
+        yield return new WaitForSeconds(.2f);
+        Destroy(this.gameObject);
     }
 
     void Update()
