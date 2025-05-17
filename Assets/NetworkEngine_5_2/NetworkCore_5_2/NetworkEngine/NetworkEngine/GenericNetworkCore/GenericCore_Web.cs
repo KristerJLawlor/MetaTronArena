@@ -335,7 +335,7 @@ public class GenCore : WebSocketBehavior
                 // Reading a plain text message
 
                 var message = System.Text.Encoding.UTF8.GetString(bytes);
-                Debug.Log("Receiving: " + message);
+                //Debug.Log("Receiving: " + message);
                 //owner.TCPHandleMessage(this, message);
                 if (message.Length > 0)
                 {

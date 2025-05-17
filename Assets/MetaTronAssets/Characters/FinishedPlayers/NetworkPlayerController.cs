@@ -98,16 +98,24 @@ public class NetworkPlayerController : HighLevelEntity
         {
             if (s.started)
             {
-                Debug.Log("Shoot function");
                 SendCommand("FIRE", "true");
                 SendCommand("ISATTACKING", true.ToString());
-                
+                Debug.Log("Shot started");
+                //LaserBeam = Instantiate(LaserPrefab, myRig.transform.forward + myRig.transform.position + new Vector3(0, 1.0f, 0), myRig.transform.rotation);
+
+            }
+            if (s.performed)
+            {
+                Destroy(LaserBeam);
+                LaserBeam = Instantiate(LaserPrefab, myRig.transform.forward + myRig.transform.position + new Vector3(0, 1.0f, 0), myRig.transform.rotation);
+                Debug.Log(s.phase);
             }
 
             else if (s.canceled)
             {
                 SendCommand("FIRE", "false");
                 SendCommand("ISATTACKING", false.ToString());
+                Destroy(LaserBeam);
                 
             }
         }
@@ -493,8 +501,8 @@ public class NetworkPlayerController : HighLevelEntity
             if (canShoot && isAttacking)
             {
                 //Debug.Log("Spawn Laser");
-                Destroy(LaserBeam);
-                LaserBeam = Instantiate(LaserPrefab, myRig.transform.forward + myRig.transform.position + new Vector3(0, 1.0f, 0), myRig.transform.rotation);
+                //Destroy(LaserBeam);
+                //LaserBeam = Instantiate(LaserPrefab, myRig.transform.forward + myRig.transform.position + new Vector3(0, 1.0f, 0), myRig.transform.rotation);
                 
                 if(canPew)
                 {
@@ -505,7 +513,7 @@ public class NetworkPlayerController : HighLevelEntity
             }
             else
             {
-                Destroy(LaserBeam, 0.5f);
+                //Destroy(LaserBeam, 0.5f);
             }
 
             if(canWalk && myRig.velocity.magnitude > 0.1f)
