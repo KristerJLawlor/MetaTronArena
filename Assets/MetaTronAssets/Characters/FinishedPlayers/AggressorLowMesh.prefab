@@ -4152,7 +4152,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5627945925265988317}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5ca7bc2689203ec4aa6fcc2fa076274a, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.8
@@ -4537,7 +4537,7 @@ MonoBehaviour:
   HealthIsLow: 0
   ShieldRegen: 0
   LastInput: {x: 0, y: 0}
-  AimVector: {x: 0, y: 0}
+  AimVector: {x: 0, y: 0, z: 0}
   AimPosition: {x: 0, y: 0, z: 0}
   AimDirection: {x: 0, y: 0, z: 0}
   myRig: {fileID: 0}

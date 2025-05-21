@@ -61,13 +61,13 @@ public class Hovl_Laser : MonoBehaviour
             {
                 //End laser position if collides with object
                 Laser.SetPosition(1, hit.point);
-
+                
                     HitEffect.transform.position = hit.point + hit.normal * HitOffset;
                 if (useLaserRotation)
                     HitEffect.transform.rotation = transform.rotation;
                 else
                     HitEffect.transform.LookAt(hit.point + hit.normal);
-
+                
                 foreach (var AllPs in Effects)
                 {
                     if (!AllPs.isPlaying) AllPs.Play();
