@@ -148,7 +148,8 @@ public class GameMasterScript : NetworkComponent
     {
         yield return new WaitForSeconds(615);
 
-        StartCoroutine(MyCore.DisconnectServer());
+        //StartCoroutine(MyCore.DisconnectServer());
+        MyCore.UI_Quit();
     }
 
     public IEnumerator TenSecTimer()
